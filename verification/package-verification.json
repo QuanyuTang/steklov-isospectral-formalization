@@ -1,0 +1,38 @@
+{
+  "status": "public_release_full_build_and_combined_audit_passed",
+  "date": "2026-10-25",
+  "toolchain": "leanprover/lean4:v4.28.0",
+  "mathlib_revision": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+  "commands": [
+    "lake build",
+    "python scripts/audit.py"
+  ],
+  "build_exit_code": 0,
+  "audit_exit_code": 0,
+  "build_reported_jobs": 8206,
+  "environment": "Independent copy of the release; existing verified dependency and project caches reused; source/pin hashes checked against delivered files.",
+  "source_hash_manifest_sha256": "83a05c3891008ea43828d0329dbbff853d9cebba758c9f7bcf8366c4b180e1b0",
+  "unique_axiom_inventory_targets": 590,
+  "axioms_allowed_only": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "public_entry_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "classical_main_theorem_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "expected_challenge_sorry_warning": true,
+  "other_build_warnings": "Non-fatal existing linter warnings; see complete build log.",
+  "proof_development_placeholders": 0,
+  "comparator_run": false,
+  "independent_kernel_replay_run": false,
+  "palomar_eligible_unchanged": false,
+  "palomar_blocker": "Current observed minimum v4.35.0-rc2 exceeds the verified v4.28.0 toolchain."
+}

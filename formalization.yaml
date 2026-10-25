@@ -1,0 +1,146 @@
+{
+  "version": "v0.4",
+  "project": {
+    "name": "Strictly Convex Steklov-Isospectral Plane Domains",
+    "description": "Lean formalization of the existence of noncongruent simply connected strictly convex plane domains with real-analytic boundary and identical Steklov spectra, including multiplicities. The family has perimeter 2π and converges smoothly to a disk. An explicit degree-seven polynomial realization supplies the construction.",
+    "authors": [
+      "taohu-hub",
+      "RGConj",
+      "QuanyuTang"
+    ],
+    "responsible_maintainers": [
+      "taohu-hub",
+      "RGConj",
+      "QuanyuTang"
+    ],
+    "license": "Apache-2.0"
+  },
+  "classification": {
+    "arxiv": [
+      "math.SP",
+      "math.DG"
+    ],
+    "msc2020": [
+      "58J53",
+      "58J50",
+      "30C35"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Strictly Convex Steklov-Isospectral Plane Domains",
+      "authors": [
+        "Tao Hu",
+        "Jiachen Shi",
+        "Quanyu Tang"
+      ],
+      "id": "https://arxiv.org/abs/2608.10557v2",
+      "type": "article",
+      "location": "Theorem 1.1.2 and supporting results in Sections 2–3",
+      "relationship": "adapts",
+      "note": "All five main conclusions; explicit degree-seven realization replaces general Riemann existence. Concrete metric orbifold disk models are used. No coauthor endorsement or independent human review is asserted.",
+      "license": "arXiv non-exclusive distribution license; original paper files are excluded from the code license"
+    }
+  ],
+  "related_formalizations": [],
+  "status": {
+    "scope": "Theorem 1.1.2, all five conclusions, with supporting construction and spectral interpretation. No general arbitrary-data Riemann existence theorem or general orbifold library. Lean 4.28 local verification completed; current Palomar eligibility requires a toolchain/Mathlib port and independent comparison checks.",
+    "sorry_count": 0,
+    "sorry_in_definitions": 0,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "main_results": [
+      {
+        "declaration": "SteklovSubmission.main_result",
+        "file": "Solution.lean",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "literature_dependencies": [],
+        "comparator_config": "comparator.json"
+      },
+      {
+        "declaration": "SteklovCoalescence.mainTheoremClassical_proved",
+        "file": "RequestProject/MainTheoremClassical.lean",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "literature_dependencies": []
+      },
+      {
+        "declaration": "Degree7.prop_3_3_1_full",
+        "file": "RequestProject/Degree7Prop331Full.lean",
+        "sorry_count": 0,
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "literature_dependencies": []
+      }
+    ],
+    "note": "Counts exclude the single deliberate statement-only sorry in Challenge.lean; the Solution does not import it."
+  },
+  "automation": {
+    "methods": [
+      {
+        "method": "agent",
+        "models": [],
+        "framework": "Aristotle (Harmonic)",
+        "tool_setup": "Primary iterative proof generation; backend model not disclosed.",
+        "cost": {
+          "wall_time": "Approximately 36 hours overall proof-project elapsed time; not isolated backend compute time.",
+          "spend_usd": "not tracked",
+          "hardware": "remote service"
+        },
+        "prompting_notes": "Formalize the paper; close explicit geometric and spectral dependencies; supply proof bodies and audit targets."
+      },
+      {
+        "method": "agent",
+        "models": [
+          "OpenAI GPT-6 family; exact model for every historical step not retained"
+        ],
+        "framework": "OpenAI Codex",
+        "tool_setup": "Orchestration, intermediate scaffolding, source correspondence review, local Lean builds, transitive axiom checks, packaging.",
+        "cost": {
+          "wall_time": "Included in overall proof-project elapsed time; packaging separate.",
+          "spend_usd": "not tracked",
+          "hardware": "local Windows host plus remote services"
+        },
+        "prompting_notes": "Check exact statements, reject predicate definitions as proof substitutes, and audit dependencies and source scope."
+      }
+    ],
+    "spend_usd": "not tracked",
+    "notes": "Human user directed the project. Most proof generation used Aristotle; Codex coordinated and checked. No independent human mathematical review claimed. The public maintainer is not credited with personally writing every generated proof. Public maintainer identifiers were supplied by the project owner."
+  },
+  "fidelity": {
+    "divergences": "Explicit degree-seven realization instead of general Riemann existence for arbitrary permutation data; direct weighted-disk transplantation in the main spectral proof; orbifolds represented by proved concrete metric disk models. All five main conclusions retained; no extra unproved hypotheses in the main theorem."
+  },
+  "review": {
+    "status": "AI-assisted self-assessment; local Lean build and axiom audit passed",
+    "reviewers": [],
+    "notes": "Source correspondence reviewed with AI assistance. No independent human expert review, Palomar Comparator verification, NanoDa replay, con-ron replay, or registry acceptance is claimed. Current Palomar minimum is newer than the verified toolchain."
+  },
+  "alignment": {
+    "namespace": "SteklovSubmission",
+    "statements": [
+      {
+        "source": "arXiv:2608.10557v2, Theorem 1.1.2",
+        "lean": "SteklovSubmission.main_result",
+        "module": "Solution",
+        "status": "proved",
+        "note": "All five conclusions; variational spectrum with classical-PDE bridges in the underlying development. Palomar checks not yet run."
+      }
+    ]
+  },
+  "acknowledgements": "Paper authors Tao Hu, Jiachen Shi, Quanyu Tang; Lean and Mathlib contributors; Harmonic Aristotle; OpenAI Codex. Credits do not imply endorsement."
+}

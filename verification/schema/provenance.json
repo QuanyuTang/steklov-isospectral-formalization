@@ -1,0 +1,7 @@
+{
+  "schema_source": "https://github.com/mathlib-initiative/formalization.yaml/blob/99c678e569c7c4c0772db297c5ddd5e4c9b6322e/schema/v0.4.schema.json",
+  "retrieved": "2026-10-25",
+  "project_metadata_format": "JSON syntax, a YAML 1.2 subset",
+  "validator": "jsonschema.Draft7Validator",
+  "validator_version": "4.25.1"
+}

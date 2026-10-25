@@ -1,0 +1,22 @@
+{
+  "status": "source_release_structural_and_integrity_checks_passed",
+  "library_modules": 176,
+  "preserved_original_audit_templates": 4,
+  "original_source_file_count": 180,
+  "all_regular_lean_files": 178,
+  "checks_passed": 980,
+  "toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "challenge_placeholder_count": 1,
+  "proof_placeholder_count": 0,
+  "original_sources_unchanged_except_one_config_module_header": true,
+  "changed_original_source_count": 0,
+  "byte_identical_original_source_contents": 179,
+  "module_header_only_adaptations": [
+    "RequestProject/Main.lean"
+  ],
+  "original_tex_and_archive_match": true,
+  "observed_palomar_toolchain_minimum_satisfied": true,
+  "palomar_registration_claimed": false,
+  "comparator_or_independent_kernel_verification_claimed": false,
+  "not_a_Lean_build_or_semantic_fidelity_proof": true
+}

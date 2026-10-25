@@ -1,0 +1,41 @@
+import RequestProject.Degree7Prop331Geom
+import RequestProject.MainTheoremClassical
+
+/-! Axiom audit of the nineteenth run's new declarations (and the main theorem). -/
+
+#print axioms SteklovBordered.local_extension
+#print axioms SteklovBordered.closed_disk_extension
+#print axioms SteklovBordered.closed_disk_homeomorph
+#print axioms Degree7.stab_label_iff
+#print axioms Degree7.deckIso
+#print axioms Degree7.stabSub_eq_map
+#print axioms Degree7.stabilizer_identification
+#print axioms Degree7.completed_quotient_identifications_deck
+#print axioms Degree7.regMetric
+#print axioms Degree7.chartDom
+#print axioms SteklovOrb.pullback_law
+#print axioms Degree7.isLocalBranched_chart
+#print axioms Degree7.regMetric_smooth
+#print axioms Degree7.regMetric_eq
+#print axioms Degree7.regMetric_cusp
+#print axioms Degree7.regMetric_transform
+#print axioms Degree7.regMetric_transition
+#print axioms Degree7.regMetric_deck
+#print axioms Degree7.quotient_chart
+#print axioms Degree7.metric_descends
+#print axioms Degree7.closed_quotient_disk
+#print axioms Degree7.stabIn_inl
+#print axioms Degree7.rot_formula
+#print axioms Degree7.stab_card_crit
+#print axioms Degree7.stab_card_noncrit
+#print axioms Degree7.local_power_map
+#print axioms Degree7.stab_card_mul_mult
+#print axioms Degree7.coneSet_iff_stab
+#print axioms Degree7.ord_eq_stab
+#print axioms Degree7.boundary_metric
+#print axioms Degree7.LabelGeometry
+#print axioms Degree7.label_geometry
+#print axioms Degree7.prop_3_3_1_geometric
+#print axioms Degree7.prop_3_3_1_geometric_nonvacuous
+#print axioms Degree7.prop_3_3_1
+#print axioms SteklovCoalescence.mainTheorem_proved

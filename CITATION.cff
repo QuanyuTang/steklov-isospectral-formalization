@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite the mathematical source below and identify the exact commit of this formalization when using the Lean code."
+type: software
+title: "Strictly Convex Steklov-Isospectral Plane Domains: Lean Formalization"
+version: 1.0.0
+date-released: 2026-10-25
+license: Apache-2.0
+authors:
+  - name: taohu-hub
+  - name: RGConj
+  - name: QuanyuTang
+preferred-citation:
+  type: article
+  title: "Strictly Convex Steklov-Isospectral Plane Domains"
+  authors:
+    - family-names: Hu
+      given-names: Tao
+    - family-names: Shi
+      given-names: Jiachen
+    - family-names: Tang
+      given-names: Quanyu
+  year: 2026
+  doi: 10.48550/arXiv.2608.10557
+  url: https://arxiv.org/abs/2608.10557v2

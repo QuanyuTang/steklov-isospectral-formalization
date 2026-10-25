@@ -1,0 +1,53 @@
+# 严格凸 Steklov 等谱平面区域：Lean 形式化
+
+**作者：[taohu-hub](https://github.com/taohu-hub)、[RGConj](https://github.com/RGConj)、[QuanyuTang](https://github.com/QuanyuTang)。**
+
+[![Lean 验证](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml)
+[![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml)
+
+**迁移候选版本：** Lean 4.35 验证正在进行。保留的历史构建和公理日志仅核验了 Lean 4.28 基线。[当前状态](PALOMAR_STATUS.md)
+
+**Hu–Shi–Tang 论文定理 1.1.2 的 Lean 4 形式化，采用显式七次多项式构造。**
+
+[English](README.md) · [论文](https://arxiv.org/abs/2608.10557v2) · [独立定理陈述](Challenge.lean) · [证明入口](Solution.lean)
+
+该工程证明：存在 Steklov 谱完全相同（包含重数）、彼此不全等的平面区域族。这些区域有界、单连通、严格凸，边界为实解析 Jordan 曲线；周长均为 2π，没有反向欧氏对称，归一化共形映射在 C∞ 意义下趋于恒等映射。
+
+## 核验与范围
+
+- 176 个可编译的 Lean 库模块与 4 份保留的原始审计模板（共 180 份原始源码），`RequestProject/` 中没有 `sorry`、`admit` 或新增数学公理。
+- 已核验环境：Lean **4.28.0**；Mathlib 固定为 `8f9d9cff6bd728b17a24e163c9402775d9e6a365`。
+- 本次发布布局已在独立目录中完整编译通过（8206 个任务），590 个不同导出审计目标均只依赖三个标准公理。[本次核验报告](verification/package-verification.json)、[构建日志](verification/package-build.log)、[审计日志](verification/package-audit.log) 均随包提供；590 是审计声明数，不是独立数学定理数。
+- 主定理的五项结论全部包含；更强入口 `SteklovCoalescence.mainTheoremClassical_proved` 连接弱 Sobolev 谱与经典调和 PDE 的 Steklov 边界条件。
+- 仅使用 `propext`（命题外延性）、`Classical.choice`（经典选择）、`Quot.sound`（商类型等价代表元的相等性）。没有把论文结论作为公理。
+
+证明采用显式七次多项式及实际单值群数据。没有形式化任意置换数据的一般 Riemann 存在定理；轨形采用经证明的具体圆盘坐标模型。不能将本项目宣传为“论文提到的所有一般理论均已形式化”。详细对应见 [RESULTS.md](docs/RESULTS.md)。
+
+## 复现
+
+安装 elan、Git 与 Lean 支持的 C/C++ 工具链后，在本目录执行：
+
+```sh
+lake exe cache get
+lake build
+python3 scripts/audit.py
+python3 scripts/check-release.py
+```
+
+`Challenge.lean` 是只导入 Mathlib 的独立陈述文件，其中有 **一个有意保留的 `sorry`**，用于 Palomar 的陈述与证明对比机制。实际证明位于 `Solution.lean` 和 `RequestProject/`，不导入该陈述文件。这个占位不属于主定理证明。
+
+## GitHub 发布与 Palomar
+
+可以将**本目录中的全部内容**作为一个 GitHub 仓库的根目录上传；不要再嵌套一层 `formalization/`。建议仓库名：`steklov-isospectral-formalization`。原始论文 PDF、TeX 和原始源码包位于 `paper/`。
+
+**Palomar 当前仍有版本障碍。** 2026-10-25 查询的官方最低版本是 Lean **4.35.0-rc2**，而本工程已经核验的版本为 **4.28.0**。本包补齐了独立陈述、证明入口、对比配置与来源元数据，但还需要迁移 Lean 和 Mathlib、重新编译并运行 Comparator 及独立内核检查，才能进行当前规则下的新提交。不能仅修改版本号后宣称已经通过。
+
+Palomar 使用公开 GitHub 仓库及完整 commit SHA 进行审查，并不是直接接收 ZIP。发布和后续提交步骤见 [PALOMAR.md](docs/PALOMAR.md)。本项目目前**没有获得 Palomar 核验、登记或背书**。
+
+## 署名、AI 使用与许可
+
+仓库维护者：[taohu-hub](https://github.com/taohu-hub)、[RGConj](https://github.com/RGConj)、[QuanyuTang](https://github.com/QuanyuTang)。形式化主要使用 **Aristotle（Harmonic）** 生成证明，**OpenAI Codex** 用于组织工作、补充中间步骤、核验与整理。没有声称经过独立数学专家的人工审稿。详见 [PROVENANCE.md](docs/PROVENANCE.md)。
+
+原论文作者为 **Tao Hu、Jiachen Shi、Quanyu Tang**。仓库维护身份和论文作者身份分别标注，没有将论文或 AI 生成工作全部归功于维护者。
+
+形式化代码和新增文档采用 **Apache-2.0**。`paper/` 中的论文文件保留原作者权利，不适用本仓库的代码许可；arXiv 页面显示的是授予 arXiv 的非独占传播许可，不是通用的开放再利用许可。见 [论文来源与权利说明](paper/README.md)。

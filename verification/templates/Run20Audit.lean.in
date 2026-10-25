@@ -1,0 +1,210 @@
+import RequestProject.MainTheoremClassical
+import RequestProject.C1Spectrum
+import RequestProject.OrbMetricSpectrum
+import RequestProject.Degree7RiemannCover
+import RequestProject.PuncturedDiskCover
+import RequestProject.Degree7Quotient
+import RequestProject.Degree7Prop331
+import RequestProject.Degree7Prop331Geom
+import RequestProject.Degree7Prop331Full
+import Lean
+
+noncomputable section
+
+/-! Independent audit of the final run-20 candidate; full original-paper requirements are reviewed separately from the machine checks. -/
+
+open Lean Elab Command
+
+elab "#audit_proof " n:ident : command => do
+  let name := n.getId
+  let info ← getConstInfo name
+  unless (← liftTermElabM (Meta.isProp info.type)) do
+    throwError "audit rejected: declaration type is not a proposition"
+  unless info.hasValue (allowOpaque := true) do
+    throwError "audit rejected: declaration has no proof body"
+  let axioms ← collectAxioms name
+  let unexpected := axioms.filter fun ax =>
+    ax != ``propext && ax != ``Classical.choice && ax != ``Quot.sound
+  unless unexpected.isEmpty do
+    throwError "audit rejected: unapproved transitive axioms {unexpected}"
+  logInfo m!"AUDIT_OK {name}: {axioms.toList}"
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof MainTheorem
+
+-- A passing build must retain this explicit distinction.
+#check MainTheorem -- MainTheorem : Prop, not a proof of MainTheorem.
+
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof MainTheoremH1
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof MainTheoremWeak
+
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof MainTheoremDom
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof MainTheoremClassical
+
+elab "#audit_construction " n:ident : command => do
+  let name := n.getId
+  let info ← getConstInfo name
+  if (← liftTermElabM (Meta.isProp info.type)) || info.type.isSort then
+    throwError "audit rejected: construction must be an object, not a proof or sort-valued statement"
+  unless info.hasValue (allowOpaque := true) do
+    throwError "audit rejected: construction has no body"
+  let axioms ← collectAxioms name
+  let unexpected := axioms.filter fun ax =>
+    ax != ``propext && ax != ``Classical.choice && ax != ``Quot.sound
+  unless unexpected.isEmpty do
+    throwError "audit rejected: unapproved transitive axioms {unexpected}"
+  logInfo m!"CONSTRUCTION_OK {name}: {axioms.toList}"
+
+/-- error: audit rejected: construction must be an object, not a proof or sort-valued statement -/
+#guard_msgs in
+#audit_construction MainTheorem
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof SteklovH1.ConfMap.sobolevPullback
+
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof Prop_2_1_1_C1
+
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof SteklovC1.Prop_2_1_1_C1_Weak
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof SteklovH1.C1Conf.sobolevPullback
+
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof SteklovOrb.DiskOrbisurface.metricSobolevEquiv
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof SteklovOrb.DiskOrbisurface.metricSobolevEquivOrb
+
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof Degree7.regEnds
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof Degree7.regFillHomeo
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof SteklovFill.Fill.cuspChart
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof SteklovFill.Fill.homeoMap
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof SteklovFill.branchEnds
+
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof Degree7.stabSub
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof Degree7.orbSetoid
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof SteklovOrb.pullbackOrb
+
+
+elab "#audit_statement " n:ident : command => do
+  let name := n.getId
+  let info ← getConstInfo name
+  let isPredicate ← liftTermElabM <| Meta.forallTelescopeReducing info.type fun _ result =>
+    pure (result == mkSort Level.zero)
+  unless isPredicate do
+    throwError "audit rejected: statement definition must return Prop"
+  unless info.hasValue (allowOpaque := true) do
+    throwError "audit rejected: statement definition has no body"
+  let axioms ← collectAxioms name
+  let unexpected := axioms.filter fun ax =>
+    ax != ``propext && ax != ``Classical.choice && ax != ``Quot.sound
+  unless unexpected.isEmpty do
+    throwError "audit rejected: unapproved transitive axioms {unexpected}"
+  logInfo m!"STATEMENT_ONLY {name}: {axioms.toList}"
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof Degree7.deckIso
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof Degree7.regMetric
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof Degree7.chartDom
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof Degree7.LabelGeometry
+
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof Degree7.CuspCompat
+
+/-- error: audit rejected: declaration type is not a proposition -/
+#guard_msgs in
+#audit_proof Degree7.cuspT
+
+#audit_proof ConeUnif.exists_equivariant_uniformizer
+#audit_proof ConeUnif.metric_eq_at_filled_point
+#audit_proof Degree7.label_geometry_cone
+#audit_proof Degree7.CuspCompat.cone_metric_identity
+#audit_proof Degree7.completed_quotient_identifications_conn
+#audit_proof Degree7.regFill_connected_of
+#audit_proof Degree7.prop_3_3_1_full
+
+example {s : ℂ} (hs : s ^ 2 = -7)
+    (f₀ : SteklovRegularCover.OrdFib (Degree7.projSum hs) 13)
+    (Ev : Degree7.RegFill hs f₀ → ℂ) (c : ℂ) (ψ : ℂ → ℂ)
+    (j : SteklovFill.BIdx (SteklovRegularCover.regProj f₀) Degree7.cB (1 / 2)) :
+    ℂ → ℂ := Degree7.cuspT hs f₀ Ev c ψ j
+#check Degree7.CuspCompat
+#check Degree7.CuspCompat.cone_metric_identity
+#check Degree7.label_geometry_cone
+#check Degree7.prop_3_3_1_full
+example : SteklovC1.Prop_2_1_1_C1_Weak := SteklovC1.prop_2_1_1_C1_weak
+example : Prop_2_3_1_complete := OuterConvergence.prop_2_3_1_complete
+#check SteklovC1.prop_2_1_1_C1_weak
+#check SteklovOrb.DiskOrbisurface.prop_2_2_1_metric
+#check OuterConvergence.prop_2_3_1_complete
+#check SteklovBlaschke.blaschke_boundary_rigidity
+#check SteklovBlaschke.blaschke_boundary_rigidity_anti
+#check group_input
+#check GL3F2.group_input_GL
+#check SteklovDiskCovers.lemma_3_2_1
+#check SteklovCoalescence.prop_3_4_1_unconditional
+example : MainTheorem := SteklovCoalescence.mainTheorem_proved
+#check SteklovCoalescence.mainTheorem_proved
+example : MainTheoremClassical := SteklovCoalescence.mainTheoremClassical_proved
+#check SteklovCoalescence.mainTheoremClassical_proved
+end

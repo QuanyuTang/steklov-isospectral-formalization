@@ -1,0 +1,35 @@
+import RequestProject.Degree7Prop331Full
+import RequestProject.MainTheoremClassical
+import RequestProject.C1Spectrum
+import RequestProject.OrbMetricSpectrum
+import RequestProject.GeneralDiskCovers
+import RequestProject.DiskCoverExistence
+
+/-! Axiom audit of the twentieth run's new declarations, and of the headline numbered results and
+the main theorem (Theorem 1.1.2). -/
+
+-- new this run
+#print axioms ConeUnif.exists_equivariant_uniformizer
+#print axioms ConeUnif.metric_eq_at_filled_point
+#print axioms Degree7.label_geometry_cone
+#print axioms Degree7.CuspCompat.cone_metric_identity
+#print axioms Degree7.completed_quotient_identifications_conn
+#print axioms Degree7.regFill_connected_of
+#print axioms Degree7.prop_3_3_1_full
+-- numbered supporting results
+#print axioms ConformalPullback.prop_2_1_1
+#print axioms SteklovC1.prop_2_1_1_C1_weak
+#print axioms SteklovOrb.DiskOrbisurface.prop_2_2_1
+#print axioms SteklovOrb.DiskOrbisurface.prop_2_2_1_metric
+#print axioms OuterConvergence.prop_2_3_1_complete
+#print axioms SteklovBlaschke.blaschke_boundary_rigidity
+#print axioms SteklovBlaschke.blaschke_boundary_rigidity_anti
+#print axioms group_input
+#print axioms GL3F2.group_input_GL
+#print axioms SteklovDiskCovers.lemma_3_2_1
+#print axioms Degree7.prop_3_3_1
+#print axioms Degree7.prop_3_3_1_geometric
+#print axioms SteklovCoalescence.prop_3_4_1_unconditional
+-- Theorem 1.1.2
+#print axioms SteklovCoalescence.mainTheorem_proved
+#print axioms SteklovCoalescence.mainTheoremClassical_proved

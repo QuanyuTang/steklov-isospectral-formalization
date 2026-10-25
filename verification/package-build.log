@@ -1,0 +1,42 @@
+✔ [8026/8206] Built RequestProject.Main (113s)
+⚠ [8030/8206] Replayed RequestProject.LocalHomeoRiemann
+warning: RequestProject/LocalHomeoRiemann.lean:90:42: This simp argument is unused:
+  OpenPartialHomeomorph.coe_coe
+
+Hint: Omit it from the simp argument list.
+  simp only [extChartAt, OpenPartialHomeomorph.extend, Function.comp_apply,
+        modelWithCornersSelf_coe, modelWithCornersSelf_coe_symm, PartialEquiv.coe_trans,
+        PartialEquiv.coe_trans_symm, OpenPartialHomeomorph.toFun_eq_coe, id_eq,
+        ModelWithCorners.toPartialEquiv_coe, ModelWithCorners.toPartialEquiv_coe_symm,
+        OpenPartialHomeomorph.coe_coe_symm,̵ ̵O̵p̵e̵n̵P̵a̵r̵t̵i̵a̵l̵H̵o̵m̵e̵o̵m̵o̵r̵p̵h̵.̵c̵o̵e̵_̵c̵o̵e̵] at hz ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RequestProject/LocalHomeoRiemann.lean:100:40: This simp argument is unused:
+  OpenPartialHomeomorph.coe_coe
+
+Hint: Omit it from the simp argument list.
+  simp only [extChartAt, OpenPartialHomeomorph.extend, Function.comp_apply,
+      modelWithCornersSelf_coe, modelWithCornersSelf_coe_symm, PartialEquiv.coe_trans,
+      PartialEquiv.coe_trans_symm, OpenPartialHomeomorph.toFun_eq_coe, id_eq,
+      ModelWithCorners.toPartialEquiv_coe, ModelWithCorners.toPartialEquiv_coe_symm,
+      OpenPartialHomeomorph.coe_coe_symm,̵ ̵O̵p̵e̵n̵P̵a̵r̵t̵i̵a̵l̵H̵o̵m̵e̵o̵m̵o̵r̵p̵h̵.̵c̵o̵e̵_̵c̵o̵e̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8032/8206] Replayed RequestProject.PuncturedDiskCover
+warning: RequestProject/PuncturedDiskCover.lean:114:0: automatically included section variable(s) unused in theorem `SteklovPunctured.mem_periods`:
+  [Fact (0 < r)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fact (0 < r)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8060/8206] Built Challenge (116s)
+warning: Challenge.lean:167:8: declaration uses `sorry`
+⚠ [8195/8206] Replayed RequestProject.RegFillMetric
+warning: RequestProject/RegFillMetric.lean:123:50: unused variable `w`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RequestProject/RegFillMetric.lean:327:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [8205/8206] Built Solution (18s)
+Build completed successfully (8206 jobs).

@@ -1,0 +1,30 @@
+{
+  "status": "original_source_fidelity_full_build_and_independent_audit_passed",
+  "service_task_id": "38df39fa-cc1b-4d6a-8b00-84bad220dcc1",
+  "service_terminal_status": "finished_successfully",
+  "source_delta": "results/run-20/source-delta.json",
+  "baseline_mathematics_and_pins_unchanged": true,
+  "new_mathematical_module_count": 3,
+  "new_metadata_module": "RequestProject/AuditRun20.lean",
+  "new_headline_proposition_targets": 7,
+  "new_typed_constructions": [],
+  "additional_uncredited_type_contract": "Degree7.cuspT : C to C in the actual cusp chart",
+  "additional_predicate_definition_not_a_proof": "Degree7.CuspCompat",
+  "scope": {
+    "cone_uniformizer": "exists_equivariant_uniformizer constructs actual holomorphic h with h(0)=0, h prime(0) nonzero, equivariance under every root-of-unity rotation and K(z0+t^m)=K(z0)+h(t)^m. metric_eq_at_filled_point proves the lifted factor identity on a full neighborhood including zero, from punctured identity and continuity.",
+    "actual_cusp_identification": "label_geometry_cone proves both LabelGeometry and CuspCompat for each actual stabilizer quotient and every structural base metric, deriving all choices from actual monodromy/power models and the existing geometry. CuspCompat universally quantifies all compatible quotient homeomorphisms, so the same identification is used. Cone cases have actual rotation isotropy, standard uniformizer change and equality for every lifted factor; CuspCompat.cone_metric_identity specializes to the actual smooth positive cone-metric factor. Ordinary cusps have a local biholomorphic coordinate with smooth positive metric identity including zero.",
+    "same_witness": "prop_3_3_1_full uses a single actual f0 for path-connected regular cover, connected completed Riemann surface, actual holomorphic right deck action, degree168 and actual original HP/HL subgroup identification, genuine connected compact bordered surface and boundary charts, invariant metric, both complete metric quotient identifications and full Steklov spectra including multiplicities.",
+    "original_numbered_scope": "Original TeX source and all nine numbered statements plus five main conclusions were reviewed locally, independently of the service inventory. The current frozen older sources match verified prior evidence; source review is recorded in verification/completion-requirements.json.",
+    "representation": "Faithful chartwise conformal metric on actual cover and actual quotient represented by its proved metric-orbifold closed-disk model. Spectra transported through the proved full geometric identification; no general orbifold library or redundant intrinsic quotient spectral theory is required.",
+    "proof_route": "Actual degree-seven polynomial pair with verified monodromy and direct weighted transplantation is a complete alternative proof route for the chosen construction. Generic Riemann existence for arbitrary permutation data is not formalized or credited."
+  },
+  "mathematical_or_statement_gaps_identified_by_source_review": [],
+  "pending_verification_requirements": [],
+  "observed_build_command": "lake build",
+  "validation_root_for_new_modules": "RequestProject.AuditRun20",
+  "independent_audit_source": "verification/Run20Audit.lean",
+  "full_original_goal_complete": true,
+  "local_verification": "results/run-20/local-verification.json",
+  "closed_contract_evidence": "results/run-20/checkpoint-contracts.json",
+  "completion_audit": "results/run-20/completion-audit.json"
+}

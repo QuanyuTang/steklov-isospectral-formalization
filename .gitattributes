@@ -1,0 +1,17 @@
+* text=auto eol=lf
+*.lean text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=lf
+*.pdf binary
+*.tar binary
+*.zip binary
+paper/tex/* -text
+verification/templates/*.lean.in -text
+verification/recorded/* -text
+verification/package-*.log -text
+LICENSE -text

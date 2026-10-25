@@ -1,0 +1,6 @@
+{
+  "baseline_toolchain": "leanprover/lean4:v4.28.0",
+  "target_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "changed_original_sources": [],
+  "note": "This hash comparison records edits; it is not a proof validation result."
+}

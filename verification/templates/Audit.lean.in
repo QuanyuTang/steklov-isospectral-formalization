@@ -1,0 +1,683 @@
+import RequestProject.Defs
+import RequestProject.MainStatement
+import RequestProject.PaperStatements
+import RequestProject.GroupTheory
+import RequestProject.LinearFixed
+import RequestProject.GroupInput
+import RequestProject.Sunada
+import RequestProject.Univalence
+import RequestProject.CriticalValues
+import RequestProject.Blaschke
+import RequestProject.BlaschkePerimeter
+import RequestProject.Dilation
+import RequestProject.DilationGeometry
+import RequestProject.DiskSanity
+import RequestProject.ArcLength
+import RequestProject.HolomorphicInverse
+import RequestProject.MinMaxTransfer
+import RequestProject.ConformalPullback
+import RequestProject.BoundaryLength
+import RequestProject.Prop231Reduction
+import RequestProject.ConformalImage
+import RequestProject.OuterFourier
+import RequestProject.RealAnalyticBounds
+import RequestProject.OuterFunction
+import RequestProject.CompositionBounds
+import RequestProject.OuterRealization
+import RequestProject.OuterConvergence
+import RequestProject.SchwarzTrapping
+import RequestProject.PolyTrapping
+import RequestProject.BlaschkeConvergence
+import RequestProject.BlaschkeWeight
+import RequestProject.Coalescence
+import RequestProject.CoalescenceRealization
+import RequestProject.StrictConvexity
+import RequestProject.ConditionalFamily
+import RequestProject.Montel
+import RequestProject.Hurwitz
+import RequestProject.StarPrimitive
+import RequestProject.RiemannMap
+import RequestProject.NearDiskDomain
+import RequestProject.BlaschkeFactorization
+import RequestProject.DiskCoverExistence
+import RequestProject.CoverFamily
+import RequestProject.Degree7Polynomial
+import RequestProject.Degree7Permutations
+import RequestProject.Degree7Counts
+import RequestProject.Degree7Passport
+import RequestProject.PolynomialCover
+import RequestProject.LocalMonodromy
+import RequestProject.MonodromyRelation
+import RequestProject.InfinityMonodromy
+import RequestProject.MonodromyTriple
+import RequestProject.Degree7Monodromy
+import RequestProject.ConjugateMonodromy
+import RequestProject.Degree7PointLine
+import RequestProject.CoverInequivalence
+import RequestProject.Pi1Generation
+import RequestProject.FullMonodromy
+import RequestProject.LogCutoff
+import RequestProject.BranchPointRemoval
+import RequestProject.SingularTransfer
+import RequestProject.AreaFormula
+import RequestProject.CircleFibre
+import RequestProject.Transplant
+import RequestProject.TransplantEnergy
+import RequestProject.TransplantTransfer
+import RequestProject.LocalBranches
+import RequestProject.TransplantKernel
+import RequestProject.BlaschkeFibres
+import RequestProject.FanoKernel
+import RequestProject.CoverKernel
+import RequestProject.HolCover
+import RequestProject.BlaschkeCover
+import RequestProject.MonodromyTransfer
+import RequestProject.BlaschkeCoverData
+import RequestProject.BlaschkeKernel
+import RequestProject.ActualKernel
+import RequestProject.FamilyIsospectral
+import RequestProject.MainExceptIII
+import RequestProject.LocalCoverIneq
+import RequestProject.DiskAut
+import RequestProject.CongruenceRigidity
+import RequestProject.FamilyNoncongruence
+import RequestProject.FullAssembly
+import RequestProject.MainTheoremProof
+import RequestProject.MainTheoremH1
+import RequestProject.H1MinMax
+import RequestProject.CompactCriterion
+import RequestProject.TraceCompact
+import RequestProject.AbstractSpectral
+import RequestProject.DiskSpectral
+import RequestProject.ConformalWeakSpectrum
+import RequestProject.MainTheoremWeak
+import RequestProject.DiskDensity
+import RequestProject.ConformalSobolev
+import RequestProject.ConformalSpectrum
+import RequestProject.DomainDensity
+import RequestProject.MainTheoremDom
+import RequestProject.WeylLemma
+import RequestProject.SteklovRegularity
+import RequestProject.ClassicalSteklov
+import RequestProject.FourierCircle
+import RequestProject.HarmonicSeries
+import RequestProject.BoundaryRegularity
+import RequestProject.AnalyticWeight
+import RequestProject.ClassicalSteklovDom
+import RequestProject.MainTheoremClassical
+import RequestProject.LemniscateBoundary
+import RequestProject.GeneralDiskCovers
+import RequestProject.ApproxMinMax
+import RequestProject.C1Mollify
+import RequestProject.C1Transfer
+import RequestProject.GeneralConformalPullback
+import RequestProject.OutwardNormal
+import RequestProject.C1H1
+import RequestProject.C1Sobolev
+import RequestProject.C1Spectrum
+import RequestProject.OrbMinMax
+import RequestProject.Orbisurface
+import RequestProject.OrbSobolev
+import RequestProject.OrderedFibre
+import RequestProject.RegularCover
+import RequestProject.Degree7RegularCover
+import RequestProject.SumCover
+import RequestProject.Degree7CommonCover
+import RequestProject.Friedrichs
+import RequestProject.OrbMetricBounds
+import RequestProject.OrbMetricSobolev
+import RequestProject.OrbMetricSpectrum
+import RequestProject.LocalHomeoRiemann
+import RequestProject.Degree7RiemannCover
+import RequestProject.PowerCover
+import RequestProject.LocalInertia
+import RequestProject.RegCovMonodromy
+import RequestProject.PolyLocalPeriod
+import RequestProject.Degree7Inertia
+import RequestProject.PunctureFilling
+import RequestProject.PunctureFillingRiemann
+import RequestProject.BranchedCompletion
+import RequestProject.Degree7Completion
+import RequestProject.FillProper
+import RequestProject.Degree7Proper
+import RequestProject.FillMap
+import RequestProject.Degree7Deck
+import RequestProject.Degree7Bordered
+import RequestProject.FillExtend
+import RequestProject.Degree7Quotient
+
+/-!
+# Axiom audit
+
+Building this file prints the transitive axioms of every headline result of the project.
+Each should depend only on `propext`, `Classical.choice` and `Quot.sound`.
+-/
+
+#print axioms group_input
+#print axioms GL3F2.group_input_GL
+#print axioms GL3F2.almostConjugate_HP_HL
+#print axioms GL3F2.not_areConjugate_HP_HL
+#print axioms GL3F2.cycleCount_x
+#print axioms GL3F2.cycleCount_y
+#print axioms GL3F2.cycleCount_xy
+#print axioms GL3F2.cycleCount_x_L
+#print axioms GL3F2.cycleCount_y_L
+#print axioms GL3F2.cycleCount_xy_L
+#print axioms SteklovGroup.sunada_finrank_invariants_eq
+#print axioms SteklovGroup.areConjugate_of_equivariant
+#print axioms SteklovAnalytic.injOn_of_re_deriv_pos
+#print axioms SteklovCritical.critical_values_match
+#print axioms SteklovCritical.critical_values_no_reflection
+#print axioms SteklovCritical.branchValues_mem_disk
+#print axioms SteklovCritical.coalescence_coeff_tendsto_zero
+#print axioms SteklovBlaschke.blaschke_boundary_rigidity
+#print axioms SteklovBlaschke.blaschke_boundary_rigidity_anti
+#print axioms SteklovBlaschke.integral_bdens
+#print axioms SteklovBlaschke.integral_norm_deriv_blaschke
+#print axioms SteklovDilationProof.steklovDilation
+#print axioms SteklovDilationProof.boundaryLength_smul
+#print axioms SteklovDilationProof.congruent_smul_iff
+#print axioms SteklovDilationProof.orientationReversing_smul_iff
+#print axioms SteklovSanity.unitDisk_isDomain
+#print axioms SteklovSanity.unitDisk_strictlyConvex
+#print axioms SteklovSanity.unitDisk_realAnalyticJordan
+#print axioms SteklovSanity.id_isNormalizedConformalMap
+-- Second run: arc-length formula, conformal pullback (Prop. 2.1.1) and consequences
+#print axioms ArcLength.hausdorffMeasure_image_eq_lintegral
+#print axioms ArcLength.hausdorffMeasure_restrict_image_eq_map
+#print axioms ArcLength.lintegral_image_hausdorffMeasure
+#print axioms HolInv.isOpen_image
+#print axioms HolInv.hasDerivAt_invFunOn
+#print axioms HolInv.deriv_ne_zero_of_injOn
+#print axioms HolInv.exists_open_injOn_of_compact
+#print axioms HolInv.exists_open_nbhd_injOn_deriv_ne_zero
+#print axioms Steklov.minMax_le_of_transfer
+#print axioms ConformalPullback.exists_cutoff
+#print axioms ConformalPullback.frontier_image_ball
+#print axioms ConformalPullback.boundary_lintegral
+#print axioms ConformalPullback.dirichletEnergy_image
+#print axioms ConformalPullback.boundaryMass_image
+#print axioms ConformalPullback.prop_2_1_1
+#print axioms BoundaryLength.boundaryLength_image_ball
+#print axioms BoundaryLength.boundaryLength_eq_of_realAnalyticJordan
+#print axioms BoundaryLength.boundaryLength_rescaled_blaschke
+#print axioms Prop231Reduction.prop_2_3_1_of_realization
+#print axioms ConformalImage.isDomain_image_ball
+#print axioms ConformalImage.isBounded_image_ball
+#print axioms ConformalImage.simplyConnected_image_ball
+#print axioms ConformalImage.realAnalyticJordan_image_ball
+#print axioms Prop231Reduction.isospectral_of_weighted
+
+-- Third run: Proposition 2.3.1 (normalized outer-function realization and C^∞ convergence)
+#print axioms OuterFourier.norm_fc_le_of_iteratedDeriv
+#print axioms OuterFourier.hasSum_fc
+#print axioms RealAnalyticBounds.exists_iteratedDeriv_bound_periodic
+#print axioms OuterFunction.norm_Hj_le
+#print axioms OuterFunction.re_H_exp
+#print axioms OuterFunction.exists_decay
+#print axioms OuterFunction.iteratedDeriv_H
+#print axioms CompositionBounds.norm_iteratedFDerivWithin_comp_le_small
+#print axioms CompositionBounds.log_comp_bound
+#print axioms OuterRealization.exists_outer_primitive
+#print axioms OuterRealization.norm_outer_eq
+#print axioms OuterRealization.prop_2_3_1_realization
+#print axioms OuterRealization.prop_2_3_1
+#print axioms OuterRealization.deriv_eq_outer
+#print axioms OuterConvergence.main_estimate
+#print axioms OuterConvergence.prop_2_3_1_convergence
+#print axioms OuterConvergence.prop_2_3_1_convergence_seq
+#print axioms OuterConvergence.prop_2_3_1_complete
+
+-- Fourth run: Proposition 3.4.1 (coalescence), strict convexity, conditional assembly
+#print axioms SteklovCoalescence.schwarz_near_id
+#print axioms SteklovCoalescence.inverse_schwarz
+#print axioms SteklovCoalescence.norm_deriv_le_of_image_subset
+#print axioms SteklovCoalescence.norm_deriv_ge_of_ball_subset
+#print axioms SteklovCoalescence.trapped_map_close_to_id
+#print axioms SteklovCoalescence.polyQ_root_small
+#print axioms SteklovCoalescence.ball_subset_component
+#print axioms SteklovCoalescence.component_subset_ball
+#print axioms SteklovCoalescence.iteratedDeriv_tendstoLocallyUniformlyOn_zero
+#print axioms SteklovCoalescence.blaschke_cinfty_convergence
+#print axioms SteklovCoalescence.iteratedDeriv_re_circle
+#print axioms SteklovCoalescence.blaschke_weight_ck_close
+#print axioms SteklovCoalescence.coalescence_trapping
+#print axioms SteklovCoalescence.coalescence_map_tendsto_id
+#print axioms SteklovCoalescence.coalescence_zeros
+#print axioms SteklovCoalescence.coalescence_cinfty
+#print axioms SteklovCoalescence.coalescence_weight
+#print axioms SteklovCoalescence.coalescence
+#print axioms SteklovCoalescence.paperQ_eq_polyQ
+#print axioms SteklovCoalescence.paperCoeff_tendsto
+#print axioms SteklovCoalescence.prop_3_4_1
+#print axioms SteklovCoalescence.blaschke_weight_posAnalytic
+#print axioms SteklovCoalescence.coalescence_realization
+#print axioms SteklovConvexity.strictConvex_closure_image
+#print axioms SteklovConvexity.eventually_strictConvex_of_C2
+#print axioms SteklovCoalescence.mainTheoremExceptNoncongruence_of_mainTheorem
+#print axioms SteklovCoalescence.mainTheorem_except_iii_of_cover_data
+
+-- Run 5: existence of the normalized disk cover (Riemann mapping + Blaschke factorization)
+#print axioms SteklovRiemann.montel
+#print axioms SteklovRiemann.hurwitz_injOn
+#print axioms SteklovRiemann.hasDerivAt_radialPrimitive
+#print axioms SteklovRiemann.exists_log_of_starConvex
+#print axioms SteklovRiemann.exists_sqrt_of_starConvex
+#print axioms SteklovRiemann.koebe_step
+#print axioms SteklovRiemann.riemann_mapping
+#print axioms SteklovCoalescence.polyQ_eq_prod
+#print axioms SteklovCoalescence.re_polyQ_deriv_pos
+#print axioms SteklovCoalescence.starConvex_preimage
+#print axioms SteklovCoalescence.nearDisk_preimage
+#print axioms SteklovRiemann.norm_le_one_of_boundary
+#print axioms SteklovRiemann.blaschke_prod_norm_ge
+#print axioms SteklovRiemann.eq_blaschke_of_proper
+#print axioms SteklovCoalescence.proper_comp_inv
+#print axioms SteklovCoalescence.exists_normalizedDiskCover
+#print axioms SteklovCoalescence.exists_paper_diskCover
+#print axioms SteklovCoalescence.exists_paper_diskCover_eventually
+#print axioms SteklovCoalescence.prop_3_4_1_unconditional
+#print axioms SteklovCoalescence.coalescence_realization_unconditional
+#print axioms SteklovCoalescence.mainTheorem_except_iii_of_spectral_transfer
+-- Run 5: degree-seven candidate (certificates only; monodromy not established)
+#print axioms Degree7.hasDerivAt_A
+#print axioms Degree7.A_divmod
+#print axioms Degree7.quartic_cc
+#print axioms Degree7.aRem_cc
+#print axioms Degree7.bRem_cc
+#print axioms Degree7.bconst_ne_zero
+#print axioms Degree7.deriv_pfun_eq_zero_iff
+#print axioms Degree7.pfun_critical_values
+#print axioms Degree7.pfun_critical_value_mem
+#print axioms Degree7.one_sub_pfun
+#print axioms Degree7.q_roots_simple
+#print axioms Degree7.q_disc_ne_zero
+#print axioms Degree7.exists_monic_normalization
+#print axioms Degree7.cc_plus_ne_cc_minus
+#print axioms Degree7.not_affine_equivalent
+#print axioms Degree7.i_sqrt7_sq
+#print axioms Degree7.cycleType_x7
+#print axioms Degree7.cycleType_y1
+#print axioms Degree7.cycleType_y2
+#print axioms Degree7.cycleType_x7y1
+#print axioms Degree7.cycleType_x7y2
+#print axioms Degree7.cycleType33_iff
+#print axioms Degree7.cycleType7_iff
+#print axioms Degree7.card_cycleType33
+#print axioms Degree7.card_good
+#print axioms Degree7.card_centralizer
+#print axioms Degree7.good_eq_orbits
+#print axioms Degree7.rhoP_x
+#print axioms Degree7.rhoP_y
+#print axioms Degree7.rhoL_x
+#print axioms Degree7.rhoL_y
+#print axioms Degree7.rhoP_injective
+#print axioms Degree7.rhoL_injective
+#print axioms Degree7.card_closure_y1
+#print axioms Degree7.card_closure_y2
+#print axioms Degree7.passport_zero
+#print axioms Degree7.passport_one
+#print axioms Degree7.passport_infinity
+#print axioms Degree7.card_roots_sub
+#print axioms Degree7.card_fibre_regular
+#print axioms PolyCover.isCoveringMap
+#print axioms PolyCover.monodromy_transitive
+#print axioms PolyCover.card_fibre
+#print axioms Degree7.critVals_pPoly
+#print axioms Degree7.card_fibre_pPoly
+#print axioms Degree7.monodromy_transitive
+#print axioms LocalMonodromy.local_monodromy
+#print axioms MonodromyRelation.loop_relation
+#print axioms InfinityMonodromy.infinity_monodromy
+#print axioms MonodromyTriple.monodromy_triple
+#print axioms Degree7.monodromy_pair
+#print axioms Degree7.admissible_normal_form
+#print axioms CoverTransport.monodromy_map_mk
+#print axioms ConjMonodromy.monodromyPerm_conj
+#print axioms ConjMonodromy.std_conj
+#print axioms Degree7.pPoly_conj
+#print axioms Degree7.monodromy_point_line
+#print axioms Degree7.monodromy_rho
+#print axioms CoverIneq.isStdLoops_unique
+#print axioms CoverIneq.monodromy_homeo
+#print axioms Degree7.covers_not_isomorphic
+#print axioms Pi1Gen.subdivision
+#print axioms Pi1Gen.local_step
+#print axioms Pi1Gen.isStdLoops_generate
+#print axioms Degree7.extend_pair
+#print axioms Degree7.monodromy_full
+#print axioms SteklovBranch.lintegral_fderiv_logCut_le
+#print axioms SteklovBranch.tendsto_eLpNorm_fderiv_corr_sub
+#print axioms SteklovBranch.minMax_le_of_singular_transfer
+#print axioms SteklovArea.lintegral_deriv_sq_mul_eq_fibreSum
+#print axioms SteklovBlaschke.lintegral_circle_norm_deriv_eq_circFibreSum
+#print axioms SteklovBlaschke.circFibre_finite
+#print axioms SteklovTransplant.weightedBoundaryMass_transplant
+#print axioms SteklovTransplant.dirichletEnergy_transplant
+#print axioms SteklovTransplant.weightedSteklovEigenvalue_le_of_transplant
+#print axioms HolInv.exists_local_branches
+#print axioms HolInv.exists_local_branches_comp
+#print axioms SteklovTransplant.weightedSteklovEigenvalue_le_of_kernel
+#print axioms SteklovBlaschke.fibre_finite
+#print axioms SteklovBlaschke.fibre_card_le
+#print axioms SteklovBlaschke.IsFiniteBlaschke.exists_nbhd
+#print axioms Degree7.fanoT_rho
+#print axioms Degree7.fanoT_mul_transpose
+#print axioms Degree7.fanoT_transpose_mul
+#print axioms CoverKernel.kernel_eventually_eq
+#print axioms CoverKernel.fibK_sum_mul
+#print axioms BCover.isCoveringMap_bproj
+#print axioms BKernel.weightedSteklovEigenvalue_le
+#print axioms ActualKernel.spectra_eq_of_disk_data
+#print axioms FamilyIso.family_spectra_eq
+#print axioms FamilyIso.exists_family_isospectral
+#print axioms SteklovCoalescence.mainTheoremExceptNoncongruence_proved
+#print axioms Degree7.monodromy_local
+#print axioms Degree7.no_local_iso
+#print axioms DiskAut.exists_diskAut
+#print axioms DiskAut.isometry_form
+#print axioms CongrRigid.blaschke_of_congr_hol
+#print axioms CongrRigid.blaschke_of_congr_anti
+#print axioms FamilyNoncongr.critSet_of_aut
+#print axioms FamilyNoncongr.critSet_of_anti
+#print axioms FamilyNoncongr.family_facts
+#print axioms FamilyNoncongr.no_disk_equiv
+#print axioms SteklovCoalescence.mainTheorem_of_cover_data
+#print axioms SteklovCoalescence.not_congruent_of_critSet
+#print axioms SteklovCoalescence.not_reversing_of_critSet
+#print axioms SteklovCoalescence.mainTheorem_proved
+
+-- Tenth run: H¹ / trace / min–max bridge
+#print axioms SteklovH1.trace_ineq
+#print axioms SteklovH1.trace_embed
+#print axioms SteklovH1.norm_trace_le
+#print axioms SteklovH1.weak_gradient
+#print axioms SteklovH1.snd_eq_zero_of_fst_eq_zero
+#print axioms SteklovH1.fst_injective
+#print axioms SteklovH1.exists_family_ratio_lt
+#print axioms SteklovH1.weightedSteklovEigenvalue_eq_h1
+#print axioms SteklovH1.minMax_eq_closureMinMax
+#print axioms SteklovH1.BddDomain.weak_gradient
+#print axioms SteklovH1.BddDomain.snd_eq_zero_of_fst_eq_zero
+#print axioms SteklovH1.BddDomain.trace_embed_ae
+#print axioms SteklovH1.BddDomain.steklovEigenvalue_eq_h1
+#print axioms SteklovH1.traceIneq_image
+#print axioms SteklovH1.bddDomain_image
+#print axioms SteklovH1.steklovSpectrum_image_eq_h1
+#print axioms mainTheorem_of_mainTheoremH1
+#print axioms SteklovCoalescence.mainTheoremH1_proved
+
+-- Eleventh run: compact trace, abstract spectral theorem, weak weighted Steklov spectrum
+#print axioms SteklovH1.isCompactOperator_of_approx
+#print axioms SteklovH1.isCompactOperator_trace
+#print axioms SteklovSpectral.exists_maximizer
+#print axioms SteklovSpectral.euler_lagrange
+#print axioms SteklovSpectral.spectral_theorem
+#print axioms SteklovH1.poincare_trace
+#print axioms SteklovH1.norm_sq_le_trace_grad
+#print axioms SteklovH1.hyp_weighted
+#print axioms SteklovH1.mem_weakEigenspace
+#print axioms SteklovH1.weighted_disk_spectral_theorem
+#print axioms SteklovH1.conformal_weak_spectrum
+#print axioms SteklovH1.hasWeakSteklovSpectrum_image
+#print axioms SteklovCoalescence.mainTheoremWeak_proved
+#print axioms SteklovCoalescence.weak_isospectral
+#print axioms mainTheoremH1_of_mainTheoremWeak
+
+
+-- Twelfth run: disk H1 = W^{1,2}, Sobolev pullback, weak spectrum on H1(G(D))
+#print axioms SteklovH1.mem_H1_of_weak_gradient
+#print axioms SteklovH1.mem_H1_iff_isWeakGradientPair
+#print axioms SteklovH1.ConfMap.sobolevPullback
+#print axioms SteklovH1.ConfMap.sobolevPullback_embedH
+#print axioms SteklovH1.ConfMap.inner_trace_pull
+#print axioms SteklovH1.ConfMap.inner_grad_pull
+#print axioms SteklovH1.ConfMap.isWeakSteklovEigenDom_iff
+#print axioms SteklovH1.ConfMap.isCompactOperator_trace
+#print axioms SteklovH1.ConfMap.weak_spectral_theorem_dom
+#print axioms SteklovH1.ConfMap.pullAmb_isWeakGradientPair
+#print axioms SteklovH1.ConfMap.mem_H1_iff_isWeakGradientPair
+#print axioms SteklovH1.hasSobolevWeakSteklovSpectrum_image
+#print axioms SteklovCoalescence.mainTheoremDom_proved
+
+-- Thirteenth run: interior and boundary regularity, classical Steklov problem on G(D)
+#print axioms SteklovWeyl.weyl_lemma
+#print axioms SteklovWeyl.weak_gradient_ae_eq_grad
+#print axioms SteklovH1.ConfMap.exists_harmonic_of_eigen
+#print axioms SteklovH1.ConfMap.exists_harmonic_grad_of_eigen
+#print axioms SteklovH1.isWeakSteklovEigen_of_classical
+#print axioms SteklovH1.ConfMap.isWeakSteklovEigenDom_of_classical
+#print axioms SteklovFourier.ae_eq_of_fc_eq
+#print axioms SteklovFourier.hasSum_fc
+#print axioms SteklovBoundary.exists_harmonic_of_decay
+#print axioms SteklovBoundary.integral_inner_grad_harmonic
+#print axioms SteklovBoundary.coeff_relation
+#print axioms SteklovBoundary.eq_embedH_of_trace
+#print axioms SteklovBoundary.boundary_condition
+#print axioms SteklovBoundary.weak_eigen_classical
+#print axioms SteklovBoundary.isAnalyticWeight_norm
+#print axioms SteklovH1.ConfMap.isAnalyticWeight_ρ
+#print axioms SteklovH1.ConfMap.weak_eigen_classical_dom
+#print axioms SteklovH1.ConfMap.isWeakSteklovEigenDom_iff_classical
+#print axioms SteklovH1.ConfMap.classical_spectral_theorem_dom
+#print axioms SteklovCoalescence.mainTheoremClassical_proved
+#print axioms mainTheoremDom_of_mainTheoremClassical
+-- Fourteenth run: Lemma 3.2.1 for an arbitrary monic polynomial with critical values {0, 1}
+#print axioms SteklovCoalescence.bdryRad_analyticAt
+#print axioms SteklovCoalescence.frontier_preimage_eq
+#print axioms SteklovCoalescence.range_bdryCurve
+#print axioms SteklovCoalescence.isRealAnalyticJordanBoundary_preimage
+#print axioms SteklovDiskCovers.isRealAnalyticJordanBoundary_mul
+#print axioms SteklovDiskCovers.coverDomain_geometry
+#print axioms SteklovDiskCovers.critVals_coverPoly
+#print axioms SteklovDiskCovers.lemma_3_2_1
+#print axioms SteklovDiskCovers.critVals_comp_mul
+#print axioms SteklovDiskCovers.critVals_monicP
+#print axioms Steklov.minMax_le_of_approx
+#print axioms SteklovC1.exists_smooth_C1_approx
+#print axioms SteklovC1.minMax_le_of_C1_comp
+#print axioms SteklovC1.minMax_congr_smooth
+#print axioms SteklovC1.fderiv_eq_mul
+#print axioms SteklovC1.frontier_eq_image_sphere
+#print axioms SteklovC1.boundary_lintegral_C1
+#print axioms SteklovC1.lintegral_weightMeasure
+#print axioms prop_2_1_1_C1
+#print axioms SteklovH1.ConfMap.closure_Ω
+#print axioms SteklovH1.ConfMap.nrm_outward
+#print axioms SteklovH1.exists_smooth_approx_on
+#print axioms SteklovH1.embedC1_mem_H1
+#print axioms SteklovH1.trace_embedC1
+#print axioms SteklovH1.BddDomain.embedC1_mem_H1
+#print axioms SteklovH1.BddDomain.trace_embedC1
+#print axioms SteklovH1.C1Conf.exists_bounds
+#print axioms SteklovH1.C1Conf.hasDerivAt_G
+#print axioms SteklovH1.C1Conf.lintegral_frontier
+#print axioms SteklovH1.C1Conf.bdry_finite
+#print axioms SteklovH1.C1Conf.pullAmb_embed
+#print axioms SteklovH1.C1Conf.pushAmb_embed
+#print axioms SteklovH1.C1Conf.sobolevPullback
+#print axioms SteklovH1.C1Conf.sobolevPullback_embedH
+#print axioms SteklovH1.C1Conf.pullAmb_isWeakGradientPair
+#print axioms SteklovH1.C1Conf.mem_H1_iff_isWeakGradientPair
+#print axioms SteklovH1.C1Conf.exists_hasTraceIneq
+#print axioms SteklovH1.C1Conf.norm_trace_eq
+#print axioms SteklovH1.C1Conf.inner_trace_pull
+#print axioms SteklovH1.C1Conf.inner_grad_pull
+#print axioms SteklovH1.C1Conf.isWeakSteklovEigenDom_iff
+#print axioms SteklovH1.C1Conf.isCompactOperator_trace
+#print axioms SteklovH1.C1Conf.weak_spectral_theorem_dom
+#print axioms SteklovH1.C1Conf.steklovSpectrum_eq_h1
+#print axioms SteklovC1.prop_2_1_1_C1_weak
+#print axioms SteklovC1.hasSobolevWeakSteklovSpectrum_C1
+#print axioms SteklovOrb.minMaxOn_le_minMax
+#print axioms SteklovOrb.minMaxOn_le_of_singular_transfer
+#print axioms SteklovOrb.chartFactor_rot
+#print axioms SteklovOrb.coneChart_eq_iff
+#print axioms SteklovOrb.exists_coneChart_eq
+#print axioms SteklovOrb.DiskOrbisurface.coneMetric_invariant
+#print axioms SteklovOrb.DiskOrbisurface.isOrbSmooth_of_contDiff
+#print axioms SteklovOrb.DiskOrbisurface.IsOrbSmooth.continuous
+#print axioms SteklovOrb.DiskOrbisurface.energy_eq
+#print axioms SteklovOrb.DiskOrbisurface.bdryMass_eq
+#print axioms SteklovOrb.DiskOrbisurface.cone_lintegral_le
+#print axioms SteklovOrb.DiskOrbisurface.cone_energy_finite
+#print axioms SteklovOrb.DiskOrbisurface.IsOrbSmooth.dirichletEnergy_lt_top
+#print axioms SteklovOrb.DiskOrbisurface.prop_2_2_1
+#print axioms SteklovOrb.DiskOrbisurface.IsOrbSmooth.memLp_grad
+#print axioms SteklovOrb.DiskOrbisurface.tendsto_eLpNorm_corr_sub
+#print axioms SteklovOrb.DiskOrbisurface.orbEmbed_mem_H1
+#print axioms SteklovOrb.DiskOrbisurface.H1Orb_eq
+#print axioms SteklovOrb.DiskOrbisurface.isWeakSteklovEigenOrb_iff
+#print axioms SteklovOrb.DiskOrbisurface.weak_spectral_theorem_orb
+#print axioms SteklovRegularCover.isEvenlyCovered_ordProj
+#print axioms SteklovRegularCover.isCoveringMap_ordProj
+#print axioms SteklovRegularCover.permAct_eq_self
+#print axioms SteklovRegularCover.liftPath_ordProj
+#print axioms SteklovRegularCover.monodromy_ordProj
+#print axioms SteklovRegularCover.joined_sheet
+#print axioms SteklovRegularCover.isCoveringMap_restrict_pathComponent
+#print axioms SteklovRegularCover.isCoveringMap_regProj
+#print axioms SteklovRegularCover.regAct_eq_self
+#print axioms SteklovRegularCover.exists_regAct_eq
+#print axioms SteklovRegularCover.mem_regCov_iff
+#print axioms SteklovRegularCover.evZero_eq_iff
+#print axioms SteklovRegularCover.evZero_surjective
+#print axioms SteklovRegularCover.card_regProj_fibre
+#print axioms Degree7.mem_deckGroup_iff
+#print axioms Degree7.regular_cover
+#print axioms SteklovRegularCover.restrictEven
+#print axioms SteklovRegularCover.isCoveringMap_sumElim
+#print axioms SteklovRegularCover.card_fibre_sumElim
+#print axioms SteklovRegularCover.monodromy_sumElim_inl
+#print axioms SteklovRegularCover.monodromy_sumElim_inr
+#print axioms SteklovRegularCover.sumLabel_monodromy_castAdd
+#print axioms SteklovRegularCover.sumLabel_monodromy_natAdd
+#print axioms SteklovRegularCover.evAt_eq_iff
+#print axioms SteklovRegularCover.evAt_surjective_of_joined
+#print axioms SteklovRegularCover.mem_deckGroup_baseTuple
+#print axioms Degree7.monodromy_homeomorph_comp
+#print axioms Degree7.labelH_monodromy
+#print axioms Degree7.combRho_injective
+#print axioms Degree7.sumLabel_monodromy_eq
+#print axioms Degree7.mem_deckGroup_sum_iff
+#print axioms Degree7.summand_map_inl
+#print axioms Degree7.summand_map_inr
+#print axioms Degree7.common_cover_generic
+#print axioms Degree7.common_regular_cover
+
+-- Sixteenth run
+#print axioms SteklovFriedrichs.friedrichs_ball
+#print axioms SteklovOrb.cone_lintegral_ge
+#print axioms SteklovOrb.DiskOrbisurface.exists_cone_radius
+#print axioms SteklovOrb.DiskOrbisurface.cone_estimates
+#print axioms SteklovOrb.DiskOrbisurface.exists_lam_lower
+#print axioms SteklovOrb.DiskOrbisurface.exists_weighted_bound
+#print axioms SteklovOrb.DiskOrbisurface.area_lt_top
+#print axioms SteklovOrb.DiskOrbisurface.exists_restrict_le_smul_area
+#print axioms SteklovOrb.DiskOrbisurface.metric_form_norm
+#print axioms SteklovOrb.DiskOrbisurface.enorm_metricEmbed_sq
+#print axioms SteklovOrb.DiskOrbisurface.forget_metricEmbed
+#print axioms SteklovOrb.DiskOrbisurface.norm_le_of_mem_H1Met
+#print axioms SteklovOrb.DiskOrbisurface.forget_mem_H1
+#print axioms SteklovOrb.DiskOrbisurface.metricSobolevEquiv
+#print axioms SteklovOrb.DiskOrbisurface.metricSobolevEquivOrb
+#print axioms SteklovOrb.subspaceMinMax_eq_of_equiv
+#print axioms SteklovOrb.DiskOrbisurface.exists_smooth_near_orbEmbed
+#print axioms SteklovOrb.DiskOrbisurface.trace_orbEmbed
+#print axioms SteklovOrb.DiskOrbisurface.traceMet_metricEmbed
+#print axioms SteklovOrb.DiskOrbisurface.metricEnergy_metricEmbed
+#print axioms SteklovOrb.DiskOrbisurface.metricBoundaryMass_metricEmbed
+#print axioms SteklovOrb.DiskOrbisurface.isWeakSteklovEigenMet_iff
+#print axioms SteklovOrb.DiskOrbisurface.weak_spectral_theorem_met
+#print axioms SteklovOrb.DiskOrbisurface.prop_2_2_1_metric
+#print axioms SteklovRiemann.isManifold_of_chartsAre
+#print axioms SteklovRiemann.contMDiff_of_comp_eq
+#print axioms SteklovRiemann.contMDiff_proj
+#print axioms SteklovRiemann.contMDiff_of_comp_eq_holo
+#print axioms Degree7.isLocalHomeomorph_coverProjC
+#print axioms Degree7.regCov_riemannSurface
+#print axioms SteklovPunctured.lift_surjective
+#print axioms SteklovPunctured.exists_period_of_eq
+#print axioms SteklovPunctured.card_fibre_eq
+#print axioms SteklovPunctured.period_pos
+#print axioms SteklovPunctured.powerChart_bijective
+#print axioms SteklovPunctured.powerChart_pow
+#print axioms SteklovPunctured.covering_surjective
+#print axioms SteklovPunctured.exists_powerCover_homeomorph
+#print axioms SteklovPunctured.incl_shift_one
+#print axioms SteklovPunctured.incl_shift_nat
+#print axioms SteklovPunctured.periods_eq_of_monodromy
+#print axioms SteklovPunctured.local_power_model
+#print axioms SteklovPunctured.local_power_model_all
+#print axioms SteklovRegularCover.regMonodromy_val
+#print axioms SteklovRegularCover.regMonodromy_iterate_coord
+#print axioms SteklovRegularCover.regMonodromy_iterate_eq_self_iff
+#print axioms LocalMonodromy.finRotate_iterate_eq_iff
+#print axioms LocalMonodromy.local_monodromy_iterate
+#print axioms Degree7.sumElim_iterate_fix_iff
+#print axioms Degree7.homeomorph_comp_iterate_fix_iff
+#print axioms Degree7.projSum_iterate_fix_iff
+#print axioms Degree7.regCov_return
+#print axioms Degree7.regCov_return_zero
+#print axioms Degree7.regCov_return_one
+#print axioms Degree7.regCov_local_model
+#print axioms Degree7.regCov_local_model_zero
+#print axioms Degree7.regCov_local_model_one
+#print axioms SteklovFill.Fill.isOpenEmbedding_inl
+#print axioms SteklovFill.Fill.cuspChart
+#print axioms SteklovFill.Fill.t2Space
+#print axioms SteklovFill.Fill.isManifold_fill
+#print axioms SteklovFill.Fill.contMDiff_πFill
+#print axioms SteklovFill.branch_closed
+#print axioms SteklovFill.branchEnds
+#print axioms SteklovFill.branchEnds_pow
+#print axioms Degree7.regEnds
+#print axioms Degree7.regEnds_pow
+#print axioms Degree7.regFill_riemannSurface
+
+-- Seventeenth run (continued): properness, extended deck action, compact bordered piece
+#print axioms SteklovFill.isCompact_preimage_of_isCoveringMap
+#print axioms SteklovFill.Fill.isCompact_preimage_πFill
+#print axioms SteklovFill.exists_bIdx_of_mem
+#print axioms SteklovFill.finite_bIdx
+#print axioms Degree7.finite_regProj_fibre
+#print axioms Degree7.finite_regEnds
+#print axioms Degree7.isCompact_preimage_regFillProj
+#print axioms Degree7.isProperMap_regFillProj
+#print axioms Degree7.isCompact_preimage_closedBall
+#print axioms SteklovFill.Fill.continuous_map
+#print axioms SteklovFill.Fill.homeoMap
+#print axioms SteklovFill.Fill.πFill_map
+#print axioms SteklovFill.Fill.contMDiffAt_of_formula
+#print axioms SteklovFill.Fill.isPreconnected_pdisk
+#print axioms SteklovFill.Fill.exists_rotation
+#print axioms SteklovFill.Fill.contMDiff_map
+#print axioms SteklovFill.mem_range_bMap
+#print axioms SteklovFill.bMap_id
+#print axioms SteklovFill.bMap_comp
+#print axioms SteklovFill.endCompat_bMap
+#print axioms Degree7.endCompat_regAct
+#print axioms Degree7.continuous_regFillAct
+#print axioms Degree7.regFillAct_one
+#print axioms Degree7.regFillAct_mul
+#print axioms Degree7.regFillHomeo
+#print axioms Degree7.regFill_deckAction
+#print axioms Degree7.collarRad_lt
+#print axioms Degree7.not_branch_of_collar
+#print axioms Degree7.regBordered
+
+-- Seventeenth run (continued): holomorphic extension and completed quotient identifications
+#print axioms SteklovFill.differentiableAt_of_comp_eq
+#print axioms SteklovFill.contMDiffAt_of_formula'
+#print axioms SteklovFill.exists_bound_of_eval_le
+#print axioms SteklovFill.Fill.dense_range_inl
+#print axioms SteklovFill.Fill.differentiableOn_cuspRep
+#print axioms SteklovFill.Fill.differentiableOn_cuspExt
+#print axioms SteklovFill.Fill.continuous_extend
+#print axioms SteklovFill.Fill.eval_extend
+#print axioms SteklovFill.Fill.contMDiff_extend
+#print axioms SteklovFill.Fill.nhds_le_map_cuspExt
+#print axioms SteklovFill.Fill.exists_common_of_cuspVal_eq
+#print axioms Degree7.quotient_ident
+#print axioms Degree7.coord_data
+#print axioms Degree7.completed_quotient_identifications

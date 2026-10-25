@@ -1,0 +1,7 @@
+{
+  "source": "https://github.com/PalomarRegistry/PalomarTemplate/blob/2891de4c48955af824969a263d31b25e7a9a1406/scripts/verify-comparator.sh",
+  "upstream_commit": "2891de4c48955af824969a263d31b25e7a9a1406",
+  "retrieved": "2026-10-25",
+  "local_path": "scripts/verify-comparator.sh",
+  "notes": "Official PalomarTemplate script copied verbatim. This provenance record is not a verification result."
+}

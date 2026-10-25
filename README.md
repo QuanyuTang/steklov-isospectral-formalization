@@ -1,1 +1,90 @@
-# steklov-isospectral-formalization
+# Strictly Convex Steklov-Isospectral Plane Domains
+
+**Authors: [taohu-hub](https://github.com/taohu-hub), [RGConj](https://github.com/RGConj), [QuanyuTang](https://github.com/QuanyuTang).**
+
+[![Lean verification](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml)
+[![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml)
+
+**Migration candidate:** Lean 4.35 verification is in progress. Inherited build and axiom logs certify the Lean 4.28 baseline only. See [current status](PALOMAR_STATUS.md).
+
+**A Lean 4 formalization of Theorem 1.1.2 of Hu–Shi–Tang, with an explicit degree-seven construction.**
+
+[中文说明](README.zh-CN.md) · [Paper](https://arxiv.org/abs/2608.10557v2) · [Statement](Challenge.lean) · [Proof entry](Solution.lean) · [Scope and theorem map](docs/RESULTS.md)
+
+The development proves the existence of pairs of bounded, simply connected, strictly convex plane domains with real-analytic boundaries and identical Steklov spectra, including multiplicities. The domains have perimeter **2π**, are mutually noncongruent across distinct labels and parameters, have no orientation-reversing Euclidean symmetry, and converge to the disk through normalized conformal maps in **C∞**.
+
+| Item | Recorded status |
+| --- | --- |
+| Proof development | 176 library modules + 4 preserved audit templates; no proof placeholders |
+| Reproducible environment | Lean **4.28.0**, Mathlib `8f9d9cff6bd728b17a24e163c9402775d9e6a365` |
+| Local verification | Full build and axiom audit passed; original logs included |
+| Axioms | `propext`, `Classical.choice`, `Quot.sound` only |
+| Palomar | **Not submitted or verified; current minimum toolchain is newer** |
+| Review | AI-assisted statement/source review; no independent human mathematical review claimed |
+
+## What is proved
+
+All five conclusions of the main theorem are present in `SteklovSubmission.main_result`. The stronger `SteklovCoalescence.mainTheoremClassical_proved` also supplies the weak Sobolev and classical harmonic-PDE interpretations of the spectrum on the constructed domains.
+
+The proof uses explicit degree-seven polynomials, verified monodromy, and weighted-disk transplantation. The common-cover and quotient geometry is also developed. This is **not** a claim to formalize every general result mentioned in the article: arbitrary-data Riemann existence is not formalized, and the orbifold geometry uses proved concrete disk models. [Precise scope](docs/RESULTS.md).
+
+## Build and inspect
+
+Install [elan](https://github.com/leanprover/elan), Git, and a C/C++ toolchain supported by Lean. From the repository root:
+
+```sh
+lake exe cache get
+lake build
+python3 scripts/audit.py
+python3 scripts/check-release.py
+```
+
+`lean-toolchain` selects the exact Lean release; the committed manifest pins the dependency closure. Do not run `lake update` just to reproduce this release. A deliberate `sorry` occurs **only in `Challenge.lean`**, as Palomar's statement/proof separation permits. It is not imported by `Solution.lean` or the proof library.
+
+The recorded full build reported 8206 successful jobs. That historical count need not equal a fresh incremental build's count. Machine logs are in [`verification/recorded/`](verification/recorded/). [Reproduction details](docs/REPRODUCIBILITY.md).
+
+The public release layout was also built and audited in an independent directory: **8206 build jobs succeeded, and all 590 unique axiom-inventory targets used only the three standard axioms**, including the new public entry. See the [release verification report](verification/package-verification.json), [build log](verification/package-build.log), and [audit log](verification/package-audit.log). These are local Lean checks; Palomar Comparator and independent-kernel verification remain outstanding.
+
+## Repository map
+
+```text
+Challenge.lean             Independent statement; imports Mathlib only
+Solution.lean              Proved public entry
+RequestProject/            Complete Lean proof development
+comparator.json            Statement/proof comparison configuration
+formalization.yaml         Sources, authorship, AI use, scope, and review disclosures
+paper/                     Original arXiv PDF, TeX, and source archive
+verification/              Re-runnable audit and recorded evidence
+docs/                      Scope, foundations, provenance, and submission instructions
+scripts/                   Build checks and Palomar preflight
+.github/workflows/         GitHub Actions build and axiom checks
+```
+
+## Palomar submission status
+
+**This release can be published on GitHub, but cannot currently pass a new Palomar submission unchanged.** On 2026-10-25 the official minimum was `leanprover/lean4:v4.35.0-rc2`; this release is verified on `v4.28.0`. The independent Challenge, Solution, comparison configuration, and metadata are supplied, but the proof and canonical Mathlib pin must be ported together, rebuilt, and checked with Comparator and the required independent kernels before submission. Changing the version string alone is insufficient.
+
+Palomar reviews an exact commit of a **public GitHub repository**, rather than accepting a standalone ZIP as the proof submission. See [the included submission guide](docs/PALOMAR.md) and [Palomar's current instructions](https://palomar-registry.org/how-to-submit). No Palomar registration or endorsement is claimed.
+
+## Attribution and citation
+
+Repository maintainers: [taohu-hub](https://github.com/taohu-hub), [RGConj](https://github.com/RGConj), [QuanyuTang](https://github.com/QuanyuTang). Proof generation was primarily performed with **Aristotle (Harmonic)**, with **OpenAI Codex** used for orchestration, intermediate scaffolding, local checks, and packaging. [Full provenance](docs/PROVENANCE.md).
+
+Mathematical source: **Tao Hu, Jiachen Shi, Quanyu Tang**, *Strictly Convex Steklov-Isospectral Plane Domains*, [arXiv:2608.10557v2](https://arxiv.org/abs/2608.10557v2). The formalization follows an explicit alternative realization of the construction. This repository is not a new claim of authorship of the paper.
+
+```bibtex
+@misc{hu2026strictly,
+  title = {Strictly Convex Steklov-Isospectral Plane Domains},
+  author = {Hu, Tao and Shi, Jiachen and Tang, Quanyu},
+  year = {2026},
+  eprint = {2608.10557},
+  archivePrefix = {arXiv},
+  primaryClass = {math.SP},
+  doi = {10.48550/arXiv.2608.10557},
+  url = {https://arxiv.org/abs/2608.10557v2}
+}
+```
+
+## Licensing
+
+The formalization and new documentation use **Apache-2.0**; see [LICENSE](LICENSE) and [NOTICE](NOTICE). The paper files retain their authors' rights and are excluded from this grant. arXiv lists its non-exclusive distribution license for this paper; it does not grant a general reuse license. [Paper provenance and rights](paper/README.md).
