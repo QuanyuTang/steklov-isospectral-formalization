@@ -45,3 +45,19 @@ through its cycle type and support instead of evaluating a noncomputable cycle
 factor construction. The remaining changes adapt topology, derivatives and
 measure-theoretic proof APIs. The full 590-target axiom inventory is retained;
 only `propext`, `Classical.choice` and `Quot.sound` are permitted in the proofs.
+
+## Subsequent repair batch
+
+Task `9ecf9e68-c557-4f81-ab10-234aa5cf7eae` returned 31 changed files against
+commit `0066d2a0df97eddd0fcfb6f70a5fcd8ea8177121`. This batch also requires
+fresh target-version compilation; Aristotle did not claim a new build.
+The source comparison found no changed theorem statement, concrete definition
+body, or dropped declaration. `PolyCover.pathConnectedSpace_total` retains its
+statement and binders but is now a theorem rather than a globally registered
+instance: its proof parameter cannot be inferred by the new typeclass checker.
+Its callers already supply the fact explicitly with `haveI`.
+The new private `cycleType22_of_aux` supports symbolic finite-cycle proofs.
+Other changes adapt product inequalities, derivatives, integration by parts,
+function equalities and `WithLp` pair reconstruction. The five earlier helper
+signature changes above remain the complete list of mathematical signature
+adaptations in these two repair batches.

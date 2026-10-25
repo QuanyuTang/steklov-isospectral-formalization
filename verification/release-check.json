@@ -9,8 +9,8 @@
   "challenge_placeholder_count": 1,
   "proof_placeholder_count": 0,
   "original_sources_unchanged_except_one_config_module_header": false,
-  "changed_original_source_count": 44,
-  "byte_identical_original_source_contents": 135,
+  "changed_original_source_count": 67,
+  "byte_identical_original_source_contents": 112,
   "module_header_only_adaptations": [
     "RequestProject/Main.lean"
   ],

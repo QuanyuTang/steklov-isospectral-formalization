@@ -94,7 +94,11 @@ theorem ram_of_poly {B ψ : ℂ → ℂ} {P : ℂ[X]} {c κ w₀ : ℂ} {m : ℕ
       have h1 : HasDerivAt (fun x : ℂ => x - z) 1 z := (hasDerivAt_id z).sub_const z
       have := (h1.pow 1).mul hGa.differentiableAt.hasDerivAt
       have := this.const_add w₀
-      simpa using this
+      first
+        | simpa using this
+        | simpa [Pi.add_def, Pi.sub_def, Pi.mul_def, Pi.neg_def, Function.comp_def] using this
+        | exact (this.congr_deriv (by first | rfl | simp | (simp; ring))).congr_of_eventuallyEq
+            (Filter.Eventually.of_forall fun _ => by first | rfl | simp | (simp; ring))
     have : deriv B z = G z := by
       rw [Filter.EventuallyEq.deriv_eq (show B =ᶠ[𝓝 z] _ from hev)]
       exact hd'.deriv

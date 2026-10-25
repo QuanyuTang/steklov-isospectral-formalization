@@ -217,7 +217,11 @@ theorem isLocalBranched_chart {hs : s ^ 2 = -7} {f₀ : OrdFib (projSum hs) 13} 
       unfold affA
       have := (((hasDerivAt_pow (dB j.1) t).const_add (cB j.1)).const_mul
         ((lamStar - 1) * (ε : ℂ))).const_add (ε : ℂ)
-      simpa using this
+      first
+        | simpa using this
+        | simpa [Pi.add_def, Pi.sub_def, Pi.mul_def, Pi.neg_def, Function.comp_def] using this
+        | exact (this.congr_deriv (by first | rfl | simp | (simp; ring))).congr_of_eventuallyEq
+            (Filter.Eventually.of_forall fun _ => by first | rfl | simp | (simp; ring))
     refine ⟨hopen, fun t ht => (hpa t).congr (hev t ht).symm, fun t ht => ht.2, ?_, ?_, ?_⟩
     · intro t ht hu hv
       have ht0 : t ≠ 0 := by
@@ -324,7 +328,9 @@ theorem regMetric_cusp {hs : s ^ 2 = -7} {f₀ : OrdFib (projSum hs) 13} {ε : �
   unfold affA
   have := (((hasDerivAt_pow (dB j.1) t).const_add (cB j.1)).const_mul
     ((lamStar - 1) * (ε : ℂ))).const_add (ε : ℂ)
-  simpa using this.deriv
+  first
+    | simpa using this.deriv
+    | simpa [Pi.add_def, Pi.sub_def, Pi.mul_def, Pi.neg_def, Function.comp_def] using this.deriv
 
 /-- **The conformal transformation law** under any holomorphic self-map preserving `b_ε`. -/
 theorem regMetric_transform {hs : s ^ 2 = -7} {f₀ : OrdFib (projSum hs) 13} {ε : ℝ} (h0 : 0 < ε)

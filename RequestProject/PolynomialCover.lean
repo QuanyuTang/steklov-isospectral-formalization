@@ -98,7 +98,9 @@ theorem finite_exceptional (hP : 0 < P.degree) :
   simp only [mem_iUnion, mem_preimage, mem_singleton_iff]
   exact ⟨_, hz, rfl⟩
 
-instance pathConnectedSpace_total (hP : 0 < P.degree) : PathConnectedSpace (Total P) := by
+/-- The total space of the polynomial covering is path connected (used via `haveI`; not
+registered as an instance since `hP` cannot be found by typeclass synthesis). -/
+theorem pathConnectedSpace_total (hP : 0 < P.degree) : PathConnectedSpace (Total P) := by
   rw [← isPathConnected_iff_pathConnectedSpace, preimage_compl]
   refine (finite_exceptional hP).countable.isPathConnected_compl_of_one_lt_rank ?_
   rw [Complex.rank_real_complex]; norm_num

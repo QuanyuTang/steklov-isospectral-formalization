@@ -83,7 +83,11 @@ theorem divergence_disk {P Q : ℂ → ℝ} (hP : ContDiff ℝ 1 P) (hQ : ContDi
     have h1 : HasDerivAt (fun θ : ℝ => (θ : ℂ) * Complex.I) Complex.I θ := by
       simpa using (Complex.ofRealCLM.hasDerivAt (x := θ)).mul_const Complex.I
     have h2 := (h1.cexp).const_mul (r : ℂ)
-    simpa [hpt, he, mul_comm, mul_left_comm, mul_assoc] using h2
+    first
+      | simpa [hpt, he, mul_comm, mul_left_comm, mul_assoc] using h2
+      | simpa [hpt, he, mul_comm, mul_left_comm, mul_assoc, Pi.add_def, Pi.sub_def, Pi.mul_def, Pi.neg_def, Function.comp_def] using h2
+      | exact (h2.congr_deriv (by first | rfl | simp | (simp; ring))).congr_of_eventuallyEq
+          (Filter.Eventually.of_forall fun _ => by first | rfl | simp | (simp; ring))
   have hFr : ∀ r θ, HasDerivAt (fun r => f r θ) (Fr r θ) r := by
     intro r θ
     have hP1 := (hPd (pt r θ)).hasFDerivAt.comp_hasDerivAt r (hptr r θ)

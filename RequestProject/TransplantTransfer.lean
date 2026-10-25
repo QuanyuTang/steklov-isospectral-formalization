@@ -90,7 +90,7 @@ lemma IsFiniteBlaschke.norm_lt_one {B : ℂ → ℂ} {n : ℕ} (hB : IsFiniteBla
   calc ∏ l, ‖bfac (a l) z‖ ≤ ‖bfac (a ⟨0, h⟩) z‖ := by
         rw [← Finset.mul_prod_erase _ _ (Finset.mem_univ ⟨0, h⟩)]
         refine mul_le_of_le_one_right (norm_nonneg _) ?_
-        exact Finset.prod_le_one (fun l _ => norm_nonneg _) fun l _ => (hfac l).le
+        exact Finset.prod_le_one₀ (fun l _ => norm_nonneg _) fun l _ => (hfac l).le
     _ < 1 := hfac _
 
 /-- **Spectral comparison by transplantation.**  Let `B₁, B₂` be finite Blaschke products of

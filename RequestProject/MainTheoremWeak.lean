@@ -94,7 +94,9 @@ theorem mainTheoremWeak_of_cover_data {n : ℕ} (hn : 1 ≤ n) (P : Label → Po
     refine rescale_tendsto hc ((hFgood i).mono fun ε h => h.1.1) ?_
     intro k η hη
     have := hFconv i k η hη
-    simpa [inv_inv] using this
+    first
+      | simpa [inv_inv] using this
+      | simpa [inv_inv, Function.comp_def] using this
   -- strict convexity
   have hconvex : ∀ i, ∀ᶠ ε in 𝓝[>] (0 : ℝ), IsStrictlyConvexDomain (Ω i ε) := by
     intro i

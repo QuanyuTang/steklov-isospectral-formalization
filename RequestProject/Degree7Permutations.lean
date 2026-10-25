@@ -50,12 +50,6 @@ theorem x7_tuple : (List.ofFn x7) = [1, 0, 3, 2, 4, 5, 6] := by decide
 theorem y1_tuple : (List.ofFn y1) = [0, 2, 4, 5, 1, 6, 3] := by decide
 theorem y2_tuple : (List.ofFn y2) = [0, 4, 1, 5, 2, 6, 3] := by decide
 
-theorem cycleType_x7 : x7.cycleType = {2, 2} := by decide +kernel
-theorem cycleType_y1 : y1.cycleType = {3, 3} := by decide +kernel
-theorem cycleType_y2 : y2.cycleType = {3, 3} := by decide +kernel
-theorem cycleType_x7y1 : (x7 * y1).cycleType = {7} := by decide +kernel
-theorem cycleType_x7y2 : (x7 * y2).cycleType = {7} := by decide +kernel
-
 /-- Number of fixed points. -/
 def nfix (σ : Perm (Fin 7)) : ℕ := (univ.filter fun i => σ i = i).card
 
@@ -111,6 +105,33 @@ theorem cycleType7_iff (σ : Perm (Fin 7)) : σ.cycleType = {7} ↔ σ ^ 7 = 1 �
       exact h1 (Perm.cycleType_eq_zero.1 (Multiset.card_eq_zero.1 h0))
     have hk : Multiset.card σ.cycleType = 1 := by omega
     rw [hrep, hk]; rfl
+
+/-- Migration helper: cycle type `(2,2,1,1,1)` from `σ² = 1` and three fixed points (a symbolic
+replacement for kernel evaluation of the noncomputable `cycleType`). -/
+private lemma cycleType22_of_aux (σ : Perm (Fin 7)) (h2 : σ ^ 2 = 1) (h3 : nfix σ = 3) :
+    σ.cycleType = {2, 2} := by
+  have hns := nfix_add_support σ
+  have hrep : σ.cycleType = Multiset.replicate (Multiset.card σ.cycleType) 2 :=
+    Multiset.eq_replicate.2 ⟨rfl, fun m hm => mem_cycleType_eq_prime Nat.prime_two h2 hm⟩
+  have hsum : σ.cycleType.sum = 4 := by rw [Perm.sum_cycleType]; omega
+  rw [hrep, Multiset.sum_replicate, smul_eq_mul] at hsum
+  have hk : Multiset.card σ.cycleType = 2 := by omega
+  rw [hrep, hk]; decide
+
+theorem cycleType_x7 : x7.cycleType = {2, 2} :=
+  cycleType22_of_aux x7 (by first | decide | decide +kernel) (by first | decide | decide +kernel)
+theorem cycleType_y1 : y1.cycleType = {3, 3} :=
+  (cycleType33_iff y1).2
+    ⟨by first | decide | decide +kernel, by first | decide | decide +kernel⟩
+theorem cycleType_y2 : y2.cycleType = {3, 3} :=
+  (cycleType33_iff y2).2
+    ⟨by first | decide | decide +kernel, by first | decide | decide +kernel⟩
+theorem cycleType_x7y1 : (x7 * y1).cycleType = {7} :=
+  (cycleType7_iff (x7 * y1)).2
+    ⟨by first | decide | decide +kernel, by first | decide | decide +kernel⟩
+theorem cycleType_x7y2 : (x7 * y2).cycleType = {7} :=
+  (cycleType7_iff (x7 * y2)).2
+    ⟨by first | decide | decide +kernel, by first | decide | decide +kernel⟩
 
 /-! ### Identification with the point/line actions of `GL(3, 𝔽₂)` -/
 

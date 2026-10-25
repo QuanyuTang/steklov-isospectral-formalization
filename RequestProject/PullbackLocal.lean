@@ -50,7 +50,11 @@ theorem exists_local_root {F g : ℂ → ℂ} {p w₀ : ℂ} {m : ℕ} (hm : 0 <
   have hderiv : HasDerivAt h (r w₀) w₀ := by
     have h1 : HasDerivAt (fun w : ℂ => w - w₀) 1 w₀ := (hasDerivAt_id w₀).sub_const w₀
     have := h1.mul hr.differentiableAt.hasDerivAt
-    simpa using this
+    first
+      | simpa using this
+      | simpa [Pi.add_def, Pi.sub_def, Pi.mul_def, Pi.neg_def, Function.comp_def] using this
+      | exact (this.congr_deriv (by first | rfl | simp | (simp; ring))).congr_of_eventuallyEq
+          (Filter.Eventually.of_forall fun _ => by first | rfl | simp | (simp; ring))
   refine ⟨h, hh, by simp [h], by rw [hderiv.deriv, hr0]; exact hc0, ?_⟩
   have hgne : ∀ᶠ w in 𝓝 w₀, g w ≠ 0 := hg.continuousAt.eventually_ne hg0
   filter_upwards [hF, hgne] with w hw hgw

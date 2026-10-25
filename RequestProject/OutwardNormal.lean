@@ -50,7 +50,11 @@ theorem nrm_outward (θ : ℝ) :
   have hγ : HasDerivAt γ (c.nrm θ) 0 := by
     have := ((Complex.ofRealCLM.hasDerivAt (x := (0 : ℝ))).mul_const (c.nrm θ)).const_add
       (c.G z₀)
-    simpa [γ] using this
+    first
+      | simpa [γ] using this
+      | simpa [γ, Pi.add_def, Pi.sub_def, Pi.mul_def, Pi.neg_def, Function.comp_def] using this
+      | exact (this.congr_deriv (by first | rfl | simp | (simp; ring))).congr_of_eventuallyEq
+          (Filter.Eventually.of_forall fun _ => by first | rfl | simp | (simp; ring))
   have hγ0 : γ 0 = c.G z₀ := by simp [γ]
   have hHγ : HasDerivAt (H ∘ γ) (d⁻¹ * c.nrm θ) 0 := by
     have hH' : HasDerivAt H d⁻¹ (γ 0) := by rwa [hγ0]

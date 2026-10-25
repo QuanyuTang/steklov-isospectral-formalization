@@ -63,7 +63,9 @@ lemma lipschitz_sub_linear (h1 : ∀ z ∈ closedBall (0 : ℂ) 1, ‖deriv F z 
     have : HasDerivAt (fun w => F w - c * w) (deriv F w - c) w := by
       have := (differentiableAt_of_mem hU hcb hd hw).hasDerivAt.sub
         ((hasDerivAt_id w).const_mul (c : ℂ))
-      simpa using this
+      first
+        | exact this.congr_deriv (by simp)
+        | simpa [Function.comp_def, Pi.sub_def] using this
     rw [this.deriv]
     exact h1 w hw
   have := (convex_closedBall (0 : ℂ) 1).norm_image_sub_le_of_norm_deriv_le hdiff hder hy hx
@@ -85,7 +87,11 @@ lemma taylor_two (h2 : ∀ z ∈ closedBall (0 : ℂ) 1, ‖deriv (deriv F) z‖
     have hdw : deriv (fun w => F w - deriv F m * (w - m)) w = deriv F w - deriv F m := by
       have := (differentiableAt_of_mem hU hcb hd (hseg hw)).hasDerivAt.sub
         (((hasDerivAt_id w).sub_const m).const_mul (deriv F m))
-      simpa using this.deriv
+      have h' : HasDerivAt (fun w => F w - deriv F m * (w - m)) (deriv F w - deriv F m) w := by
+        first
+          | exact this.congr_deriv (by simp)
+          | simpa [Pi.sub_def] using this
+      exact h'.deriv
     rw [hdw]
     have hdd : ∀ v ∈ segment ℝ m z, DifferentiableAt ℂ (deriv F) v :=
       fun v hv => differentiableAt_deriv_of_mem hU hcb hd (hseg hv)
@@ -210,13 +216,17 @@ theorem strictConvex_closure_image (hc : 0 < c) (hU : IsOpen U)
       bound' := fun y => by
         simp only [NNReal.coe_mk, norm_div, norm_real, Real.norm_eq_abs, abs_of_pos hc]
         rw [div_eq_inv_mul]
+        all_goals exact le_of_eq rfl
       right_inv' := fun y => by
         simp only [L, ContinuousLinearMap.smul_apply, ContinuousLinearMap.id_apply, real_smul]
         field_simp }
   have hsurj := happrox.surjOn_closedBall_of_nonlinearRightInverse Linv hρ subset_rfl
   replace hsurj : SurjOn F (closedBall m ρ) (closedBall (F m) (c * (1 - ε) * ρ)) := by
     convert hsurj using 2
-    simp only [Linv, NNReal.coe_mk, inv_inv]; ring
+    first
+      | (simp only [Linv, NNReal.coe_mk, inv_inv]; ring)
+      | (show c * (1 - ε) * ρ = ((c⁻¹ : ℝ)⁻¹ - ε * c) * ρ; rw [inv_inv]; ring)
+      | (simp only [Linv]; show c * (1 - ε) * ρ = ((c⁻¹ : ℝ)⁻¹ - ε * c) * ρ; rw [inv_inv]; ring)
   -- conclude
   have hopen : ball (F m) (c * (1 - ε) * ρ) ⊆ F '' ball 0 1 := by
     intro w hw
@@ -243,7 +253,11 @@ lemma norm_iteratedFDeriv_one_two {F : ℂ → ℂ} {U : Set ℂ} (hU : IsOpen U
     intro w hw
     have := (hd.differentiableAt (hU.mem_nhds hw)).hasDerivAt.sub
       ((hasDerivAt_id w).const_mul c)
-    simpa using this.deriv
+    have h' : HasDerivAt (fun w => F w - c * w) (deriv F w - c) w := by
+      first
+        | exact this.congr_deriv (by simp)
+        | simpa [Pi.sub_def] using this
+    exact h'.deriv
   refine ⟨?_, ?_⟩
   · rw [OuterConvergence.norm_iteratedFDeriv_real_eq hU hg hz 1, iteratedDeriv_one, hderiv z hz]
   · rw [OuterConvergence.norm_iteratedFDeriv_real_eq hU hg hz 2, iteratedDeriv_succ,

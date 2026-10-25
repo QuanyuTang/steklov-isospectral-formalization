@@ -527,7 +527,9 @@ lemma ae_eq_conv_radK (U : Set ℂ) {F : ℂ → ℝ} {G : ℂ → ℂ} (hFL : M
   have hto : Tendsto (fun n => ‖c‖ₑ * eLpNorm (F - u n) 2 volume) atTop (𝓝 0) := by
     have := ENNReal.Tendsto.const_mul (tendsto_eLpNorm_moll hFL hFm) (a := ‖c‖ₑ)
       (Or.inr enorm_ne_top)
-    simpa using this
+    first
+      | simpa using this
+      | simpa [Function.comp_def] using this
   have hzero : eLpNorm (fun x => c * F x - W x) 2 (volume.restrict (S U ε)) = 0 := by
     refine le_antisymm (hfat.trans ?_) (zero_le)
     have hli : atTop.liminf (fun n => ‖c‖ₑ * eLpNorm (F - u n) 2 volume) = 0 := hto.liminf_eq

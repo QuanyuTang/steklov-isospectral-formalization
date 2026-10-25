@@ -68,7 +68,11 @@ theorem exists_equivariant_uniformizer {K : ℂ → ℂ} {z₀ : ℂ} {m : ℕ} 
   have hh : AnalyticAt ℂ h 0 := analyticAt_id.mul hRm
   have hderiv : HasDerivAt h (R ((0 : ℂ) ^ m)) 0 := by
     have := (hasDerivAt_id (0 : ℂ)).mul hRm.differentiableAt.hasDerivAt
-    simpa using this
+    first
+      | simpa using this
+      | simpa [Pi.add_def, Pi.sub_def, Pi.mul_def, Pi.neg_def, Function.comp_def] using this
+      | exact (this.congr_deriv (by first | rfl | simp | (simp; ring))).congr_of_eventuallyEq
+          (Filter.Eventually.of_forall fun _ => by first | rfl | simp | (simp; ring))
   refine ⟨h, hh, by simp [h], ?_, ?_, ?_⟩
   · rw [hderiv.deriv, zero_pow hm.ne', hR0]; exact hc0
   · intro ζ t hζ

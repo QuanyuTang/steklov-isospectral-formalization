@@ -80,7 +80,7 @@ lemma ibp_local {U : Set ℂ} (hU : IsOpen U) {h : ℂ → ℝ} (hh : ∀ x ∈ 
     · simp [hφ0 t ht]
   rw [e1, e2]
   refine integral_mul_fderiv_eq_neg_fderiv_mul_of_integrable ?_ ?_ ?_
-    (hgc.differentiable one_ne_zero) (hφ1.differentiable one_ne_zero)
+    (fun x _ => (hgc.differentiable one_ne_zero) x) (fun x _ => (hφ1.differentiable one_ne_zero) x)
   · exact Continuous.integrable_of_hasCompactSupport (by fun_prop) h2.mul_left
   · exact Continuous.integrable_of_hasCompactSupport (by fun_prop)
       (h2.fderiv_apply (𝕜 := ℝ) v).mul_left

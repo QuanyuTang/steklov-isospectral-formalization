@@ -139,8 +139,9 @@ theorem exists_radial_retraction {g : X → ℂ} (hg : Continuous g) {r ρ : ℝ
         exact ((continuous_subtype_val.subtype_mk _).subtype_mk _)
       refine hc.congr ?_
       intro x
+      have hx2 : ρ ≤ ‖g x.1‖ := x.2
       show _ = g' x.1
-      exact (dif_pos x.2).symm
+      simp only [g', dif_pos hx2]
     · intro x hx
       show x = g' x
       have h' : ρ ≤ ‖g x‖ := hx.ge

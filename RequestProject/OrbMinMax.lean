@@ -138,7 +138,9 @@ theorem minMaxOn_le_of_singular_transfer {P : (ℂ → ℝ) → Prop} {E₁ B₁
   have hεlim : Tendsto ε (𝓝[>] 0) (𝓝 0) := by
     have := tendsto_finset_sum (Finset.univ : Finset (Fin (k+1)))
       (fun i _ => tendsto_eLpNorm_fderiv_corr_sub hS (hfb i) (hfs i) (hfE i))
-    simpa using this
+    first
+      | simpa using this
+      | simpa [Function.comp_def] using this
   have hlim : Tendsto (fun r => (Λ ^ (1/2:ℝ) + (K:ℝ≥0∞) * ε r) ^ 2) (𝓝[>] 0) (𝓝 Λ) := by
     have h1 : Tendsto (fun r => (K:ℝ≥0∞) * ε r) (𝓝[>] 0) (𝓝 0) := by
       simpa using ENNReal.Tendsto.const_mul hεlim (Or.inr ENNReal.coe_ne_top)

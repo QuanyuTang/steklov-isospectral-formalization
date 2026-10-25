@@ -197,9 +197,7 @@ theorem IsFiniteBlaschke.exists_nbhd {B : ℂ → ℂ} {n : ℕ} (hB : IsFiniteB
     calc Real.sqrt (1 + δ) = Real.sqrt (1 + δ) * 1 := (mul_one _).symm
       _ ≤ ‖bfac (a ⟨0, hn⟩) p‖ * ∏ l ∈ Finset.univ.erase ⟨0, hn⟩, ‖bfac (a l) p‖ := by
           refine mul_le_mul hfac0 ?_ zero_le_one (norm_nonneg _)
-          have := Finset.prod_le_prod (s := Finset.univ.erase ⟨0, hn⟩)
-            (fun _ _ => zero_le_one) (fun l _ => hfac l)
-          simpa using this
+          exact Finset.one_le_prod₀ (s := Finset.univ.erase ⟨0, hn⟩) fun l _ => hfac l
 
 end SteklovBlaschke
 

@@ -201,9 +201,13 @@ theorem eLpNorm_fderiv_corr_sub_le {S : Finset ℂ} {r : ℝ} (hr : GoodRadius S
         refine (eLpNorm_add_le (by norm_num)).trans (add_le_add ?_ ?_)
         · have h2 : eLpNorm (fun z => |f s - f z| * ‖fderiv ℝ (logCut s r) z‖) 2 μB ≤
               (Real.toNNReal (2 * M)) • eLpNorm (fderiv ℝ (logCut s r)) 2 μB := by
+            have hm2 : AEStronglyMeasurable
+                (fun z => |f s - f z| * ‖fderiv ℝ (logCut s r) z‖) μB :=
+              ((measurable_const.sub hfm).abs.mul (hmeas _)).aestronglyMeasurable
             refine eLpNorm_le_nnreal_smul_eLpNorm_of_ae_le_mul
-              ((measurable_const.sub hfm).abs.mul (hmeas _)).aestronglyMeasurable ?_ _
+              (f := fun z => |f s - f z| * ‖fderiv ℝ (logCut s r) z‖) hm2 ?_ _
             filter_upwards [ae_restrict_mem Metric.isOpen_ball.measurableSet] with z hz
+            show ‖|f s - f z| * ‖fderiv ℝ (logCut s r) z‖‖₊ ≤ _
             rw [← NNReal.coe_le_coe, coe_nnnorm, NNReal.coe_mul, coe_nnnorm,
               Real.coe_toNNReal _ (by positivity), Real.norm_eq_abs, abs_mul, abs_abs, abs_norm]
             gcongr

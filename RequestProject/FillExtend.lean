@@ -224,7 +224,9 @@ theorem eval_extend (w : Fill E) : P.eval (extend (E := E) k w) = πFill π c w 
         (𝓝 (P.eval (cuspVal (E := E) k j))) := by
       have := (P.continuous.continuousAt.comp hcont).tendsto.mono_left
         (nhdsWithin_le_nhds (s := {0}ᶜ))
-      simpa [cuspExt] using this
+      first
+        | simpa [cuspExt] using this
+        | simpa [cuspExt, Function.comp_def] using this
     have h2 : Tendsto (fun t : ℂ => c j + t ^ (d j)) (𝓝[≠] 0) (𝓝 (c j)) := by
       have : Tendsto (fun t : ℂ => c j + t ^ (d j)) (𝓝 0) (𝓝 (c j + 0 ^ (d j))) :=
         (continuous_const.add (continuous_pow _)).tendsto 0

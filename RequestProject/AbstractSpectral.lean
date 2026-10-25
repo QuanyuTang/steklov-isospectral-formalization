@@ -213,7 +213,10 @@ theorem exists_maximizer [CompleteSpace X] (hB : IsCompactOperator B) {c : ℝ} 
       have h5 := hup.div_const c
       rw [zero_div] at h5
       have := (Real.continuous_sqrt.tendsto 0).comp h5
-      simpa using this
+      first
+        | (simp only [Real.sqrt_zero] at this; exact this)
+        | simpa [Function.comp_def] using this
+        | (rw [Real.sqrt_zero] at this; exact this)
     exact squeeze_zero (fun _ => dist_nonneg) hbound hsq
   obtain ⟨x, hx⟩ := cauchySeq_tendsto_of_complete hcauchy
   have hxW : x ∈ W := hW.mem_of_tendsto hx (Eventually.of_forall (fun n => hxsW _))

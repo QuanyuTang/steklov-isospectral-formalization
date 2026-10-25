@@ -70,7 +70,9 @@ lemma radial_sq_le {u : ℂ → ℝ} (hu : ContDiff ℝ 1 u) (θ : ℝ) {ρ : �
     have hγ : HasDerivAt (fun r : ℝ => (r : ℂ) * e) e r := by
       simpa using ((Complex.ofRealCLM.hasDerivAt (x := r)).mul_const e)
     have := (hu.differentiable one_ne_zero (r * e)).hasFDerivAt.comp_hasDerivAt r hγ
-    simpa using this
+    first
+      | exact this
+      | simpa [Function.comp_def] using this
   have hFTC := intervalIntegral.integral_eq_sub_of_hasDerivAt (a := ρ) (b := 1)
     (fun r _ => hder r) (hgc.intervalIntegrable _ _)
   simp only [Complex.ofReal_one, one_mul] at hFTC

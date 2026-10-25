@@ -40,5 +40,30 @@
       "file": "RequestProject/GroupInput.lean",
       "name": "parts_card_eq_aux"
     }
+  ],
+  "subsequent_batches": [
+    {
+      "base_commit": "0066d2a0df97eddd0fcfb6f70a5fcd8ea8177121",
+      "aristotle_task": "9ecf9e68-c557-4f81-ab10-234aa5cf7eae",
+      "changed_files": 31,
+      "statement_changes": [],
+      "declaration_kind_changes": [
+        {
+          "file": "RequestProject/PolynomialCover.lean",
+          "name": "pathConnectedSpace_total",
+          "old_kind": "instance",
+          "new_kind": "theorem",
+          "statement_identical": true
+        }
+      ],
+      "new_declarations": [
+        {
+          "file": "RequestProject/Degree7Permutations.lean",
+          "name": "cycleType22_of_aux"
+        }
+      ],
+      "existing_definition_bodies_unchanged": true,
+      "compiled": false
+    }
   ]
 }

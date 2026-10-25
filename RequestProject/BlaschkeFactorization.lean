@@ -94,7 +94,7 @@ theorem blaschke_prod_norm_ge {n : ℕ} {a : Fin n → ℂ} (ha : ∀ l, ‖a l�
 lemma norm_blaschke_prod_le {n : ℕ} {a : Fin n → ℂ} (ha : ∀ l, ‖a l‖ < 1) {w : ℂ}
     (hw : ‖w‖ ≤ 1) : ‖∏ l, bfac (a l) w‖ ≤ 1 := by
   rw [norm_prod]
-  exact Finset.prod_le_one (fun _ _ => norm_nonneg _) fun l _ => norm_bfac_le (ha l) hw
+  exact Finset.prod_le_one₀ (fun _ _ => norm_nonneg _) fun l _ => norm_bfac_le (ha l) hw
 
 /-- `ψ(w) - ψ(a) = bfac a (w) · ((1 - ā w) · dslope ψ a w)` on `𝔻̄`. -/
 lemma sub_eq_bfac_mul {ψ : ℂ → ℂ} {a w : ℂ} (ha : ‖a‖ < 1) (hw : ‖w‖ ≤ 1) :

@@ -205,7 +205,9 @@ theorem coalescence_cinfty (hn : 1 ≤ n) {q : ι → Fin n → ℂ}
       unfold bfac
       refine ContinuousAt.div (by fun_prop) (by fun_prop) (by simp)
     have := hc.tendsto.comp (ha j)
-    simpa [bfac] using this
+    first
+      | simpa [bfac, Function.comp_def] using this
+      | (rw [show bfac 0 (1 / 2 : ℂ) = 1 / 2 by simp [bfac]] at this; exact this)
   have hprod : Tendsto (fun i => ∏ j, bfac (a i j) (1 / 2)) l (𝓝 ((1 / 2 : ℂ) ^ n)) := by
     have := tendsto_finset_prod (Finset.univ : Finset (Fin n)) fun j _ => hcont j
     simpa using this

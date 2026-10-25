@@ -612,7 +612,11 @@ theorem mem_H1_iff_isWeakGradientPair (x : Amb) : x ∈ H1 ↔ IsWeakGradientPai
     exact weak_gradient ⟨x, hx⟩ hφ v
   · intro hx
     have := mem_H1_of_weak_gradient x.fst x.snd hx
-    simpa using this
+    have heta : (WithLp.toLp 2 (x.fst, x.snd) : Amb) = x := rfl
+    first
+      | exact heta ▸ this
+      | exact this
+      | (rw [heta] at this; exact this)
 
 theorem H1_coe_eq_weak : (H1 : Set Amb) = {x | IsWeakGradientPair x} :=
   Set.ext mem_H1_iff_isWeakGradientPair

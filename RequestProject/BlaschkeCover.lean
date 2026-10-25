@@ -73,15 +73,13 @@ lemma prod_lt_one_aux {n : ℕ} (hn : 0 < n) (f : Fin n → ℝ) (h0 : ∀ l, 0 
     (h1 : ∀ l, f l < 1) : ∏ l, f l < 1 := by
   rw [← Finset.mul_prod_erase _ _ (Finset.mem_univ ⟨0, hn⟩)]
   exact mul_lt_one_of_nonneg_of_lt_one_left (h0 _) (h1 _)
-    (Finset.prod_le_one (fun l _ => h0 l) (fun l _ => (h1 l).le))
+    (Finset.prod_le_one₀ (fun l _ => h0 l) (fun l _ => (h1 l).le))
 
 lemma one_lt_prod_aux {n : ℕ} (hn : 0 < n) (f : Fin n → ℝ) (h1 : ∀ l, 1 < f l) :
     1 < ∏ l, f l := by
   rw [← Finset.mul_prod_erase _ _ (Finset.mem_univ ⟨0, hn⟩)]
   have hrest : 1 ≤ ∏ l ∈ Finset.univ.erase ⟨0, hn⟩, f l := by
-    have := Finset.prod_le_prod (s := Finset.univ.erase ⟨0, hn⟩) (f := fun _ => (1:ℝ))
-      (fun _ _ => zero_le_one) (fun l _ => (h1 l).le)
-    simpa using this
+    exact Finset.one_le_prod₀ (s := Finset.univ.erase ⟨0, hn⟩) fun l _ => (h1 l).le
   nlinarith [h1 ⟨0, hn⟩]
 
 /-- Norm trichotomy for a finite Blaschke product in a pole-free disk. -/

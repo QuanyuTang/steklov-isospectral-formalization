@@ -251,7 +251,7 @@ lemma ibp {u φ : ℂ → ℝ} (hu : ContDiff ℝ 1 u) (hφ : D.IsTest φ) (v : 
       simp [hφ.fderiv_eq_zero hz]),
     setIntegral_eq_integral_of_forall_compl_eq_zero (fun z hz => by simp [hφ.eq_zero hz])]
   refine integral_mul_fderiv_eq_neg_fderiv_mul_of_integrable ?_ ?_ ?_
-    (hu.differentiable one_ne_zero) (hφ1.differentiable one_ne_zero)
+    (fun x _ => (hu.differentiable one_ne_zero) x) (fun x _ => (hφ1.differentiable one_ne_zero) x)
   · exact Continuous.integrable_of_hasCompactSupport (by fun_prop) hφ.2.1.mul_left
   · exact Continuous.integrable_of_hasCompactSupport (by fun_prop)
       (hφ.2.1.fderiv_apply (𝕜 := ℝ) v).mul_left

@@ -163,7 +163,9 @@ theorem isometry_form (J : ℂ ≃ᵢ ℂ) :
       have := A.map_vadd 0 (z - 0)
       simp only [vadd_eq_add, sub_zero, add_zero] at this
       rw [sub_zero, this]
-    simpa using h1
+    first
+      | exact h1
+      | simpa [A] using h1
   obtain ⟨a, ha | ha⟩ := linear_isometry_complex f
   · refine ⟨a, J 0, by simp, Or.inl fun z => ?_⟩
     rw [hA, ha, rotation_apply]

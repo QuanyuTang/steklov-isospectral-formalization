@@ -79,11 +79,15 @@ theorem regCov_riemannSurface (hs : s ^ 2 = -7) (f₀ : OrdFib (projSum hs) 13) 
       (F := fun w => (pPoly s).eval w) (fun f => (pPoly s).differentiableAt)
       (fun f => derivative_ne_zero_of_total (ev₁ f)) fun f => ?_
     have := congrArg Subtype.val (hcomp f)
-    simpa [coverProjC] using this
+    first
+      | simpa [coverProjC] using this
+      | simpa [coverProjC, Function.comp_def] using this
   · refine contMDiff_of_comp_eq_holo hc (continuous_subtype_val.comp hev)
       (F := fun w => (pPoly (-s)).eval w) (fun f => (pPoly (-s)).differentiableAt)
       (fun f => derivative_ne_zero_of_total (ev₂ f)) fun f => ?_
     have := congrArg Subtype.val (hcomp f)
-    simpa [coverProjC] using this
+    first
+      | simpa [coverProjC] using this
+      | simpa [coverProjC, Function.comp_def] using this
 
 end Degree7
