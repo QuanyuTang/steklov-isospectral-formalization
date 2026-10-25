@@ -55,8 +55,7 @@ lemma sq_le_segment {v : ℂ → ℝ} {W : Set ℂ} (hW : IsOpen W) (hv : ContDi
       ((hv.contDiffAt (hW.mem_nhds (hseg t ht))).differentiableAt (by norm_num)).hasFDerivAt
     have h2 := h1.comp_hasDerivAt t (hγ t)
     have h3 := h2.pow 2
-    convert h3 using 1
-    simp
+    convert! h3 using 1 <;> simp
   have hfc : ContinuousOn (fderiv ℝ v) W := hv.continuousOn_fderiv_of_isOpen hW le_rfl
   have hvc : ContinuousOn v W := hv.continuousOn
   have hγc : Continuous γ := by fun_prop

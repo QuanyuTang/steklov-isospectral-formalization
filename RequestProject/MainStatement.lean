@@ -5,10 +5,12 @@ public import RequestProject.Defs
 /-!
 # Statement of Theorem 1.1.2 (main theorem of arXiv:2608.10557v2)
 
-The theorem is recorded as a `Prop`, `MainTheorem`, **without** a proof: the end-to-end proof
-is *not* formalized in this project (see `INVENTORY.md`).  No `sorry` and no axiom is used to
-"assert" it.  The statement keeps the original quantifier structure: one `ε₀ > 0` and one
-simultaneous family `Ω i ε` for `i ∈ {P, L}` and `0 < ε < ε₀`.
+This file records the theorem as the proposition `MainTheorem`. The proof entry is
+`SteklovCoalescence.mainTheorem_proved` in `MainTheoremProof.lean`; the stronger entry in
+`MainTheoremClassical.lean` also supplies the Sobolev and classical PDE interpretation.
+The statement keeps the original quantifier structure: one `ε₀ > 0` and one simultaneous
+family `Ω i ε` for `i ∈ {P, L}` and `0 < ε < ε₀`. No unproved geometric or spectral premise
+is added to the theorem.
 -/
 
 @[expose] public section

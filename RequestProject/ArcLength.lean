@@ -39,7 +39,7 @@ lemma norm_sub_affine_le {γ γ' : ℝ → E} {I : Set ℝ} (hI : Convex ℝ I)
     (f' := fun r => γ' r - v) (C := δ)
     (fun r hr => by
       have := ((hasDerivWithinAt_id r I).smul_const v)
-      simpa using (hγ r hr).sub this)
+      simpa only [Pi.sub_def, one_smul, id] using (hγ r hr).sub this)
     hv hs ht
   have e : γ t - t • v - (γ s - s • v) = γ t - γ s - (t - s) • v := by
     rw [sub_smul]; abel

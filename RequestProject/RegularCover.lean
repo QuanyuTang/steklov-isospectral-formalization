@@ -41,7 +41,7 @@ lemma joined_sheet {U : Set X} {I : Type*} [TopologicalSpace I] {p : E → X}
   exact ⟨γ.map hg⟩
 
 /-- **Restriction of a covering map to a path component is a covering map.** -/
-theorem isCoveringMap_restrict_pathComponent [LocPathConnectedSpace X] {p : E → X}
+theorem isCoveringMap_restrict_pathComponent [LocallyPathConnectedSpace X] {p : E → X}
     (hp : IsCoveringMap p) (e₀ : E) :
     IsCoveringMap (fun c : pathComponent e₀ => p c) := by
   intro x
@@ -109,7 +109,7 @@ def RegCov (f₀ : OrdFib p n) : Set (OrdFib p n) := pathComponent f₀
 def regProj (f₀ : OrdFib p n) : RegCov f₀ → X := fun f => ordProj p n f.1
 
 /-- **The regular cover is a covering space.** -/
-theorem isCoveringMap_regProj [LocPathConnectedSpace X] (hp : IsCoveringMap p)
+theorem isCoveringMap_regProj [LocallyPathConnectedSpace X] (hp : IsCoveringMap p)
     (f₀ : OrdFib p n) : IsCoveringMap (regProj f₀) :=
   isCoveringMap_restrict_pathComponent (isCoveringMap_ordProj hp n) f₀
 

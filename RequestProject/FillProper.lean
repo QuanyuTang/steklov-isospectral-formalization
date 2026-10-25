@@ -143,11 +143,11 @@ lemma exists_bIdx_of_mem {i : I} {y : Y} (hy : (q y : ℂ) - c i ∈ pdisk ρ) :
   change v ∈ pathComponent j.rep
   rw [← h]; exact mem_pathComponent_self v
 
-variable [LocPathConnectedSpace Y] (hq : IsCoveringMap q) (d : I → ℕ)
+variable [LocallyPathConnectedSpace Y] (hq : IsCoveringMap q) (d : I → ℕ)
   (hmodel : ∀ i (y : q ⁻¹' nbhdSet S (c i) ρ), ∃ Φ : LocComp q y ≃ₜ pdisk (rootRad ρ (d i)),
     ∀ x, ((Φ x : ℂ)) ^ (d i) = (q (incl y x) : ℂ) - c i)
 
-omit [LocPathConnectedSpace Y] in
+omit [LocallyPathConnectedSpace Y] in
 include hmodel in
 /-- **Finitely many ends.**  With finitely many punctures and finite fibres, the ends of a
 covering with local power models are finite in number. -/

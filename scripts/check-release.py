@@ -131,7 +131,12 @@ for name, expected in frozen["lean_source_sha256"].items():
         require(content.startswith(b"module\n\n"), "new audit-module header: " + name)
         content = content[len(b"module\n\n"):]
     actual = hashlib.sha256(content).hexdigest()
-    if name in audit_template_files or name in {"RequestProject/Defs.lean", "RequestProject/MainStatement.lean"}:
+    if name == "RequestProject/MainStatement.lean":
+        original = (ROOT / "verification/templates/MainStatement.original.lean.in").read_bytes()
+        require(hashlib.sha256(original).hexdigest() == expected, "original main statement source archived byte-for-byte")
+        normalize = lambda data: re.sub(r"\s+", " ", code_only(data.decode("utf-8"))).strip()
+        require(normalize(content) == normalize(original), "main statement code unchanged; only historical documentation corrected")
+    elif name in audit_template_files or name == "RequestProject/Defs.lean":
         require(actual == expected, "unchanged baseline statement or audit inventory: " + name)
     if actual != expected:
         changed_sources.append({"file": name, "baseline_sha256": expected, "migrated_sha256": actual})

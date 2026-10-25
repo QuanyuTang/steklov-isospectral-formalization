@@ -36,7 +36,7 @@ namespace Degree7
 
 variable {s : ℂ}
 
-lemma locPathConnectedSpace_base (hs : s ^ 2 = -7) : LocPathConnectedSpace (Base (pPoly s)) :=
+lemma locPathConnectedSpace_base (hs : s ^ 2 = -7) : LocallyPathConnectedSpace (Base (pPoly s)) :=
   (critVals_finite (pPoly_degree_pos hs)).isClosed.isOpen_compl.locPathConnectedSpace
 
 /-- The ordered fibre tuple given by a labelling of the fibre over `A`. -/

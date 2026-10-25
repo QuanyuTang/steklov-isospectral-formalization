@@ -64,7 +64,7 @@ lemma isCoveringMap_locProj (hq : IsCoveringMap q) {c : ℂ} {ρ : ℝ}
     (hS : ∀ u ∈ pdisk ρ, u + c ∈ S) : IsCoveringMap (locProj q hS) :=
   (hq.restrictPreimage _).homeomorph_comp _
 
-instance instLocPathPdisk (ρ : ℝ) : LocPathConnectedSpace (pdisk ρ) :=
+instance instLocPathPdisk (ρ : ℝ) : LocallyPathConnectedSpace (pdisk ρ) :=
   (isOpen_pdisk ρ).locPathConnectedSpace
 
 /-- The path component of `y₀` over the punctured disk. -/

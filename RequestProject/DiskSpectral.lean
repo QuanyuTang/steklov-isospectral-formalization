@@ -196,7 +196,7 @@ lemma poly_eq_zero_of_ae_cos {p : Polynomial ℝ}
       _ = μT {t | p.eval (Real.cos t) ≠ 0} := (Measure.restrict_apply' measurableSet_Ioc).symm
       _ = 0 := h0
   rw [measure_diff_null (hZ.measure_zero volume), Real.volume_Ioo, sub_zero] at h1
-  exact absurd (le_antisymm h1 (zero_le _)) (ENNReal.ofReal_pos.2 Real.pi_pos).ne'
+  exact absurd (le_antisymm h1 (zero_le)) (ENNReal.ofReal_pos.2 Real.pi_pos).ne'
 
 /-- The smooth functions `(Re z)ⁿ`. -/
 def rePow (n : ℕ) : smoothFns :=

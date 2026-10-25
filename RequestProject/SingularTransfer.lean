@@ -381,7 +381,7 @@ theorem minMax_le_of_singular_transfer {E₁ B₁ : (ℂ → ℝ) → ℝ≥0∞
         ≤ ∑ i, ‖c i‖ₑ * ε r := by
           refine Finset.sum_le_sum fun i _ => mul_le_mul_right ?_ _
           exact Finset.single_le_sum (f := fun i => eLpNorm (fderiv ℝ (corr S r (f i) - f i)) 2 μB)
-            (fun _ _ => zero_le _) (Finset.mem_univ i)
+            (fun _ _ => zero_le) (Finset.mem_univ i)
       _ = (∑ i, ‖c i‖ₑ) * ε r := by rw [Finset.sum_mul]
       _ ≤ (K * N c) * ε r := mul_le_mul_left (hK c) _
       _ = K * ε r * N c := by ring

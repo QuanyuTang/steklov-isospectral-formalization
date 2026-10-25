@@ -312,7 +312,7 @@ theorem ae_comp_H {p : ℂ → Prop} (h : ∀ᵐ z ∂(volume.restrict (ball (0 
   have hf : Measurable f := measurable_one.indicator hN
   have h1 : ∫⁻ w in c.Ω, f (c.H w) = 0 := by
     rw [c.lintegral_Ω_H]
-    refine le_antisymm ?_ (zero_le _)
+    refine le_antisymm ?_ (zero_le)
     calc ∫⁻ z in ball (0 : ℂ) 1, ENNReal.ofReal (‖deriv c.G z‖ ^ 2) * f z
         ≤ ∫⁻ z in ball (0 : ℂ) 1, (⊤ : ℝ≥0∞) * f z := lintegral_mono fun z => mul_le_mul' le_top le_rfl
       _ = (⊤ : ℝ≥0∞) * ∫⁻ z in ball (0 : ℂ) 1, f z := lintegral_const_mul _ hf

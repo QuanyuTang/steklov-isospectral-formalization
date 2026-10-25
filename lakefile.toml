@@ -4,6 +4,7 @@ defaultTargets = ["RequestProject", "Challenge", "Solution"]
 
 [leanOptions]
 backward.isDefEq.respectTransparency = false
+backward.defeqAttrib.useBackward = true
 
 [[require]]
 name = "mathlib"

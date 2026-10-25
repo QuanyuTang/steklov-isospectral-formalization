@@ -259,7 +259,7 @@ lemma bMap_comp {g h : Y → Y} (hgc : Continuous g)
   have h2 := joined_map h1 (continuous_liftV hgc hg)
   exact (pathComponent_congr h2).symm
 
-variable [LocPathConnectedSpace Y] (hq : IsCoveringMap q) (d : I → ℕ)
+variable [LocallyPathConnectedSpace Y] (hq : IsCoveringMap q) (d : I → ℕ)
   (hmodel : ∀ i (y : q ⁻¹' nbhdSet S (c i) ρ), ∃ Φ : LocComp q y ≃ₜ pdisk (rootRad ρ (d i)),
     ∀ x, ((Φ x : ℂ)) ^ (d i) = (q (incl y x) : ℂ) - c i)
 

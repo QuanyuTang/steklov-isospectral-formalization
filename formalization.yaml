@@ -126,9 +126,9 @@
     "divergences": "Explicit degree-seven realization instead of general Riemann existence for arbitrary permutation data; direct weighted-disk transplantation in the main spectral proof; orbifolds represented by proved concrete metric disk models. All five main conclusions retained; no extra unproved hypotheses in the main theorem."
   },
   "review": {
-    "status": "AI-assisted self-assessment; local Lean build and axiom audit passed",
+    "status": "AI-assisted self-assessment; Lean 4.28 baseline verified; Lean 4.35 migration under repair",
     "reviewers": [],
-    "notes": "Source correspondence reviewed with AI assistance. No independent human expert review, Palomar Comparator verification, NanoDa replay, con-ron replay, or registry acceptance is claimed. Current Palomar minimum is newer than the verified toolchain."
+    "notes": "The verified baseline passed compilation and a 590-target axiom inventory. The Lean 4.35 target is undergoing Linux CI compatibility repairs. Source, schema and sandbox startup checks passed; full proof compilation and independent-kernel replay have not passed the new version. No independent human peer review or Palomar registration is claimed."
   },
   "alignment": {
     "namespace": "SteklovSubmission",
@@ -138,7 +138,7 @@
         "lean": "SteklovSubmission.main_result",
         "module": "Solution",
         "status": "proved",
-        "note": "All five conclusions; variational spectrum with classical-PDE bridges in the underlying development. Palomar checks not yet run."
+        "note": "All five conclusions; variational spectrum with classical-PDE bridges in the underlying development. Lean 4.28 baseline proved; Lean 4.35 compilation and Palomar replay remain pending."
       }
     ]
   },

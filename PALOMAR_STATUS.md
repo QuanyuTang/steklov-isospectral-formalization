@@ -10,7 +10,9 @@ reports are baseline evidence and do not certify this port.
 | Check | Current state |
 | --- | --- |
 | Toolchain and Mathlib pins | Prepared |
-| Full Lean 4.35 build | In progress |
+| Source checks and official v0.4 metadata schema | Passed in Linux CI |
+| Linux namespace sandbox startup | Passed in Linux CI |
+| Full Lean 4.35 build | First run found compatibility errors; repairs in progress |
 | Lean 4.35 public theorem and axiom audit | Pending |
 | Linux sandboxed Comparator, Lean and NanoDa replay | Pending GitHub Actions run |
 | con-ron advisory replay | Pending GitHub Actions run |

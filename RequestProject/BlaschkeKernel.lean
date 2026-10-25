@@ -148,7 +148,7 @@ theorem weightedSteklovEigenvalue_le
       Steklov.weightedSteklovEigenvalue (fun z => ‖deriv B₁ z‖) k := by
   have hXo : IsOpen (Xb c' C) := isOpen_Xb hC
   haveI := pathConnected_Xb hc' hC
-  haveI : LocPathConnectedSpace (Xb c' C) := hXo.locPathConnectedSpace
+  haveI : LocallyPathConnectedSpace (Xb c' C) := hXo.locPathConnectedSpace
   have hXc₁ : Xb c' C ⊆ ball 0 c₁ := Xb_subset hc₁
   have hXc₂ : Xb c' C ⊆ ball 0 c₂ := Xb_subset hc₂
   have cov₁ := isCoveringMap_bproj h₁ hXc₁ (crit_Xb hcr₁)

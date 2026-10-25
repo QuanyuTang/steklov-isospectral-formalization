@@ -75,10 +75,10 @@ def Squot (c z : ℂ) : ℂ :=
 theorem hasDerivAt_A (c z : ℂ) : HasDerivAt (Apoly c) ((z ^ 2 - 1) ^ 2 * qpoly c z) z := by
   have h1 : HasDerivAt (fun w : ℂ => (w ^ 2 - 1) ^ 3) (3 * (z ^ 2 - 1) ^ 2 * (2 * z)) z := by
     have := ((hasDerivAt_pow 2 z).sub_const (1 : ℂ)).pow 3
-    convert this using 1; push_cast; ring
+    convert! this using 1; push_cast; ring
   have := h1.mul ((hasDerivAt_id z).sub_const c)
   show HasDerivAt (fun w => (w ^ 2 - 1) ^ 3 * (w - c)) _ z
-  convert this using 1
+  convert! this using 1
   simp only [qpoly, id]; ring
 
 /-- **Division certificate**: `A_c = q_c S_c + a(c) z + b(c)`. -/
@@ -121,7 +121,7 @@ theorem cc_ne_neg_one (hs : s ^ 2 = -7) : cc s ≠ -1 := by
 theorem hasDerivAt_pfun (s z : ℂ) :
     HasDerivAt (pfun s) (-((z ^ 2 - 1) ^ 2 * qpoly (cc s) z) / bconst s) z := by
   have := ((hasDerivAt_A (cc s) z).div_const (bconst s)).const_sub 1
-  convert this using 1
+  convert! this using 1
   ring
 
 /-- **Critical points** of `p_c`: `±1` and the roots of `q_c`. -/

@@ -50,7 +50,7 @@ lemma ray_estimate {u : ℂ → ℝ} (hu : ContDiff ℝ 1 u) (θ : ℝ) :
       simpa using ((Complex.ofRealCLM.hasDerivAt (x := r)).mul_const e)
     have hu' : HasDerivAt (fun r : ℝ => u (r * e)) (fderiv ℝ u (r * e) e) r := by
       have := (hu.differentiable one_ne_zero (r * e)).hasFDerivAt.comp_hasDerivAt r hγ
-      simpa using this
+      convert! this using 1 <;> rfl
     have h2 := (hu'.pow 2)
     have h3 := (hasDerivAt_pow 2 r).mul h2
     convert h3 using 1

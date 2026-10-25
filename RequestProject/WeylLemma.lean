@@ -529,7 +529,7 @@ lemma ae_eq_conv_radK (U : Set ℂ) {F : ℂ → ℝ} {G : ℂ → ℂ} (hFL : M
       (Or.inr enorm_ne_top)
     simpa using this
   have hzero : eLpNorm (fun x => c * F x - W x) 2 (volume.restrict (S U ε)) = 0 := by
-    refine le_antisymm (hfat.trans ?_) (zero_le _)
+    refine le_antisymm (hfat.trans ?_) (zero_le)
     have hli : atTop.liminf (fun n => ‖c‖ₑ * eLpNorm (F - u n) 2 volume) = 0 := hto.liminf_eq
     rw [← hli]
     exact liminf_le_liminf (Eventually.of_forall hbound)

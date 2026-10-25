@@ -40,12 +40,12 @@ lemma BIdx.eq_rep (j : BIdx q c ρ) : j.2.1 = pathComponent j.rep := j.2.2.choos
 lemma isOpen_nbhdSet (c₀ : ℂ) : IsOpen (nbhdSet S c₀ ρ) :=
   (isOpen_pdisk ρ).preimage ((continuous_subtype_val).sub continuous_const)
 
-variable [LocPathConnectedSpace Y]
+variable [LocallyPathConnectedSpace Y]
 
 lemma isOpenEmbedding_incl (hq : Continuous q) {c₀ : ℂ} (y₀ : q ⁻¹' nbhdSet S c₀ ρ) :
     IsOpenEmbedding (incl (q := q) y₀) := by
   have hV : IsOpen (q ⁻¹' nbhdSet S c₀ ρ) := (isOpen_nbhdSet c₀).preimage hq
-  haveI : LocPathConnectedSpace (q ⁻¹' nbhdSet S c₀ ρ) := hV.locPathConnectedSpace
+  haveI : LocallyPathConnectedSpace (q ⁻¹' nbhdSet S c₀ ρ) := hV.locPathConnectedSpace
   exact hV.isOpenEmbedding_subtypeVal.comp (IsOpen.pathComponent y₀).isOpenEmbedding_subtypeVal
 
 
@@ -57,7 +57,7 @@ variable (hq : IsCoveringMap q) (d : I → ℕ)
 def branchModel (j : BIdx q c ρ) : LocComp q j.rep ≃ₜ pdisk (rootRad ρ (d j.1)) :=
   (hmodel j.1 j.rep).choose
 
-omit [LocPathConnectedSpace Y] in
+omit [LocallyPathConnectedSpace Y] in
 lemma branchModel_pow (j : BIdx q c ρ) (x : LocComp q j.rep) :
     ((branchModel d hmodel j x : ℂ)) ^ (d j.1) = (q (incl j.rep x) : ℂ) - c j.1 :=
   (hmodel j.1 j.rep).choose_spec x
@@ -79,12 +79,12 @@ lemma branchPhi_pow (j : BIdx q c ρ) (x : range (incl (q := q) j.rep)) :
   rw [hx] at h
   exact h
 
-omit [LocPathConnectedSpace Y] in
+omit [LocallyPathConnectedSpace Y] in
 lemma mem_pdisk_of_mem_range {j : BIdx q c ρ} {y : Y} (hy : y ∈ range (incl (q := q) j.rep)) :
     (q y : ℂ) - c j.1 ∈ pdisk ρ := by
   obtain ⟨x, rfl⟩ := hy; exact x.1.2
 
-omit [LocPathConnectedSpace Y] in
+omit [LocallyPathConnectedSpace Y] in
 /-- Distinct ends are disjoint. -/
 lemma branch_disj
     (hdisj : ∀ i i', i ≠ i' → ∀ z : ℂ, z - c i ∈ pdisk ρ → z - c i' ∉ pdisk ρ) :
@@ -143,7 +143,7 @@ lemma branch_closed (hρ : 0 < ρ) (hcS : ∀ i, c i ∉ S) (hd : ∀ i, 0 < d i
   have hyV : q y ∈ nbhdSet S (c j.1) ρ := ⟨sub_ne_zero.2 hne, lt_of_le_of_lt hyB hεd⟩
   set V := q ⁻¹' nbhdSet S (c j.1) ρ
   have hVo : IsOpen V := (isOpen_nbhdSet (c j.1)).preimage hq.continuous
-  haveI : LocPathConnectedSpace V := hVo.locPathConnectedSpace
+  haveI : LocallyPathConnectedSpace V := hVo.locPathConnectedSpace
   set z : V := ⟨y, hyV⟩
   have hsub : (Subtype.val ⁻¹' A : Set V) ⊆ pathComponent j.rep := by
     rintro w ⟨x, -, hxw⟩

@@ -24,7 +24,7 @@ lemma ennreal_ratio_bound {E B E' B' : ℝ≥0∞} {a b c : ℝ≥0∞} (hc : c 
     (hB0 : B ≠ 0) (hBt : B ≠ ⊤) (hE : E' ≤ a * E + b * B) (hB : B ≤ c * B') :
     E' / B' ≤ c * (a * (E / B) + b) := by
   have hB'0 : B' ≠ 0 := by
-    rintro rfl; rw [mul_zero] at hB; exact hB0 (le_antisymm hB (zero_le _))
+    rintro rfl; rw [mul_zero] at hB; exact hB0 (le_antisymm hB (zero_le))
   have h1 : E' / B' ≤ (a * E + b * B) / (B / c) := by
     refine ENNReal.div_le_div hE ?_
     rw [ENNReal.div_le_iff hc hc']
@@ -62,7 +62,7 @@ theorem minMax_le_of_approx {E₁ B₁ E₂ B₂ : (ℂ → ℝ) → ℝ≥0∞}
       apply hpos u hu hne
       have := (hT u hu).2.2
       rw [h0, hB₂, mul_zero] at this
-      exact le_antisymm this (zero_le _)
+      exact le_antisymm this (zero_le)
     have hinj : Function.Injective (T.domRestrict V) := by
       rw [← LinearMap.ker_eq_bot, LinearMap.ker_eq_bot']
       intro u hu
@@ -75,7 +75,7 @@ theorem minMax_le_of_approx {E₁ B₁ E₂ B₂ : (ℂ → ℝ) → ℝ≥0∞}
         have hu0 : u ≠ 0 := by rintro rfl; exact hne (map_zero T)
         have := (hT u hu).2.2
         rw [h0, mul_zero] at this
-        exact hpos u hu hu0 (le_antisymm this (zero_le _))
+        exact hpos u hu hu0 (le_antisymm this (zero_le))
     refine (iInf₂_le (V.map T) hW).trans ?_
     refine iSup₂_le fun w hw => iSup_le fun hne => ?_
     obtain ⟨u, hu, rfl⟩ := hw

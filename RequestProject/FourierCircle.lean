@@ -51,7 +51,7 @@ theorem ae_eq_zero_of_fc {g : ℝ → ℂ} (hg : MemLp g 2 (volume.restrict (Ioc
     · exfalso; simp at h2
     · exact h2
   have hint : Integrable (fun x => ‖g x‖ ^ 2) (volume.restrict (Ioc 0 (2 * π))) :=
-    (memLp_two_iff_integrable_sq_norm hg.1).1 hg
+    (memLp_two_iff_integrable_sq_norm hg.aestronglyMeasurable).1 hg
   have := (integral_eq_zero_iff_of_nonneg (fun _ => by positivity) hint).1 h1
   filter_upwards [this] with x hx
   simpa using hx

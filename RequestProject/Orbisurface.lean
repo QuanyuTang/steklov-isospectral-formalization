@@ -340,7 +340,7 @@ theorem cone_lintegral_le (p : ℂ) {m : ℕ} (hm : m ≠ 0) {r : ℝ} (hr : 0 �
           refine le_trans (le_of_eq ?_) (ENNReal.le_tsum
             (⟨w, hw, hwz⟩ : {w' // w' ∈ ball (0 : ℂ) r ∧ B w' = z}))
           simp [Function.comp, B, hwz]
-        · rw [indicator_of_notMem hz]; exact zero_le _
+        · rw [indicator_of_notMem hz]; exact zero_le
 
 /-- Near each cone point, an orbifold-smooth function has finite Dirichlet integral (computed in
 the cone chart, where it is `C¹`). -/

@@ -20,7 +20,7 @@ noncomputable section
 
 namespace SteklovRegularCover
 
-variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X] [LocPathConnectedSpace X]
+variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X] [LocallyPathConnectedSpace X]
   {p : E → X} {n : ℕ} (hp : IsCoveringMap p) (f₀ : OrdFib p n)
 
 /-- The monodromy of the regular cover is the monodromy of the ordered fibre cover. -/

@@ -222,13 +222,17 @@ lemma bdryRad_analyticAt (θ₀ : ℝ) : AnalyticAt ℝ (bdryRad n q) θ₀ := b
     rw [h3]
     have hm := bdryRad_mem_Ioo hq hs hn (q := q) θ₀
     exact (deriv_radF_pos hq hs hn θ₀ hm.1.le hm.2.le).ne'
-  have hI : IsContDiffImplicitAt ω f (fderiv ℝ f a) a := ⟨hd, hf.contDiffAt, hbij, by simp⟩
-  have hφa : AnalyticAt ℝ hI.implicitFunction θ₀ := hI.contDiffAt_implicitFunction.analyticAt
-  have hφ0 : hI.implicitFunction θ₀ = r₀ :=
-    hI.eventually_implicitFunction_apply_eq.self_of_nhds rfl
+  have hinv : ((fderiv ℝ f a).comp (ContinuousLinearMap.inr ℝ ℝ ℝ)).IsInvertible :=
+    ⟨ContinuousLinearEquiv.ofBijective _ (LinearMap.ker_eq_bot.mpr hbij.1)
+      (LinearMap.range_eq_top.mpr hbij.2), rfl⟩
+  have hI : ContDiffAt ℝ ω f a := hf.contDiffAt
+  have hφa : AnalyticAt ℝ (hI.implicitFunction (by simp) hinv) θ₀ :=
+    (hI.contDiffAt_implicitFunction (by simp) hinv).analyticAt
+  have hφ0 : hI.implicitFunction (by simp) hinv θ₀ = r₀ :=
+    hI.implicitFunction_apply_self (by simp) hinv
   have hfa : f a = 1 := (bdryRad_spec hq hs hn θ₀).2
-  have hev1 := hI.apply_implicitFunction
-  have hev2 : ∀ᶠ θ in 𝓝 θ₀, hI.implicitFunction θ ∈ Ioo (1 / 2 : ℝ) 2 := by
+  have hev1 := hI.eventually_apply_implicitFunction (by simp) hinv
+  have hev2 : ∀ᶠ θ in 𝓝 θ₀, hI.implicitFunction (by simp) hinv θ ∈ Ioo (1 / 2 : ℝ) 2 := by
     have := hφa.continuousAt
     rw [ContinuousAt, hφ0] at this
     exact this (Ioo_mem_nhds (bdryRad_mem_Ioo hq hs hn θ₀).1 (bdryRad_mem_Ioo hq hs hn θ₀).2)

@@ -39,7 +39,7 @@ lemma chartsAre_regCov (hs : s ^ 2 = -7) (f₀ : OrdFib (projSum hs) 13) :
   chartsAre_lhChartedSpace (isLocalHomeomorph_coverProjC hs f₀)
 
 instance regCovLocPath {hs : s ^ 2 = -7} {f₀ : OrdFib (projSum hs) 13} :
-    LocPathConnectedSpace (RegCov f₀) :=
+    LocallyPathConnectedSpace (RegCov f₀) :=
   ChartedSpace.locPathConnectedSpace ℂ (RegCov f₀)
 
 /-- The two finite branch values. -/

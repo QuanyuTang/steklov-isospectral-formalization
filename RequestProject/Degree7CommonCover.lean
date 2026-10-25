@@ -293,7 +293,7 @@ variable {X E₁ E₂ : Type*} [TopologicalSpace X] [TopologicalSpace E₁] [Top
   {p₁ : E₁ → X} {p₂ : E₂ → X}
 
 /-- **Common regular cover of two degree-seven covers with a common monodromy group.** -/
-theorem common_cover_generic [LocPathConnectedSpace X] [PathConnectedSpace E₁]
+theorem common_cover_generic [LocallyPathConnectedSpace X] [PathConnectedSpace E₁]
     [PathConnectedSpace E₂] (h₁ : IsCoveringMap p₁) (h₂ : IsCoveringMap p₂)
     (hc₁ : ∀ x, Nat.card (p₁ ⁻¹' {x}) = 7) (hc₂ : ∀ x, Nat.card (p₂ ⁻¹' {x}) = 7) {A : X}
     (L₁ : p₁ ⁻¹' {A} ≃ Fin 7) (L₂ : p₂ ⁻¹' {A} ≃ Fin 7) (Φ Ψ : G →* Perm (Fin 7))

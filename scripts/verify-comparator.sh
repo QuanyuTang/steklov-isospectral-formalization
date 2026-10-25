@@ -59,4 +59,3 @@ PY
 
 lake exe cache get
 lake comparator --config "$config"
-

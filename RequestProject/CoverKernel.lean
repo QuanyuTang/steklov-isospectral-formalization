@@ -138,7 +138,7 @@ lemma kernel_fibre {x : X} (a : p₁ ⁻¹' {x}) (b : p₂ ⁻¹' {x}) :
   exact kernel_of_eq hb'
 
 /-- **Local constancy on the fibre product.** -/
-theorem kernel_eventually_eq [LocPathConnectedSpace X] (hT : IsInvariant cov₁ cov₂ x₀ L₁ L₂ T)
+theorem kernel_eventually_eq [LocallyPathConnectedSpace X] (hT : IsInvariant cov₁ cov₂ x₀ L₁ L₂ T)
     {e₁ : E₁} {e₂ : E₂} (h : p₂ e₂ = p₁ e₁) :
     ∀ᶠ q in 𝓝 (e₁, e₂), p₂ q.2 = p₁ q.1 →
       kernel cov₁ cov₂ x₀ L₁ L₂ T q.1 q.2 = kernel cov₁ cov₂ x₀ L₁ L₂ T e₁ e₂ := by

@@ -31,7 +31,10 @@ if args.check_log:
     output = args.check_log.read_text(encoding='utf-8')
 else:
     print('Checking preserved proof/type contracts, full axiom inventory, and public entry.', flush=True)
-    process = subprocess.Popen(['lake', 'env', 'lean', target.relative_to(root).as_posix()],
+    process = subprocess.Popen(['lake', 'env', 'lean',
+                               '-Dbackward.isDefEq.respectTransparency=false',
+                               '-Dbackward.defeqAttrib.useBackward=true',
+                               target.relative_to(root).as_posix()],
                                cwd=root, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                text=True, encoding='utf-8')
     lines = []

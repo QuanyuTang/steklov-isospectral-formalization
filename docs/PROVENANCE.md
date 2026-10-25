@@ -1,27 +1,62 @@
 # Provenance and review
 
-## Mathematical source
+## Source and authorship
 
-Tao Hu, Jiachen Shi, Quanyu Tang, *Strictly Convex Steklov-Isospectral Plane Domains*, arXiv:2608.10557v2, revised 15 August 2026. The source is adapted through an explicit degree-seven realization; the five conclusions of its main theorem are retained. Full original TeX and its arXiv source archive are preserved under `paper/`.
+The mathematical source is Tao Hu, Jiachen Shi and Quanyu Tang,
+*Strictly Convex Steklov-Isospectral Plane Domains*, arXiv:2608.10557v2.
+The original PDF, TeX and arXiv source archive are preserved under `paper/`.
+Their rights are separate from the formalization's code license.
 
-## Repository and automation
+The formalization authors and responsible maintainers are **taohu-hub,
+RGConj, QuanyuTang**, in that order, as specified by the project owner.
+These identifiers do not authenticate a particular paper-author identity or
+assert any coauthor's endorsement or independent human review.
 
-This is the substantive proof development, not a wrapper around an unpublished external formalization. Public repository maintainers: **taohu-hub, RGConj, QuanyuTang**, as supplied by the project owner. This identifies repository maintenance; it does not certify identity as any particular paper author or claim independent human verification.
+The user requested and directed the work. **Aristotle (Harmonic)** performed
+most proof generation. **OpenAI Codex (GPT-6 family)** coordinated tasks,
+provided intermediate proof scaffolding, reviewed statement correspondence,
+performed machine checks, repaired compatibility and organized the repository.
+The exact backend model for every historical step and monetary cost were not
+tracked. The original proof project elapsed time was approximately 36 hours;
+release preparation and version migration are separate.
 
-The user requested and directed the formalization. **Aristotle, by Harmonic**, performed most proof generation over successive tasks. Its backend model and exact compute expenditure were not disclosed. **OpenAI Codex (GPT-6 family)** organized proof tasks, supplied intermediate mathematical scaffolding, ran local builds and axiom checks, reviewed source correspondence, and prepared the public release. The exact model for every historical step was not retained, so no more precise model attribution is asserted. Total monetary expenditure was not tracked. Recorded elapsed time for the completed proof effort was approximately 36 hours; packaging is separate.
+## Baseline and migration evidence
 
-No paper coauthor's endorsement, independent human expert review, or Palomar registration is asserted. The review status is **AI-assisted self-assessment with local machine checking**. Original logs and source hashes are supplied, and the release is intended to enable independent reproduction and mathematical inspection.
+The verified baseline uses Lean 4.28.0 and Mathlib
+`8f9d9cff6bd728b17a24e163c9402775d9e6a365`. Its 180 original source files
+are identified by the frozen manifest in `verification/recorded/`.
+Four command-only audit inventories are preserved as `.lean.in` templates;
+the proof library contains 176 modules. The public library's configuration-only
+`Main.lean` receives a module header. Audit commands run from a generated
+non-module probe under `.lake/audit/` and are not proof dependencies.
 
-## Preserved evidence
+The migration target is Lean 4.35.0-rc2 and canonical Mathlib
+`065356127b1dc0016f66b7283ce0ce2c4055aa55`. Changes relative to the baseline
+are recorded in [migration-changes.json](../verification/migration-changes.json).
+The release checker holds the main statement's Lean code fixed and archives
+the original statement file; its obsolete introductory comment was corrected
+to point to the actual proof entries. Concrete definitions are compared in
+full by Comparator, rather than admitted as fillable definitions.
 
-The original snapshot has 180 Lean source files: 176 library/configuration modules and four command-only axiom inventories. The latter are preserved byte-for-byte as `verification/templates/*.lean.in`, rather than compiled library modules, because Lean 4.28 forbids `#print axioms` inside a `module`. The remaining 176 library files are unchanged except that the command-only `Main.lean` receives a module header. Thus all mathematical declarations and proof bodies, and all original audit commands, are unchanged. The release checker verifies these contents against the frozen hashes.
+The root Lake configuration records the Lean-provided elaboration compatibility
+options used by the port. These change proof elaboration, not the mathematical
+statement or kernel acceptance criteria. The solution must still build, satisfy
+the three-axiom allowlist and pass the independent-kernel checks.
 
-`scripts/audit.py` combines those templates with the original final proof/type audit and a public-entry axiom check, then runs the generated non-module file under `.lake/audit/`. Generated `.lake/` files are excluded from public source scans and from the release. The new Solution entry contains no audit side effects and does not import the Challenge.
+Historical logs under `verification/recorded/` and `verification/package-*.log`
+certify the baseline only. They do not certify the migration. The two GitHub
+workflows identify the exact new commit they test; [PALOMAR_STATUS.md](../PALOMAR_STATUS.md)
+records the current stage. A failed or unfinished build is not verified.
 
-The toolchain and all resolved dependency revisions are unchanged. The release Lakefile pins Mathlib by full commit, the manifest's `inputRev` is synchronized to that same commit, and the independent Challenge and Solution build targets are added. The original manifest is represented in the recorded verification evidence; changing the dependency label has not changed the resolved source closure.
+## Trust and scope
 
-One historical introductory comment in `RequestProject/MainStatement.lean` says that the end-to-end proof was not yet formalized. That describes the early statement-only stage and is superseded by the actual later proof declarations, especially `MainTheoremClassical.lean`; it has been retained to keep the verified source snapshot byte-identical. The public README and scope report describe the final state.
+The independent statement imports only canonical Mathlib. Its one deliberate
+statement hole is not imported by the Solution. The permitted proof axioms
+are `propext`, `Classical.choice` and `Quot.sound`; the audit enforces the
+allowlist for every inventory target and rejects missing reports.
 
-Original logs and reports in `verification/recorded/` are preserved as evidence of the earlier build. References in those files to `results/run-20/` or `formalization/` describe the original workspace layout; they are not required paths in this public repository. Current reproduction uses the commands in `docs/REPRODUCIBILITY.md`.
-
-The new `Challenge.lean` contains one permitted statement-only placeholder. The proved `Solution.lean` is independent of it. A local build does not establish a Palomar Comparator or independent-kernel result; those checks are explicitly outstanding.
+The review status remains AI-assisted self-assessment with machine checking.
+No independent human mathematical peer review, Palomar registration or
+institutional endorsement is claimed. [RESULTS.md](RESULTS.md) and
+[ERRATA-AND-DEVIATIONS.md](ERRATA-AND-DEVIATIONS.md) describe the actual scope,
+concrete representations and alternative proof routes.

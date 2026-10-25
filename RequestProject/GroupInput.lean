@@ -247,21 +247,21 @@ lemma quotEquiv_smul (g : G) (i : Fin 7) :
 theorem cycleCount_xy : cycleCount (x * y) (G ⧸ HP) = 1 := by
   rw [cycleCount_eq_of_conj_equiv (x * y) _ _ quotEquiv
     (c[0, 1, 5, 6, 4, 2, 3] : Equiv.Perm (Fin 7))]
-  · decide
+  · decide +kernel
   · intro i
     rw [quotEquiv_smul]
     revert i; simp only [Units.val_mul]; decide
 
 theorem cycleCount_x : cycleCount x (G ⧸ HP) = 5 := by
   rw [cycleCount_eq_of_conj_equiv x _ _ quotEquiv (c[0, 3] * c[2, 5] : Equiv.Perm (Fin 7))]
-  · decide
+  · decide +kernel
   · intro i
     rw [quotEquiv_smul]
     revert i; decide
 
 theorem cycleCount_y : cycleCount y (G ⧸ HP) = 3 := by
   rw [cycleCount_eq_of_conj_equiv y _ _ quotEquiv (c[0, 1, 2] * c[4, 5, 6] : Equiv.Perm (Fin 7))]
-  · decide
+  · decide +kernel
   · intro i
     rw [quotEquiv_smul]
     revert i; decide
@@ -294,14 +294,14 @@ lemma quotEquivL_smul (g : G) (i : Fin 7) :
 
 theorem cycleCount_x_L : cycleCount x (G ⧸ HL) = 5 := by
   rw [cycleCount_eq_of_conj_equiv x _ _ quotEquivL (c[0, 3] * c[2, 5] : Equiv.Perm (Fin 7))]
-  · decide
+  · decide +kernel
   · intro i
     rw [quotEquivL_smul]
     revert i; decide
 
 theorem cycleCount_y_L : cycleCount y (G ⧸ HL) = 3 := by
   rw [cycleCount_eq_of_conj_equiv y _ _ quotEquivL (c[0, 2, 1] * c[4, 6, 5] : Equiv.Perm (Fin 7))]
-  · decide
+  · decide +kernel
   · intro i
     rw [quotEquivL_smul]
     revert i; decide
@@ -309,7 +309,7 @@ theorem cycleCount_y_L : cycleCount y (G ⧸ HL) = 3 := by
 theorem cycleCount_xy_L : cycleCount (x * y) (G ⧸ HL) = 1 := by
   rw [cycleCount_eq_of_conj_equiv (x * y) _ _ quotEquivL
     (c[0, 5, 4, 6, 2, 1, 3] : Equiv.Perm (Fin 7))]
-  · decide
+  · decide +kernel
   · intro i
     rw [quotEquivL_smul, map_mul]
     revert i; simp only [Units.val_mul]; decide
@@ -346,8 +346,9 @@ lemma card_fix_orbit (g : G) :
   have h0 : (0 : V) ∈ Finset.univ.filter (fun v : V => g • v = v) := by simp
   rw [← Finset.card_erase_add_one h0]
   congr 2
-  ext v
-  simp [and_comm]
+  all_goals
+    ext v
+    simp [and_comm]
 
 theorem card_fix_θ (g : G) :
     Nat.card {v : V // θ g • v = v} = Nat.card {v : V // g • v = v} := by

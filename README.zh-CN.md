@@ -40,7 +40,7 @@ python3 scripts/check-release.py
 
 可以将**本目录中的全部内容**作为一个 GitHub 仓库的根目录上传；不要再嵌套一层 `formalization/`。建议仓库名：`steklov-isospectral-formalization`。原始论文 PDF、TeX 和原始源码包位于 `paper/`。
 
-**Palomar 当前仍有版本障碍。** 2026-10-25 查询的官方最低版本是 Lean **4.35.0-rc2**，而本工程已经核验的版本为 **4.28.0**。本包补齐了独立陈述、证明入口、对比配置与来源元数据，但还需要迁移 Lean 和 Mathlib、重新编译并运行 Comparator 及独立内核检查，才能进行当前规则下的新提交。不能仅修改版本号后宣称已经通过。
+**目标版本已满足最低版本要求，但迁移尚未通过完整验证。** 当前固定为 Lean **4.35.0-rc2** 及对应 canonical Mathlib。首轮 Linux 检查通过了源码、元数据和沙箱检查，随后发现证明兼容性错误；正在修复并重新构建。成功的公理审计和 Comparator/独立内核重放仍待完成。保留的 Lean 4.28 日志只核验原基线。[当前状态](PALOMAR_STATUS.md)
 
 Palomar 使用公开 GitHub 仓库及完整 commit SHA 进行审查，并不是直接接收 ZIP。发布和后续提交步骤见 [PALOMAR.md](docs/PALOMAR.md)。本项目目前**没有获得 Palomar 核验、登记或背书**。
 
@@ -49,5 +49,9 @@ Palomar 使用公开 GitHub 仓库及完整 commit SHA 进行审查，并不是�
 仓库维护者：[taohu-hub](https://github.com/taohu-hub)、[RGConj](https://github.com/RGConj)、[QuanyuTang](https://github.com/QuanyuTang)。形式化主要使用 **Aristotle（Harmonic）** 生成证明，**OpenAI Codex** 用于组织工作、补充中间步骤、核验与整理。没有声称经过独立数学专家的人工审稿。详见 [PROVENANCE.md](docs/PROVENANCE.md)。
 
 原论文作者为 **Tao Hu、Jiachen Shi、Quanyu Tang**。仓库维护身份和论文作者身份分别标注，没有将论文或 AI 生成工作全部归功于维护者。
+
+## 原文差异记录
+
+[差异记录](docs/ERRATA-AND-DEVIATIONS.md) 不主张论文存在勘误，记录四项形式化选择：显式多项式构造、具体度量轨形模型、加权圆盘谱证明路线，以及带有已证 PDE 桥接的变分谱编码。主定理五项结论均保留。[第三方工具归属](docs/THIRD_PARTY_NOTICES.md) 另行列明。
 
 形式化代码和新增文档采用 **Apache-2.0**。`paper/` 中的论文文件保留原作者权利，不适用本仓库的代码许可；arXiv 页面显示的是授予 arXiv 的非独占传播许可，不是通用的开放再利用许可。见 [论文来源与权利说明](paper/README.md)。

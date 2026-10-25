@@ -55,7 +55,7 @@ lemma nonempty_Hp {r : ℝ} (hr : 0 < r) : (exp ⁻¹' pdisk r).Nonempty := by
 instance instContractibleHp {r : ℝ} [Fact (0 < r)] : ContractibleSpace (Hp r) :=
   (convex_Hp Fact.out).contractibleSpace (nonempty_Hp Fact.out)
 
-instance instLocPathHp {r : ℝ} : LocPathConnectedSpace (Hp r) :=
+instance instLocPathHp {r : ℝ} : LocallyPathConnectedSpace (Hp r) :=
   ((isOpen_pdisk r).preimage continuous_exp).locPathConnectedSpace
 
 instance instPathConnHp {r : ℝ} [Fact (0 < r)] : PathConnectedSpace (Hp r) :=

@@ -245,7 +245,7 @@ theorem tendsto_eLpNorm_fderiv_logCut (s : ℂ) :
     exact tendsto_const_nhds.div_atTop
       (tendsto_abs_atBot_atTop.comp Real.tendsto_log_nhdsGT_zero)
   refine tendsto_of_tendsto_of_tendsto_of_le_of_le' tendsto_const_nhds hlim
-    (Eventually.of_forall fun _ => zero_le _) ?_
+    (Eventually.of_forall fun _ => zero_le) ?_
   have h1 : ∀ᶠ r in 𝓝[>] (0:ℝ), r < 1 := nhdsWithin_le_nhds (eventually_lt_nhds one_pos)
   filter_upwards [self_mem_nhdsWithin, h1] with r hr0 hr1
   rw [eLpNorm_two_sq]
@@ -267,7 +267,7 @@ theorem tendsto_eLpNorm_restrict_ball {μ : Measure ℂ} (hμ : μ ≤ volume)
     rw [zero_mul] at h
     exact h.mono_left nhdsWithin_le_nhds
   refine tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds this
-    (fun _ => zero_le _) (fun r => ?_)
+    (fun _ => zero_le) (fun r => ?_)
   simp only [Function.comp_apply]
   exact (hμ _).trans (Complex.volume_ball s r).le
 
@@ -289,7 +289,7 @@ theorem tendsto_eLpNorm_fderiv_corr_sub {S : Finset ℂ} (hS : ∀ s ∈ S, ‖s
         (tendsto_eLpNorm_restrict_ball Measure.restrict_le_self hfE s)))
     simpa using this
   refine tendsto_of_tendsto_of_tendsto_of_le_of_le' tendsto_const_nhds hlim
-    (Eventually.of_forall fun _ => zero_le _) ?_
+    (Eventually.of_forall fun _ => zero_le) ?_
   filter_upwards [eventually_goodRadius S hS] with r hr
   exact eLpNorm_fderiv_corr_sub_le hr hfs hS hM'
 

@@ -196,7 +196,7 @@ lemma norm_traceSmooth_le {C : ℝ} (hC : D.HasTraceIneq C) (u : smoothFns) :
   have hC0 : ∀ a : ℝ, 0 ≤ a → ENNReal.ofReal C * ENNReal.ofReal a = ENNReal.ofReal (max C 0 * a) := by
     intro a ha
     rw [ENNReal.ofReal_mul (le_max_right _ _), ENNReal.ofReal_max, ENNReal.ofReal_zero, max_eq_left
-      (zero_le _)]
+      (zero_le)]
   rw [hC0 _ (by positivity)] at h
   have h2 := (ENNReal.ofReal_le_ofReal_iff (by positivity)).1 h
   have h3 : ‖D.traceSmooth u‖ ≤ Real.sqrt (max C 0 * ‖(D.embedH u : D.Amb)‖ ^ 2) :=

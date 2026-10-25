@@ -113,7 +113,7 @@ theorem hasDerivAt_radialPrimitive (hU : IsOpen U) (hs : StarConvex ℝ 0 U) {h 
       have h2 := (hdiffAt _ hm).comp x h1
       have h3 := (hasDerivAt_id x).mul h2
       simp only [hF, hF']
-      convert h3 using 1
+      convert! h3 using 1
       simp only [Function.comp, id]; ring)
   -- evaluate the integral of the derivative
   have hval : ∫ t in (0 : ℝ)..1, F' z₀ t = h z₀ := by
@@ -127,7 +127,7 @@ theorem hasDerivAt_radialPrimitive (hU : IsOpen U) (hs : StarConvex ℝ 0 U) {h 
         have := (hdiffAt _ hm).comp (t : ℂ) ((hasDerivAt_id (t : ℂ)).mul_const z₀)
         exact (hasDerivAt_id (t : ℂ)).mul (by simpa using this)
       have h2 := h1.comp_ofReal
-      convert h2 using 1
+      convert! h2 using 1
       simp only [hF']; ring
     rw [intervalIntegral.integral_eq_sub_of_hasDerivAt hderiv
       ((hcontF' z₀ hz₀b).intervalIntegrable_of_Icc zero_le_one)]
@@ -150,7 +150,7 @@ theorem exists_log_of_starConvex (hU : IsOpen U) (hs : StarConvex ℝ 0 U) (h0 :
   have hEd : ∀ z ∈ U, HasDerivAt E 0 z := by
     intro z hz
     have := (hfd z hz).mul ((hGd z hz).neg.cexp)
-    convert this using 1
+    convert! this using 1
     field_simp [hf0 z hz]
     ring
   have hEconst : ∀ z ∈ U, E z = E 0 := by
