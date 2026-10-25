@@ -106,7 +106,9 @@ theorem exists_smooth_near_orbEmbed {u : ℂ → ℝ} (hu : O.IsOrbSmooth u) {ε
     rw [← MemLp.toLp_sub, Lp.norm_toLp]
     have hcong : eLpNorm (grad u - grad (corr O.S r u)) 2 μD =
         eLpNorm (fderiv ℝ (corr O.S r u - u)) 2 μD := by
-      refine eLpNorm_congr_norm_ae ?_
+      refine eLpNorm_congr_norm_ae
+        ((measurable_grad u).aestronglyMeasurable.sub (measurable_grad _).aestronglyMeasurable)
+        (measurable_fderiv ℝ _).aestronglyMeasurable ?_
       have h0 : volume (O.S : Set ℂ) = 0 := O.S.finite_toSet.measure_zero _
       filter_upwards [ae_restrict_of_ae (measure_eq_zero_iff_ae_notMem.1 h0)] with z hz
       have hdu : DifferentiableAt ℝ u z :=

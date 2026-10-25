@@ -170,12 +170,12 @@ theorem re_H_exp {h : ℝ → ℝ} (hsm : ContDiff ℝ ∞ h) (hper : Function.P
         ((Real.summable_one_div_int_pow.2 one_lt_two).mul_left M)
     · intro n
       rcases eq_or_ne n 0 with rfl | hn
-      · dsimp only
+      · try dsimp only
         rw [if_pos rfl]
         simp only [Int.cast_zero, ne_eq, OfNat.ofNat_ne_zero, not_false_eq_true, zero_pow,
           div_zero, mul_zero, add_zero, le_refl]
       · have := norm_coef_le hsm hper 2 hM hn
-        dsimp only
+        try dsimp only
         rw [if_neg hn, zero_add, mul_one_div]
         rw [sq_abs] at this
         exact this
@@ -214,7 +214,10 @@ theorem re_H_exp {h : ℝ → ℝ} (hsm : ContDiff ℝ ∞ h) (hper : Function.P
   have h4 : HasSum (fun k : ℕ => if k = 0 then (coef h 0).re else 0) (coef h 0).re := by
     convert hasSum_ite_eq 0 (coef h 0).re using 1
   convert h3.sub h4 using 1
-  simp [coef]
+  all_goals first
+    | (simp [coef]; done)
+    | (funext k; simp [coef])
+    | (simp only [coef, Int.cast_zero, Nat.cast_zero, zero_mul, Complex.exp_zero, mul_one]; ring)
 
 /-! ## Holomorphy under geometric decay -/
 

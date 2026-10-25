@@ -533,9 +533,7 @@ lemma ae_eq_conv_radK (U : Set ℂ) {F : ℂ → ℝ} {G : ℂ → ℂ} (hFL : M
     have hli : atTop.liminf (fun n => ‖c‖ₑ * eLpNorm (F - u n) 2 volume) = 0 := hto.liminf_eq
     rw [← hli]
     exact liminf_le_liminf (Eventually.of_forall hbound)
-  have hmeas : AEStronglyMeasurable (fun x => c * F x - W x) (volume.restrict (S U ε)) :=
-    ((hFm.aestronglyMeasurable.const_mul c).sub hWc.aestronglyMeasurable).restrict
-  rw [eLpNorm_eq_zero_iff hmeas two_ne_zero] at hzero
+  rw [eLpNorm_eq_zero_iff two_ne_zero] at hzero
   filter_upwards [hzero] with x hx
   simpa [sub_eq_zero] using hx
 

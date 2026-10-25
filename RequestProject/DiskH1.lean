@@ -172,7 +172,8 @@ lemma denseRange_embedH : DenseRange embedH := by
 
 lemma enorm_toLp_sq {α F : Type*} [MeasurableSpace α] [NormedAddCommGroup F] {μ : Measure α}
     {f : α → F} (hf : MemLp f 2 μ) : ‖hf.toLp f‖ₑ ^ 2 = ∫⁻ a, ‖f a‖ₑ ^ 2 ∂μ := by
-  rw [Lp.enorm_toLp, eLpNorm_eq_lintegral_rpow_enorm_toReal two_ne_zero ENNReal.ofNat_ne_top]
+  rw [Lp.enorm_toLp, eLpNorm_eq_lintegral_rpow_enorm_toReal two_ne_zero ENNReal.ofNat_ne_top
+    hf.aestronglyMeasurable]
   rw [← ENNReal.rpow_natCast, ← ENNReal.rpow_mul]
   simp
 
@@ -321,7 +322,7 @@ lemma ibp_disk {u φ : ℂ → ℝ} (hu : ContDiff ℝ 1 u) (hφ : IsDiskTest φ
       simp [hφ.fderiv_eq_zero hz]),
     setIntegral_eq_integral_of_forall_compl_eq_zero (fun z hz => by simp [hφ.eq_zero hz])]
   refine integral_mul_fderiv_eq_neg_fderiv_mul_of_integrable ?_ ?_ ?_
-    (hu.differentiable one_ne_zero) (hφ1.differentiable one_ne_zero)
+    (fun x _ => (hu.differentiable one_ne_zero) x) (fun x _ => (hφ1.differentiable one_ne_zero) x)
   · exact Continuous.integrable_of_hasCompactSupport (by fun_prop) hφ.2.1.mul_left
   · exact Continuous.integrable_of_hasCompactSupport (by fun_prop)
       (hφ.2.1.fderiv_apply (𝕜 := ℝ) v).mul_left

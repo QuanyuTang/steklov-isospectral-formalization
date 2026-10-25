@@ -243,25 +243,50 @@ lemma quotEquiv_smul (g : G) (i : Fin 7) :
   have hv' : a.val *ᵥ e1 = vecs i := hv
   simp only [e3, Equiv.coe_fn_symm_mk, smul_eq_mul, smul_def, Units.val_mul, ← mulVec_mulVec, hv']
 
+/-- Migration helper: the number of parts of the cycle partition of a permutation, expressed
+through its cycle type and support (avoids kernel evaluation of `cycleFactorsFinset`). -/
+private lemma parts_card_eq_aux {α : Type*} [Fintype α] [DecidableEq α] (σ : Equiv.Perm α) :
+    Multiset.card σ.partition.parts =
+      Multiset.card σ.cycleType + (Fintype.card α - σ.support.card) := by
+  rw [Equiv.Perm.parts_partition, Multiset.card_add, Multiset.card_replicate]
+
 /-- `xy` acts on the seven-point set `G/H_P` with a single cycle, i.e. as a `7`-cycle. -/
 theorem cycleCount_xy : cycleCount (x * y) (G ⧸ HP) = 1 := by
   rw [cycleCount_eq_of_conj_equiv (x * y) _ _ quotEquiv
     (c[0, 1, 5, 6, 4, 2, 3] : Equiv.Perm (Fin 7))]
-  · decide +kernel
+  · rw [parts_card_eq_aux, Equiv.Perm.card_cycleType_eq_one.2 (Cycle.isCycle_formPerm _ _
+      ((Cycle.nontrivial_coe_nodup_iff (by decide)).2 (by decide)))]
+    first | decide | decide +kernel
   · intro i
     rw [quotEquiv_smul]
     revert i; simp only [Units.val_mul]; decide
 
 theorem cycleCount_x : cycleCount x (G ⧸ HP) = 5 := by
   rw [cycleCount_eq_of_conj_equiv x _ _ quotEquiv (c[0, 3] * c[2, 5] : Equiv.Perm (Fin 7))]
-  · decide +kernel
+  · have hd : Equiv.Perm.Disjoint (c[0, 3] : Equiv.Perm (Fin 7)) c[2, 5] := by
+      rw [Equiv.Perm.disjoint_iff_disjoint_support]
+      first | decide | decide +kernel
+    rw [parts_card_eq_aux, hd.cycleType_mul, Multiset.card_add,
+      Equiv.Perm.card_cycleType_eq_one.2 (Cycle.isCycle_formPerm _ _
+        ((Cycle.nontrivial_coe_nodup_iff (by decide)).2 (by decide))),
+      Equiv.Perm.card_cycleType_eq_one.2 (Cycle.isCycle_formPerm _ _
+        ((Cycle.nontrivial_coe_nodup_iff (by decide)).2 (by decide)))]
+    first | decide | decide +kernel
   · intro i
     rw [quotEquiv_smul]
     revert i; decide
 
 theorem cycleCount_y : cycleCount y (G ⧸ HP) = 3 := by
   rw [cycleCount_eq_of_conj_equiv y _ _ quotEquiv (c[0, 1, 2] * c[4, 5, 6] : Equiv.Perm (Fin 7))]
-  · decide +kernel
+  · have hd : Equiv.Perm.Disjoint (c[0, 1, 2] : Equiv.Perm (Fin 7)) c[4, 5, 6] := by
+      rw [Equiv.Perm.disjoint_iff_disjoint_support]
+      first | decide | decide +kernel
+    rw [parts_card_eq_aux, hd.cycleType_mul, Multiset.card_add,
+      Equiv.Perm.card_cycleType_eq_one.2 (Cycle.isCycle_formPerm _ _
+        ((Cycle.nontrivial_coe_nodup_iff (by decide)).2 (by decide))),
+      Equiv.Perm.card_cycleType_eq_one.2 (Cycle.isCycle_formPerm _ _
+        ((Cycle.nontrivial_coe_nodup_iff (by decide)).2 (by decide)))]
+    first | decide | decide +kernel
   · intro i
     rw [quotEquiv_smul]
     revert i; decide
@@ -294,14 +319,30 @@ lemma quotEquivL_smul (g : G) (i : Fin 7) :
 
 theorem cycleCount_x_L : cycleCount x (G ⧸ HL) = 5 := by
   rw [cycleCount_eq_of_conj_equiv x _ _ quotEquivL (c[0, 3] * c[2, 5] : Equiv.Perm (Fin 7))]
-  · decide +kernel
+  · have hd : Equiv.Perm.Disjoint (c[0, 3] : Equiv.Perm (Fin 7)) c[2, 5] := by
+      rw [Equiv.Perm.disjoint_iff_disjoint_support]
+      first | decide | decide +kernel
+    rw [parts_card_eq_aux, hd.cycleType_mul, Multiset.card_add,
+      Equiv.Perm.card_cycleType_eq_one.2 (Cycle.isCycle_formPerm _ _
+        ((Cycle.nontrivial_coe_nodup_iff (by decide)).2 (by decide))),
+      Equiv.Perm.card_cycleType_eq_one.2 (Cycle.isCycle_formPerm _ _
+        ((Cycle.nontrivial_coe_nodup_iff (by decide)).2 (by decide)))]
+    first | decide | decide +kernel
   · intro i
     rw [quotEquivL_smul]
     revert i; decide
 
 theorem cycleCount_y_L : cycleCount y (G ⧸ HL) = 3 := by
   rw [cycleCount_eq_of_conj_equiv y _ _ quotEquivL (c[0, 2, 1] * c[4, 6, 5] : Equiv.Perm (Fin 7))]
-  · decide +kernel
+  · have hd : Equiv.Perm.Disjoint (c[0, 2, 1] : Equiv.Perm (Fin 7)) c[4, 6, 5] := by
+      rw [Equiv.Perm.disjoint_iff_disjoint_support]
+      first | decide | decide +kernel
+    rw [parts_card_eq_aux, hd.cycleType_mul, Multiset.card_add,
+      Equiv.Perm.card_cycleType_eq_one.2 (Cycle.isCycle_formPerm _ _
+        ((Cycle.nontrivial_coe_nodup_iff (by decide)).2 (by decide))),
+      Equiv.Perm.card_cycleType_eq_one.2 (Cycle.isCycle_formPerm _ _
+        ((Cycle.nontrivial_coe_nodup_iff (by decide)).2 (by decide)))]
+    first | decide | decide +kernel
   · intro i
     rw [quotEquivL_smul]
     revert i; decide
@@ -309,7 +350,9 @@ theorem cycleCount_y_L : cycleCount y (G ⧸ HL) = 3 := by
 theorem cycleCount_xy_L : cycleCount (x * y) (G ⧸ HL) = 1 := by
   rw [cycleCount_eq_of_conj_equiv (x * y) _ _ quotEquivL
     (c[0, 5, 4, 6, 2, 1, 3] : Equiv.Perm (Fin 7))]
-  · decide +kernel
+  · rw [parts_card_eq_aux, Equiv.Perm.card_cycleType_eq_one.2 (Cycle.isCycle_formPerm _ _
+      ((Cycle.nontrivial_coe_nodup_iff (by decide)).2 (by decide)))]
+    first | decide | decide +kernel
   · intro i
     rw [quotEquivL_smul, map_mul]
     revert i; simp only [Units.val_mul]; decide

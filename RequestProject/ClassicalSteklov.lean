@@ -109,7 +109,11 @@ lemma hasDerivAt_boundary (θ : ℝ) :
   have h1 : HasDerivAt (fun t : ℝ => (t : ℂ) * Complex.I) Complex.I θ := by
     simpa using (Complex.ofRealCLM.hasDerivAt (x := θ)).mul_const Complex.I
   have := hGd.comp θ h1.cexp
-  convert this using 1; ring
+  convert this using 1
+  all_goals first
+    | rfl
+    | (funext t; simp [Function.comp_apply])
+    | ring
 
 /-- `ν(θ)` is the velocity of the boundary parametrization rotated by `-π/2` and normalized,
 i.e. the outward unit normal of the positively oriented boundary curve. -/
@@ -152,7 +156,10 @@ theorem isWeakSteklovEigenDom_of_classical {τ : ℝ} (u : smoothFns)
         ((fderiv ℝ (u : ℂ → ℝ) (c.G e)).comp ((deriv c.G e) • (1 : ℂ →L[ℝ] ℂ))) e := by
       have := hud.hasFDerivAt.comp e (hGd.hasFDerivAt.restrictScalars ℝ)
       convert this using 2
-      ext1 w; simp [mul_comm]
+      all_goals first
+        | rfl
+        | (funext z; simp [Function.comp_apply])
+        | (ext1 w; simp [mul_comm])
     rw [hcomp.fderiv]
     simp only [ContinuousLinearMap.comp_apply, ContinuousLinearMap.smul_apply,
       ContinuousLinearMap.one_apply, smul_eq_mul]

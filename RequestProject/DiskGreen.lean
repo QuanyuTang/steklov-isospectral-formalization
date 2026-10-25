@@ -90,13 +90,16 @@ theorem divergence_disk {P Q : ℂ → ℝ} (hP : ContDiff ℝ 1 P) (hQ : ContDi
     have hQ1 := (hQd (pt r θ)).hasFDerivAt.comp_hasDerivAt r (hptr r θ)
     have := (hasDerivAt_id r).mul ((hP1.mul_const (Real.cos θ)).add (hQ1.mul_const (Real.sin θ)))
     convert this using 1
-    simp only [Fr, id, Function.comp, Pi.add_apply]; ring
+    all_goals first
+      | (funext y; simp only [f, id, Function.comp, Pi.add_apply]; done)
+      | (simp only [Fr, id, Function.comp, Pi.add_apply]; ring)
   have hGt : ∀ r θ, HasDerivAt (fun θ => g r θ) (Gt r θ) θ := by
     intro r θ
     have hP1 := (hPd (pt r θ)).hasFDerivAt.comp_hasDerivAt θ (hptt r θ)
     have hQ1 := (hQd (pt r θ)).hasFDerivAt.comp_hasDerivAt θ (hptt r θ)
     have := ((hP1.neg).mul (Real.hasDerivAt_sin θ)).add (hQ1.mul (Real.hasDerivAt_cos θ))
     convert this using 1
+    all_goals try (funext y; simp only [g, Function.comp, Pi.neg_apply]; done)
     · simp only [Gt, Function.comp, Pi.neg_apply]
       have e1 : fderiv ℝ P (pt r θ) ((r : ℂ) * (e θ * Complex.I)) =
           r * fderiv ℝ P (pt r θ) (e θ * Complex.I) := by

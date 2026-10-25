@@ -47,7 +47,8 @@ theorem weightedBoundaryMass_congr' (ρ : ℂ → ℝ) {g h : ℂ → ℝ}
 theorem weightedBoundaryMass_eq_eLpNorm (hρ : Continuous fun t : ℝ => ρ (circ t)) (g : ℂ → ℝ)
     (hg : Continuous fun t => g (circ t)) :
     weightedBoundaryMass ρ g = eLpNorm (fun t => g (circ t)) 2 (circMeasure ρ) ^ 2 := by
-  rw [eLpNorm_two_sq, circMeasure, lintegral_withDensity_eq_lintegral_mul]
+  rw [eLpNorm_two_sq _ _ hg.aestronglyMeasurable, circMeasure,
+    lintegral_withDensity_eq_lintegral_mul]
   · unfold weightedBoundaryMass
     refine lintegral_congr fun t => ?_
     simp only [Pi.mul_apply, circ]
@@ -192,21 +193,18 @@ theorem eLpNorm_fderiv_corr_comb_le {S : Finset ℂ} {r : ℝ} (hr : GoodRadius 
     rw [(h1.add h2).fderiv, h1.fderiv]
   have hcongr := eLpNorm_congr_ae (p := 2) hae
   rw [hcongr]
-  have hm : ∀ i, AEStronglyMeasurable (fun z => c i • fderiv ℝ (corr S r (f i) - f i) z) μ :=
-    fun i => ((measurable_fderiv ℝ _).const_smul (c i)).aestronglyMeasurable
-  have hms : AEStronglyMeasurable
-      (fun z => ∑ i, c i • fderiv ℝ (corr S r (f i) - f i) z) μ := by
-    apply Measurable.aestronglyMeasurable
-    apply Finset.measurable_fun_sum
-    intro i _
-    exact (measurable_fderiv ℝ _).const_smul (c i)
-  refine (eLpNorm_add_le (measurable_fderiv ℝ _).aestronglyMeasurable hms
-    (by norm_num)).trans ?_
+  have hsplit : (fun z => fderiv ℝ (∑ i, c i • f i) z +
+        ∑ i, c i • fderiv ℝ (corr S r (f i) - f i) z) =
+      fderiv ℝ (∑ i, c i • f i) + fun z => ∑ i, c i • fderiv ℝ (corr S r (f i) - f i) z := by
+    funext z; simp only [Pi.add_apply]
+  rw [hsplit]
+  refine (eLpNorm_add_le (by norm_num)).trans ?_
   refine add_le_add le_rfl ?_
   have : (fun z => ∑ i, c i • fderiv ℝ (corr S r (f i) - f i) z) =
-      ∑ i, fun z => c i • fderiv ℝ (corr S r (f i) - f i) z := by ext z; simp
+      ∑ i, c i • fderiv ℝ (corr S r (f i) - f i) := by
+    funext z; simp only [Finset.sum_apply, Pi.smul_apply]
   rw [this]
-  refine (eLpNorm_sum_le (fun i _ => hm i) (by norm_num)).trans ?_
+  refine (eLpNorm_sum_le (by norm_num)).trans ?_
   exact Finset.sum_le_sum fun i _ => (eLpNorm_const_smul (c := c i)
     (f := fderiv ℝ (corr S r (f i) - f i)) (p := 2) (μ := μ)).le
 
@@ -309,13 +307,18 @@ theorem minMax_le_of_singular_transfer {E₁ B₁ : (ℂ → ℝ) → ℝ≥0∞
     simp only [hG, Pi.add_apply, add_smul, Finset.sum_add_distrib]
   have hGsmul : ∀ (a : ℝ) c, G (a • c) = a • G c := fun a c => by
     simp only [hG, Pi.smul_apply, smul_eq_mul, mul_smul, Finset.smul_sum]
-  have hmeasG : ∀ c, AEStronglyMeasurable (fun t => G c (circ t)) (circMeasure ρ) := fun c =>
-    (hGc c).aestronglyMeasurable
   have hNadd : ∀ c c', N (c + c') ≤ N c + N c' := fun c c' => by
-    simp only [hN, hGadd]
-    exact eLpNorm_add_le (hmeasG c) (hmeasG c') (by norm_num)
+    have hfun : (fun t => G (c + c') (circ t)) =
+        (fun t => G c (circ t)) + (fun t => G c' (circ t)) := by
+      funext t; simp only [hGadd, Pi.add_apply]
+    simp only [hN]
+    rw [hfun]
+    exact eLpNorm_add_le (by norm_num)
   have hNsmul : ∀ (a : ℝ) c, N (a • c) = ‖a‖ₑ * N c := fun a c => by
-    simp only [hN, hGsmul]
+    have hfun : (fun t => G (a • c) (circ t)) = a • (fun t => G c (circ t)) := by
+      funext t; simp only [hGsmul, Pi.smul_apply]
+    simp only [hN]
+    rw [hfun]
     exact eLpNorm_const_smul (c := a) (f := fun t => G c (circ t)) (p := 2) (μ := circMeasure ρ)
   obtain ⟨K, hK⟩ := exists_sum_le_of_seminorm N hNtop hNadd hNsmul hNpos
   -- energies of the corrections

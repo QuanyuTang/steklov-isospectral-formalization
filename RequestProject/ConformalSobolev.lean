@@ -79,16 +79,17 @@ end WComp
 
 lemma memLp_two_of_lintegral {E : Type*} [NormedAddCommGroup E] {μ : Measure ℂ} {f : ℂ → E}
     (hm : AEStronglyMeasurable f μ) (h : ∫⁻ x, ‖f x‖ₑ ^ 2 ∂μ < ⊤) : MemLp f 2 μ := by
-  refine ⟨hm, ?_⟩
-  rw [eLpNorm_lt_top_iff_lintegral_rpow_enorm_lt_top two_ne_zero ENNReal.ofNat_ne_top]
+  show eLpNorm f 2 μ < ⊤
+  rw [eLpNorm_lt_top_iff_lintegral_rpow_enorm_lt_top two_ne_zero ENNReal.ofNat_ne_top hm]
   have e : ∀ x : ℝ≥0∞, x ^ ((2:ℝ≥0∞).toReal) = x ^ (2:ℕ) := fun x => by
     rw [ENNReal.toReal_ofNat, ← ENNReal.rpow_natCast]; norm_num
   simp_rw [e]; exact h
 
 lemma lintegral_lt_top_of_memLp {E : Type*} [NormedAddCommGroup E] {μ : Measure ℂ} {f : ℂ → E}
     (hf : MemLp f 2 μ) : ∫⁻ x, ‖f x‖ₑ ^ 2 ∂μ < ⊤ := by
-  have := hf.2
-  rw [eLpNorm_lt_top_iff_lintegral_rpow_enorm_lt_top two_ne_zero ENNReal.ofNat_ne_top] at this
+  have := hf.eLpNorm_lt_top
+  rw [eLpNorm_lt_top_iff_lintegral_rpow_enorm_lt_top two_ne_zero ENNReal.ofNat_ne_top
+    hf.aestronglyMeasurable] at this
   have e : ∀ x : ℝ≥0∞, x ^ ((2:ℝ≥0∞).toReal) = x ^ (2:ℕ) := fun x => by
     rw [ENNReal.toReal_ofNat, ← ENNReal.rpow_natCast]; norm_num
   simp_rw [e] at this; exact this

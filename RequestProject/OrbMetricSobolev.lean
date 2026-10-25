@@ -61,7 +61,8 @@ lemma norm_lpMono_le {α : Type*} [MeasurableSpace α] {μ ν : Measure α} {k :
   refine ENNReal.toReal_mono (ENNReal.mul_ne_top (ENNReal.rpow_ne_top_of_nonneg (by norm_num) hk)
     (Lp.eLpNorm_ne_top f)) ?_
   refine (eLpNorm_mono_measure _ h).trans (le_of_eq ?_)
-  rw [eLpNorm_smul_measure_of_ne_top (by norm_num : (2 : ℝ≥0∞) ≠ ⊤)]
+  rw [eLpNorm_smul_measure_of_ne_top (by norm_num : (2 : ℝ≥0∞) ≠ ⊤) _ _
+    (Lp.aestronglyMeasurable f)]
   simp [smul_eq_mul]
 
 namespace DiskOrbisurface
@@ -119,7 +120,9 @@ theorem metric_form_norm (u : ℂ → ℝ) :
   rw [show ∫⁻ z, ENNReal.ofReal (O.metricGradSq u z) ∂O.areaMeasure = O.energy u from rfl,
     O.energy_eq, dirichletEnergy_eq_eLpNorm_sq]
   congr 1
-  exact eLpNorm_congr_norm_ae (Eventually.of_forall fun z => (norm_grad u z).symm)
+  exact eLpNorm_congr_norm_ae (measurable_fderiv ℝ u).aestronglyMeasurable
+    (measurable_grad u).aestronglyMeasurable
+    (Eventually.of_forall fun z => (norm_grad u z).symm)
 
 /-- **Ambient space of the metric Sobolev space**: `L²(O, dA_g) ⊕₂ L²(T*O, g)`, with the form
 space realized as `L²(𝔻; ℝ²)` through `du ↦ ∇u` (`metric_form_norm`). -/
@@ -162,7 +165,7 @@ theorem enorm_metricEmbed_sq {u : ℂ → ℝ} (hu : O.IsOrbSmooth u) :
   rw [h2, enorm_toLp_sq, enorm_toLp_sq]
   congr 1
   rw [show ∫⁻ z, ‖grad u z‖ₑ ^ 2 ∂μD = eLpNorm (grad u) 2 μD ^ 2 by
-    rw [eLpNorm_two_sq], ← metric_form_norm]
+    rw [eLpNorm_two_sq _ _ (measurable_grad u).aestronglyMeasurable], ← metric_form_norm]
   rfl
 
 /-! ### Linearity of the graph map -/

@@ -25,7 +25,7 @@ lemma eLpNorm_comp_smul {h : ℂ → E} (hh : AEStronglyMeasurable h volume) {r 
     · rfl
     · rw [hmap]; exact hh.smul_measure _
     · exact (measurable_const_smul r).aemeasurable
-  rw [h1, hmap, eLpNorm_smul_measure_of_ne_top (by simp)]
+  rw [h1, hmap, eLpNorm_smul_measure_of_ne_top (by simp) _ _ hh]
   congr 1
   rw [abs_of_pos (by positivity), ENNReal.ofReal_rpow_of_nonneg (by positivity) (by norm_num)]
   congr 1
@@ -86,10 +86,11 @@ lemma enorm_moll_sq_le (b : ContDiffBump (0 : ℂ)) (h : ℂ → E) (hh : Strong
         rw [← ENNReal.rpow_mul]; norm_num
 
 /-- **Mollification is an `L²` contraction.** -/
-lemma eLpNorm_moll_le (b : ContDiffBump (0 : ℂ)) (h : ℂ → E) (hh : StronglyMeasurable h) :
+lemma eLpNorm_moll_le (b : ContDiffBump (0 : ℂ)) (h : ℂ → E) (hh : StronglyMeasurable h)
+    (hm : AEStronglyMeasurable (moll b h) volume) :
     eLpNorm (moll b h) 2 volume ≤ eLpNorm h 2 volume := by
-  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal (by norm_num) (by simp),
-    eLpNorm_eq_lintegral_rpow_enorm_toReal (by norm_num) (by simp)]
+  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal (by norm_num) (by simp) hm,
+    eLpNorm_eq_lintegral_rpow_enorm_toReal (by norm_num) (by simp) hh.aestronglyMeasurable]
   refine ENNReal.rpow_le_rpow ?_ (by norm_num)
   simp only [show ((2 : ℝ≥0∞).toReal) = 2 by norm_num]
   set a : ℂ → ℝ≥0∞ := fun t => ‖b.normed volume t‖ₑ
@@ -118,20 +119,20 @@ lemma eLpNorm_moll_le (b : ContDiffBump (0 : ℂ)) (h : ℂ → E) (hh : Strongl
 omit [NormedSpace ℝ E] in
 /-- A uniformly small function supported in a fixed ball has small `L²` norm. -/
 lemma exists_bound_eLpNorm (R : ℝ) {ε : ℝ} (hε : 0 < ε) :
-    ∃ c > 0, ∀ k : ℂ → E, (∀ x, ‖k x‖ ≤ c) → (∀ x, R < ‖x‖ → k x = 0) →
-      eLpNorm k 2 volume ≤ ENNReal.ofReal ε := by
+    ∃ c > 0, ∀ k : ℂ → E, AEStronglyMeasurable k volume → (∀ x, ‖k x‖ ≤ c) →
+      (∀ x, R < ‖x‖ → k x = 0) → eLpNorm k 2 volume ≤ ENNReal.ofReal ε := by
   set V : ℝ≥0∞ := volume (Metric.closedBall (0:ℂ) R) ^ ((2:ℝ≥0∞).toReal⁻¹)
   have hV : V ≠ (⊤ : ℝ≥0∞) := by
     refine ENNReal.rpow_ne_top_of_nonneg (by positivity) ?_
     exact measure_closedBall_lt_top.ne
-  refine ⟨ε / (V.toReal + 1), by positivity, fun k hk hs => ?_⟩
+  refine ⟨ε / (V.toReal + 1), by positivity, fun k hkm hk hs => ?_⟩
   have hsupp : Function.support k ⊆ Metric.closedBall 0 R := by
     intro x hx
     by_contra h'
     simp only [Metric.mem_closedBall, dist_zero_right, not_le] at h'
     exact hx (hs x h')
-  rw [← eLpNorm_restrict_eq_of_support_subset hsupp]
-  refine (eLpNorm_le_of_ae_bound (C := ε / (V.toReal + 1))
+  rw [← eLpNorm_restrict_eq_of_support_subset hkm hsupp]
+  refine (eLpNorm_le_of_ae_bound (C := ε / (V.toReal + 1)) hkm.restrict
     (Eventually.of_forall fun x => hk x)).trans ?_
   rw [Measure.restrict_apply_univ]
   change V * _ ≤ _
@@ -150,6 +151,10 @@ lemma exists_support_bound {h : ℂ → E} (hs : HasCompactSupport h) :
   simp only [Metric.mem_closedBall, dist_zero_right] at this
   linarith [le_max_left R 0]
 
+lemma continuous_moll (b : ContDiffBump (0 : ℂ)) {h : ℂ → E} (hh : LocallyIntegrable h volume) :
+    Continuous (moll b h) :=
+  b.hasCompactSupport_normed.continuous_convolution_left _ (b.continuous_normed (μ := volume)) hh
+
 /-- Mollifications of a continuous compactly supported function converge in `L²`. -/
 lemma cc_moll [CompleteSpace E] {h : ℂ → E} (hc : Continuous h) (hs : HasCompactSupport h) {ε : ℝ} (hε : 0 < ε) :
     ∃ δ > 0, ∀ b : ContDiffBump (0 : ℂ), b.rOut < δ →
@@ -158,7 +163,10 @@ lemma cc_moll [CompleteSpace E] {h : ℂ → E} (hc : Continuous h) (hs : HasCom
   obtain ⟨c, hc0, hcb⟩ := exists_bound_eLpNorm (E := E) (R + 1) hε
   obtain ⟨δ0, hδ0, hu⟩ := Metric.uniformContinuous_iff.mp
     (hs.uniformContinuous_of_continuous hc) c hc0
-  refine ⟨min δ0 1, lt_min hδ0 one_pos, fun b hb => hcb _ (fun x => ?_) (fun x hx => ?_)⟩
+  refine ⟨min δ0 1, lt_min hδ0 one_pos, fun b hb => hcb (h - moll b h)
+    (hc.aestronglyMeasurable.sub
+      (continuous_moll b (hc.locallyIntegrable (μ := volume))).aestronglyMeasurable)
+    (fun x => ?_) (fun x hx => ?_)⟩
   · rw [Pi.sub_apply, ← dist_eq_norm, dist_comm]
     refine b.dist_normed_convolution_le hc.aestronglyMeasurable (fun y hy => (hu ?_).le)
     exact (Metric.mem_ball.mp hy).trans (hb.trans_le (min_le_left _ _))
@@ -190,7 +198,10 @@ lemma cc_dil {h : ℂ → E} (hc : Continuous h) (hs : HasCompactSupport h) {ε 
     (hs.uniformContinuous_of_continuous hc) c hc0
   refine ⟨max (1/2) (1 - δ0 / (2 * R + 2)), le_max_left _ _, max_lt (by norm_num)
     (by have : 0 < δ0 / (2 * R + 2) := by positivity
-        linarith), fun r hr0 hr1 => hcb _ (fun x => ?_) (fun x hx => ?_)⟩
+        linarith), fun r hr0 hr1 => hcb (h - fun x => h (r • x))
+      (hc.aestronglyMeasurable.sub
+        (by fun_prop : Continuous fun x : ℂ => h (r • x)).aestronglyMeasurable)
+      (fun x => ?_) (fun x hx => ?_)⟩
   · have hr2 : 1/2 ≤ r := (le_max_left _ _).trans hr0
     have hr3 : 1 - δ0 / (2 * R + 2) ≤ r := (le_max_right _ _).trans hr0
     rw [Pi.sub_apply]
@@ -230,10 +241,6 @@ lemma moll_sub (b : ContDiffBump (0 : ℂ)) {h k : ℂ → E} (hh : LocallyInteg
   simp only [moll_apply, Pi.sub_apply, smul_sub]
   exact integral_sub (integrable_moll b hh x) (integrable_moll b hk x)
 
-lemma continuous_moll (b : ContDiffBump (0 : ℂ)) {h : ℂ → E} (hh : LocallyIntegrable h volume) :
-    Continuous (moll b h) :=
-  b.hasCompactSupport_normed.continuous_convolution_left _ (b.continuous_normed (μ := volume)) hh
-
 lemma ofReal_third {ε : ℝ} (hε : 0 < ε) :
     ENNReal.ofReal (ε/3) + (ENNReal.ofReal (ε/3) + ENNReal.ofReal (ε/3)) = ENNReal.ofReal ε := by
   rw [← ENNReal.ofReal_add (by positivity) (by positivity),
@@ -254,20 +261,17 @@ lemma moll_tendsto [CompleteSpace E] {F : ℂ → E} (hF : MemLp F 2 volume) (hF
   have hdec : F - moll b F = (F - h) + ((h - moll b h) + moll b (h - F)) := by
     rw [moll_sub b hhl hFl]; abel
   rw [hdec]
-  have hm1 : AEStronglyMeasurable (F - h) volume :=
-    (hFm.sub hhc.stronglyMeasurable).aestronglyMeasurable
-  have hm2 : AEStronglyMeasurable (h - moll b h) volume :=
-    (hhc.sub (continuous_moll b hhl)).aestronglyMeasurable
   have hm3 : AEStronglyMeasurable (moll b (h - F)) volume :=
     (continuous_moll b (hhl.sub hFl)).aestronglyMeasurable
   calc eLpNorm ((F - h) + ((h - moll b h) + moll b (h - F))) 2 volume
       ≤ eLpNorm (F - h) 2 volume + (eLpNorm (h - moll b h) 2 volume +
           eLpNorm (moll b (h - F)) 2 volume) :=
-        (eLpNorm_add_le hm1 (hm2.add hm3) one_le_two).trans
-          (add_le_add_right (eLpNorm_add_le hm2 hm3 one_le_two) _)
+        (eLpNorm_add_le (f := F - h) (g := (h - moll b h) + moll b (h - F)) one_le_two).trans
+          (add_le_add_right (eLpNorm_add_le (f := h - moll b h) (g := moll b (h - F))
+            one_le_two) _)
     _ ≤ ENNReal.ofReal (ε/3) + (ENNReal.ofReal (ε/3) + ENNReal.ofReal (ε/3)) := by
         refine add_le_add hFh (add_le_add (hmol b hb) ?_)
-        refine (eLpNorm_moll_le b _ (hhc.stronglyMeasurable.sub hFm)).trans ?_
+        refine (eLpNorm_moll_le b _ (hhc.stronglyMeasurable.sub hFm) hm3).trans ?_
         rw [eLpNorm_sub_comm]; exact hFh
     _ = ENNReal.ofReal ε := ofReal_third hε
 
@@ -285,13 +289,6 @@ lemma dil_tendsto {F : ℂ → E} (hF : MemLp F 2 volume) (hFm : StronglyMeasura
       (F - h) + ((h - fun x => h (r • x)) + fun x => (h - F) (r • x)) := by
     funext x; simp only [Pi.add_apply, Pi.sub_apply]; abel
   rw [hdec]
-  have hm1 : AEStronglyMeasurable (F - h) volume :=
-    (hFm.sub hhc.stronglyMeasurable).aestronglyMeasurable
-  have hm2 : AEStronglyMeasurable (h - fun x => h (r • x)) volume :=
-    (hhc.sub (hhc.comp (continuous_const_smul r))).aestronglyMeasurable
-  have hm3 : AEStronglyMeasurable (fun x => (h - F) (r • x)) volume :=
-    ((hhc.stronglyMeasurable.sub hFm).comp_measurable
-      (measurable_const_smul r)).aestronglyMeasurable
   have h3 : eLpNorm (fun x => (h - F) (r • x)) 2 volume ≤ ENNReal.ofReal (ε/3) := by
     rw [eLpNorm_comp_smul (hhc.stronglyMeasurable.sub hFm).aestronglyMeasurable hr,
       eLpNorm_sub_comm]
@@ -304,8 +301,10 @@ lemma dil_tendsto {F : ℂ → E} (hF : MemLp F 2 volume) (hFm : StronglyMeasura
   calc eLpNorm ((F - h) + ((h - fun x => h (r • x)) + fun x => (h - F) (r • x))) 2 volume
       ≤ eLpNorm (F - h) 2 volume + (eLpNorm (h - fun x => h (r • x)) 2 volume +
           eLpNorm (fun x => (h - F) (r • x)) 2 volume) :=
-        (eLpNorm_add_le hm1 (hm2.add hm3) one_le_two).trans
-          (add_le_add_right (eLpNorm_add_le hm2 hm3 one_le_two) _)
+        (eLpNorm_add_le (f := F - h)
+          (g := (h - fun x => h (r • x)) + fun x => (h - F) (r • x)) one_le_two).trans
+          (add_le_add_right (eLpNorm_add_le (f := h - fun x => h (r • x))
+            (g := fun x => (h - F) (r • x)) one_le_two) _)
     _ ≤ ENNReal.ofReal (ε/3) + (ENNReal.ofReal (ε/3) + ENNReal.ofReal (ε/3)) := by
         refine add_le_add (hFh.trans (ENNReal.ofReal_le_ofReal (by linarith)))
           (add_le_add (hdil r hr0 hr1) h3)
@@ -421,12 +420,10 @@ lemma norm_amb_le (x : Amb) : ‖x‖ ≤ ‖x.fst‖ + ‖x.snd‖ := by
   have h := WithLp.prod_norm_sq_eq_of_L2 x
   nlinarith [norm_nonneg x, norm_nonneg x.fst, norm_nonneg x.snd]
 
-lemma eLpNorm_add3_le {E : Type*} [NormedAddCommGroup E] {a b c : ℂ → E}
-    (ha : AEStronglyMeasurable a volume) (hb : AEStronglyMeasurable b volume)
-    (hc : AEStronglyMeasurable c volume) :
+lemma eLpNorm_add3_le {E : Type*} [NormedAddCommGroup E] {a b c : ℂ → E} :
     eLpNorm (a + b + c) 2 volume ≤ eLpNorm a 2 volume + eLpNorm b 2 volume + eLpNorm c 2 volume :=
-  (eLpNorm_add_le (ha.add hb) hc one_le_two).trans
-    (add_le_add_left (eLpNorm_add_le ha hb one_le_two) _)
+  (eLpNorm_add_le (f := a + b) (g := c) one_le_two).trans
+    (add_le_add_left (eLpNorm_add_le (f := a) (g := b) one_le_two) _)
 
 /-- **Converse weak-gradient identification on the disk.** If `f ∈ L²(𝔻)` and `g ∈ L²(𝔻; ℝ²)`
 satisfy `∫_𝔻 f ∂_v φ = -∫_𝔻 ⟪g, v⟫ φ` for every compactly supported smooth `φ` in `𝔻` and every
@@ -511,11 +508,6 @@ theorem mem_H1_of_weak_gradient (f : Lp ℝ 2 μD) (g : Lp ℂ 2 μD)
     have h2 := norm_le_norm_add_norm_sub' y (r • z)
     rw [dist_eq_norm] at hy
     linarith
-  -- measurability
-  have hmFr : AEStronglyMeasurable (fun z => F (r • z)) volume :=
-    (hFm.comp_measurable (measurable_const_smul r)).aestronglyMeasurable
-  have hmGr : AEStronglyMeasurable (fun z => G (r • z)) volume :=
-    (hGm.comp_measurable (measurable_const_smul r)).aestronglyMeasurable
   have hcmF := continuous_moll b hFl
   have hcmG := continuous_moll b hGl
   -- the function estimate
@@ -532,11 +524,9 @@ theorem mem_H1_of_weak_gradient (f : Lp ℝ 2 μD) (g : Lp ℂ 2 μD)
       ring
     rw [eLpNorm_congr_ae hae]
     refine (eLpNorm_mono_measure _ Measure.restrict_le_self).trans ?_
-    refine (eLpNorm_add_le ((hFm.aestronglyMeasurable).sub hmFr)
-      ((hFm.sub hcmF.stronglyMeasurable).comp_measurable
-        (measurable_const_smul r)).aestronglyMeasurable one_le_two).trans ?_
-    rw [show ((F - moll b F) ∘ fun x => r • x) = fun x => (F - moll b F) (r • x) from rfl,
-      eLpNorm_comp_smul (hFm.sub hcmF.stronglyMeasurable).aestronglyMeasurable hr0]
+    refine (eLpNorm_add_le (f := F - fun z => F (r • z))
+      (g := fun z => (F - moll b F) (r • z)) one_le_two).trans ?_
+    rw [eLpNorm_comp_smul (hFm.sub hcmF.stronglyMeasurable).aestronglyMeasurable hr0]
     calc eLpNorm (F - fun z => F (r • z)) 2 volume +
           ENNReal.ofReal r⁻¹ * eLpNorm (F - moll b F) 2 volume
         ≤ ENNReal.ofReal e + ENNReal.ofReal 2 * ENNReal.ofReal e := by
@@ -563,11 +553,7 @@ theorem mem_H1_of_weak_gradient (f : Lp ℝ 2 μD) (g : Lp ℂ 2 μD)
       abel
     rw [eLpNorm_congr_ae hae]
     refine (eLpNorm_mono_measure _ Measure.restrict_le_self).trans ?_
-    have hmC : AEStronglyMeasurable (fun z => (G - moll b G) (r • z)) volume :=
-      ((hGm.sub hcmG.stronglyMeasurable).comp_measurable
-        (measurable_const_smul r)).aestronglyMeasurable
-    refine (eLpNorm_add3_le (hGm.aestronglyMeasurable.sub hmGr) (hmGr.const_smul (1 - r))
-      (hmC.const_smul r)).trans ?_
+    refine eLpNorm_add3_le.trans ?_
     have eA : eLpNorm ((1 - r) • fun z => G (r • z)) 2 volume =
         ENNReal.ofReal (1 - r) * (ENNReal.ofReal r⁻¹ * ENNReal.ofReal M) := by
       rw [eLpNorm_const_smul, eLpNorm_comp_smul hGm.aestronglyMeasurable hr0, hM,

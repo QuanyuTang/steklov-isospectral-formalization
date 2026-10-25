@@ -286,7 +286,7 @@ theorem not_affine_equivalent (hs : s ^ 2 = -7) :
         (((α * z + β) ^ 2 - 1) ^ 2 * qpoly c' (α * z + β) * α) z := by
       have := (hasDerivAt_A c' (α * z + β)).comp z
         (((hasDerivAt_id z).const_mul α).add_const β)
-      simpa using this
+      convert! this using 1 <;> first | rfl | ring1 | simp
     have h2 : HasDerivAt (fun z => k * Apoly c z) (k * ((z ^ 2 - 1) ^ 2 * qpoly c z)) z :=
       (hasDerivAt_A c z).const_mul k
     rw [hfun] at h1

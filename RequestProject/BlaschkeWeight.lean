@@ -49,8 +49,10 @@ lemma hasDerivAt_re_circle {g : ℂ → ℂ} {U : Set ℂ} (hU : IsOpen U) (hS :
   have h2 := hgd.comp t he
   have h3 := reCLM.hasFDerivAt.comp_hasDerivAt t h2
   convert h3 using 1
-  simp only [Dop, reCLM_apply]
-  ring_nf
+  all_goals first
+    | rfl
+    | (funext s; simp [Function.comp_apply, reCLM_apply])
+    | (simp only [Dop, reCLM_apply]; ring_nf)
 
 /-- `t`-derivatives of `Re g(e^{it})` are `Re (Dop^j g)(e^{it})`. -/
 theorem iteratedDeriv_re_circle {g : ℂ → ℂ} {U : Set ℂ} (hU : IsOpen U)

@@ -119,15 +119,18 @@ theorem measurable_of_contDiffOn_compl {S : Finset ℂ} {f : ℂ → ℝ}
   measurable_of_measurable_on_compl_finite _ S.finite_toSet
     (continuousOn_iff_continuous_restrict.1 hfs.continuousOn).measurable
 
+/-- Implementation helper.  Since the current `eLpNorm` is `∞` on functions which are not
+a.e. strongly measurable, the identity `‖f‖₂² = ∫ ‖f‖²` needs a measurability premise. -/
 theorem eLpNorm_two_sq {α E : Type*} [MeasurableSpace α] [NormedAddCommGroup E] (f : α → E)
-    (μ : Measure α) : eLpNorm f 2 μ ^ 2 = ∫⁻ x, ‖f x‖ₑ ^ 2 ∂μ := by
-  have := eLpNorm_nnreal_pow_eq_lintegral (f := f) (μ := μ) (p := 2) two_ne_zero
+    (μ : Measure α) (hf : AEStronglyMeasurable f μ) :
+    eLpNorm f 2 μ ^ 2 = ∫⁻ x, ‖f x‖ₑ ^ 2 ∂μ := by
+  have := eLpNorm_nnreal_pow_eq_lintegral (f := f) (μ := μ) (p := 2) two_ne_zero hf
   simpa using this
 
 /-- The Dirichlet energy is the square of an `L²` seminorm of the gradient. -/
 theorem dirichletEnergy_eq_eLpNorm_sq (Ω : Set ℂ) (f : ℂ → ℝ) :
     dirichletEnergy Ω f = eLpNorm (fderiv ℝ f) 2 (volume.restrict Ω) ^ 2 := by
-  rw [eLpNorm_two_sq]; rfl
+  rw [eLpNorm_two_sq _ _ (measurable_fderiv ℝ f).aestronglyMeasurable]; rfl
 
 theorem corr_sub_eq (S : Finset ℂ) (r : ℝ) (f : ℂ → ℝ) :
     corr S r f - f = fun z => ∑ s ∈ S, logCut s r z * (f s - f z) := by
@@ -147,7 +150,9 @@ theorem norm_fderiv_corr_sub_le {S : Finset ℂ} {r : ℝ} (hr : GoodRadius S r)
       (logCut s r z • (-fderiv ℝ f z) + (f s - f z) • fderiv ℝ (logCut s r) z) z := by
     intro s _
     have h2 : HasFDerivAt (fun w => f s - f w) (-fderiv ℝ f z) z := by
-      simpa using (hasFDerivAt_const (f s) z).sub hf.hasFDerivAt
+      first
+        | exact hf.hasFDerivAt.const_sub (f s)
+        | (convert! hf.hasFDerivAt.const_sub (f s) using 1 <;> first | rfl | simp)
     exact (hχ s).hasFDerivAt.mul h2
   have hsum := HasFDerivAt.sum hterm
   rw [corr_sub_eq]
@@ -183,24 +188,21 @@ theorem eLpNorm_fderiv_corr_sub_le {S : Finset ℂ} {r : ℝ} (hr : GoodRadius S
   calc eLpNorm (fderiv ℝ (corr S r f - f)) 2 μB
       ≤ eLpNorm (fun z => ∑ s ∈ S, (|f s - f z| * ‖fderiv ℝ (logCut s r) z‖ +
           logCut s r z * ‖fderiv ℝ f z‖)) 2 μB := by
-        apply eLpNorm_mono_ae_real
+        refine eLpNorm_mono_ae_real (measurable_fderiv ℝ _).aestronglyMeasurable ?_
         filter_upwards [hnull] with z hz using norm_fderiv_corr_sub_le hr hfs hz
     _ = eLpNorm (∑ s ∈ S, fun z => (|f s - f z| * ‖fderiv ℝ (logCut s r) z‖ +
           logCut s r z * ‖fderiv ℝ f z‖)) 2 μB := by
         congr 1; ext z; simp
     _ ≤ ∑ s ∈ S, eLpNorm (fun z => (|f s - f z| * ‖fderiv ℝ (logCut s r) z‖ +
           logCut s r z * ‖fderiv ℝ f z‖)) 2 μB := by
-        refine eLpNorm_sum_le (fun s _ => ?_) (by norm_num)
-        exact ((((measurable_const.sub hfm).abs.mul (hmeas _)).add
-          ((hχc s).measurable.mul (hmeas f)))).aestronglyMeasurable
+        exact eLpNorm_sum_le (by norm_num)
     _ ≤ _ := by
         refine Finset.sum_le_sum fun s hs => ?_
-        refine (eLpNorm_add_le ?_ ?_ (by norm_num)).trans (add_le_add ?_ ?_)
-        · exact ((measurable_const.sub hfm).abs.mul (hmeas _)).aestronglyMeasurable
-        · exact ((hχc s).measurable.mul (hmeas f)).aestronglyMeasurable
+        refine (eLpNorm_add_le (by norm_num)).trans (add_le_add ?_ ?_)
         · have h2 : eLpNorm (fun z => |f s - f z| * ‖fderiv ℝ (logCut s r) z‖) 2 μB ≤
               (Real.toNNReal (2 * M)) • eLpNorm (fderiv ℝ (logCut s r)) 2 μB := by
-            apply eLpNorm_le_nnreal_smul_eLpNorm_of_ae_le_mul
+            refine eLpNorm_le_nnreal_smul_eLpNorm_of_ae_le_mul
+              ((measurable_const.sub hfm).abs.mul (hmeas _)).aestronglyMeasurable ?_ _
             filter_upwards [ae_restrict_mem Metric.isOpen_ball.measurableSet] with z hz
             rw [← NNReal.coe_le_coe, coe_nnnorm, NNReal.coe_mul, coe_nnnorm,
               Real.coe_toNNReal _ (by positivity), Real.norm_eq_abs, abs_mul, abs_abs, abs_norm]
@@ -212,7 +214,8 @@ theorem eLpNorm_fderiv_corr_sub_le {S : Finset ℂ} {r : ℝ} (hr : GoodRadius S
           exact mul_le_mul_right (eLpNorm_mono_measure _ Measure.restrict_le_self) _
         · rw [← eLpNorm_indicator_eq_eLpNorm_restrict (f := fderiv ℝ f) (μ := μB)
             Metric.isOpen_ball.measurableSet]
-          refine eLpNorm_mono fun z => ?_
+          refine eLpNorm_mono ((hχc s).measurable.mul (hmeas f)).aestronglyMeasurable
+            fun z => ?_
           rw [Real.norm_eq_abs, abs_mul, abs_norm, abs_of_nonneg (logCut_nonneg z)]
           by_cases hz : z ∈ Metric.ball s r
           · rw [indicator_of_mem hz]
@@ -248,21 +251,29 @@ theorem tendsto_eLpNorm_fderiv_logCut (s : ℂ) :
     (Eventually.of_forall fun _ => zero_le) ?_
   have h1 : ∀ᶠ r in 𝓝[>] (0:ℝ), r < 1 := nhdsWithin_le_nhds (eventually_lt_nhds one_pos)
   filter_upwards [self_mem_nhdsWithin, h1] with r hr0 hr1
-  rw [eLpNorm_two_sq]
+  rw [eLpNorm_two_sq _ _ (measurable_fderiv ℝ _).aestronglyMeasurable]
   exact lintegral_fderiv_logCut_le hr0 hr1 hK0 hK
 
 theorem tendsto_eLpNorm_restrict_ball {μ : Measure ℂ} (hμ : μ ≤ volume)
     {g : ℂ → (ℂ →L[ℝ] ℝ)} (hg : eLpNorm g 2 μ ≠ ⊤) (s : ℂ) :
     Tendsto (fun r => eLpNorm g 2 (μ.restrict (Metric.ball s r))) (𝓝[>] 0) (𝓝 0) := by
   apply tendsto_zero_of_sq
-  simp_rw [eLpNorm_two_sq]
+  have hgm : AEStronglyMeasurable g μ := aestronglyMeasurable_of_eLpNorm_ne_top hg
+  have hsq : ∀ r : ℝ, eLpNorm g 2 (μ.restrict (Metric.ball s r)) ^ 2 =
+      ∫⁻ x in Metric.ball s r, ‖g x‖ₑ ^ 2 ∂μ := fun r =>
+    eLpNorm_two_sq g _ hgm.restrict
+  simp_rw [hsq]
   have hfin : ∫⁻ x, ‖g x‖ₑ ^ 2 ∂μ ≠ ⊤ := by
-    rw [← eLpNorm_two_sq]; exact ENNReal.pow_ne_top hg
+    rw [← eLpNorm_two_sq g μ hgm]; exact ENNReal.pow_ne_top hg
   apply tendsto_setLIntegral_zero hfin
   have : Tendsto (fun r : ℝ => ENNReal.ofReal r ^ 2 * NNReal.pi) (𝓝[>] 0) (𝓝 0) := by
     have h0 : Tendsto (fun r : ℝ => ENNReal.ofReal r ^ 2) (𝓝 0) (𝓝 0) := by
       have := ((ENNReal.continuous_pow 2).tendsto _).comp (ENNReal.continuous_ofReal.tendsto 0)
-      simpa using this
+      rw [ENNReal.ofReal_zero, zero_pow two_ne_zero] at this
+      first
+        | exact this
+        | (rw [Function.comp_def] at this; exact this)
+        | simpa [Function.comp_def] using this
     have h := ENNReal.Tendsto.mul_const h0 (Or.inr (ENNReal.coe_ne_top (r := NNReal.pi)))
     rw [zero_mul] at h
     exact h.mono_left nhdsWithin_le_nhds

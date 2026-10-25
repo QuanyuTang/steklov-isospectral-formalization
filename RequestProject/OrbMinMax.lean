@@ -115,13 +115,18 @@ theorem minMaxOn_le_of_singular_transfer {P : (ℂ → ℝ) → Prop} {E₁ B₁
     simp only [hG, Pi.add_apply, add_smul, Finset.sum_add_distrib]
   have hGsmul : ∀ (a : ℝ) c, G (a • c) = a • G c := fun a c => by
     simp only [hG, Pi.smul_apply, smul_eq_mul, mul_smul, Finset.smul_sum]
-  have hmeasG : ∀ c, AEStronglyMeasurable (fun t => G c (circ t)) (circMeasure ρ) := fun c =>
-    (hGc c).aestronglyMeasurable
   have hNadd : ∀ c c', N (c + c') ≤ N c + N c' := fun c c' => by
-    simp only [hN, hGadd]
-    exact eLpNorm_add_le (hmeasG c) (hmeasG c') (by norm_num)
+    have hfun : (fun t => G (c + c') (circ t)) =
+        (fun t => G c (circ t)) + (fun t => G c' (circ t)) := by
+      funext t; simp only [hGadd, Pi.add_apply]
+    simp only [hN]
+    rw [hfun]
+    exact eLpNorm_add_le (by norm_num)
   have hNsmul : ∀ (a : ℝ) c, N (a • c) = ‖a‖ₑ * N c := fun a c => by
-    simp only [hN, hGsmul]
+    have hfun : (fun t => G (a • c) (circ t)) = a • (fun t => G c (circ t)) := by
+      funext t; simp only [hGsmul, Pi.smul_apply]
+    simp only [hN]
+    rw [hfun]
     exact eLpNorm_const_smul (c := a) (f := fun t => G c (circ t)) (p := 2) (μ := circMeasure ρ)
   obtain ⟨K, hK⟩ := exists_sum_le_of_seminorm N hNtop hNadd hNsmul hNpos
   -- energies of the corrections

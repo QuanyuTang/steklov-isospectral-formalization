@@ -124,8 +124,9 @@ theorem hasDerivAt_radialPrimitive (hU : IsOpen U) (hs : StarConvex ℝ 0 U) {h 
       have hm := hKU ⟨t, ht, rfl⟩
       have h1 : HasDerivAt (fun w : ℂ => w * h (w * z₀))
           (1 * h (t * z₀) + t * (deriv h (t * z₀) * z₀)) (t : ℂ) := by
-        have := (hdiffAt _ hm).comp (t : ℂ) ((hasDerivAt_id (t : ℂ)).mul_const z₀)
-        exact (hasDerivAt_id (t : ℂ)).mul (by simpa using this)
+        refine (hasDerivAt_id (t : ℂ)).mul ?_
+        have := (hdiffAt _ hm).comp (t : ℂ) (hasDerivAt_mul_const z₀)
+        convert! this using 1 <;> first | rfl | simp
       have h2 := h1.comp_ofReal
       convert! h2 using 1
       simp only [hF']; ring

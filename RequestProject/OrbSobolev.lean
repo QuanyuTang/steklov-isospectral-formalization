@@ -64,7 +64,13 @@ theorem tendsto_eLpNorm_corr_sub {u : ℂ → ℝ} (hu : O.IsOrbSmooth u) :
     Tendsto (fun r => eLpNorm (corr O.S r u - u) 2 μD) (𝓝[>] 0) (𝓝 0) := by
   obtain ⟨M, hM⟩ := hu.bounded
   apply tendsto_zero_of_sq
-  simp_rw [eLpNorm_two_sq]
+  have hsq : (fun r => ∫⁻ z, ‖(corr O.S r u - u) z‖ₑ ^ 2 ∂μD) =ᶠ[𝓝[>] (0:ℝ)]
+      (fun r => eLpNorm (corr O.S r u - u) 2 μD ^ 2) := by
+    filter_upwards [eventually_goodRadius O.S (fun s hs => O.S_mem hs)] with r hr
+    have h1 : Continuous (corr O.S r u) :=
+      (corr_contDiff hr (by rw [O.coe_S]; exact hu.1)).continuous
+    exact (eLpNorm_two_sq _ _ (h1.aestronglyMeasurable.sub hu.continuous.aestronglyMeasurable)).symm
+  refine Tendsto.congr' hsq ?_
   have hlim := tendsto_lintegral_filter_of_dominated_convergence (μ := μD) (l := 𝓝[>] (0:ℝ))
     (F := fun r z => ‖(corr O.S r u - u) z‖ₑ ^ 2) (f := fun _ => 0)
     (fun _ => ENNReal.ofReal ((O.S.card * (2 * |M|)) ^ 2)) ?_ ?_ ?_ ?_
@@ -142,7 +148,9 @@ theorem orbEmbed_mem_H1 {u : ℂ → ℝ} (hu : O.IsOrbSmooth u) : O.orbEmbed u 
     rw [← MemLp.toLp_sub, Lp.norm_toLp]
     have hcong : eLpNorm (grad u - grad (corr O.S r u)) 2 μD =
         eLpNorm (fderiv ℝ (corr O.S r u - u)) 2 μD := by
-      refine eLpNorm_congr_norm_ae ?_
+      refine eLpNorm_congr_norm_ae
+        ((measurable_grad u).aestronglyMeasurable.sub (measurable_grad _).aestronglyMeasurable)
+        (measurable_fderiv ℝ _).aestronglyMeasurable ?_
       have h0 : volume (O.S : Set ℂ) = 0 := O.S.finite_toSet.measure_zero _
       filter_upwards [ae_restrict_of_ae (measure_eq_zero_iff_ae_notMem.1 h0)] with z hz
       have hdu : DifferentiableAt ℝ u z :=

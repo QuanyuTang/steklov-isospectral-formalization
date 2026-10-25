@@ -132,13 +132,15 @@ theorem exists_radial_retraction {g : X → ℂ} (hg : Continuous g) {r ρ : ℝ
   refine ⟨fun x => if ‖g x‖ ≤ ρ then x else g' x, ?_, fun x hx => if_pos hx, fun x => ?_⟩
   · refine continuous_if_le (continuous_norm.comp hg) continuous_const continuousOn_id ?_ ?_
     · rw [continuousOn_iff_continuous_restrict]
-      have : restrict {x | ρ ≤ ‖g x‖} g' =
-          fun x => (L (1, ⟨⟨x.1, hSx x.1 x.2⟩, x.2⟩)).1 := by
-        funext x; exact dif_pos x.2
-      rw [this]
-      refine continuous_subtype_val.comp (L.continuous.comp ?_)
-      refine continuous_const.prodMk ?_
-      exact ((continuous_subtype_val.subtype_mk _).subtype_mk _)
+      have hc : Continuous fun x : {x | ρ ≤ ‖g x‖} =>
+          (L (1, ⟨⟨x.1, hSx x.1 x.2⟩, x.2⟩)).1 := by
+        refine continuous_subtype_val.comp (L.continuous.comp ?_)
+        refine continuous_const.prodMk ?_
+        exact ((continuous_subtype_val.subtype_mk _).subtype_mk _)
+      refine hc.congr ?_
+      intro x
+      show _ = g' x.1
+      exact (dif_pos x.2).symm
     · intro x hx
       show x = g' x
       have h' : ρ ≤ ‖g x‖ := hx.ge
@@ -185,15 +187,20 @@ theorem isPreconnected_strictSublevel [PreconnectedSpace X] {g : X → ℂ} (hg 
     · rintro ⟨n, hn⟩
       have : 0 < (ρ - r) / ((n : ℝ) + 2) := div_pos (by linarith) (by positivity)
       linarith
-  rw [hU, ← sUnion_range]
-  refine IsPreconnected.sUnion_directed (directedOn_range.1 (Monotone.directed_le ?_)) ?_
-  · intro m n hmn x hx
-    simp only [mem_setOf_eq] at hx ⊢
+  have hmono : Monotone (fun n : ℕ => {x | ‖g x‖ ≤ ρ - (ρ - r) / (n + 2)}) := by
+    intro m n hmn x hx
+    have hx' : ‖g x‖ ≤ ρ - (ρ - r) / ((m : ℝ) + 2) := hx
+    show ‖g x‖ ≤ ρ - (ρ - r) / ((n : ℝ) + 2)
     have : (ρ - r) / ((n : ℝ) + 2) ≤ (ρ - r) / ((m : ℝ) + 2) := by
       apply div_le_div_of_nonneg_left (by linarith) (by positivity)
       have : (m : ℝ) ≤ n := by exact_mod_cast hmn
       linarith
     linarith
+  rw [hU, ← sUnion_range]
+  refine IsPreconnected.sUnion_directed ?_ ?_
+  · first
+    | exact directedOn_range.2 hmono.directed_le
+    | exact directedOn_range.1 hmono.directed_le
   · rintro _ ⟨n, rfl⟩
     refine isPreconnected_sublevel hg hr ?_ hcov
     have : (ρ - r) / ((n : ℝ) + 2) < ρ - r := by

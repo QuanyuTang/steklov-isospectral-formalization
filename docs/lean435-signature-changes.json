@@ -1,0 +1,44 @@
+{
+  "status": "Source compatibility changes; target compilation pending",
+  "base_commit": "635ac12bcd94900ed358f1e4e6a8973f7500d937",
+  "aristotle_task": "81dccf0b-8b15-4407-9ca6-6dac05d49813",
+  "existing_concrete_definitions_unchanged_in_this_patch": true,
+  "changes": [
+    {
+      "file": "RequestProject/BranchPointRemoval.lean",
+      "name": "eLpNorm_two_sq",
+      "old": "theorem eLpNorm_two_sq {α E : Type*} [MeasurableSpace α] [NormedAddCommGroup E] (f : α → E) (μ : Measure α) : eLpNorm f 2 μ ^ 2 = ∫⁻ x, ‖f x‖ₑ ^ 2 ∂μ",
+      "new": "theorem eLpNorm_two_sq {α E : Type*} [MeasurableSpace α] [NormedAddCommGroup E] (f : α → E) (μ : Measure α) (hf : AEStronglyMeasurable f μ) : eLpNorm f 2 μ ^ 2 = ∫⁻ x, ‖f x‖ₑ ^ 2 ∂μ"
+    },
+    {
+      "file": "RequestProject/C1Transfer.lean",
+      "name": "eLpNorm_two_sq",
+      "old": "lemma eLpNorm_two_sq {F : Type*} [NormedAddCommGroup F] {μ : Measure ℂ} (g : ℂ → F) : eLpNorm g 2 μ ^ 2 = ∫⁻ x, ‖g x‖ₑ ^ 2 ∂μ",
+      "new": "lemma eLpNorm_two_sq {F : Type*} [NormedAddCommGroup F] {μ : Measure ℂ} (g : ℂ → F) (hg : AEStronglyMeasurable g μ) : eLpNorm g 2 μ ^ 2 = ∫⁻ x, ‖g x‖ₑ ^ 2 ∂μ"
+    },
+    {
+      "file": "RequestProject/DiskDensity.lean",
+      "name": "eLpNorm_moll_le",
+      "old": "lemma eLpNorm_moll_le (b : ContDiffBump (0 : ℂ)) (h : ℂ → E) (hh : StronglyMeasurable h) : eLpNorm (moll b h) 2 volume ≤ eLpNorm h 2 volume",
+      "new": "lemma eLpNorm_moll_le (b : ContDiffBump (0 : ℂ)) (h : ℂ → E) (hh : StronglyMeasurable h) (hm : AEStronglyMeasurable (moll b h) volume) : eLpNorm (moll b h) 2 volume ≤ eLpNorm h 2 volume"
+    },
+    {
+      "file": "RequestProject/DiskDensity.lean",
+      "name": "exists_bound_eLpNorm",
+      "old": "lemma exists_bound_eLpNorm (R : ℝ) {ε : ℝ} (hε : 0 < ε) : ∃ c > 0, ∀ k : ℂ → E, (∀ x, ‖k x‖ ≤ c) → (∀ x, R < ‖x‖ → k x = 0) → eLpNorm k 2 volume ≤ ENNReal.ofReal ε",
+      "new": "lemma exists_bound_eLpNorm (R : ℝ) {ε : ℝ} (hε : 0 < ε) : ∃ c > 0, ∀ k : ℂ → E, AEStronglyMeasurable k volume → (∀ x, ‖k x‖ ≤ c) → (∀ x, R < ‖x‖ → k x = 0) → eLpNorm k 2 volume ≤ ENNReal.ofReal ε"
+    },
+    {
+      "file": "RequestProject/DiskDensity.lean",
+      "name": "eLpNorm_add3_le",
+      "old": "lemma eLpNorm_add3_le {E : Type*} [NormedAddCommGroup E] {a b c : ℂ → E} (ha : AEStronglyMeasurable a volume) (hb : AEStronglyMeasurable b volume) (hc : AEStronglyMeasurable c volume) : eLpNorm (a + b + c) 2 volume ≤ eLpNorm a 2 volume + eLpNorm b 2 volume + eLpNorm c 2 volume",
+      "new": "lemma eLpNorm_add3_le {E : Type*} [NormedAddCommGroup E] {a b c : ℂ → E} : eLpNorm (a + b + c) 2 volume ≤ eLpNorm a 2 volume + eLpNorm b 2 volume + eLpNorm c 2 volume"
+    }
+  ],
+  "new_declarations": [
+    {
+      "file": "RequestProject/GroupInput.lean",
+      "name": "parts_card_eq_aux"
+    }
+  ]
+}

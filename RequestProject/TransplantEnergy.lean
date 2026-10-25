@@ -66,6 +66,9 @@ lemma hasFDerivAt_local_sum {B₁ B₂ : ℂ → ℂ} {z' : ℂ} (Pf : Finset �
   have := (hup.comp z' hcf).const_mul (k p)
   rw [h1, comp_mulR_mul] at this
   convert this using 1
+  all_goals first
+    | rfl
+    | (funext y; simp [Function.comp_apply])
 
 /-- The Dirichlet energy on `𝔻` computed on the base of a holomorphic map. -/
 lemma dirichletEnergy_eq_lintegral_fibreSum {B : ℂ → ℂ} (hB : DifferentiableOn ℂ B (ball 0 1))

@@ -57,10 +57,12 @@ lemma lintegral_sq_le {F G : Type*} [NormedAddCommGroup F] [NormedAddCommGroup G
         rw [lintegral_add_right _ measurable_const, lintegral_const_mul' _ _ ENNReal.ofReal_ne_top,
           lintegral_const]
 
-/-- `eLpNorm g 2 μ ^ 2 = ∫ ‖g‖²`. -/
-lemma eLpNorm_two_sq {F : Type*} [NormedAddCommGroup F] {μ : Measure ℂ} (g : ℂ → F) :
+/-- `eLpNorm g 2 μ ^ 2 = ∫ ‖g‖²` (implementation helper; the measurability premise is needed
+because the current `eLpNorm` is `∞` on non-a.e.-strongly-measurable functions). -/
+lemma eLpNorm_two_sq {F : Type*} [NormedAddCommGroup F] {μ : Measure ℂ} (g : ℂ → F)
+    (hg : AEStronglyMeasurable g μ) :
     eLpNorm g 2 μ ^ 2 = ∫⁻ x, ‖g x‖ₑ ^ 2 ∂μ := by
-  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal two_ne_zero ENNReal.ofNat_ne_top]
+  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal two_ne_zero ENNReal.ofNat_ne_top hg]
   rw [← ENNReal.rpow_natCast, ← ENNReal.rpow_mul]
   simp only [ENNReal.toReal_ofNat]
   norm_num
@@ -131,9 +133,11 @@ lemma exists_coeff_lower_bound {ν : Measure ℂ} [IsFiniteMeasure ν] {m : ℕ}
     exact Finset.sum_congr rfl fun i _ => hx3 i
   have hnorm : ∀ a, ENNReal.ofReal (‖L a‖ ^ 2) = ∫⁻ x, ‖∑ i, a i * f i x‖ₑ ^ 2 ∂ν := by
     intro a
-    rw [Lp.norm_def, eLpNorm_congr_ae (hLae a), ← ENNReal.toReal_pow, eLpNorm_two_sq,
+    have hm : AEStronglyMeasurable (fun x => ∑ i, a i * f i x) ν :=
+      (Lp.aestronglyMeasurable (L a)).congr (hLae a)
+    rw [Lp.norm_def, eLpNorm_congr_ae (hLae a), ← ENNReal.toReal_pow, eLpNorm_two_sq _ hm,
       ENNReal.ofReal_toReal]
-    rw [← eLpNorm_two_sq]
+    rw [← eLpNorm_two_sq _ hm]
     exact ENNReal.pow_ne_top (eLpNorm_congr_ae (hLae a) ▸ (Lp.memLp (L a)).eLpNorm_ne_top)
   have hinj : Function.Injective L := by
     rw [← LinearMap.ker_eq_bot, LinearMap.ker_eq_bot']

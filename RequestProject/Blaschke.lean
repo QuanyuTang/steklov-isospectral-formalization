@@ -92,9 +92,9 @@ lemma hasDerivAt_bfac (ha : ‖a‖ < 1) {z : ℂ} (hz : ‖z‖ ≤ 1) :
     simpa using ((hasDerivAt_id z).const_mul ((starRingEnd ℂ) a)).const_sub 1
   have := h1.div h2 hd
   convert this using 1
-  rw [← Complex.mul_conj a]
-  field_simp
-  ring
+  all_goals first
+    | (funext w; simp [bfac])
+    | (rw [← Complex.mul_conj a]; field_simp; ring)
 
 lemma differentiableAt_bfac (ha : ‖a‖ < 1) {z : ℂ} (hz : ‖z‖ ≤ 1) :
     DifferentiableAt ℂ (bfac a) z := (hasDerivAt_bfac ha hz).differentiableAt
@@ -212,9 +212,11 @@ lemma hasDerivAt_circle {B : ℂ → ℂ} {Q : ℂ → ℝ} (hB : BdryArg B Q) (
     have := this.comp_ofReal
     simpa [mul_comm] using this
   have := h3.comp t he
-  convert this using 1
   have hz0 : exp (t * I) ≠ 0 := exp_ne_zero _
-  field_simp
+  convert this using 1
+  all_goals first
+    | (funext s; simp [Function.comp_apply])
+    | field_simp
 
 lemma norm_deriv_circle {B : ℂ → ℂ} {Q : ℂ → ℝ} (hB : BdryArg B Q) (t : ℝ) :
     ‖deriv (fun s : ℝ => B (exp (s * I))) t‖ = Q (exp (t * I)) := by
@@ -240,7 +242,7 @@ lemma const_of_same_arg {G₁ G₂ : ℝ → ℂ} {q : ℝ → ℝ}
     (fun t => (hd t).differentiableAt) (fun t => (hd t).deriv)
   refine ⟨G₁ 0 / G₂ 0, by rw [norm_div, n₁, n₂, div_one], fun t => ?_⟩
   have := hc t 0
-  simp only at this
+  try simp only at this
   rw [← this]
   field_simp [hne t]
 
@@ -332,7 +334,9 @@ theorem blaschke_boundary_rigidity_anti {B₁ B₂ φ : ℂ → ℂ} {n m : ℕ}
     have := g3.conj_conj
     simp only [Complex.conj_conj] at this
     convert this using 1
-    simp only [C, map_div₀, map_mul, Complex.conj_ofReal, Complex.conj_conj]
+    all_goals first
+      | (funext w; simp [Function.comp_apply, C])
+      | simp only [C, map_div₀, map_mul, Complex.conj_ofReal, Complex.conj_conj]
   -- derivative of the hypothesis curve `t ↦ D(conj e^{it})`
   have hcurve : ∀ t : ℝ, ‖deriv (fun s : ℝ => D ((starRingEnd ℂ) (exp (s * I)))) t‖ =
       QD ((starRingEnd ℂ) (exp (t * I))) := by
