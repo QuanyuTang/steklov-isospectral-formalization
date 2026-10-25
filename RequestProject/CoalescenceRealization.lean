@@ -61,9 +61,9 @@ theorem blaschke_weight_posAnalytic {B : ℂ → ℂ} {n : ℕ} (hn : 1 ≤ n)
         fun s : ℝ => (n : ℝ) + (hsum a (exp (s * I))).re := by
       ext s
       have := congrFun heq s
-      simp only at this
+      try simp only at this
       linarith
-    simp only
+    try simp only
     rw [hfun]
     refine analyticAt_const.add (analyticAt_re_circle (hsum_analyticAt fun j h => ?_))
     have h1 : exp (t * I) = a j := sub_eq_zero.1 h
@@ -71,7 +71,7 @@ theorem blaschke_weight_posAnalytic {B : ℂ → ℂ} {n : ℕ} (hn : 1 ≤ n)
     rw [← h1, norm_exp_ofReal_mul_I] at this
     exact lt_irrefl _ this
   · have hz : ‖exp (t * I)‖ = 1 := norm_exp_ofReal_mul_I t
-    simp only
+    try simp only
     rw [norm_deriv_blaschke_circle hη ha hz]
     haveI : Nonempty (Fin n) := ⟨⟨0, by omega⟩⟩
     exact Finset.sum_pos (fun j _ => bdens_pos (ha j) hz) Finset.univ_nonempty

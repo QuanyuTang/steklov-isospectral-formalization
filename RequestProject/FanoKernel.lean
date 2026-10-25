@@ -35,9 +35,11 @@ def fanoInc (i j : Fin 7) : Bool := decide (dot3 (vecs (σL⁻¹ i)) (vecs (σP�
 /-- The incidence matrix as natural numbers. -/
 def fanoN (i j : Fin 7) : ℕ := if fanoInc i j then 1 else 0
 
-theorem fanoInc_x7 : ∀ i j : Fin 7, fanoInc (x7 i) (x7 j) = fanoInc i j := by decide
+set_option maxRecDepth 100000 in
+theorem fanoInc_x7 : ∀ i j : Fin 7, fanoInc (x7 i) (x7 j) = fanoInc i j := by decide +kernel
 
-theorem fanoInc_y : ∀ i j : Fin 7, fanoInc (y1 i) (y2 j) = fanoInc i j := by decide
+set_option maxRecDepth 100000 in
+theorem fanoInc_y : ∀ i j : Fin 7, fanoInc (y1 i) (y2 j) = fanoInc i j := by decide +kernel
 
 /-- **Invariance of incidence** under the simultaneous line/point action. -/
 theorem fanoInc_rho (g : G) (i j : Fin 7) : fanoInc (rhoL g i) (rhoP g j) = fanoInc i j := by
@@ -61,21 +63,25 @@ theorem fanoInc_rho (g : G) (i j : Fin 7) : fanoInc (rhoL g i) (rhoP g j) = fano
 theorem fanoN_rho (g : G) (i j : Fin 7) : fanoN (rhoL g i) (rhoP g j) = fanoN i j := by
   simp only [fanoN, fanoInc_rho]
 
+set_option maxRecDepth 100000 in
 /-- Every line contains three points. -/
 theorem fanoInc_row : ∀ i : Fin 7, ∑ j, fanoN i j = 3 := by
-  simp only [Fin.sum_univ_seven]; decide
+  simp only [Fin.sum_univ_seven]; decide +kernel
 
+set_option maxRecDepth 100000 in
 /-- Every point lies on three lines. -/
 theorem fanoInc_col : ∀ j : Fin 7, ∑ i, fanoN i j = 3 := by
-  simp only [Fin.sum_univ_seven]; decide
+  simp only [Fin.sum_univ_seven]; decide +kernel
 
+set_option maxRecDepth 100000 in
 /-- `M Mᵀ = 2 I + J`: two distinct lines meet in exactly one point. -/
 theorem fanoInc_rows : ∀ i i' : Fin 7, ∑ j, fanoN i j * fanoN i' j = if i = i' then 3 else 1 := by
-  simp only [Fin.sum_univ_seven]; decide
+  simp only [Fin.sum_univ_seven]; decide +kernel
 
+set_option maxRecDepth 100000 in
 /-- `Mᵀ M = 2 I + J`: two distinct points lie on exactly one line. -/
 theorem fanoInc_cols : ∀ j j' : Fin 7, ∑ i, fanoN i j * fanoN i j' = if j = j' then 3 else 1 := by
-  simp only [Fin.sum_univ_seven]; decide
+  simp only [Fin.sum_univ_seven]; decide +kernel
 
 /-- The constant `a = (√2 - 3)/7`, a root of `7a² + 6a + 1 = 0`. -/
 def fanoA : ℝ := (Real.sqrt 2 - 3) / 7

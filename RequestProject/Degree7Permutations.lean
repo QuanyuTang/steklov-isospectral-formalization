@@ -126,12 +126,12 @@ theorem cycleType_y1 : y1.cycleType = {3, 3} :=
 theorem cycleType_y2 : y2.cycleType = {3, 3} :=
   (cycleType33_iff y2).2
     ⟨by first | decide | decide +kernel, by first | decide | decide +kernel⟩
+set_option maxRecDepth 100000 in
 theorem cycleType_x7y1 : (x7 * y1).cycleType = {7} :=
-  (cycleType7_iff (x7 * y1)).2
-    ⟨by first | decide | decide +kernel, by first | decide | decide +kernel⟩
+  (cycleType7_iff (x7 * y1)).2 ⟨by decide +kernel, by decide +kernel⟩
+set_option maxRecDepth 100000 in
 theorem cycleType_x7y2 : (x7 * y2).cycleType = {7} :=
-  (cycleType7_iff (x7 * y2)).2
-    ⟨by first | decide | decide +kernel, by first | decide | decide +kernel⟩
+  (cycleType7_iff (x7 * y2)).2 ⟨by decide +kernel, by decide +kernel⟩
 
 /-! ### Identification with the point/line actions of `GL(3, 𝔽₂)` -/
 

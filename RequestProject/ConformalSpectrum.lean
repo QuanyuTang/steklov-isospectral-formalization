@@ -190,15 +190,25 @@ theorem weak_spectral_theorem_dom :
   set P := c.sobolevPullback
   refine ⟨fun k => P.symm (e k), σ, hmono, h0, htend, fun k => ⟨?_, ?_⟩, fun τ => ?_,
     fun τ => ?_, hspec⟩
-  · simpa using (heig k).1
+  · first
+      | exact fun h => (heig k).1 ((ContinuousLinearEquiv.map_eq_zero_iff P.symm).1 h)
+      | exact fun h => (heig k).1 (P.symm.injective (h.trans P.symm.map_zero.symm))
   · rw [c.isWeakSteklovEigenDom_iff, ContinuousLinearEquiv.apply_symm_apply]
     exact (heig k).2
   · rw [← hiff τ]
     constructor
     · rintro ⟨x, hx, hxe⟩
-      exact ⟨P x, by simpa using hx, (c.isWeakSteklovEigenDom_iff τ x).1 hxe⟩
+      have hPx : P x ≠ 0 := by
+        first
+          | exact fun h => hx ((ContinuousLinearEquiv.map_eq_zero_iff P).1 h)
+          | exact fun h => hx (P.injective (h.trans P.map_zero.symm))
+      exact ⟨P x, hPx, (c.isWeakSteklovEigenDom_iff τ x).1 hxe⟩
     · rintro ⟨y, hy, hye⟩
-      refine ⟨P.symm y, by simpa using hy, ?_⟩
+      have hPy : P.symm y ≠ 0 := by
+        first
+          | exact fun h => hy ((ContinuousLinearEquiv.map_eq_zero_iff P.symm).1 h)
+          | exact fun h => hy (P.symm.injective (h.trans P.symm.map_zero.symm))
+      refine ⟨P.symm y, hPy, ?_⟩
       rw [c.isWeakSteklovEigenDom_iff, ContinuousLinearEquiv.apply_symm_apply]
       exact hye
   · obtain ⟨S, hS, hSd⟩ := hdim τ

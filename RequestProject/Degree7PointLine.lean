@@ -85,9 +85,10 @@ theorem permCongr_inv' {α β : Type*} (e : α ≃ β) (σ : Perm α) :
 /-- The permutation identifying the transported pair with the other orbit. -/
 def tau7 : Perm (Fin 7) := c[0, 1] * c[2, 3] * c[5, 6]
 
+set_option maxRecDepth 100000 in
 theorem tau7_facts : tau7 * x7⁻¹ * tau7⁻¹ = x7 ∧
     tau7 * (x7⁻¹ * y1⁻¹ * x7) * tau7⁻¹ = y2 ∧ tau7 * (x7⁻¹ * y2⁻¹ * x7) * tau7⁻¹ = y1 := by
-  decide
+  decide +kernel
 
 /-- **The actual monodromies of `p_s` and `p_{-s}` on the same standard generators.**  There are
 `0 < r < 1/2`, standard generators `γ₀, γ₁` of `ℂ \ {0,1}` at `-r` (for the covering `p_s`) and

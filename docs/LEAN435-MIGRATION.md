@@ -61,3 +61,13 @@ Other changes adapt product inequalities, derivatives, integration by parts,
 function equalities and `WithLp` pair reconstruction. The five earlier helper
 signature changes above remain the complete list of mathematical signature
 adaptations in these two repair batches.
+
+Task `17c2b647-7001-44ce-b580-dba56694b49f` supplied a further 10-file proof
+repair batch against commit `7aee2a86d4a6c5b7add3a3574eb9bfcfe4268ec5`.
+No statement, definition, declaration kind or inventory entry changed in this
+batch. Some individual proofs receive bounded increases of `maxRecDepth` or
+`maxHeartbeats`; finite computations still use the real kernel through
+`decide +kernel`. These resource settings do not add axioms or bypass kernel
+verification. The batch also supplies a measurability proof for a limiting
+function and uses explicit equivalence facts to avoid stalled instance search.
+It remains uncompiled source work until the exact target CI validates it.

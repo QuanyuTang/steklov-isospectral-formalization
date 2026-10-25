@@ -516,7 +516,9 @@ lemma ae_eq_conv_radK (U : Set ℂ) {F : ℂ → ℝ} {G : ℂ → ℂ} (hFL : M
   have hfm : ∀ n, AEStronglyMeasurable (f n) (volume.restrict (S U ε)) := fun n =>
     ((hFm.aestronglyMeasurable.const_mul c).sub
       ((huc n).aestronglyMeasurable.const_mul c)).restrict
-  have hfat := Lp.eLpNorm_lim_le_liminf_eLpNorm (p := 2) hfm _ hlim
+  have hlimm : AEStronglyMeasurable (fun x => c * F x - W x) (volume.restrict (S U ε)) :=
+    ((hFm.aestronglyMeasurable.const_mul c).sub hWc.aestronglyMeasurable).restrict
+  have hfat := Lp.eLpNorm_lim_le_liminf_eLpNorm (p := 2) hfm _ hlimm hlim
   have hbound : ∀ n, eLpNorm (f n) 2 (volume.restrict (S U ε)) ≤
       ‖c‖ₑ * eLpNorm (F - u n) 2 volume := by
     intro n

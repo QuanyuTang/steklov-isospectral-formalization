@@ -68,6 +68,11 @@
       "migrated_sha256": "94ff5538ad16d4c9b6baf133c32a7da5b01f183af2f1025021d6d7429e33321d"
     },
     {
+      "file": "RequestProject/C1Spectrum.lean",
+      "baseline_sha256": "95c6228ace1c592abe7141aa9b844d75fd2acee15ce5e7d8feab9e6cb34762b4",
+      "migrated_sha256": "87c5fbdb91cd04976a23fcbbd596283807dff5cbce80f733b466ca501731f8f4"
+    },
+    {
       "file": "RequestProject/C1Transfer.lean",
       "baseline_sha256": "d7069b1cf66faf7b6c8fe5ee897c12043ecd43686a7d126512bd16c6db270241",
       "migrated_sha256": "3f051a1f7a1d3577089556bc7bf8b1dfb1dfb134a1e642b409cd7ba1e05a69f4"
@@ -83,6 +88,11 @@
       "migrated_sha256": "08cfb5fcd5a1078e057d677308f645695d701a2675680042c877e743646faafb"
     },
     {
+      "file": "RequestProject/CoalescenceRealization.lean",
+      "baseline_sha256": "2b1ac3e0b23ac3d6cfad235bfba8a5cd785dad2ba5022b3d3a8b8ea4af3dd037",
+      "migrated_sha256": "79ce514c820cb5d6b7b944ddf8753cbc24d8ad9d9130c713a0208349fef48490"
+    },
+    {
       "file": "RequestProject/ConditionalFamily.lean",
       "baseline_sha256": "0090d8d3b6a6cf420b0d4c26f28c8170792cee772bbbdadf6d6e0cc24212e046",
       "migrated_sha256": "636bb61e6863d096d8b891a844a551803fc41c73309653508fd16ebc51f38bea"
@@ -96,6 +106,11 @@
       "file": "RequestProject/ConformalSobolev.lean",
       "baseline_sha256": "0c5f00d5f0e30039e10e3e5372dfa22b1e1b1b1c689f6bf860defe7b29596b51",
       "migrated_sha256": "040ce9cadaf692ec2b6748eab62de67e6f8e0a317c0fb3630d2af32ab381f3ad"
+    },
+    {
+      "file": "RequestProject/ConformalSpectrum.lean",
+      "baseline_sha256": "8c6278ca213bb199e70a2d9d9ed1a857ff201e51d1e51b0e9d4294fa7b35da96",
+      "migrated_sha256": "39b5f8b0e2ea8e4c808e640407f031a5895a394ecc08660b0ddbce62fce1ad00"
     },
     {
       "file": "RequestProject/CoverKernel.lean",
@@ -115,7 +130,12 @@
     {
       "file": "RequestProject/Degree7Permutations.lean",
       "baseline_sha256": "1ff7d45a63b6207242db5d2af809205f805cb9f9ca4e24cc9d4e3b7c2f1816fc",
-      "migrated_sha256": "2f655438c0896a2b132069cdb6f8d2fdb6a80921d8e107f1c2ca43618cda3790"
+      "migrated_sha256": "84795b61cc2b81cf1fe9e063a708a365ae1cccecfcb4788c46eddebef2a5f78d"
+    },
+    {
+      "file": "RequestProject/Degree7PointLine.lean",
+      "baseline_sha256": "4bfd40fbf4ad80e345d76f97427addc5f3917f70decca7ea62dbe128311cc28a",
+      "migrated_sha256": "ee8b602e8dbdec074379583bee3fac6ebb45f217b9991894d73dd17827898d1c"
     },
     {
       "file": "RequestProject/Degree7Polynomial.lean",
@@ -173,6 +193,11 @@
       "migrated_sha256": "c5014e47262e559bab5eb0841b5c0492c0d07af01348a0503837bc4605d73c5c"
     },
     {
+      "file": "RequestProject/FanoKernel.lean",
+      "baseline_sha256": "6fa57a3cd708f0de9a462358c990c049ab76a990063731963b80f70a0e7f4186",
+      "migrated_sha256": "fc6a713380a32f9e6352c88c117707fa7efa99c84d793dc7fb96a1d697bd4062"
+    },
+    {
       "file": "RequestProject/FillExtend.lean",
       "baseline_sha256": "bcaa7718d4174a24288633a5c87115cf48ed28ee1164889bad200e4b994ff2f8",
       "migrated_sha256": "2ea4dccbb9e9de77ad35bd37aecb065bfd9e3bf4dba73128dba335216b45dff1"
@@ -215,7 +240,7 @@
     {
       "file": "RequestProject/LocalInertia.lean",
       "baseline_sha256": "eee84af0aaf44a9b9167f3dea77a0d0391182228c700543b9da07c06e0824733",
-      "migrated_sha256": "9841c280fed41ebc8613806f4906c9ee71de9ba07bbca2aa9c7aab8812163682"
+      "migrated_sha256": "e1fc8576e3302c079f7988f9909120534f9d873941c379ee6706c7b721bc238c"
     },
     {
       "file": "RequestProject/MainStatement.lean",
@@ -300,7 +325,7 @@
     {
       "file": "RequestProject/SingularTransfer.lean",
       "baseline_sha256": "75800c471b13a310dc9300fba30b1d11ba057bd6f107a8b3c9322b12a62486cb",
-      "migrated_sha256": "d8236ebdee9c377db0098025f92c0674865bdfd4e7eb785d223e5c7738b5b688"
+      "migrated_sha256": "f3b6dfe80e38a245f3eef8ead10ec3883d083da6abaa910623c724af2f7d1a52"
     },
     {
       "file": "RequestProject/StarPrimitive.lean",
@@ -315,7 +340,7 @@
     {
       "file": "RequestProject/StrictConvexity.lean",
       "baseline_sha256": "bae64d4eda6e481f77fb9a0c3f69b708a70989befa8c102b3a6109e444287d76",
-      "migrated_sha256": "c9f8574a579fb169b9c4469d249045aaee0472a27557557093b752d8ce4b7c3a"
+      "migrated_sha256": "f954fdd79bdf4c5fd6ca7da90dd5abb8b3eabc952245e25d620df4589d011145"
     },
     {
       "file": "RequestProject/TraceCompact.lean",
@@ -335,7 +360,7 @@
     {
       "file": "RequestProject/WeylLemma.lean",
       "baseline_sha256": "8349ee4d44534c842614d067dd84d77ad64a906ec5521b9163f10ffa8ea2feb9",
-      "migrated_sha256": "873bc863ce5150fa1c679d3c18667ca8801a800f186ac2ee216d81b76813c95a"
+      "migrated_sha256": "a81d51824c77e9e5d7b874fac66a42b7966731421a30d50843613d9540bf54db"
     }
   ],
   "note": "This hash comparison records edits; it is not a proof validation result."

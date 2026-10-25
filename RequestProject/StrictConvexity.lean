@@ -223,10 +223,15 @@ theorem strictConvex_closure_image (hc : 0 < c) (hU : IsOpen U)
   have hsurj := happrox.surjOn_closedBall_of_nonlinearRightInverse Linv hρ subset_rfl
   replace hsurj : SurjOn F (closedBall m ρ) (closedBall (F m) (c * (1 - ε) * ρ)) := by
     convert hsurj using 2
+    have e1 : ((Linv.nnnorm : NNReal) : ℝ) = c⁻¹ := by
+      first | rfl | simp [Linv] | exact NNReal.coe_mk _ _
+    have e2 : ((⟨ε * c, hcε⟩ : NNReal) : ℝ) = ε * c := by
+      first | rfl | exact NNReal.coe_mk _ _
     first
-      | (simp only [Linv, NNReal.coe_mk, inv_inv]; ring)
-      | (show c * (1 - ε) * ρ = ((c⁻¹ : ℝ)⁻¹ - ε * c) * ρ; rw [inv_inv]; ring)
-      | (simp only [Linv]; show c * (1 - ε) * ρ = ((c⁻¹ : ℝ)⁻¹ - ε * c) * ρ; rw [inv_inv]; ring)
+      | (rw [e1, e2, inv_inv]; ring1)
+      | (simp only [e1, e2, inv_inv]; ring1)
+      | (show c * (1 - ε) * ρ = ((c⁻¹ : ℝ)⁻¹ - ε * c) * ρ; rw [inv_inv]; ring1)
+      | (simp only [Linv, NNReal.coe_mk, inv_inv]; ring1)
   -- conclude
   have hopen : ball (F m) (c * (1 - ε) * ρ) ⊆ F '' ball 0 1 := by
     intro w hw

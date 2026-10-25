@@ -166,6 +166,7 @@ theorem corr_comb_eq (S : Finset ℂ) (r : ℝ) {n : ℕ} (f : Fin n → ℂ →
   abel
 
 /-- Energy of the corrected linear combination. -/
+set_option maxHeartbeats 1000000 in
 theorem eLpNorm_fderiv_corr_comb_le {S : Finset ℂ} {r : ℝ} (hr : GoodRadius S r) {n : ℕ}
     (f : Fin n → ℂ → ℝ) (hfs : ∀ i, ContDiffOn ℝ ∞ (f i) (↑S)ᶜ) (c : Fin n → ℝ)
     (μ : Measure ℂ) (hμ : μ ≪ volume) :
@@ -185,11 +186,20 @@ theorem eLpNorm_fderiv_corr_comb_le {S : Finset ℂ} {r : ℝ} (hr : GoodRadius 
       fderiv ℝ (∑ i, c i • f i) z + ∑ i, c i • fderiv ℝ (corr S r (f i) - f i) z := by
     filter_upwards [hnull] with z hz
     rw [corr_comb_eq]
-    have h1 : HasFDerivAt (∑ i, c i • f i) (∑ i, c i • fderiv ℝ (f i) z) z :=
-      HasFDerivAt.sum fun i _ => ((hdf i z hz).hasFDerivAt.const_smul (c i))
+    have e1 : (∑ i, c i • f i) = fun y => ∑ i, c i • f i y := by
+      funext y; simp only [Finset.sum_apply, Pi.smul_apply]
+    have e2 : (∑ i, c i • (corr S r (f i) - f i)) =
+        fun y => ∑ i, c i • (corr S r (f i) - f i) y := by
+      funext y; simp only [Finset.sum_apply, Pi.smul_apply]
+    have h1 : HasFDerivAt (∑ i, c i • f i) (∑ i, c i • fderiv ℝ (f i) z) z := by
+      rw [e1]
+      exact HasFDerivAt.fun_sum (u := Finset.univ)
+        fun i _ => ((hdf i z hz).hasFDerivAt.const_smul (c i))
     have h2 : HasFDerivAt (∑ i, c i • (corr S r (f i) - f i))
-        (∑ i, c i • fderiv ℝ (corr S r (f i) - f i) z) z :=
-      HasFDerivAt.sum fun i _ => ((hdh i z hz).hasFDerivAt.const_smul (c i))
+        (∑ i, c i • fderiv ℝ (corr S r (f i) - f i) z) z := by
+      rw [e2]
+      exact HasFDerivAt.fun_sum (u := Finset.univ)
+        fun i _ => ((hdh i z hz).hasFDerivAt.const_smul (c i))
     rw [(h1.add h2).fderiv, h1.fderiv]
   have hcongr := eLpNorm_congr_ae (p := 2) hae
   rw [hcongr]

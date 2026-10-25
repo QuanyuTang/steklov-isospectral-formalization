@@ -276,6 +276,6 @@ theorem local_power_model_all {c : ℂ} {ρ : ℝ} [Fact (0 < ρ)] (hq : IsCover
   obtain ⟨Φ₀, hΦ₀, hcard⟩ := local_power_model hq hS hr' hr'ρ γ hγ y₀ hy₀ hd0 (hd _)
   refine ⟨(Homeomorph.setCongr heq.symm).trans Φ₀, fun x => hΦ₀ _, fun u => ?_⟩
   rw [← hcard u]
-  exact Nat.card_congr (Equiv.subtypeEquiv (Equiv.setCongr heq.symm) (fun x => Iff.rfl))
+  exact Nat.card_congr (Equiv.subtypeEquiv (Set.equivOfEq heq.symm) (fun x => Iff.rfl))
 
 end SteklovPunctured
