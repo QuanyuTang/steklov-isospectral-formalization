@@ -118,3 +118,20 @@ ordinary declaration order. Challenge, the comparison targets, the trusted
 judge and the permitted axiom set remain unchanged. No cache-reset command or
 other metaprogram is added to the submission. This source-only batch still
 requires full target compilation, the 590-target audit and independent replay.
+
+Task `587e1778-5fd6-402d-a67d-d95ba64b5e32` returned three proof-only files
+against commit `66ee1559b88b781a6ecaea48c81eb1db41f86876`. Exact input hashes
+were verified. The batch replaces a redundant conversion with explicit base-set
+and function equalities in `Degree7Bordered`, evaluates the real inner product
+in `OutwardNormal` without relying on its implementation's multiplication
+order, and combines typed `WithLp` component equalities in `OrbMetricSobolev`.
+The last proof has a bounded local heartbeat limit. No declaration, signature,
+concrete definition or module changes, and the exact main-statement relocation
+is retained. Target compilation and replay remain pending.
+
+The ninth Comparator job failed without downloadable job logs or an evidence
+artifact. No success of declaration comparison or independent replay is inferred
+from that run. The next workflow preserves the environment before the long
+comparison and records resource use in the comparison log, to improve evidence
+when a job fails. The official verification script and trust settings are
+unchanged.

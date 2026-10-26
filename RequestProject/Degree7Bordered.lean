@@ -138,10 +138,24 @@ theorem regBordered (hs : s ^ 2 = -7) (f₀ : OrdFib (projSum hs) 13) {ε : ℝ}
       exact (IsEvenlyCovered.subtypeVal_comp _ (isOpen_base hs)
         (hcov ⟨x, hxB⟩)).to_isEvenlyCovered_preimage
     have := hS'.homeomorph_comp (affHomeo hε)
-    convert this using 1
-    ext z
-    simp only [S', mem_preimage, mem_setOf_eq]
-    rw [← affHomeo_apply hε, Homeomorph.apply_symm_apply]
+    -- Lean 4.35: no `convert`.  The base sets are identified by an explicit set equality; the
+    -- covering functions agree definitionally (`affHomeo_apply` and `coverProjC` are `rfl`), with
+    -- an explicit function equality as fallback.
+    have hset : {z : ℂ | collarRad ε < ‖z‖} = (affHomeo hε).symm ⁻¹' S' := by
+      ext z
+      change collarRad ε < ‖z‖ ↔ collarRad ε < ‖affA ε ((affHomeo hε).symm z)‖
+      rw [← affHomeo_apply hε, Homeomorph.apply_symm_apply]
+    first
+      | rw [hset]
+      | rw [← hset] at this
+    first
+      | exact this
+      | (have hfun : (fun f : RegCov f₀ => affA ε (coverProjC hs f₀ f)) =
+            ((affHomeo hε) ∘ fun f : RegCov f₀ => ((regProj f₀ f : Base (pPoly s)) : ℂ)) := by
+          funext f
+          exact (affHomeo_apply hε _).symm
+         rw [hfun]
+         exact this)
   · intro x hx
     rw [← hx]
     refine Nat.card_congr ?_

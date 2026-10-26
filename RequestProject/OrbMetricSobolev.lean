@@ -273,15 +273,24 @@ lemma iota_toLp {u : ℂ → ℝ} (hu : O.IsOrbSmooth u) :
     MemLp.coeFn_toLp (memLp_disk hu.continuous)
   exact e1.trans (e2.trans e3.symm)
 
+-- Lean 4.35: the former `change` steps (from `(ofLp _).1` to `WithLp.fst _`) made the kernel
+-- re-check a definitional unfolding through the concrete `L²` maps and time out.  The two
+-- component equalities are now proved by rewriting with the typed component lemmas, and they are
+-- combined through a generic `WithLp` product extensionality fact proved for *abstract* points,
+-- so the kernel only unfolds `WithLp.fst/snd` on variables.  The heartbeat bound is a local safety
+-- margin only.
+set_option maxHeartbeats 800000 in
 /-- `J` sends the metric graph of `u` to its Euclidean graph. -/
 theorem forget_metricEmbed {u : ℂ → ℝ} (hu : O.IsOrbSmooth u) :
     O.forget (O.metricEmbed u hu) = O.orbEmbed u hu := by
-  apply WithLp.ofLp_injective 2
-  refine Prod.ext ?_ ?_
-  · change (O.forget (O.metricEmbed u hu)).fst = (O.orbEmbed u hu).fst
+  have hext : ∀ {α β : Type} {x y : WithLp 2 (α × β)},
+      x.fst = y.fst → x.snd = y.snd → x = y :=
+    fun h1 h2 => WithLp.ofLp_injective 2 (Prod.ext h1 h2)
+  have h1 : (O.forget (O.metricEmbed u hu)).fst = (O.orbEmbed u hu).fst := by
     rw [forget_fst, metricEmbed_fst, orbEmbed_fst, O.iota_toLp hu]
-  · change (O.forget (O.metricEmbed u hu)).snd = (O.orbEmbed u hu).snd
+  have h2 : (O.forget (O.metricEmbed u hu)).snd = (O.orbEmbed u hu).snd := by
     rw [forget_snd, metricEmbed_snd, orbEmbed_snd]
+  exact hext h1 h2
 
 lemma enorm_orbEmbed_sq {u : ℂ → ℝ} (hu : O.IsOrbSmooth u) :
     ‖O.orbEmbed u hu‖ₑ ^ 2 = (∫⁻ z in ball (0 : ℂ) 1, ‖u z‖ₑ ^ 2) +

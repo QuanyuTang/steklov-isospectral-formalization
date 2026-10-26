@@ -123,6 +123,11 @@
       "migrated_sha256": "452f002e21e0bdfc38237a4399dc7293420b610b590f0a3469f7978fcb220f3a"
     },
     {
+      "file": "RequestProject/Degree7Bordered.lean",
+      "baseline_sha256": "0c9a67072668fa016ef27d4cac1ac31e5ab5f797972a27fc7cc3dd90c8054202",
+      "migrated_sha256": "59aab9806e25f5b241d6d5fa993cd977a37f36d12538ad2c1b63d0a690379ef9"
+    },
+    {
       "file": "RequestProject/Degree7CommonCover.lean",
       "baseline_sha256": "23d2ff07b6f357ab52d87c1ac5f98d1b85b306b1b76110e151df4bba319cc949",
       "migrated_sha256": "6cda8cabf4e6bff3ab10fc545d9b15c60a4a881d974ca48555ee7f99d58d9649"
@@ -275,7 +280,7 @@
     {
       "file": "RequestProject/OrbMetricSobolev.lean",
       "baseline_sha256": "d9c335f4128891620c62c63e579d50ac18d2724d00ade9729024810283204972",
-      "migrated_sha256": "d3f328c0b0b160974fa953db6a9e181ae56d6f3e2c80cb8604e6bff85ce79373"
+      "migrated_sha256": "ee7c7082fcdd1d0fca3d671ab936f4baa22e93afce7e6658329c998762b25d16"
     },
     {
       "file": "RequestProject/OrbMetricSpectrum.lean",
@@ -300,7 +305,7 @@
     {
       "file": "RequestProject/OutwardNormal.lean",
       "baseline_sha256": "bae4b6c53a51b04480bfc4f1fce6bd9985a68944c0129a3cee3af388eec606b0",
-      "migrated_sha256": "67dcbdc3433b8adefcfe41bcd2d32fa85507777eddaf027a3f29ec0fd48748c7"
+      "migrated_sha256": "53b53867785cbaf4d45c2d42f1f7cc3361ec6303186558318b0ba9b0b38159e4"
     },
     {
       "file": "RequestProject/PolynomialCover.lean",

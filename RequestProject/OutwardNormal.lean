@@ -69,28 +69,33 @@ theorem nrm_outward (θ : ℝ) :
   -- `f t = ‖H(γ t)‖²` has positive derivative at `0`
   set f : ℝ → ℝ := fun t => ‖(H ∘ γ) t‖ ^ 2
   have hf : HasDerivAt f (2 * ‖d‖⁻¹) 0 := by
+    -- Lean 4.35: evaluate the real inner product `⟪z₀, z₀ * ‖d‖⁻¹⟫_ℝ = ‖d‖⁻¹` abstractly
+    -- (real scalar pulled out, `⟪z₀, z₀⟫_ℝ = ‖z₀‖² = 1`), independent of how `inner` on `ℂ`
+    -- unfolds; the old unfolding route is kept only as a fallback.
+    have hip : inner ℝ z₀ (z₀ * ((‖d‖⁻¹ : ℝ) : ℂ)) = ‖d‖⁻¹ := by
+      first
+        | (rw [mul_comm, ← Complex.real_smul, real_inner_smul_right, real_inner_self_eq_norm_sq,
+            hz₀]; norm_num; done)
+        | (rw [mul_comm, ← Complex.real_smul, inner_smul_right, real_inner_self_eq_norm_sq,
+            hz₀]; simp; done)
+        | (rw [mul_comm, ← Complex.real_smul, real_inner_smul_right, real_inner_self_eq_norm_sq,
+            hz₀, one_pow, mul_one])
     have := hHγ.norm_sq
     rw [hH0, hval] at this
     convert this using 1
-    rw [real_inner_eq_re_inner ℂ]
-    simp only [inner]
-    -- Lean 4.35 / current Mathlib: the inner product unfolds to `z₀ * star z₀ * _`, written with
-    -- `Star.star` rather than `starRingEnd ℂ`; normalise it before using `Complex.mul_conj`.
-    have hzz : z₀ * star z₀ = 1 := by
-      have hconj : z₀ * (starRingEnd ℂ) z₀ = 1 := by
-        first
-          | (rw [Complex.mul_conj, Complex.normSq_eq_norm_sq, hz₀]; norm_num)
-          | (rw [Complex.mul_conj', hz₀]; norm_num)
-          | (apply Complex.ext <;>
-              simp [Complex.mul_re, Complex.mul_im, ← Complex.normSq_apply,
-                Complex.normSq_eq_norm_sq, hz₀] <;> ring)
-      simpa only [starRingEnd_apply] using hconj
     first
-      | (rw [hzz, one_mul]; simp)
-      | (rw [hzz, one_mul]; simp [RCLike.re_to_complex])
-      | (simp only [hzz, one_mul, RCLike.re_to_complex, Complex.ofReal_re])
-      | (simp [hzz])
-      | (simp [← starRingEnd_apply, Complex.mul_conj, Complex.normSq_eq_norm_sq, hz₀])
+      | exact congrArg (fun t : ℝ => 2 * t) hip.symm
+      | (rw [hip]; done)
+      | (linarith [hip]; done)
+      | (rw [real_inner_eq_re_inner ℂ]
+         simp only [inner]
+         have hzz : z₀ * star z₀ = 1 := by
+           have hconj : z₀ * (starRingEnd ℂ) z₀ = 1 := by
+             rw [Complex.mul_conj, Complex.normSq_eq_norm_sq, hz₀]; norm_num
+           simpa only [starRingEnd_apply] using hconj
+         simp only [RCLike.re_to_complex]
+         rw [mul_right_comm, hzz, one_mul, Complex.ofReal_re]
+         done)
   have hf0 : f 0 = 1 := by
     show ‖(H ∘ γ) 0‖ ^ 2 = 1
     rw [hH0, hz₀]; norm_num
