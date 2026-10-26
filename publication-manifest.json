@@ -204,7 +204,7 @@
     "comparator.json": "b74ee968d7cb3abbdf2e231b885e9dbe04e1b5ad861304ae4cb7dbbd0baaf2be",
     "docs/AXIOMS.md": "2306143a234401370da62cacd6674c30a11ffc365e31399e450a96bd31ec700e",
     "docs/ERRATA-AND-DEVIATIONS.md": "d9c7ebe3ee815157080f592522f17f9924c158ae641b409c5a5b178b05fcbdca",
-    "docs/LEAN435-MIGRATION.md": "ef4c81c8d81c8b32ddcb78df567da2ce97bd98a94a52fcf0bd587329dbdd8021",
+    "docs/LEAN435-MIGRATION.md": "433f1717cce16e5cf1eaff5109a0dfd12f88b112ac8a7768f56c675ce1876488",
     "docs/PALOMAR.md": "d54b69e076ca39e4a0aaac84cd0ce3eae37e18b30d50ba90dfbefba04c18e609",
     "docs/PROVENANCE.md": "5bce3439f454a780322b79fc9d226edea908f67db1a467c617d15839b71f862a",
     "docs/REPRODUCIBILITY.md": "6553d7f9072522256f380caaf7f354e682b77b5c597ba4043cd477578e2e6494",
@@ -224,7 +224,7 @@
     "paper/README.md": "76a080e88dedb727660450c9452e9937760143ec6759bae09384b4945f978237",
     "paper/tex/00README.json": "46e4d9ddd93757bb1fbf697d50082af5883be84aa84812e9cf90553122815531",
     "paper/tex/pdes40_arxiv_v2.tex": "972ad426dcc4855a6a6eb6c8f444d82175f057eef157a79494b24e36fcf9bce3",
-    "scripts/audit.py": "fd110657fc6689c21d74147aee7e734a842e1934ba5e51075db5233a81677056",
+    "scripts/audit.py": "c450fb9b6287bad4d1d3347024ea0b1c203c16d883ed636153f308ec3f7a43cc",
     "scripts/check-release.py": "68e6a51c9dde391d905eb11187f0d020ebf77bf4b090267241f710cf988cebb5",
     "scripts/palomar-preflight.sh": "38a57a9d49c22b3f9af6b7cc3ae31baf356c680ecd68ca7ee230ff6e1185cce3",
     "scripts/validate-metadata.py": "a718afc41ca8a2f1f204a9c1f34e1708a3067da5f04eb23b5593a943dab86fb4",
@@ -256,7 +256,7 @@
     "verification/templates/Defs.original.lean.in": "7bd03c5465c97e0e6b2c71441994b3a006dca4467cbb021638a13a17020f98cb",
     "verification/templates/MainStatement.original.lean.in": "c711050a6b4efc0d4e37696b0b8bd4d66c15c1bb15a9be271f87894db2ff5379",
     "verification/templates/Run20Audit.lean.in": "5a5e9daf8bac5c64a7388b53da4f0fa2eafeb245bfd5398689dc4a4b811a629a",
-    "SOURCE_SHA256SUMS": "36b119cd8c6924b02378249e8e969d5960871fece7c619e6dd3497a19baed0bf",
+    "SOURCE_SHA256SUMS": "79933005499c781d16ec3611103d3e80fee764d99a9657a69ce1ba892c04666c",
     "verification/release-check.json": "0a932b6a35259189242e707d3d7e603f6bed7567701cf8d389e37c9ec29fe7e7"
   }
 }

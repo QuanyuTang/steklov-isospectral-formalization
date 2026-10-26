@@ -63,6 +63,15 @@ headroom, reduced scheduling priority and periodic diagnostics are therefore
 applied to the cold-build workflow as well. Fresh project-source compilation,
 all 590 audit targets and strict source preservation remain required.
 
+The fifteenth cold build, commit `d92ef21624add1c2b5d0d0206986fe8a5b8d4020`,
+compiled all 176 modules successfully (9111 reported jobs). The newly added
+smoothness audit guard then failed to parse `ℝ≥0∞`, because the generated
+audit file opened `ContDiff` but omitted the `ENNReal` notation scope.
+The audit generator now opens both scopes, as the original `Defs.lean` does.
+This correction changes no proof module, declaration, audit target or kernel
+checker. The failed audit process is not counted as a successful audit; the
+corrected guard and all existing targets require a new exact-commit CI run.
+
 ## Historical patch sequence
 
 Aristotle task `81dccf0b-8b15-4407-9ca6-6dac05d49813` supplied a 21-file repair

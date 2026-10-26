@@ -22,7 +22,7 @@ for source in sources:
 target = root / '.lake/audit/ReleaseAudit.lean'
 target.parent.mkdir(parents=True, exist_ok=True)
 smooth_contract = '''
-open scoped ContDiff
+open scoped ENNReal ContDiff
 example (B : (ℂ → ℝ) → ℝ≥0∞) (k : ℕ) (V : Submodule ℝ (ℂ → ℝ)) :
     Steklov.AdmissibleSpace B k V ↔
       ((∀ u ∈ V, ContDiff ℝ ∞ u) ∧ Module.finrank ℝ V = k + 1 ∧
