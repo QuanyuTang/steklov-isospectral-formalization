@@ -166,3 +166,11 @@ generic simplification calls by direct proof terms. The complete spectral and
 multiplicity statement, every binder and all definitions are unchanged. This
 one-file batch has no new declaration or signature change and is still
 target-uncompiled until the next Linux workflow validates it.
+
+The eleventh full-library build compiled `OrbMetricSpectrum` and then found
+one further no-progress error in `Degree7ConeOrders`. Codex removed the empty
+`simp only at h2` command; the following explicit rewrites and all mathematical
+declarations are unchanged. The independent-kernel workflow now keeps an
+in-progress verification when a new source fix is pushed, queuing the new
+snapshot rather than discarding unfinished kernel work. This does not certify
+either snapshot until its own required checks finish.

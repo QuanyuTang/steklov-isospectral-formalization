@@ -381,7 +381,6 @@ theorem stab_card_noncrit
       intro k l hkl
       have h1 : σ ^ (k : ℕ) = σ ^ (l : ℕ) := congrArg Subtype.val hkl
       have h2 := congrArg (fun g => regFillAct hs f₀ g (χ.symm t₀)) h1
-      simp only at h2
       rw [hpow k t₀ ht₀r, hpow l t₀ ht₀r] at h2
       have hk : ζ₀ ^ (k : ℕ) * t₀ ∈ χ.symm.source := by
         show _ ∈ ball (0 : ℂ) r

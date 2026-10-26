@@ -138,6 +138,11 @@
       "migrated_sha256": "5ad6e1cb640e6bac6e3173876479420252a70b18b4698aed866970b3d3448598"
     },
     {
+      "file": "RequestProject/Degree7ConeOrders.lean",
+      "baseline_sha256": "7af599ba062fb7052cde537aa5afb81fd8e5a84e8ae158e0ce7714bf831a7fae",
+      "migrated_sha256": "daceb01552deb08b83ab7309ce34aab7e48e0eac00a3392441dabe1997917d03"
+    },
+    {
       "file": "RequestProject/Degree7Permutations.lean",
       "baseline_sha256": "1ff7d45a63b6207242db5d2af809205f805cb9f9ca4e24cc9d4e3b7c2f1816fc",
       "migrated_sha256": "84795b61cc2b81cf1fe9e063a708a365ae1cccecfcb4788c46eddebef2a5f78d"
