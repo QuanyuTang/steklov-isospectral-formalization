@@ -88,3 +88,9 @@ No declaration statement or definition changes. Both workflows now explicitly
 check out the pull request's submitted head SHA, and record the checkout and
 tree hashes; earlier PR runs used GitHub's generated merge checkout.
 Complete target validation is still required for the updated snapshot.
+
+The sixth full-library build also exposed a downstream coercion mismatch in
+`Degree7RiemannCover`. Codex makes the polynomial evaluation equality explicit
+with `change`, unfolding the transported projection by definitional equality.
+This additional proof-body repair leaves the theorem statement and all
+definitions unchanged and still requires the pinned Linux build.

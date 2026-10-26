@@ -155,7 +155,7 @@
     {
       "file": "RequestProject/Degree7RiemannCover.lean",
       "baseline_sha256": "cc95d04bb3db29b28986367977fefdfae24b7ee4c7c1492483b6afcd8d0406f5",
-      "migrated_sha256": "737bfd653843aff9591b148dda06354fd9ec90c26dcf80ad3ab71091c441bac4"
+      "migrated_sha256": "a91e32f882b1e070e966455bceae08e42552a73a80d02cd5d641885933ec03d0"
     },
     {
       "file": "RequestProject/DiskAut.lean",
