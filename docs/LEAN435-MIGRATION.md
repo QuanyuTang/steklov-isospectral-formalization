@@ -71,3 +71,12 @@ batch. Some individual proofs receive bounded increases of `maxRecDepth` or
 verification. The batch also supplies a measurability proof for a limiting
 function and uses explicit equivalence facts to avoid stalled instance search.
 It remains uncompiled source work until the exact target CI validates it.
+
+Task `8c7275c8-bf02-4265-9ddd-2ec9000b1fe8` returned a three-file batch against
+commit `1d2d1f9e4aa1f2f4fb59c7591a57bbfe61322f6b`, addressing the observed
+`SingularTransfer`, `DiskGreen` and `FillExtend` errors. It changes proof steps
+and the placement of a local resource option, with no statement, definition,
+declaration-kind or inventory change. The preceding full-build job was
+interrupted by a runner shutdown, while its Comparator job failed at source
+compilation; neither supplied a successful new axiom audit or independent
+replay. This next source batch must therefore undergo complete validation.

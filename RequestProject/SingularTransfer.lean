@@ -165,8 +165,8 @@ theorem corr_comb_eq (S : Finset ℂ) (r : ℝ) {n : ℕ} (f : Fin n → ℂ →
   change _ = _ + (∑ i, c i • corr S r (f i) - _)
   abel
 
-/-- Energy of the corrected linear combination. -/
 set_option maxHeartbeats 1000000 in
+/-- Energy of the corrected linear combination. -/
 theorem eLpNorm_fderiv_corr_comb_le {S : Finset ℂ} {r : ℝ} (hr : GoodRadius S r) {n : ℕ}
     (f : Fin n → ℂ → ℝ) (hfs : ∀ i, ContDiffOn ℝ ∞ (f i) (↑S)ᶜ) (c : Fin n → ℝ)
     (μ : Measure ℂ) (hμ : μ ≪ volume) :
@@ -208,13 +208,13 @@ theorem eLpNorm_fderiv_corr_comb_le {S : Finset ℂ} {r : ℝ} (hr : GoodRadius 
       fderiv ℝ (∑ i, c i • f i) + fun z => ∑ i, c i • fderiv ℝ (corr S r (f i) - f i) z := by
     funext z; simp only [Pi.add_apply]
   rw [hsplit]
-  refine (eLpNorm_add_le (by norm_num)).trans ?_
+  refine (eLpNorm_add_le (μ := μ) (p := (2 : ℝ≥0∞)) (by norm_num)).trans ?_
   refine add_le_add le_rfl ?_
   have : (fun z => ∑ i, c i • fderiv ℝ (corr S r (f i) - f i) z) =
       ∑ i, c i • fderiv ℝ (corr S r (f i) - f i) := by
     funext z; simp only [Finset.sum_apply, Pi.smul_apply]
   rw [this]
-  refine (eLpNorm_sum_le (by norm_num)).trans ?_
+  refine (eLpNorm_sum_le (μ := μ) (p := (2 : ℝ≥0∞)) (by norm_num)).trans ?_
   exact Finset.sum_le_sum fun i _ => (eLpNorm_const_smul (c := c i)
     (f := fderiv ℝ (corr S r (f i) - f i)) (p := 2) (μ := μ)).le
 

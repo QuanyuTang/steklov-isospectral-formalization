@@ -93,18 +93,23 @@ theorem divergence_disk {P Q : ℂ → ℝ} (hP : ContDiff ℝ 1 P) (hQ : ContDi
     have hP1 := (hPd (pt r θ)).hasFDerivAt.comp_hasDerivAt r (hptr r θ)
     have hQ1 := (hQd (pt r θ)).hasFDerivAt.comp_hasDerivAt r (hptr r θ)
     have := (hasDerivAt_id r).mul ((hP1.mul_const (Real.cos θ)).add (hQ1.mul_const (Real.sin θ)))
-    convert this using 1
-    all_goals first
-      | (funext y; simp only [f, id, Function.comp, Pi.add_apply]; done)
-      | (simp only [Fr, id, Function.comp, Pi.add_apply]; ring)
+    -- Lean 4.35 / new Mathlib: `HasDerivAt.mul` is stated for the pointwise product `c * d`
+    -- (not a lambda), so we transfer along an explicit pointwise equality and an explicit
+    -- equality of derivative values instead of `convert`.
+    refine (this.congr_deriv ?_).congr_of_eventuallyEq (Filter.Eventually.of_forall fun y => ?_)
+    · simp only [Fr, id_eq, id, Function.comp_apply, Pi.add_apply, Pi.mul_apply, one_mul]
+      ring
+    · simp only [f, id_eq, id, Function.comp_apply, Pi.add_apply, Pi.mul_apply]
+      try ring1
   have hGt : ∀ r θ, HasDerivAt (fun θ => g r θ) (Gt r θ) θ := by
     intro r θ
     have hP1 := (hPd (pt r θ)).hasFDerivAt.comp_hasDerivAt θ (hptt r θ)
     have hQ1 := (hQd (pt r θ)).hasFDerivAt.comp_hasDerivAt θ (hptt r θ)
     have := ((hP1.neg).mul (Real.hasDerivAt_sin θ)).add (hQ1.mul (Real.hasDerivAt_cos θ))
-    convert this using 1
-    all_goals try (funext y; simp only [g, Function.comp, Pi.neg_apply]; done)
-    · simp only [Gt, Function.comp, Pi.neg_apply]
+    -- See `hFr`: explicit value equality and pointwise function equality instead of `convert`
+    -- (unapplied `Function.comp` is no longer unfolded by `simp only [Function.comp]`).
+    refine (this.congr_deriv ?_).congr_of_eventuallyEq (Filter.Eventually.of_forall fun y => ?_)
+    · simp only [Gt, Function.comp_apply, Pi.neg_apply]
       have e1 : fderiv ℝ P (pt r θ) ((r : ℂ) * (e θ * Complex.I)) =
           r * fderiv ℝ P (pt r θ) (e θ * Complex.I) := by
         rw [show ((r : ℂ) * (e θ * Complex.I)) = r • (e θ * Complex.I) by simp, map_smul,
@@ -114,6 +119,8 @@ theorem divergence_disk {P Q : ℂ → ℝ} (hP : ContDiff ℝ 1 P) (hQ : ContDi
         rw [show ((r : ℂ) * (e θ * Complex.I)) = r • (e θ * Complex.I) by simp, map_smul,
           smul_eq_mul]
       rw [e1, e2]; ring
+    · simp only [g, Function.comp_apply, Pi.neg_apply, Pi.add_apply, Pi.mul_apply]
+      try ring1
   have hsum : ∀ r θ, Fr r θ + Gt r θ =
       r * (fderiv ℝ P (pt r θ) 1 + fderiv ℝ Q (pt r θ) Complex.I) := by
     intro r θ

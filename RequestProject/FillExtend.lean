@@ -35,7 +35,11 @@ lemma differentiableAt_of_comp_eq {F G k : ℂ → ℂ} {F' t₀ : ℂ} (hk : Co
     (hcomp : ∀ᶠ t in 𝓝 t₀, F (k t) = G t) : DifferentiableAt ℂ k t₀ := by
   set ψ := hF.localInverse F F' (k t₀) hF'
   have hψ : DifferentiableAt ℂ ψ (G t₀) := by
-    rw [← hcomp.self_of_nhds]; exact (hF.to_localInverse hF').differentiableAt
+    -- Lean 4.35 / new Mathlib: `HasStrictDerivAt` unfolds to a `HasDerivAtFilter` statement, so
+    -- generalized field notation no longer finds `differentiableAt`; go through the explicit
+    -- interface `HasStrictDerivAt.hasDerivAt` and `HasDerivAt.differentiableAt`.
+    rw [← hcomp.self_of_nhds]
+    exact HasDerivAt.differentiableAt (HasStrictDerivAt.hasDerivAt (hF.to_localInverse hF'))
   have hleft : ∀ᶠ t in 𝓝 t₀, ψ (F (k t)) = k t := hk.eventually (hF.eventually_left_inverse hF')
   have heq : (ψ ∘ G) =ᶠ[𝓝 t₀] k := by
     filter_upwards [hleft, hcomp] with t h1 h2
@@ -138,12 +142,11 @@ lemma extend_cuspInv (k : Y → ℂ) (j : J) {t : ℂ} (ht : t ∈ Metric.ball (
 
 include hk in
 lemma continuousOn_cuspRep (j : J) : ContinuousOn (cuspRep (E := E) k j) (pdisk (E.r j)) := by
-  rw [continuousOn_iff_continuous_restrict]
-  have : (pdisk (E.r j)).restrict (cuspRep (E := E) k j) =
-      k ∘ Subtype.val ∘ (E.Φ j).symm := by
-    funext u; simp [cuspRep_of_mem k u.2]
-  rw [this]
-  exact hk.comp (continuous_subtype_val.comp (E.Φ j).symm.continuous)
+  -- Lean 4.35 / new Mathlib: `Set.restrict` is now `Set.domRestrict`; compare pointwise with
+  -- `Continuous.congr` instead of rewriting the restricted function.
+  rw [continuousOn_iff_continuous_domRestrict]
+  refine (hk.comp (continuous_subtype_val.comp (E.Φ j).symm.continuous)).congr fun u => ?_
+  exact (cuspRep_of_mem (E := E) k u.2).symm
 
 include hpow hPk in
 lemma eval_cuspRep {j : J} {t : ℂ} (h : t ∈ pdisk (E.r j)) :
