@@ -24,6 +24,7 @@ jobs:
       - name: Check out the exact source snapshot
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           persist-credentials: "false"
       - name: Free disk on the disposable hosted runner
         run: |
@@ -44,7 +45,7 @@ jobs:
         uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5
         with:
           path: .lake/build
-          key: lean435-comparator-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          key: lean435-comparator-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.event.pull_request.head.sha || github.sha }}
           restore-keys: |
             lean435-comparator-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
             lean435-build-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
@@ -62,6 +63,7 @@ jobs:
           mkdir -p verification/current-ci
           {
             git rev-parse HEAD
+            git rev-parse HEAD^{tree}
             lean --version
             sha256sum lean-toolchain lake-manifest.json comparator.json
           } > verification/current-ci/environment.txt
@@ -81,12 +83,12 @@ jobs:
         uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5
         with:
           path: .lake/build
-          key: lean435-comparator-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          key: lean435-comparator-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.event.pull_request.head.sha || github.sha }}
       - name: Preserve verification evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: lean435-comparator-evidence-${{ github.sha }}
+          name: lean435-comparator-evidence-${{ github.event.pull_request.head.sha || github.sha }}
           path: verification/current-ci/
           if-no-files-found: ignore
 

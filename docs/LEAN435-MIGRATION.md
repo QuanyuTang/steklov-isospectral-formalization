@@ -80,3 +80,11 @@ declaration-kind or inventory change. The preceding full-build job was
 interrupted by a runner shutdown, while its Comparator job failed at source
 compilation; neither supplied a successful new axiom audit or independent
 replay. This next source batch must therefore undergo complete validation.
+
+After the sixth Comparator build, Codex supplied two small proof-body fixes:
+explicit function arguments for the `L²` triangle inequalities and removal of
+an unnecessary tactic after simplification already closed a derivative goal.
+No declaration statement or definition changes. Both workflows now explicitly
+check out the pull request's submitted head SHA, and record the checkout and
+tree hashes; earlier PR runs used GitHub's generated merge checkout.
+Complete target validation is still required for the updated snapshot.

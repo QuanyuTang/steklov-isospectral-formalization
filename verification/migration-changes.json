@@ -170,7 +170,7 @@
     {
       "file": "RequestProject/DiskGreen.lean",
       "baseline_sha256": "b36a252e9478b9fae6a74f38608130c7df6673070e1b18e785a01595dd29f5d0",
-      "migrated_sha256": "7b81946cd871fb98205946db0e56ede8ba515ac1b1704b2949ac8b53dc418281"
+      "migrated_sha256": "38b21673542962b4d5f153a32edca2ef3969475ff245146a43c81fabc9a659ae"
     },
     {
       "file": "RequestProject/DiskH1.lean",
@@ -325,7 +325,7 @@
     {
       "file": "RequestProject/SingularTransfer.lean",
       "baseline_sha256": "75800c471b13a310dc9300fba30b1d11ba057bd6f107a8b3c9322b12a62486cb",
-      "migrated_sha256": "2d91ca90b7a86495accd94b6d683d80500111c5e860f34907a5739e04a086f65"
+      "migrated_sha256": "371c5bc58e4519eb7b333973960b7ad5a2bdbf399e728219f10897a182457e90"
     },
     {
       "file": "RequestProject/StarPrimitive.lean",

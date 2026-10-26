@@ -98,7 +98,7 @@ theorem divergence_disk {P Q : ℂ → ℝ} (hP : ContDiff ℝ 1 P) (hQ : ContDi
     -- equality of derivative values instead of `convert`.
     refine (this.congr_deriv ?_).congr_of_eventuallyEq (Filter.Eventually.of_forall fun y => ?_)
     · simp only [Fr, id_eq, id, Function.comp_apply, Pi.add_apply, Pi.mul_apply, one_mul]
-      ring
+      try ring1
     · simp only [f, id_eq, id, Function.comp_apply, Pi.add_apply, Pi.mul_apply]
       try ring1
   have hGt : ∀ r θ, HasDerivAt (fun θ => g r θ) (Gt r θ) θ := by
