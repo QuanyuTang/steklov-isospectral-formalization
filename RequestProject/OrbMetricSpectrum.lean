@@ -233,17 +233,20 @@ theorem weak_spectral_theorem_met :
   obtain ⟨e, σ, hmono, h0, htend, heig, hiff, -, hdim, hspec⟩ :=
     weighted_disk_spectral_theorem hρ hpos
   set P := O.metricSobolevEquiv
+  -- Explicitly typed zero-transport facts for `P` and `P.symm` (no generic `ZeroHomClass` search).
+  have hP0 : ∀ x : O.H1Met, P x = 0 ↔ x = 0 := fun _ => ContinuousLinearEquiv.map_eq_zero_iff P
+  have hPs0 : ∀ y, P.symm y = 0 ↔ y = 0 := fun _ => ContinuousLinearEquiv.map_eq_zero_iff P.symm
   refine ⟨fun k => P.symm (e k), σ, hmono, h0, htend, fun k => ⟨?_, ?_⟩, fun τ => ?_,
     fun τ => ?_, fun k => ?_⟩
-  · simpa using (heig k).1
+  · exact fun h => (heig k).1 ((hPs0 (e k)).1 h)
   · rw [O.isWeakSteklovEigenMet_iff, ContinuousLinearEquiv.apply_symm_apply]
     exact (heig k).2
   · rw [← hiff τ]
     constructor
     · rintro ⟨x, hx, hxe⟩
-      exact ⟨P x, by simpa using hx, (O.isWeakSteklovEigenMet_iff τ x).1 hxe⟩
+      exact ⟨P x, fun h => hx ((hP0 x).1 h), (O.isWeakSteklovEigenMet_iff τ x).1 hxe⟩
     · rintro ⟨y, hy, hye⟩
-      refine ⟨P.symm y, by simpa using hy, ?_⟩
+      refine ⟨P.symm y, fun h => hy ((hPs0 y).1 h), ?_⟩
       rw [O.isWeakSteklovEigenMet_iff, ContinuousLinearEquiv.apply_symm_apply]
       exact hye
   · refine ⟨(weakEigenspace hρ τ).map (P.symm.toLinearEquiv : H1 →ₗ[ℝ] O.H1Met), fun x => ?_, ?_⟩

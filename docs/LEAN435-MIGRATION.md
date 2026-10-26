@@ -135,3 +135,34 @@ from that run. The next workflow preserves the environment before the long
 comparison and records resource use in the comparison log, to improve evidence
 when a job fails. The official verification script and trust settings are
 unchanged.
+
+The tenth run reached `runKernels` after declaration equality and the selected
+proof's transitive axiom precheck. Its runner then received a shutdown signal
+while executing con-ron, before the mandatory NanoDa and Lean replay could
+complete. This is not a kernel acceptance result. The remaining full-library
+source errors are two typeclass-inference timeouts in `OrbMetricSpectrum`.
+
+CI now follows the order in [Palomar's current mechanical policy, section 5](https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md#5-what-mechanical-verification-establishes):
+`verify-required-comparator.sh` invokes the unmodified bundled, sandboxed
+Comparator with bundled NanoDa, followed by its built-in Lean checker. It keeps
+the same theorem, definitions and three permitted axioms. Only after that phase
+succeeds does CI run the unchanged upstream all-kernel template script, with
+a local ten-minute budget for that additional attempt. A local timeout is
+reported as inconclusive, without claiming con-ron acceptance or predicting
+Palomar's own advisory outcome. An observed checker rejection or other error
+continues to block the workflow. Mandatory evidence is saved before that
+additional attempt. No submitted `external_kernels` field is introduced.
+
+Prepared submission entries are cached before replay, and current full-build
+caches take precedence over older Comparator caches. These changes reduce
+recompilation after infrastructure interruption; final fresh-source compilation
+and complete 590-target auditing are still required.
+
+Task `c26643cd-4293-4f38-b0e5-77a76f830c1b` returned the exact-base
+`OrbMetricSpectrum.lean` against commit
+`e53d40edc0aca2454653ae3511fab7e0490eb7a9`. It supplies typed zero-transport
+facts for the continuous linear equivalence and its inverse, replacing three
+generic simplification calls by direct proof terms. The complete spectral and
+multiplicity statement, every binder and all definitions are unchanged. This
+one-file batch has no new declaration or signature change and is still
+target-uncompiled until the next Linux workflow validates it.

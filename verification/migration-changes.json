@@ -285,7 +285,7 @@
     {
       "file": "RequestProject/OrbMetricSpectrum.lean",
       "baseline_sha256": "e3d5319af5f4f56be110f808c8435d740d797dd904a95f65044e089a2b6c907a",
-      "migrated_sha256": "6c82c970f0f020341d5f76ba06ec227ce49fe2f1d81bcbb17a3f383515796184"
+      "migrated_sha256": "ca39ab49d169a02b67958378cfe937369ebdb4505710de3e8e32367165c9a0d4"
     },
     {
       "file": "RequestProject/OrbMinMax.lean",

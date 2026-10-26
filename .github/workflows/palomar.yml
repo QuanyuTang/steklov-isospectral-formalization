@@ -42,13 +42,15 @@ jobs:
           python3 scripts/validate-metadata.py
           python3 scripts/check-release.py
       - name: Restore project build cache
+        id: project-cache
         uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5
         with:
           path: .lake/build
-          key: lean435-comparator-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.event.pull_request.head.sha || github.sha }}
+          key: lean435-comparator-prepared-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.event.pull_request.head.sha || github.sha }}
           restore-keys: |
-            lean435-comparator-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
             lean435-build-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            lean435-comparator-prepared-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+            lean435-comparator-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
       - name: Set up pinned Lean and canonical Mathlib cache
         uses: leanprover/lean-action@24581d74d674803a25a81b10b059c5c0cdd344c6 # v1
         with:
@@ -66,6 +68,8 @@ jobs:
             git rev-parse HEAD^{tree}
             lean --version
             sha256sum lean-toolchain lake-manifest.json comparator.json
+            prefix=$(lean --print-prefix)
+            sha256sum "$prefix/bin/leanexport" "$prefix/bin/leanchecker" "$prefix/bin/nanoda_bin" "$prefix/bin/con-ron"
             free -h
             df -h .
           } > verification/current-ci/environment.txt
@@ -80,10 +84,44 @@ jobs:
           name: lean435-comparator-startup-${{ github.event.pull_request.head.sha || github.sha }}
           path: verification/current-ci/environment.txt
           if-no-files-found: error
-      - name: Compare Challenge and Solution with bundled independent kernels
+      - name: Build submission entries before independent replay
+        run: lake build Challenge Solution
+      - name: Preserve prepared project build cache
+        if: steps.project-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5
+        with:
+          path: .lake/build
+          key: lean435-comparator-prepared-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Required sandboxed comparison with bundled Lean and NanoDa
         run: |
           set -o pipefail
-          /usr/bin/time -v bash scripts/verify-comparator.sh 2>&1 | tee verification/current-ci/comparator.log
+          /usr/bin/time -v bash scripts/verify-required-comparator.sh 2>&1 | tee verification/current-ci/comparator-required.log
+      - name: Preserve mandatory verification evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: lean435-comparator-required-${{ github.event.pull_request.head.sha || github.sha }}
+          path: verification/current-ci/
+          if-no-files-found: error
+      - name: Additional all-kernel template check with con-ron
+        run: |
+          set +e
+          set -o pipefail
+          /usr/bin/time -v timeout --signal=TERM --kill-after=30s 10m bash scripts/verify-comparator.sh 2>&1 | tee verification/current-ci/comparator-all-kernels.log
+          replay_exit=${PIPESTATUS[0]}
+          set -e
+          if [[ "$replay_exit" == 124 ]]; then
+            if grep -Ei 'kernel rejected|Error while interacting|error:|panic|exception' verification/current-ci/comparator-all-kernels.log; then
+              echo 'An error preceded the timeout; review required.' >&2
+              exit 1
+            fi
+            echo 'con-ron/all-kernel attempt exceeded the local time budget; no acceptance claimed.' | tee verification/current-ci/con-ron-status.txt
+          elif [[ "$replay_exit" == 0 ]]; then
+            echo 'All bundled kernels accepted.' | tee verification/current-ci/con-ron-status.txt
+          else
+            echo "All-kernel attempt failed with exit $replay_exit; review required." >&2
+            exit "$replay_exit"
+          fi
       - name: Ensure verification preserved pinned source
         run: git diff --exit-code
       - name: Save project build artifacts

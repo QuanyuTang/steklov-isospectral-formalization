@@ -62,6 +62,7 @@ def code_only(text):
     return "".join(out)
 
 required = ["README.md", "README.zh-CN.md", "LICENSE", "NOTICE", "Challenge.lean",
+            "scripts/verify-required-comparator.sh",
             "Solution.lean", "comparator.json", "formalization.yaml", "lean-toolchain",
             "lakefile.toml", "lake-manifest.json", "SOURCE_SHA256SUMS", "paper/README.md",
             "paper/2608.10557v2.pdf", "paper/2608.10557v2-source.tar", "verification/templates/Run20Audit.lean.in"]
