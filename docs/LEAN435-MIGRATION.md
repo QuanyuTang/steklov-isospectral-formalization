@@ -174,3 +174,20 @@ declarations are unchanged. The independent-kernel workflow now keeps an
 in-progress verification when a new source fix is pushed, queuing the new
 snapshot rather than discarding unfinished kernel work. This does not certify
 either snapshot until its own required checks finish.
+
+The twelfth run, commit `1d94bf3771ef1995e9a64b4885879d1cae918028`,
+compiled the full library and passed the enforced proof/type and transitive
+axiom audit for all 590 distinct targets on the pinned Linux toolchain.
+Its final source-preservation step failed because several Windows-generated
+text blobs contained CRLF while Git's declared text attributes normalize them
+to LF. The diff changed line endings only; it changed no content. The source
+publication preparer now writes LF for Git text files while preserving the
+byte-exact original paper, archived source templates and recorded baseline
+evidence. The source-preservation check remains strict.
+
+From the next run, the full-library workflow restores no project build cache
+and asserts that compiled `RequestProject` output is absent before compiling.
+It may reuse the pinned canonical Mathlib dependency cache. The separate
+Comparator workflow may still reuse prepared project builds; the complete
+fresh-source build, the current snapshot's audit, and the required sandboxed
+Lean/NanoDa replay must all finish before final verification is claimed.

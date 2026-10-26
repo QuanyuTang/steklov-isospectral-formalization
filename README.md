@@ -5,7 +5,7 @@
 [![Lean verification](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml)
 [![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml)
 
-**Migration candidate:** Lean 4.35 verification is in progress. Inherited build and axiom logs certify the Lean 4.28 baseline only. See [current status](PALOMAR_STATUS.md).
+**Migration candidate:** Linux CI compiled the full library and passed the 590-target audit with Lean 4.35.0-rc2. A fresh project rebuild and independent kernel replay remain pending. See [current status](PALOMAR_STATUS.md) and [exact build evidence](docs/lean435-build-audit-evidence.json).
 
 **A Lean 4 formalization of Theorem 1.1.2 of Hu–Shi–Tang, with an explicit degree-seven construction.**
 
@@ -16,10 +16,10 @@ The development proves the existence of pairs of bounded, simply connected, stri
 | Item | Baseline evidence and current target |
 | --- | --- |
 | Proof development | 176 library modules + 4 preserved audit templates; no proof placeholders |
-| Current target | Lean **4.35.0-rc2**, Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`; compatibility repairs in progress |
+| Current target | Lean **4.35.0-rc2**, Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`; full build and 590-target audit passed on the recorded candidate |
 | Verified baseline | Lean **4.28.0**, Mathlib `8f9d9cff6bd728b17a24e163c9402775d9e6a365`; original successful logs included |
 | Axioms | `propext`, `Classical.choice`, `Quot.sound` only |
-| Palomar | **Not submitted or verified; compatibility repairs are in progress** |
+| Palomar | **Not submitted or verified; fresh rebuild and independent replay pending** |
 | Review | AI-assisted statement/source review; no independent human mathematical review claimed |
 
 ## What is proved

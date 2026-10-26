@@ -182,5 +182,5 @@ summary = {
     "not_a_Lean_build_or_semantic_fidelity_proof": True,
 }
 if args.write_report:
-    (ROOT / "verification/release-check.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "verification/release-check.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8", newline="\n")
 print(json.dumps(summary, indent=2))

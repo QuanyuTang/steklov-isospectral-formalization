@@ -5,7 +5,7 @@
 [![Lean 验证](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml)
 [![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml)
 
-**迁移候选版本：** Lean 4.35 验证正在进行。保留的历史构建和公理日志仅核验了 Lean 4.28 基线。[当前状态](PALOMAR_STATUS.md)
+**迁移候选版本：** Lean 4.35.0-rc2 的 Linux CI 已通过完整库编译及 590 目标审计；关闭项目缓存的重新构建与独立内核复核仍待完成。[当前状态](PALOMAR_STATUS.md) · [对应提交与核验证据](docs/lean435-build-audit-evidence.json)
 
 **Hu–Shi–Tang 论文定理 1.1.2 的 Lean 4 形式化，采用显式七次多项式构造。**
 
@@ -16,8 +16,9 @@
 ## 核验与范围
 
 - 176 个可编译的 Lean 库模块与 4 份保留的原始审计模板（共 180 份原始源码），`RequestProject/` 中没有 `sorry`、`admit` 或新增数学公理。
-- 已核验环境：Lean **4.28.0**；Mathlib 固定为 `8f9d9cff6bd728b17a24e163c9402775d9e6a365`。
-- 本次发布布局已在独立目录中完整编译通过（8206 个任务），590 个不同导出审计目标均只依赖三个标准公理。[本次核验报告](verification/package-verification.json)、[构建日志](verification/package-build.log)、[审计日志](verification/package-audit.log) 均随包提供；590 是审计声明数，不是独立数学定理数。
+- 原始基线核验环境：Lean **4.28.0**；Mathlib 固定为 `8f9d9cff6bd728b17a24e163c9402775d9e6a365`。
+- 原始基线发布布局已在独立目录中完整编译通过（8206 个任务），590 个不同导出审计目标均只依赖三个标准公理。[基线核验报告](verification/package-verification.json)、[构建日志](verification/package-build.log)、[审计日志](verification/package-audit.log) 均随包提供；590 是审计声明数，不是独立数学定理数。
+- 迁移候选提交 `1d94bf3771ef1995e9a64b4885879d1cae918028` 已在 Linux 的目标 Lean **4.35.0-rc2**、canonical Mathlib 下通过完整库编译与同一套 590 目标审计；该轮复用了项目缓存，最终文件差异检查因换行符失败。独立内核复核仍未通过，不能据此称为 Palomar 已验证。[准确记录](docs/lean435-build-audit-evidence.json)
 - 主定理的五项结论全部包含；更强入口 `SteklovCoalescence.mainTheoremClassical_proved` 连接弱 Sobolev 谱与经典调和 PDE 的 Steklov 边界条件。
 - 仅使用 `propext`（命题外延性）、`Classical.choice`（经典选择）、`Quot.sound`（商类型等价代表元的相等性）。没有把论文结论作为公理。
 
@@ -40,7 +41,7 @@ python3 scripts/check-release.py
 
 可以将**本目录中的全部内容**作为一个 GitHub 仓库的根目录上传；不要再嵌套一层 `formalization/`。建议仓库名：`steklov-isospectral-formalization`。原始论文 PDF、TeX 和原始源码包位于 `paper/`。
 
-**目标版本已满足最低版本要求，但迁移尚未通过完整验证。** 当前固定为 Lean **4.35.0-rc2** 及对应 canonical Mathlib。首轮 Linux 检查通过了源码、元数据和沙箱检查，随后发现证明兼容性错误；正在修复并重新构建。成功的公理审计和 Comparator/独立内核重放仍待完成。保留的 Lean 4.28 日志只核验原基线。[当前状态](PALOMAR_STATUS.md)
+**迁移尚未通过全部验证。** 当前固定为 Lean **4.35.0-rc2** 及对应 canonical Mathlib，已通过完整库编译与 590 目标审计。下一轮统一文本换行符并关闭项目缓存重新编译；Comparator 的 Lean 与 NanoDa 重放仍在进行。保留的 Lean 4.28 日志只核验原基线。[当前状态](PALOMAR_STATUS.md)
 
 Palomar 使用公开 GitHub 仓库及完整 commit SHA 进行审查，并不是直接接收 ZIP。发布和后续提交步骤见 [PALOMAR.md](docs/PALOMAR.md)。本项目目前**没有获得 Palomar 核验、登记或背书**。
 

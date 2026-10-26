@@ -1,0 +1,23 @@
+{
+  "commit": "1d94bf3771ef1995e9a64b4885879d1cae918028",
+  "tree": "3794ad02522d48156166d912c05c2371adf3c46f",
+  "workflow_run": "https://github.com/taohu-hub/steklov-isospectral-formalization/actions/runs/40296724140",
+  "workflow_conclusion": "failure: strict final Git diff detected CRLF/LF-only differences",
+  "toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "lean_commit": "11acb17ec6b07a8f9e9173e6845197929540936b",
+  "mathlib": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "full_library_build": "passed, 9111 reported jobs; restored project build cache",
+  "fresh_project_source_build": false,
+  "proof_type_and_axiom_audit": "passed in a new Lean audit process",
+  "unique_targets": 590,
+  "permitted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "axioms_json_sha256": "bba4371e82f78293e4f9b306061ee154a9250c6541300c57bad45e741a2c3dcd",
+  "artifact_id": 12638493895,
+  "artifact_zip_sha256": "beaa09d88a6f15675501cdc5e37ef7ca149d0b38f13b67b0245b3734dbb8ec01",
+  "required_independent_kernel_replay": "pending; no acceptance claimed",
+  "palomar_registration": false
+}

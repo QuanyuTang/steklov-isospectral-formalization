@@ -12,10 +12,11 @@ reports are baseline evidence and do not certify this port.
 | Toolchain and Mathlib pins | Prepared |
 | Source checks and official v0.4 metadata schema | Passed in Linux CI |
 | Linux namespace sandbox startup | Passed in Linux CI |
-| Full Lean 4.35 build | First run found compatibility errors; repairs in progress |
-| Lean 4.35 public theorem and axiom audit | Pending |
-| Linux sandboxed Comparator, Lean and NanoDa replay | Pending GitHub Actions run |
-| con-ron advisory replay | Pending GitHub Actions run |
+| Full Lean 4.35 build | Passed for recorded commit `1d94bf37`; project-cache-free rebuild pending |
+| Lean 4.35 public theorem and axiom audit | All 590 targets passed on recorded commit `1d94bf37` |
+| Source-preservation guard | Run 12 failed on CRLF/LF differences only; publication normalization fixed for next run |
+| Linux sandboxed Comparator, Lean and NanoDa replay | In progress on earlier candidate; current candidate queued |
+| con-ron advisory replay | Earlier attempt interrupted; additional attempt follows mandatory checks |
 | Palomar mechanical verification | Not submitted |
 | Automated editorial review and registration | Not submitted |
 
@@ -23,6 +24,13 @@ The two workflows, `lean.yml` and `palomar.yml`, run on pull requests and
 pushes to main, and support manual dispatch. Their logs
 will identify the exact tested commit. A GitHub Actions pass is preparation
 evidence; it is not a Palomar registration.
+
+The exact successful build/audit commit, artifact digest and remaining limits
+are recorded in [the evidence record](docs/lean435-build-audit-evidence.json).
+The overall run was not green: its final strict Git diff guard detected text
+line endings. The guard remains enabled. New full-library runs start without
+project compilation artifacts; only canonical Mathlib dependency caches may be
+reused. An earlier candidate's independent replay cannot certify a later commit.
 
 The statement surface is `Challenge.lean` and the proof entry is
 `Solution.lean`. Comparator selects `SteklovSubmission.main_result` and has
