@@ -50,6 +50,24 @@ jobs:
           lint: "false"
           use-mathlib-cache: "true"
           use-github-cache: "false"
+      - name: Add memory headroom on the disposable hosted runner
+        run: |
+          set -Eeuo pipefail
+          if [[ "${RUNNER_ENVIRONMENT:-}" == github-hosted ]]; then
+            steklov_available_kib=$(df -Pk . | awk 'NR==2 {print $4}')
+            steklov_swap_gib=$((steklov_available_kib / 1048576 - 12))
+            if (( steklov_swap_gib > 8 )); then steklov_swap_gib=8; fi
+            if (( steklov_swap_gib > 0 )); then
+              steklov_swap_path="${RUNNER_TEMP:?}/steklov-build.swap"
+              test ! -e "$steklov_swap_path"
+              sudo fallocate -l "${steklov_swap_gib}G" "$steklov_swap_path"
+              sudo chmod 600 "$steklov_swap_path"
+              sudo mkswap "$steklov_swap_path"
+              sudo swapon "$steklov_swap_path"
+            fi
+          fi
+          free -h
+          df -h .
       - name: Record environment
         run: |
           mkdir -p verification/current-ci
@@ -59,12 +77,27 @@ jobs:
             lean --version
             sha256sum lean-toolchain lake-manifest.json comparator.json
             echo 'project_build_cache_restored=false; canonical Mathlib cache allowed'
+            free -h
+            df -h .
           } > verification/current-ci/environment.txt
       - name: Build every advertised module and both submission entries from fresh project source
         run: |
           set -o pipefail
           test ! -d .lake/build/lib/lean/RequestProject
-          lake build 2>&1 | tee verification/current-ci/build.log
+          (
+            while true; do
+              {
+                date -u '+resource_snapshot=%Y-%m-%dT%H:%M:%SZ'
+                free -m
+                ps -C lean,lake -o pid,comm,etime,pcpu,pmem,rss --no-headers || true
+                df -h .
+              } | tee -a verification/current-ci/build-resources.log
+              sleep 60
+            done
+          ) &
+          steklov_monitor_pid=$!
+          trap 'kill "$steklov_monitor_pid" 2>/dev/null || true' EXIT
+          /usr/bin/time -v nice -n 10 lake build 2>&1 | tee verification/current-ci/build.log
       - name: Proof/type contracts and transitive axiom inventory
         run: |
           set -o pipefail

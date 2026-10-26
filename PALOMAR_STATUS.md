@@ -17,7 +17,7 @@ reports are baseline evidence and do not certify this port.
 | Source-preservation guard | Passed on recorded commit `fd44fc6172c4`; earlier line-ending failure fixed |
 | Linux sandboxed Comparator | Declaration comparison and main-proof axiom precheck reached kernel replay |
 | NanoDa replay | Accepted the exported proof on recorded commit `fd44fc6172c4` |
-| Lean default replay | Runner shut down before a result; same-commit retry in progress |
+| Lean default replay | Required acceptance is still missing; subsequent attempts are recorded by commit in CI |
 | con-ron advisory replay | Additional attempt follows successful mandatory checks |
 | Palomar mechanical verification | Not submitted |
 | Automated editorial review and registration | Not submitted |

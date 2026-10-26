@@ -36,7 +36,8 @@
     "nanoda_binary_sha256": "8241c5e6baa29490aa118d382f97961b208ae730fdb96545c2abed74c9ece5a8",
     "leanchecker_binary_sha256": "9e36e955a251b1313c8eb5b7fa101282d51df109d34d8bb7c1cfdf51985aba29"
   },
-  "same_commit_retry": "in progress at last inspection",
+  "same_commit_retry": "Attempt 2 lost hosted-runner communication; final job log unavailable, so its kernel outcome is unknown.",
   "palomar_submitted_or_registered": false,
-  "qualification": "This records the named snapshot only; all required checks must pass again on the final submission commit."
+  "qualification": "This records the named snapshot only; all required checks must pass again on the final submission commit.",
+  "later_candidates": "Follow exact commit IDs in the two GitHub Actions workflows; recorded evidence does not certify subsequent commits."
 }

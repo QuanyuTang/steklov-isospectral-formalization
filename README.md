@@ -64,7 +64,7 @@ scripts/                   Build checks and Palomar preflight
 
 ## Palomar submission status
 
-**Final verification is incomplete.** Recorded commit `fd44fc6172c412ccdc844c112dea5d3df9a26383` passed the fresh full-library build, 590-target audit, metadata and strict source-preservation checks. Its sandboxed Comparator reached NanoDa acceptance, then the runner shut down during Lean's replay. That interruption is not Lean acceptance or a recorded kernel rejection. The same commit is being retried. Historical Lean 4.28 logs certify the baseline only; see [current evidence](docs/lean435-build-audit-evidence.json).
+**Final verification is incomplete.** Recorded commit `fd44fc6172c412ccdc844c112dea5d3df9a26383` passed the fresh full-library build, 590-target audit, metadata and strict source-preservation checks. Its sandboxed Comparator reached NanoDa acceptance, then the runner shut down during Lean's replay. That interruption is not Lean acceptance or a recorded kernel rejection. Subsequent attempts are identified by commit in CI; no completed Lean replay is claimed here. Historical Lean 4.28 logs certify the baseline only; see [current evidence](docs/lean435-build-audit-evidence.json).
 
 Palomar reviews an exact commit of a **public GitHub repository**, rather than accepting a standalone ZIP as the proof submission. See [the included submission guide](docs/PALOMAR.md) and [Palomar's current instructions](https://palomar-registry.org/how-to-submit). No Palomar registration or endorsement is claimed.
 

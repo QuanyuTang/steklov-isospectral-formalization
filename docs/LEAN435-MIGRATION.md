@@ -57,6 +57,12 @@ at reduced scheduling priority, and emits minute-by-minute memory/process/disk
 snapshots. These measures add diagnostics and resource headroom; they do not
 assert a memory-exhaustion diagnosis, change the proof or relax any check.
 
+The fourteenth cold build also received a runner shutdown signal and exited
+143 before finishing; no Lean compiler error was recorded. The same memory
+headroom, reduced scheduling priority and periodic diagnostics are therefore
+applied to the cold-build workflow as well. Fresh project-source compilation,
+all 590 audit targets and strict source preservation remain required.
+
 ## Historical patch sequence
 
 Aristotle task `81dccf0b-8b15-4407-9ca6-6dac05d49813` supplied a 21-file repair

@@ -18,7 +18,7 @@
 - 176 个可编译的 Lean 库模块与 4 份保留的原始审计模板（共 180 份原始源码），`RequestProject/` 中没有 `sorry`、`admit` 或新增数学公理。
 - 原始基线核验环境：Lean **4.28.0**；Mathlib 固定为 `8f9d9cff6bd728b17a24e163c9402775d9e6a365`。
 - 原始基线发布布局已在独立目录中完整编译通过（8206 个任务），590 个不同导出审计目标均只依赖三个标准公理。[基线核验报告](verification/package-verification.json)、[构建日志](verification/package-build.log)、[审计日志](verification/package-audit.log) 均随包提供；590 是审计声明数，不是独立数学定理数。
-- 迁移候选提交 `fd44fc6172c412ccdc844c112dea5d3df9a26383` 已在 Linux 的目标 Lean **4.35.0-rc2**、canonical Mathlib 下通过无项目缓存的完整编译、同一套 590 目标审计及源码完整性检查。NanoDa 已接受证明，Lean 独立复核被 runner 关闭信号中断后正在重试，不能称为 Palomar 已验证。[准确记录](docs/lean435-build-audit-evidence.json)
+- 迁移候选提交 `fd44fc6172c412ccdc844c112dea5d3df9a26383` 已在 Linux 的目标 Lean **4.35.0-rc2**、canonical Mathlib 下通过无项目缓存的完整编译、同一套 590 目标审计及源码完整性检查。NanoDa 已接受证明，Lean 独立复核曾被 runner 关闭信号中断，后续尝试按提交记录在 CI 中，不能称为 Palomar 已验证。[准确记录](docs/lean435-build-audit-evidence.json)
 - 主定理的五项结论全部包含；更强入口 `SteklovCoalescence.mainTheoremClassical_proved` 连接弱 Sobolev 谱与经典调和 PDE 的 Steklov 边界条件。
 - 仅使用 `propext`（命题外延性）、`Classical.choice`（经典选择）、`Quot.sound`（商类型等价代表元的相等性）。没有把论文结论作为公理。
 

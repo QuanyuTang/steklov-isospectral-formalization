@@ -6,7 +6,7 @@ As checked on **2026-10-26**, the official [toolchain policy](https://raw.github
 
 The package contains `Challenge.lean`, `Solution.lean`, `comparator.json`, `formalization.yaml`, a standard root license, all proof sources, and pinned dependencies. The Challenge imports only Mathlib, stays below 1000 lines / 100 KiB, and states all five main conclusions. Its one deliberate `sorry` is not a proof dependency.
 
-The bundled sandboxed Comparator reached NanoDa acceptance on the recorded commit, then the runner shut down during Lean's replay. No Lean acceptance or rejection was recorded. A same-commit retry is running. Both mandatory kernel acceptances remain necessary; con-ron is attempted afterward under [the official mechanical policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md#5-what-mechanical-verification-establishes). An inconclusive local advisory timeout is never described as acceptance.
+The bundled sandboxed Comparator reached NanoDa acceptance on the recorded commit, then the runner shut down during Lean's replay. No Lean acceptance or rejection was recorded. Subsequent attempts are recorded by commit in CI; no completed Lean replay is claimed here. Both mandatory kernel acceptances remain necessary; con-ron is attempted afterward under [the official mechanical policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md#5-what-mechanical-verification-establishes). An inconclusive local advisory timeout is never described as acceptance.
 
 ## Publish the repository
 
