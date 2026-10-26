@@ -2,8 +2,7 @@ cff-version: 1.2.0
 message: "Please cite the mathematical source below and identify the exact commit of this formalization when using the Lean code."
 type: software
 title: "Strictly Convex Steklov-Isospectral Plane Domains: Lean Formalization"
-version: 1.0.0
-date-released: 2026-10-25
+version: 1.1.0
 license: Apache-2.0
 authors:
   - name: taohu-hub

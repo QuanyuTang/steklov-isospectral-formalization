@@ -18,7 +18,8 @@ Solution.lean supplies the actual proof without importing this module.
 Proof scope: explicit degree-seven polynomial realization and verified monodromy.
 The general Riemann existence theorem for arbitrary permutation data is not claimed.
 The internal orbifold development uses proved concrete disk-coordinate models.
-Palomar verification has NOT been run; see docs/PALOMAR.md for the toolchain blocker.
+Exact verification evidence and any remaining checks are recorded in PALOMAR_STATUS.md
+and docs/PALOMAR.md; this statement file does not assert registry acceptance.
 -/
 
 @[expose] public section

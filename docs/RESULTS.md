@@ -13,12 +13,18 @@ The advertised declaration `SteklovSubmission.main_result` proves **all five con
 | Lemma 2.4.1 | `SteklovBlaschke.blaschke_boundary_rigidity` and `_anti` | Holomorphic and antiholomorphic boundary-modulus rigidity. |
 | Lemma 3.1.1 | `group_input`; `GL3F2.group_input_GL` | Actual GL(3,F₂), point/line stabilizers, and (2,3,7) generation. |
 | Lemma 3.2.1 | `SteklovDiskCovers.lemma_3_2_1` | Polynomial disk-cover geometry; the chosen pair has explicit realization and proved monodromy. |
-| Proposition 3.3.1 | `Degree7.prop_3_3_1_full` | Actual degree-168 common cover and metric quotients for the chosen degree-seven pair. |
+| Proposition 3.3.1 | `Degree7.prop_3_3_1_full` | Actual degree-168 common cover and metric quotients for the chosen degree-seven pair; spectral equality uses weighted-disk transplantation. |
 | Proposition 3.4.1 | `SteklovCoalescence.prop_3_4_1_unconditional` | Normalized covers and smooth coalescence for arbitrary monic positive-degree polynomials. |
 
 ## Alternative proof route and omitted generality
 
 The spectral step of the main proof uses direct weighted-disk transplantation for the explicit degree-seven construction. The common regular cover, completed connected bordered surface, stabilizer identifications, and metric quotient geometry are developed separately, including cone origins and the boundary.
+
+The spectral conclusion of `Degree7.prop_3_3_1_full` also uses
+`FamilyIso.family_spectra_eq` and then transports that equality to the concrete
+quotient models. `RequestProject/Sunada.lean` proves an algebraic Sunada core;
+the current proof modules do not import it, and no general analytic Sunada
+operator theorem on the covering surface is claimed.
 
 The general Riemann existence theorem for **arbitrary** permutation data is not formalized. It is replaced by verified explicit polynomials and their actual monodromy. The geometric development does not constitute a general orbifold library: the relevant quotients are identified with concrete metric orbifold disk models, and spectra are transported through the proved identifications. The common-cover result is specialized to this construction, rather than asserted for every finite group and every abstract orbisurface.
 

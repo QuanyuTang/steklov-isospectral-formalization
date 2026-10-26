@@ -55,7 +55,13 @@ statement hole is not imported by the Solution. The permitted proof axioms
 are `propext`, `Classical.choice` and `Quot.sound`; the audit enforces the
 allowlist for every inventory target and rejects missing reports.
 
-The review status remains AI-assisted self-assessment with machine checking.
+Release preparation also received a subsequent read-only AI source/document
+review by Aristotle. It identified documentation and inventory issues; the
+source-map corrections, comments and full-baseline declaration inventory were
+then checked separately. This was an AI review, not independent human peer
+review or target-toolchain compilation by that reviewer.
+
+The review status remains AI-assisted assessment with machine checking.
 No independent human mathematical peer review, Palomar registration or
 institutional endorsement is claimed. [RESULTS.md](RESULTS.md) and
 [ERRATA-AND-DEVIATIONS.md](ERRATA-AND-DEVIATIONS.md) describe the actual scope,

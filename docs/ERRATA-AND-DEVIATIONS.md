@@ -44,6 +44,10 @@ None asserted. The choices below do not add assumptions to Theorem 1.1.2.
    The quotient-orbifold result is developed separately. The main proof does
    not depend on a second general Sunada operator proof on the covering surface.
    The equality still concerns the full indexed spectrum, with multiplicities.
+   The spectral clause of `Degree7.prop_3_3_1_full` likewise uses
+   `FamilyIso.family_spectra_eq`, transported to the concrete quotient models.
+   `Sunada.lean` supplies an algebraic core and is not imported by the current
+   proof modules; it does not supply that analytic spectral step.
 
 4. **Section 2.1 and Theorem 1.1.2(ii) — variational encoding and PDE bridge.**
    `Steklov.steklovSpectrum` is an extended-nonnegative-real min-max sequence

@@ -60,6 +60,24 @@ jobs:
           lint: "false"
           use-mathlib-cache: "true"
           use-github-cache: "false"
+      - name: Add memory headroom on the disposable hosted runner
+        run: |
+          set -Eeuo pipefail
+          if [[ "${RUNNER_ENVIRONMENT:-}" == github-hosted ]]; then
+            steklov_available_kib=$(df -Pk . | awk 'NR==2 {print $4}')
+            steklov_swap_gib=$((steklov_available_kib / 1048576 - 12))
+            if (( steklov_swap_gib > 8 )); then steklov_swap_gib=8; fi
+            if (( steklov_swap_gib > 0 )); then
+              steklov_swap_path="${RUNNER_TEMP:?}/steklov-kernel.swap"
+              test ! -e "$steklov_swap_path"
+              sudo fallocate -l "${steklov_swap_gib}G" "$steklov_swap_path"
+              sudo chmod 600 "$steklov_swap_path"
+              sudo mkswap "$steklov_swap_path"
+              sudo swapon "$steklov_swap_path"
+            fi
+          fi
+          free -h
+          df -h .
       - name: Record environment
         run: |
           mkdir -p verification/current-ci
@@ -68,6 +86,7 @@ jobs:
             git rev-parse HEAD^{tree}
             lean --version
             sha256sum lean-toolchain lake-manifest.json comparator.json
+            printf 'project_cache_matched_key=%s\n' '${{ steps.project-cache.outputs.cache-matched-key }}'
             prefix=$(lean --print-prefix)
             sha256sum "$prefix/bin/leanexport" "$prefix/bin/leanchecker" "$prefix/bin/nanoda_bin" "$prefix/bin/con-ron"
             free -h
@@ -95,7 +114,20 @@ jobs:
       - name: Required sandboxed comparison with bundled Lean and NanoDa
         run: |
           set -o pipefail
-          /usr/bin/time -v bash scripts/verify-required-comparator.sh 2>&1 | tee verification/current-ci/comparator-required.log
+          (
+            while true; do
+              {
+                date -u '+resource_snapshot=%Y-%m-%dT%H:%M:%SZ'
+                free -m
+                ps -C leanchecker,nanoda_bin,con-ron,lake -o pid,comm,etime,pcpu,pmem,rss --no-headers || true
+                df -h .
+              } | tee -a verification/current-ci/replay-resources.log
+              sleep 60
+            done
+          ) &
+          steklov_monitor_pid=$!
+          trap 'kill "$steklov_monitor_pid" 2>/dev/null || true' EXIT
+          /usr/bin/time -v nice -n 10 bash scripts/verify-required-comparator.sh 2>&1 | tee verification/current-ci/comparator-required.log
       - name: Preserve mandatory verification evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2

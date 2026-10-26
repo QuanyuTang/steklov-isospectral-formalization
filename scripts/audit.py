@@ -21,7 +21,14 @@ for source in sources:
     bodies.append(re.sub(r'^import\s+[^\n]+\n?', '', text, flags=re.M))
 target = root / '.lake/audit/ReleaseAudit.lean'
 target.parent.mkdir(parents=True, exist_ok=True)
-target.write_text('\n'.join(imports) + '\n\n' + '\n\n'.join(bodies)
+smooth_contract = '''
+open scoped ContDiff
+example (B : (ℂ → ℝ) → ℝ≥0∞) (k : ℕ) (V : Submodule ℝ (ℂ → ℝ)) :
+    Steklov.AdmissibleSpace B k V ↔
+      ((∀ u ∈ V, ContDiff ℝ ∞ u) ∧ Module.finrank ℝ V = k + 1 ∧
+        ∀ u ∈ V, u ≠ 0 → B u ≠ 0) := Iff.rfl
+'''
+target.write_text('\n'.join(imports) + '\n\n' + smooth_contract + '\n\n' + '\n\n'.join(bodies)
                   + '\n#print axioms SteklovSubmission.main_result\n', encoding='utf-8')
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--check-log', type=Path, help='Validate an existing log only; does not rerun Lean')
@@ -61,8 +68,11 @@ missing = expected - records.keys()
 if missing:
     sys.exit(f'FAIL: missing axiom reports for {sorted(missing)}')
 report = {'status': 'pass', 'fresh_lean_run': not bool(args.check_log),
+          'smooth_infinity_contract_checked': not bool(args.check_log),
           'audited_unique_targets': len(expected), 'permitted_axioms': sorted(allowed),
           'targets': {name: records[name] for name in sorted(expected)}}
 if not args.check_log:
     (target.parent / 'axioms.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
 print(f'Axiom allowlist enforced for all {len(expected)} distinct targets: PASS', flush=True)
+if not args.check_log:
+    print('Smooth-infinity admissibility contract: PASS', flush=True)

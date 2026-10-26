@@ -43,6 +43,11 @@
       "migrated_sha256": "c0422df1d67eb5be659bc487fcee9a6a2b6c0fe5f58e7995d8bcb8a7652f97ec"
     },
     {
+      "file": "RequestProject/BlaschkePerimeter.lean",
+      "baseline_sha256": "f091b103f575e41405eff8c20647beb96a0b1522f4e83c85fe07bb917ad6e8de",
+      "migrated_sha256": "8bfed73d6a63179427b748bfa47f105f39d3ae4cc50832d86a62ecea17d1fe7f"
+    },
+    {
       "file": "RequestProject/BlaschkeWeight.lean",
       "baseline_sha256": "8a86a95a8d0c24bc6e65899450ac31a5f1bdabf1a9fa1ec600bcc183748b8b99",
       "migrated_sha256": "a68e28deae8b6c550a523e552fca53f2a73f30154b57bcf9cf63845feada0025"
@@ -95,7 +100,7 @@
     {
       "file": "RequestProject/ConditionalFamily.lean",
       "baseline_sha256": "0090d8d3b6a6cf420b0d4c26f28c8170792cee772bbbdadf6d6e0cc24212e046",
-      "migrated_sha256": "636bb61e6863d096d8b891a844a551803fc41c73309653508fd16ebc51f38bea"
+      "migrated_sha256": "84d84b019f4bebc843ecb84487567c1f56d507f2b0afe3a99f264d3e67b9b20c"
     },
     {
       "file": "RequestProject/ConeUniformizer.lean",
@@ -243,6 +248,11 @@
       "migrated_sha256": "92caebd97a13ca4438a6f795f1f66696951eedeffd8d434a3e62aca65caf5cca"
     },
     {
+      "file": "RequestProject/GeneralDiskCovers.lean",
+      "baseline_sha256": "65e3f7908b96322ee67ffe27a4a6ece790723485949bc23cd6a656563adda190",
+      "migrated_sha256": "415c48febf8476380121da163b1305eaebfb333d1dedb9630fbcc14f0aeae51a"
+    },
+    {
       "file": "RequestProject/GroupInput.lean",
       "baseline_sha256": "a24764d1138e28196a03aed7e1fc085a87427d0018ad198e47370a0953fb0758",
       "migrated_sha256": "5a2a54789ae0fb40874c2816ea3f92dd1a7163ae9144958f74b2c14f729476bb"
@@ -313,6 +323,11 @@
       "migrated_sha256": "53b53867785cbaf4d45c2d42f1f7cc3361ec6303186558318b0ba9b0b38159e4"
     },
     {
+      "file": "RequestProject/PaperStatements.lean",
+      "baseline_sha256": "62c3f5ec9788a960656f41a08c39c8ff9fc71f6fadb0926f97887e857a2eb628",
+      "migrated_sha256": "2847c411669f77dca593675041e03fdcde2ec4be6c55d25d1f1de29eea3d18a4"
+    },
+    {
       "file": "RequestProject/PolynomialCover.lean",
       "baseline_sha256": "56f70fe4f044d6d902696a630738c9521990d426ee2ac83295fde6d15cca32ac",
       "migrated_sha256": "5c3beff0fc3f45996e0187ab4f3d62e6e0deea4f1089fc3c62121a1fe7d71b0b"
@@ -325,7 +340,7 @@
     {
       "file": "RequestProject/PuncturedDiskCover.lean",
       "baseline_sha256": "b737644f8f6511b3ffa9b6e25af816487b404260617cc9fc8a1b25b278b21141",
-      "migrated_sha256": "7ed2ed11b078b4a9663d0aa9447c89dcfda8b7aea5af72219c2d0f058c944536"
+      "migrated_sha256": "ac4815a87920d156eef151c74a3942e3c58f8eda62b1e661254a5e35a3d4969a"
     },
     {
       "file": "RequestProject/RegCovMonodromy.lean",

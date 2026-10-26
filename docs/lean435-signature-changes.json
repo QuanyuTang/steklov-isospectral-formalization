@@ -1,5 +1,5 @@
 {
-  "status": "Source compatibility changes; target compilation pending",
+  "status": "Historical five-helper patch; later pinned Linux fresh compilation and all 590 audit targets passed on recorded fd44fc6172c4. Required Lean replay remains incomplete.",
   "base_commit": "635ac12bcd94900ed358f1e4e6a8973f7500d937",
   "aristotle_task": "81dccf0b-8b15-4407-9ca6-6dac05d49813",
   "existing_concrete_definitions_unchanged_in_this_patch": true,
@@ -8,31 +8,36 @@
       "file": "RequestProject/BranchPointRemoval.lean",
       "name": "eLpNorm_two_sq",
       "old": "theorem eLpNorm_two_sq {\u03b1 E : Type*} [MeasurableSpace \u03b1] [NormedAddCommGroup E] (f : \u03b1 \u2192 E) (\u03bc : Measure \u03b1) : eLpNorm f 2 \u03bc ^ 2 = \u222b\u207b x, \u2016f x\u2016\u2091 ^ 2 \u2202\u03bc",
-      "new": "theorem eLpNorm_two_sq {\u03b1 E : Type*} [MeasurableSpace \u03b1] [NormedAddCommGroup E] (f : \u03b1 \u2192 E) (\u03bc : Measure \u03b1) (hf : AEStronglyMeasurable f \u03bc) : eLpNorm f 2 \u03bc ^ 2 = \u222b\u207b x, \u2016f x\u2016\u2091 ^ 2 \u2202\u03bc"
+      "new": "theorem eLpNorm_two_sq {\u03b1 E : Type*} [MeasurableSpace \u03b1] [NormedAddCommGroup E] (f : \u03b1 \u2192 E) (\u03bc : Measure \u03b1) (hf : AEStronglyMeasurable f \u03bc) : eLpNorm f 2 \u03bc ^ 2 = \u222b\u207b x, \u2016f x\u2016\u2091 ^ 2 \u2202\u03bc",
+      "qualified_name": "SteklovBranch.eLpNorm_two_sq"
     },
     {
       "file": "RequestProject/C1Transfer.lean",
       "name": "eLpNorm_two_sq",
       "old": "lemma eLpNorm_two_sq {F : Type*} [NormedAddCommGroup F] {\u03bc : Measure \u2102} (g : \u2102 \u2192 F) : eLpNorm g 2 \u03bc ^ 2 = \u222b\u207b x, \u2016g x\u2016\u2091 ^ 2 \u2202\u03bc",
-      "new": "lemma eLpNorm_two_sq {F : Type*} [NormedAddCommGroup F] {\u03bc : Measure \u2102} (g : \u2102 \u2192 F) (hg : AEStronglyMeasurable g \u03bc) : eLpNorm g 2 \u03bc ^ 2 = \u222b\u207b x, \u2016g x\u2016\u2091 ^ 2 \u2202\u03bc"
+      "new": "lemma eLpNorm_two_sq {F : Type*} [NormedAddCommGroup F] {\u03bc : Measure \u2102} (g : \u2102 \u2192 F) (hg : AEStronglyMeasurable g \u03bc) : eLpNorm g 2 \u03bc ^ 2 = \u222b\u207b x, \u2016g x\u2016\u2091 ^ 2 \u2202\u03bc",
+      "qualified_name": "SteklovC1.eLpNorm_two_sq"
     },
     {
       "file": "RequestProject/DiskDensity.lean",
       "name": "eLpNorm_moll_le",
       "old": "lemma eLpNorm_moll_le (b : ContDiffBump (0 : \u2102)) (h : \u2102 \u2192 E) (hh : StronglyMeasurable h) : eLpNorm (moll b h) 2 volume \u2264 eLpNorm h 2 volume",
-      "new": "lemma eLpNorm_moll_le (b : ContDiffBump (0 : \u2102)) (h : \u2102 \u2192 E) (hh : StronglyMeasurable h) (hm : AEStronglyMeasurable (moll b h) volume) : eLpNorm (moll b h) 2 volume \u2264 eLpNorm h 2 volume"
+      "new": "lemma eLpNorm_moll_le (b : ContDiffBump (0 : \u2102)) (h : \u2102 \u2192 E) (hh : StronglyMeasurable h) (hm : AEStronglyMeasurable (moll b h) volume) : eLpNorm (moll b h) 2 volume \u2264 eLpNorm h 2 volume",
+      "qualified_name": "SteklovDensity.eLpNorm_moll_le"
     },
     {
       "file": "RequestProject/DiskDensity.lean",
       "name": "exists_bound_eLpNorm",
       "old": "lemma exists_bound_eLpNorm (R : \u211d) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) : \u2203 c > 0, \u2200 k : \u2102 \u2192 E, (\u2200 x, \u2016k x\u2016 \u2264 c) \u2192 (\u2200 x, R < \u2016x\u2016 \u2192 k x = 0) \u2192 eLpNorm k 2 volume \u2264 ENNReal.ofReal \u03b5",
-      "new": "lemma exists_bound_eLpNorm (R : \u211d) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) : \u2203 c > 0, \u2200 k : \u2102 \u2192 E, AEStronglyMeasurable k volume \u2192 (\u2200 x, \u2016k x\u2016 \u2264 c) \u2192 (\u2200 x, R < \u2016x\u2016 \u2192 k x = 0) \u2192 eLpNorm k 2 volume \u2264 ENNReal.ofReal \u03b5"
+      "new": "lemma exists_bound_eLpNorm (R : \u211d) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) : \u2203 c > 0, \u2200 k : \u2102 \u2192 E, AEStronglyMeasurable k volume \u2192 (\u2200 x, \u2016k x\u2016 \u2264 c) \u2192 (\u2200 x, R < \u2016x\u2016 \u2192 k x = 0) \u2192 eLpNorm k 2 volume \u2264 ENNReal.ofReal \u03b5",
+      "qualified_name": "SteklovDensity.exists_bound_eLpNorm"
     },
     {
       "file": "RequestProject/DiskDensity.lean",
       "name": "eLpNorm_add3_le",
       "old": "lemma eLpNorm_add3_le {E : Type*} [NormedAddCommGroup E] {a b c : \u2102 \u2192 E} (ha : AEStronglyMeasurable a volume) (hb : AEStronglyMeasurable b volume) (hc : AEStronglyMeasurable c volume) : eLpNorm (a + b + c) 2 volume \u2264 eLpNorm a 2 volume + eLpNorm b 2 volume + eLpNorm c 2 volume",
-      "new": "lemma eLpNorm_add3_le {E : Type*} [NormedAddCommGroup E] {a b c : \u2102 \u2192 E} : eLpNorm (a + b + c) 2 volume \u2264 eLpNorm a 2 volume + eLpNorm b 2 volume + eLpNorm c 2 volume"
+      "new": "lemma eLpNorm_add3_le {E : Type*} [NormedAddCommGroup E] {a b c : \u2102 \u2192 E} : eLpNorm (a + b + c) 2 volume \u2264 eLpNorm a 2 volume + eLpNorm b 2 volume + eLpNorm c 2 volume",
+      "qualified_name": "SteklovH1.eLpNorm_add3_le"
     }
   ],
   "new_declarations": [
@@ -126,5 +131,6 @@
       "compiled_by_aristotle": false,
       "source_archive_sha256": "caa71af7a691e1ba46f491bae06c8c8cbecce0ae465b1fe328a902210907b476"
     }
-  ]
+  ],
+  "inventory_scope": "This records the five helper adaptations in the named patch, not a complete baseline-to-current declaration inventory."
 }

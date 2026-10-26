@@ -44,7 +44,7 @@
   ],
   "related_formalizations": [],
   "status": {
-    "scope": "Theorem 1.1.2, all five conclusions, with supporting construction and spectral interpretation. No general arbitrary-data Riemann existence theorem or general orbifold library. Lean 4.28 local verification completed; current Palomar eligibility requires a toolchain/Mathlib port and independent comparison checks.",
+    "scope": "Theorem 1.1.2, all five conclusions, with supporting construction and spectral interpretation. No general arbitrary-data Riemann existence theorem or general orbifold library. Recorded Lean 4.35.0-rc2 commit fd44fc6172c412ccdc844c112dea5d3df9a26383 passed the fresh full-library build and 590-target audit; required independent Lean replay is unfinished.",
     "sorry_count": 0,
     "sorry_in_definitions": 0,
     "axioms": [
@@ -98,7 +98,7 @@
         "framework": "Aristotle (Harmonic)",
         "tool_setup": "Primary iterative proof generation; backend model not disclosed.",
         "cost": {
-          "wall_time": "Approximately 36 hours overall proof-project elapsed time; not isolated backend compute time.",
+          "wall_time": "Approximately 36 hours elapsed for original proof development; migration and release verification are additional and not isolated backend compute time.",
           "spend_usd": "not tracked",
           "hardware": "remote service"
         },
@@ -110,7 +110,7 @@
           "OpenAI GPT-6 family; exact model for every historical step not retained"
         ],
         "framework": "OpenAI Codex",
-        "tool_setup": "Orchestration, intermediate scaffolding, source correspondence review, local Lean builds, transitive axiom checks, packaging.",
+        "tool_setup": "Orchestration, intermediate scaffolding, source correspondence review, local Lean checks, pinned Linux CI builds, transitive axiom audits, sandboxed Comparator verification and packaging.",
         "cost": {
           "wall_time": "Included in overall proof-project elapsed time; packaging separate.",
           "spend_usd": "not tracked",
@@ -126,9 +126,9 @@
     "divergences": "Explicit degree-seven realization instead of general Riemann existence for arbitrary permutation data; direct weighted-disk transplantation in the main spectral proof; orbifolds represented by proved concrete metric disk models. All five main conclusions retained; no extra unproved hypotheses in the main theorem."
   },
   "review": {
-    "status": "AI-assisted self-assessment; Lean 4.28 baseline verified; Lean 4.35 migration under repair",
+    "status": "AI-assisted self-assessment; pinned Lean 4.35 fresh build and full audit passed on recorded commit; independent replay incomplete",
     "reviewers": [],
-    "notes": "The verified baseline passed compilation and a 590-target axiom inventory. The Lean 4.35 target is undergoing Linux CI compatibility repairs. Source, schema and sandbox startup checks passed; full proof compilation and independent-kernel replay have not passed the new version. No independent human peer review or Palomar registration is claimed."
+    "notes": "Commit fd44fc6172c412ccdc844c112dea5d3df9a26383 passed a fresh build of all 176 modules, a fresh Lean proof/type and 590-target transitive axiom audit, the official v0.4 metadata schema and strict source-preservation checks in Linux CI. NanoDa accepted its exported main proof. The runner shut down during Lean default kernel replay with exit 143, before a kernel acceptance or rejection was recorded; the same commit is being retried. These reports do not certify a subsequent commit. No independent human mathematical peer review, Palomar verification or registration is claimed. A subsequent read-only AI review of release preparation identified documentation and inventory issues. Source-map descriptions and old comments were corrected. A complete textual comparison of all 176 modules against the frozen 4.28 baseline records 2486 original declarations, no dropped declaration, the five disclosed helper adaptations, upstream typeclass renamings, an exact main-statement relocation, a statement-identical instance-to-theorem change and two new proved private helpers. This textual check is not a cross-version elaborated-type equivalence proof."
   },
   "alignment": {
     "namespace": "SteklovSubmission",
@@ -138,7 +138,7 @@
         "lean": "SteklovSubmission.main_result",
         "module": "Solution",
         "status": "proved",
-        "note": "All five conclusions; variational spectrum with classical-PDE bridges in the underlying development. Lean 4.28 baseline proved; Lean 4.35 compilation and Palomar replay remain pending."
+        "note": "All five conclusions; variational spectrum with proved classical-PDE bridges in the underlying development. Recorded Lean 4.35 commit passed fresh compilation and the complete audit; NanoDa accepted the main proof, while required independent Lean replay is unfinished."
       }
     ]
   },

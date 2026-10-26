@@ -1,6 +1,11 @@
 # Reproduce this release
 
-This is a migration candidate. The recorded successful proof logs certify the Lean 4.28 baseline; the Lean 4.35 target still requires a successful build, fresh axiom audit, and Comparator replay. See `PALOMAR_STATUS.md`.
+This is a migration candidate. Recorded commit
+`fd44fc6172c412ccdc844c112dea5d3df9a26383` passed the complete Lean 4.35.0-rc2
+build with no restored project artifacts and all 590 audit targets. NanoDa
+accepted its exported main proof; Lean's independent replay is unfinished.
+The historical logs under `verification/recorded/` certify Lean 4.28 only.
+See [current status](../PALOMAR_STATUS.md) and [exact evidence](lean435-build-audit-evidence.json).
 
 ## Environment
 
@@ -20,6 +25,26 @@ lake build
 python3 scripts/audit.py
 python3 scripts/check-release.py
 ```
+
+The `lean.yml` workflow starts from a fresh checkout, restores only the
+canonical Mathlib dependency cache, asserts that compiled `RequestProject`
+output is absent, builds every advertised module and both submission entries,
+and runs the enforced audit. The final Git diff guard must pass. The separate
+Comparator workflow can reuse source-hashed project artifacts to save time.
+
+For Linux sandboxed comparison, install bubblewrap and use the pinned toolchain:
+
+```sh
+bash scripts/verify-required-comparator.sh
+bash scripts/verify-comparator.sh
+```
+
+The first command uses the bundled Comparator with NanoDa and its built-in
+Lean checker. The second is the unchanged upstream all-kernel template,
+including con-ron. CI saves mandatory evidence before the additional attempt.
+Its local ten-minute advisory budget can produce an explicitly inconclusive
+timeout; such a timeout is not con-ron acceptance or a prediction of Palomar's
+own result. A checker rejection or other error still fails verification.
 
 On Windows, use `python` in place of `python3` if appropriate. PowerShell convenience entry:
 

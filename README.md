@@ -5,7 +5,7 @@
 [![Lean verification](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml)
 [![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml)
 
-**Migration candidate:** Linux CI compiled the full library and passed the 590-target audit with Lean 4.35.0-rc2. A fresh project rebuild and independent kernel replay remain pending. See [current status](PALOMAR_STATUS.md) and [exact build evidence](docs/lean435-build-audit-evidence.json).
+**Migration candidate:** The recorded Lean 4.35.0-rc2 snapshot passed a fresh build of all 176 modules and the 590-target audit. NanoDa accepted its exported proof; Lean's independent replay remains unfinished. See [current status](PALOMAR_STATUS.md) and [exact evidence](docs/lean435-build-audit-evidence.json).
 
 **A Lean 4 formalization of Theorem 1.1.2 of Hu–Shi–Tang, with an explicit degree-seven construction.**
 
@@ -16,10 +16,10 @@ The development proves the existence of pairs of bounded, simply connected, stri
 | Item | Baseline evidence and current target |
 | --- | --- |
 | Proof development | 176 library modules + 4 preserved audit templates; no proof placeholders |
-| Current target | Lean **4.35.0-rc2**, Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`; full build and 590-target audit passed on the recorded candidate |
+| Current target | Lean **4.35.0-rc2**, Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`; fresh full build and 590-target audit passed on recorded commit `fd44fc6172c4` |
 | Verified baseline | Lean **4.28.0**, Mathlib `8f9d9cff6bd728b17a24e163c9402775d9e6a365`; original successful logs included |
 | Axioms | `propext`, `Classical.choice`, `Quot.sound` only |
-| Palomar | **Not submitted or verified; fresh rebuild and independent replay pending** |
+| Palomar | **Not submitted or registered; required Lean replay remains unfinished** |
 | Review | AI-assisted statement/source review; no independent human mathematical review claimed |
 
 ## What is proved
@@ -64,7 +64,7 @@ scripts/                   Build checks and Palomar preflight
 
 ## Palomar submission status
 
-**The target satisfies the observed minimum, but this migration has not yet passed verification.** The pins are Lean `v4.35.0-rc2` and its canonical Mathlib release. The first Linux run passed the source/metadata and sandbox checks, then found proof compatibility errors. Repairs, a full rebuild, the new axiom audit and successful Comparator/kernel replay are still required. Historical Lean 4.28 logs certify the baseline only; see [the current status](PALOMAR_STATUS.md).
+**Final verification is incomplete.** Recorded commit `fd44fc6172c412ccdc844c112dea5d3df9a26383` passed the fresh full-library build, 590-target audit, metadata and strict source-preservation checks. Its sandboxed Comparator reached NanoDa acceptance, then the runner shut down during Lean's replay. That interruption is not Lean acceptance or a recorded kernel rejection. The same commit is being retried. Historical Lean 4.28 logs certify the baseline only; see [current evidence](docs/lean435-build-audit-evidence.json).
 
 Palomar reviews an exact commit of a **public GitHub repository**, rather than accepting a standalone ZIP as the proof submission. See [the included submission guide](docs/PALOMAR.md) and [Palomar's current instructions](https://palomar-registry.org/how-to-submit). No Palomar registration or endorsement is claimed.
 

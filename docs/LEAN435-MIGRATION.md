@@ -4,6 +4,61 @@ The target is Lean `4.35.0-rc2` and canonical Mathlib
 `065356127b1dc0016f66b7283ce0ce2c4055aa55`. The retained successful Lean 4.28
 logs certify the baseline. They do not certify these changes.
 
+## Current recorded evidence and full-baseline inventory
+
+Commit `fd44fc6172c412ccdc844c112dea5d3df9a26383` passed a fresh Linux build
+of all 176 modules, the complete 590-target proof/type and axiom audit, official
+metadata validation and strict source preservation. NanoDa accepted its main
+proof export. The runner shut down during Lean's replay, so required independent
+verification remains incomplete. See [exact evidence](lean435-build-audit-evidence.json).
+The batch narratives below record what was known when each patch arrived;
+their historical "uncompiled" labels do not override this later evidence.
+
+The [full baseline declaration inventory](lean435-baseline-declaration-audit.json)
+also covers changes made before the first 21-file Aristotle batch. It compares
+all 176 modules and 2,486 baseline declaration records, preserving duplicate
+bare names by occurrence and recording ambient variable commands. It finds:
+
+- the five substantive implementation-helper adaptations listed below;
+- eight header spelling changes and four ambient-variable changes from
+  `LocPathConnectedSpace` to `LocallyPathConnectedSpace`; both pinned Mathlib
+  sources have the same class field, and the new version retains the old name
+  as a deprecated alias;
+- the recorded instance-to-theorem change with identical statement, the exact
+  `MainTheorem` module relocation, and two new proved private cycle helpers;
+- no dropped declarations or other normalized concrete-definition code-region
+  differences outside that separately checked exact relocation.
+
+This is a textual inventory, not a cross-version elaborated-type equality
+proof. Kernel checking and mathematical interpretation remain separate gates.
+
+The two `backward.*` settings are Lean's built-in elaboration compatibility
+options, described in the pinned Lean sources
+[`DefEqAttrib.lean`](https://github.com/leanprover/lean4/blob/11acb17ec6b07a8f9e9173e6845197929540936b/src/Lean/DefEqAttrib.lean)
+and [`Meta/ExprDefEq.lean`](https://github.com/leanprover/lean4/blob/11acb17ec6b07a8f9e9173e6845197929540936b/src/Lean/Meta/ExprDefEq.lean).
+They apply to both submission entries. They do not add an axiom or replace
+kernel checking. The recorded Comparator compared their resulting declarations
+and NanoDa accepted the export; this does not assert acceptance by Palomar's
+unperformed intake or completion of Lean's replay.
+
+The audit now also contains an anonymous definitional contract fixing
+`Steklov.AdmissibleSpace` to globally smooth test functions of order `∞`, the
+dimension `k + 1` and positive boundary mass for nonzero functions. It adds no
+exported theorem or axiom-inventory target: the inventory remains 590. This
+new guard must pass in the final CI audit before packaging. Comparator
+environment evidence also records the project-cache key actually restored.
+
+The second same-commit replay attempt ended with GitHub's annotation that the
+hosted runner lost communication with the server. Its final log was unavailable
+(`BlobNotFound`); the underlying cause and any kernel outcome from that attempt
+are unknown. The next workflow adds up to eight GiB of temporary swap while
+retaining at least twelve GiB of disk headroom, runs the same trusted Comparator
+at reduced scheduling priority, and emits minute-by-minute memory/process/disk
+snapshots. These measures add diagnostics and resource headroom; they do not
+assert a memory-exhaustion diagnosis, change the proof or relax any check.
+
+## Historical patch sequence
+
 Aristotle task `81dccf0b-8b15-4407-9ca6-6dac05d49813` supplied a 21-file repair
 batch against candidate commit `635ac12bcd94900ed358f1e4e6a8973f7500d937`.
 Its environment could not download the target toolchain, so this batch was
@@ -23,7 +78,7 @@ records these auxiliary signature changes explicitly:
 | `SteklovC1.eLpNorm_two_sq` | Adds a.e. strong measurability of the function. |
 | `SteklovDensity.eLpNorm_moll_le` | Adds a.e. strong measurability of the mollification. |
 | `SteklovDensity.exists_bound_eLpNorm` | Restricts its auxiliary function argument to a.e. strongly measurable functions. |
-| `SteklovDensity.eLpNorm_add3_le` | Removes three obsolete measurability premises, giving a stronger auxiliary bound. |
+| `SteklovH1.eLpNorm_add3_le` | Removes three obsolete measurability premises, giving a stronger auxiliary bound. |
 
 The exact before/after source signatures are in
 [lean435-signature-changes.json](lean435-signature-changes.json). The helper

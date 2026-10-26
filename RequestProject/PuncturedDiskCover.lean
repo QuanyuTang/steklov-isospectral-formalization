@@ -11,7 +11,9 @@ space `C`.  Via the universal cover `exp : {Re w < log r} → D*` we obtain a li
 `{n ∈ ℤ | L(w + 2πin) = L(w) ∀ w}` is a subgroup of `ℤ` (`periods`), and agreement of a shifted
 lift at one point forces agreement everywhere (`shift_eq_of_eq`).  This is only preliminary
 topological groundwork for the local models `t ↦ t^e` of a branched cover over a branch value;
-the completion itself is not yet formalized.
+the completion is developed separately in `RequestProject.PunctureFilling`,
+`RequestProject.PunctureFillingRiemann` and the subsequent map-extension,
+regular-cover and degree-seven geometry modules.
 -/
 
 @[expose] public section

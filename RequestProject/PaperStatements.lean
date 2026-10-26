@@ -5,13 +5,14 @@ public import RequestProject.Defs
 /-!
 # Precise statements of the analytic results of Section 2
 
-These are recorded as `Prop`-valued definitions (no `sorry`, no axioms).  Status (third run):
+These are recorded as `Prop`-valued definitions (no `sorry`, no axioms).
 
 * `Prop_2_1_1` — conformal pullback (Proposition 2.1.1) for maps **holomorphic on a neighbourhood
   of `𝔻̄`**, injective on `𝔻̄`, with `F' ≠ 0` on `𝕋`: **proved** (`ConformalPullback.prop_2_1_1`).
   The paper states Proposition 2.1.1 more generally, for conformal maps with a `C¹`-diffeomorphic
-  boundary extension; that more general version is **not** formalized.  The holomorphic version
-  is the one needed for the construction (Proposition 2.3.1 produces such maps).
+  boundary extension; its weak C¹ version is proved separately as
+  `SteklovC1.prop_2_1_1_C1_weak`. This definition retains the holomorphic version
+  used for the construction (Proposition 2.3.1 produces such maps).
 * `Prop_2_3_1`, `Prop_2_3_1_realization` — Proposition 2.3.1, first part: **proved**
   (`OuterRealization.prop_2_3_1`, `OuterRealization.prop_2_3_1_realization`).
 * `Prop_2_3_1_convergence` (parameter formulation, for *every* normalized realizing map) and
@@ -22,14 +23,14 @@ These are recorded as `Prop`-valued definitions (no `sorry`, no axioms).  Status
 * `SteklovDilation` — the scaling law `σ_k(cΩ) = σ_k(Ω)/c` used in §3.5: **proved**
   (`SteklovDilationProof.steklovDilation`).
 
-Proposition 2.2.1 (cone removal on orbisurfaces), Lemma 3.2.1 (polynomial disk covers) and
-Proposition 3.3.1 (Steklov–Sunada for orbisurfaces) involve Riemannian orbisurfaces and branched
-covers / the Riemann existence theorem, none of which is available in Mathlib; they are described
-in `INVENTORY.md`.  Proposition 3.4.1 (coalescence) is proved in run 4
+Propositions 2.2.1 and 3.3.1 and Lemma 3.2.1 are supplied elsewhere in the completed
+development using concrete disk-coordinate orbifold models and the explicit
+degree-seven construction. This is not a general Riemann existence theorem or
+general orbifold library; see `docs/RESULTS.md`. Proposition 3.4.1 (coalescence) is proved
 (`SteklovCoalescence.prop_3_4_1`, `RequestProject.Coalescence`) conditional on an explicit cover
 input (`SteklovCoalescence.IsNormalizedDiskCover`: normalized conformal maps onto the cover
 components and the Blaschke property of `Q_ε ∘ ψ_ε`); no Carathéodory kernel theorem is used.
-In run 5 the existence of this cover input is proved (`SteklovCoalescence.exists_paper_diskCover`,
+The existence of this cover input is proved (`SteklovCoalescence.exists_paper_diskCover`,
 `RequestProject.DiskCoverExistence`), so Proposition 3.4.1 holds without it
 (`SteklovCoalescence.prop_3_4_1_unconditional`).
 -/

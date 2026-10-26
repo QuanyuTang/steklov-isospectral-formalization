@@ -12,8 +12,10 @@ the perimeter formula `|∂Ω_{j,ε}| = ∫₀^{2π} |B'_{j,ε}(e^{it})| dt = 2�
 computes `∫₀^{2π} (1 - |a|²)/|e^{it} - a|² dt = 2π` via the circle integral
 `∮ ((z - a)⁻¹ + ā/(1 - ā z)) dz = 2πi`.
 
-(The remaining step of the perimeter formula — that one-dimensional Hausdorff measure of the
-analytic Jordan curve `F(𝕋)` equals `∫ |F'(e^{it})| dt` — is not formalized.)
+This module proves the analytic integral identity. The geometric bridge to
+one-dimensional Hausdorff measure is developed separately in
+`RequestProject.ArcLength` and `RequestProject.BoundaryLength`, and used by the
+final family construction.
 -/
 
 @[expose] public section

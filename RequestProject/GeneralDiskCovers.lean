@@ -27,7 +27,9 @@ polynomial `Q_ε(w) = q_ε(w / τ_ε)` has the form `wⁿ + ∑_{k<n} q_k w^k` w
 (`SteklovCoalescence.nearDisk_preimage`, `SteklovCoalescence.isRealAnalyticJordanBoundary_preimage`),
 and `Y_ε = τ_ε⁻¹ · Q_ε⁻¹(𝔻)`.  The Riemann–Hurwitz/monodromy argument of the paper is therefore not
 needed for this lemma.  (The *construction* of polynomials `p_j` with prescribed monodromy, which
-precedes the lemma in the paper, is a separate matter; see `INVENTORY.md`.)
+precedes the lemma in the paper, is supplied for the explicit degree-seven pair;
+the general arbitrary-permutation realization remains outside the advertised scope.
+See `docs/RESULTS.md` and `RequestProject.Degree7Monodromy`.)
 -/
 
 @[expose] public section

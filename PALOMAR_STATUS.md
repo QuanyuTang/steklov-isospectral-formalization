@@ -12,11 +12,13 @@ reports are baseline evidence and do not certify this port.
 | Toolchain and Mathlib pins | Prepared |
 | Source checks and official v0.4 metadata schema | Passed in Linux CI |
 | Linux namespace sandbox startup | Passed in Linux CI |
-| Full Lean 4.35 build | Passed for recorded commit `1d94bf37`; project-cache-free rebuild pending |
-| Lean 4.35 public theorem and axiom audit | All 590 targets passed on recorded commit `1d94bf37` |
-| Source-preservation guard | Run 12 failed on CRLF/LF differences only; publication normalization fixed for next run |
-| Linux sandboxed Comparator, Lean and NanoDa replay | In progress on earlier candidate; current candidate queued |
-| con-ron advisory replay | Earlier attempt interrupted; additional attempt follows mandatory checks |
+| Full Lean 4.35 build | Fresh build of all 176 modules passed on recorded commit `fd44fc6172c4` |
+| Lean 4.35 public theorem and axiom audit | All 590 targets passed on recorded commit `fd44fc6172c4` |
+| Source-preservation guard | Passed on recorded commit `fd44fc6172c4`; earlier line-ending failure fixed |
+| Linux sandboxed Comparator | Declaration comparison and main-proof axiom precheck reached kernel replay |
+| NanoDa replay | Accepted the exported proof on recorded commit `fd44fc6172c4` |
+| Lean default replay | Runner shut down before a result; same-commit retry in progress |
+| con-ron advisory replay | Additional attempt follows successful mandatory checks |
 | Palomar mechanical verification | Not submitted |
 | Automated editorial review and registration | Not submitted |
 
@@ -27,10 +29,11 @@ evidence; it is not a Palomar registration.
 
 The exact successful build/audit commit, artifact digest and remaining limits
 are recorded in [the evidence record](docs/lean435-build-audit-evidence.json).
-The overall run was not green: its final strict Git diff guard detected text
-line endings. The guard remains enabled. New full-library runs start without
-project compilation artifacts; only canonical Mathlib dependency caches may be
-reused. An earlier candidate's independent replay cannot certify a later commit.
+The full-build workflow was green; the independent-replay workflow was not:
+the runner shut down with exit 143 during Lean's replay. The source-preservation
+guard remains strict. Full-library runs restore no project compilation
+artifacts; canonical Mathlib dependency caches may be reused. A recorded
+candidate's verification cannot certify a new commit.
 
 The statement surface is `Challenge.lean` and the proof entry is
 `Solution.lean`. Comparator selects `SteklovSubmission.main_result` and has

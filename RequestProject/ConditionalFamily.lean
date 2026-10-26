@@ -12,14 +12,18 @@ public import RequestProject.MainStatement
 **This is conditional scaffolding, not a proof of Theorem 1.1.2.**  The theorem
 `mainTheorem_except_iii_of_cover_data` derives conclusions (i) (including strict convexity), (ii),
 (iv) and (v) of Theorem 1.1.2 — with the paper's quantifier structure — from the following
-**explicit, unproved inputs**:
+**explicit input parameters to this assembly lemma**:
 
-* polynomial data for both labels (monic `P_i` of a common degree `n ≥ 1`; Lemma 3.2.1 is not
-  formalized, so the permutation/monodromy properties of `P_i` are not used or established);
+* polynomial data for both labels (monic `P_i` of a common degree `n ≥ 1`;
+  their permutation/monodromy properties are not used by this conditional lemma);
 * the cover input `IsNormalizedDiskCover` for both labels and all small `ε` (uniformization of the
   cover domains and the Blaschke property of `B_{i,ε} = Q_{i,ε} ∘ ψ_{i,ε}`);
-* the spectral transfer `Spec_St(𝔻, |B_{P,ε}'|) = Spec_St(𝔻, |B_{L,ε}'|)` (Proposition 3.3.1,
-  analytic part, not formalized).
+* the spectral transfer `Spec_St(𝔻, |B_{P,ε}'|) = Spec_St(𝔻, |B_{L,ε}'|)`.
+
+The completed development supplies the explicit polynomial/cover data and spectral
+transfer separately. The unconditional five-conclusion theorem and its PDE/Sobolev
+interpretation are in `RequestProject.MainTheoremClassical`; current scope and the
+weighted-disk proof route are recorded in `docs/RESULTS.md`.
 
 Conclusion (iii) (noncongruence) is not addressed here.  Everything else in the chain —
 coalescence (Proposition 3.4.1), realization and convergence (Proposition 2.3.1), conformal
