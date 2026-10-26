@@ -122,6 +122,17 @@ header_only_files = {"RequestProject/Main.lean"}
 audit_template_files = {"RequestProject/" + n for n in
                         ["Audit.lean", "AuditRun18.lean", "AuditRun19.lean", "AuditRun20.lean"]}
 changed_sources = []
+normalize = lambda data: re.sub(r"\s+", " ", code_only(data.decode("utf-8"))).strip()
+original_statement = (ROOT / "verification/templates/MainStatement.original.lean.in").read_bytes()
+original_defs = (ROOT / "verification/templates/Defs.original.lean.in").read_bytes()
+statement_code = code_only(original_statement.decode("utf-8"))
+statement_start = statement_code.index("def MainTheorem : Prop :=")
+statement_end = re.search(r"\bend\s*\Z", statement_code).start()
+main_block = statement_code[statement_start:statement_end]
+defs_code = code_only(original_defs.decode("utf-8"))
+defs_end = re.search(r"\bend\s*\Z", defs_code).start()
+expected_defs = (defs_code[:defs_end] + "\nopen Set PlaneDomain Steklov\n" + main_block + "\nend\n").encode("utf-8")
+expected_forwarder = (statement_code[:statement_start] + "\nend\n").encode("utf-8")
 for name, expected in frozen["lean_source_sha256"].items():
     source_path = ROOT / name
     if name in audit_template_files:
@@ -132,11 +143,12 @@ for name, expected in frozen["lean_source_sha256"].items():
         content = content[len(b"module\n\n"):]
     actual = hashlib.sha256(content).hexdigest()
     if name == "RequestProject/MainStatement.lean":
-        original = (ROOT / "verification/templates/MainStatement.original.lean.in").read_bytes()
-        require(hashlib.sha256(original).hexdigest() == expected, "original main statement source archived byte-for-byte")
-        normalize = lambda data: re.sub(r"\s+", " ", code_only(data.decode("utf-8"))).strip()
-        require(normalize(content) == normalize(original), "main statement code unchanged; only historical documentation corrected")
-    elif name in audit_template_files or name == "RequestProject/Defs.lean":
+        require(hashlib.sha256(original_statement).hexdigest() == expected, "original main statement source archived byte-for-byte")
+        require(normalize(content) == normalize(expected_forwarder), "MainStatement only re-exports original definitions and relocated main statement")
+    elif name == "RequestProject/Defs.lean":
+        require(hashlib.sha256(original_defs).hexdigest() == expected, "original definition source archived byte-for-byte")
+        require(normalize(content) == normalize(expected_defs), "all original definition code and MainTheorem preserved exactly under the documented module move")
+    elif name in audit_template_files:
         require(actual == expected, "unchanged baseline statement or audit inventory: " + name)
     if actual != expected:
         changed_sources.append({"file": name, "baseline_sha256": expected, "migrated_sha256": actual})

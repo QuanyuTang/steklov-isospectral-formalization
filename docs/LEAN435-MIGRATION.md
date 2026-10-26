@@ -94,3 +94,27 @@ The sixth full-library build also exposed a downstream coercion mismatch in
 with `change`, unfolding the transported projection by definitional equality.
 This additional proof-body repair leaves the theorem statement and all
 definitions unchanged and still requires the pinned Linux build.
+
+Task `f5222b23-ccbe-477f-a5fc-fb07e6f2bc1b` supplied five changed files against
+commit `96f79e2affe021fedffb029eed32d71ef1ddfb71`. Three proof-body changes address
+the eighth build's `OutwardNormal`, `OrbMetricBounds` and `Degree7RiemannCover`
+errors. No declaration signature changes, additions or removals occur.
+
+The other two files implement a module-layout correction: the exact original
+`MainTheorem` definition moves from `MainStatement.lean` to the end of
+`Defs.lean`. `MainStatement.lean` remains as a public re-export, preserving all
+176 modules and existing imports. All concrete definitions and the complete
+main proposition keep their original code. Both original files are archived
+under `verification/templates/`, and the release checker verifies the exact
+move against those immutable baseline hashes, rather than accepting arbitrary
+edits to either file.
+
+An independent inspection of Lean 4.35's compiled declarations confirmed why
+the previous identical source tokens failed strict comparison: the flattened
+Challenge reused `Steklov.weightedBoundaryMass._proof_1` for the numeral in
+`2 * Real.pi`, whereas the separate original statement module generated
+`MainTheorem._proof_1`. The layout correction reproduces the Challenge's
+ordinary declaration order. Challenge, the comparison targets, the trusted
+judge and the permitted axiom set remain unchanged. No cache-reset command or
+other metaprogram is added to the submission. This source-only batch still
+requires full target compilation, the 590-target audit and independent replay.

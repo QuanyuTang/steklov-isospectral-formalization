@@ -7,32 +7,32 @@
     {
       "file": "RequestProject/BranchPointRemoval.lean",
       "name": "eLpNorm_two_sq",
-      "old": "theorem eLpNorm_two_sq {α E : Type*} [MeasurableSpace α] [NormedAddCommGroup E] (f : α → E) (μ : Measure α) : eLpNorm f 2 μ ^ 2 = ∫⁻ x, ‖f x‖ₑ ^ 2 ∂μ",
-      "new": "theorem eLpNorm_two_sq {α E : Type*} [MeasurableSpace α] [NormedAddCommGroup E] (f : α → E) (μ : Measure α) (hf : AEStronglyMeasurable f μ) : eLpNorm f 2 μ ^ 2 = ∫⁻ x, ‖f x‖ₑ ^ 2 ∂μ"
+      "old": "theorem eLpNorm_two_sq {\u03b1 E : Type*} [MeasurableSpace \u03b1] [NormedAddCommGroup E] (f : \u03b1 \u2192 E) (\u03bc : Measure \u03b1) : eLpNorm f 2 \u03bc ^ 2 = \u222b\u207b x, \u2016f x\u2016\u2091 ^ 2 \u2202\u03bc",
+      "new": "theorem eLpNorm_two_sq {\u03b1 E : Type*} [MeasurableSpace \u03b1] [NormedAddCommGroup E] (f : \u03b1 \u2192 E) (\u03bc : Measure \u03b1) (hf : AEStronglyMeasurable f \u03bc) : eLpNorm f 2 \u03bc ^ 2 = \u222b\u207b x, \u2016f x\u2016\u2091 ^ 2 \u2202\u03bc"
     },
     {
       "file": "RequestProject/C1Transfer.lean",
       "name": "eLpNorm_two_sq",
-      "old": "lemma eLpNorm_two_sq {F : Type*} [NormedAddCommGroup F] {μ : Measure ℂ} (g : ℂ → F) : eLpNorm g 2 μ ^ 2 = ∫⁻ x, ‖g x‖ₑ ^ 2 ∂μ",
-      "new": "lemma eLpNorm_two_sq {F : Type*} [NormedAddCommGroup F] {μ : Measure ℂ} (g : ℂ → F) (hg : AEStronglyMeasurable g μ) : eLpNorm g 2 μ ^ 2 = ∫⁻ x, ‖g x‖ₑ ^ 2 ∂μ"
+      "old": "lemma eLpNorm_two_sq {F : Type*} [NormedAddCommGroup F] {\u03bc : Measure \u2102} (g : \u2102 \u2192 F) : eLpNorm g 2 \u03bc ^ 2 = \u222b\u207b x, \u2016g x\u2016\u2091 ^ 2 \u2202\u03bc",
+      "new": "lemma eLpNorm_two_sq {F : Type*} [NormedAddCommGroup F] {\u03bc : Measure \u2102} (g : \u2102 \u2192 F) (hg : AEStronglyMeasurable g \u03bc) : eLpNorm g 2 \u03bc ^ 2 = \u222b\u207b x, \u2016g x\u2016\u2091 ^ 2 \u2202\u03bc"
     },
     {
       "file": "RequestProject/DiskDensity.lean",
       "name": "eLpNorm_moll_le",
-      "old": "lemma eLpNorm_moll_le (b : ContDiffBump (0 : ℂ)) (h : ℂ → E) (hh : StronglyMeasurable h) : eLpNorm (moll b h) 2 volume ≤ eLpNorm h 2 volume",
-      "new": "lemma eLpNorm_moll_le (b : ContDiffBump (0 : ℂ)) (h : ℂ → E) (hh : StronglyMeasurable h) (hm : AEStronglyMeasurable (moll b h) volume) : eLpNorm (moll b h) 2 volume ≤ eLpNorm h 2 volume"
+      "old": "lemma eLpNorm_moll_le (b : ContDiffBump (0 : \u2102)) (h : \u2102 \u2192 E) (hh : StronglyMeasurable h) : eLpNorm (moll b h) 2 volume \u2264 eLpNorm h 2 volume",
+      "new": "lemma eLpNorm_moll_le (b : ContDiffBump (0 : \u2102)) (h : \u2102 \u2192 E) (hh : StronglyMeasurable h) (hm : AEStronglyMeasurable (moll b h) volume) : eLpNorm (moll b h) 2 volume \u2264 eLpNorm h 2 volume"
     },
     {
       "file": "RequestProject/DiskDensity.lean",
       "name": "exists_bound_eLpNorm",
-      "old": "lemma exists_bound_eLpNorm (R : ℝ) {ε : ℝ} (hε : 0 < ε) : ∃ c > 0, ∀ k : ℂ → E, (∀ x, ‖k x‖ ≤ c) → (∀ x, R < ‖x‖ → k x = 0) → eLpNorm k 2 volume ≤ ENNReal.ofReal ε",
-      "new": "lemma exists_bound_eLpNorm (R : ℝ) {ε : ℝ} (hε : 0 < ε) : ∃ c > 0, ∀ k : ℂ → E, AEStronglyMeasurable k volume → (∀ x, ‖k x‖ ≤ c) → (∀ x, R < ‖x‖ → k x = 0) → eLpNorm k 2 volume ≤ ENNReal.ofReal ε"
+      "old": "lemma exists_bound_eLpNorm (R : \u211d) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) : \u2203 c > 0, \u2200 k : \u2102 \u2192 E, (\u2200 x, \u2016k x\u2016 \u2264 c) \u2192 (\u2200 x, R < \u2016x\u2016 \u2192 k x = 0) \u2192 eLpNorm k 2 volume \u2264 ENNReal.ofReal \u03b5",
+      "new": "lemma exists_bound_eLpNorm (R : \u211d) {\u03b5 : \u211d} (h\u03b5 : 0 < \u03b5) : \u2203 c > 0, \u2200 k : \u2102 \u2192 E, AEStronglyMeasurable k volume \u2192 (\u2200 x, \u2016k x\u2016 \u2264 c) \u2192 (\u2200 x, R < \u2016x\u2016 \u2192 k x = 0) \u2192 eLpNorm k 2 volume \u2264 ENNReal.ofReal \u03b5"
     },
     {
       "file": "RequestProject/DiskDensity.lean",
       "name": "eLpNorm_add3_le",
-      "old": "lemma eLpNorm_add3_le {E : Type*} [NormedAddCommGroup E] {a b c : ℂ → E} (ha : AEStronglyMeasurable a volume) (hb : AEStronglyMeasurable b volume) (hc : AEStronglyMeasurable c volume) : eLpNorm (a + b + c) 2 volume ≤ eLpNorm a 2 volume + eLpNorm b 2 volume + eLpNorm c 2 volume",
-      "new": "lemma eLpNorm_add3_le {E : Type*} [NormedAddCommGroup E] {a b c : ℂ → E} : eLpNorm (a + b + c) 2 volume ≤ eLpNorm a 2 volume + eLpNorm b 2 volume + eLpNorm c 2 volume"
+      "old": "lemma eLpNorm_add3_le {E : Type*} [NormedAddCommGroup E] {a b c : \u2102 \u2192 E} (ha : AEStronglyMeasurable a volume) (hb : AEStronglyMeasurable b volume) (hc : AEStronglyMeasurable c volume) : eLpNorm (a + b + c) 2 volume \u2264 eLpNorm a 2 volume + eLpNorm b 2 volume + eLpNorm c 2 volume",
+      "new": "lemma eLpNorm_add3_le {E : Type*} [NormedAddCommGroup E] {a b c : \u2102 \u2192 E} : eLpNorm (a + b + c) 2 volume \u2264 eLpNorm a 2 volume + eLpNorm b 2 volume + eLpNorm c 2 volume"
     }
   ],
   "new_declarations": [
@@ -84,6 +84,25 @@
       "new_declarations": [],
       "existing_definition_bodies_unchanged": true,
       "compiled": false
+    },
+    {
+      "aristotle_task": "f5222b23-ccbe-477f-a5fc-fb07e6f2bc1b",
+      "base_commit": "96f79e2affe021fedffb029eed32d71ef1ddfb71",
+      "changed_files": 5,
+      "statement_changes": [],
+      "declaration_kind_changes": [],
+      "new_declarations": [],
+      "declaration_relocations": [
+        {
+          "name": "MainTheorem",
+          "from": "RequestProject/MainStatement.lean",
+          "to": "RequestProject/Defs.lean",
+          "signature_and_body_identical": true
+        }
+      ],
+      "existing_concrete_definitions_unchanged_in_this_patch": true,
+      "compiled_by_aristotle": false,
+      "source_archive_sha256": "8d13cd54886469999b940249ed5a8fa6a1e8c02e2a09f8e42b4644283c1878fa"
     }
   ]
 }

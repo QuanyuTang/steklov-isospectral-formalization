@@ -255,6 +255,8 @@ theorem cone_estimates (i : Fin O.n) :
       have hc := hch w hwb hw0
       have hlam : 0 < O.lam (coneChart p m w) :=
         O.lam_pos _ ⟨O.cb (ball_subset_closedBall hc.1), hc.2⟩
+      -- Lean 4.35: the integrand is the unapplied pointwise product `(f * g) z`; apply it first.
+      simp only [Pi.mul_apply]
       rw [O.lamI_eq ⟨O.cb (ball_subset_closedBall hc.1), hc.2⟩]
       have he := hμe w hwb hw0
       unfold chartFactor at he

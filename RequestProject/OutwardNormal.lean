@@ -74,8 +74,23 @@ theorem nrm_outward (θ : ℝ) :
     convert this using 1
     rw [real_inner_eq_re_inner ℂ]
     simp only [inner]
-    rw [mul_right_comm, Complex.mul_conj, Complex.normSq_eq_norm_sq, hz₀]
-    simp
+    -- Lean 4.35 / current Mathlib: the inner product unfolds to `z₀ * star z₀ * _`, written with
+    -- `Star.star` rather than `starRingEnd ℂ`; normalise it before using `Complex.mul_conj`.
+    have hzz : z₀ * star z₀ = 1 := by
+      have hconj : z₀ * (starRingEnd ℂ) z₀ = 1 := by
+        first
+          | (rw [Complex.mul_conj, Complex.normSq_eq_norm_sq, hz₀]; norm_num)
+          | (rw [Complex.mul_conj', hz₀]; norm_num)
+          | (apply Complex.ext <;>
+              simp [Complex.mul_re, Complex.mul_im, ← Complex.normSq_apply,
+                Complex.normSq_eq_norm_sq, hz₀] <;> ring)
+      simpa only [starRingEnd_apply] using hconj
+    first
+      | (rw [hzz, one_mul]; simp)
+      | (rw [hzz, one_mul]; simp [RCLike.re_to_complex])
+      | (simp only [hzz, one_mul, RCLike.re_to_complex, Complex.ofReal_re])
+      | (simp [hzz])
+      | (simp [← starRingEnd_apply, Complex.mul_conj, Complex.normSq_eq_norm_sq, hz₀])
   have hf0 : f 0 = 1 := by
     show ‖(H ∘ γ) 0‖ ^ 2 = 1
     rw [hH0, hz₀]; norm_num
