@@ -60,7 +60,8 @@
     "Use source type paper for compatibility with the published Palomar policy; declare substantive-development explicitly.",
     "Clarify manuscript review versus independent human review of the formalization, and remove obsolete PR/upload instructions.",
     "Correct a StrictConvexity module-doc declaration name; no mathematical Lean code changed.",
-    "Explicitly pass -j2 to project compiler processes and the audit; supply caller-overridable Windows stack/runtime defaults and UTF-8 output. LEAN_NUM_THREADS alone does not bound Lean CLI threads."
+    "Explicitly pass -j2 to project compiler processes and the audit; supply caller-overridable Windows stack/runtime defaults and UTF-8 output. LEAN_NUM_THREADS alone does not bound Lean CLI threads.",
+    "Clarify in the Chinese abstract that isospectrality is asserted for the two labels at each common parameter, while noncongruence holds across distinct labels or parameters; no all-parameter common spectrum is asserted."
   ],
   "policy_reference": {
     "repository": "https://github.com/PalomarRegistry/PalomarPolicy",
