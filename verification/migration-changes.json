@@ -1,0 +1,422 @@
+{
+  "baseline_toolchain": "leanprover/lean4:v4.28.0",
+  "target_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "changed_original_sources": [
+    {
+      "file": "RequestProject/AbstractSpectral.lean",
+      "baseline_sha256": "356e394c41b5e49baf556ee4b0a5e5f2d3ae30eaeef8bbc11f84870e88980c38",
+      "migrated_sha256": "866dc679d284043b0989eff06b7631dd24b3966a713763f019d2905a46f36b67"
+    },
+    {
+      "file": "RequestProject/ActualKernel.lean",
+      "baseline_sha256": "bd2a1546083da233c6672d3948879a63c121bd6b80db79e9d87d3bdd3d869006",
+      "migrated_sha256": "48db2fe26ed37a35df0c812f14b396264b69e3db485bde95245857dcf61fd4aa"
+    },
+    {
+      "file": "RequestProject/ApproxMinMax.lean",
+      "baseline_sha256": "00e926453d5d4f1f3c85f9c04958d51b99b2ad75caa95566712c9212b2384d65",
+      "migrated_sha256": "bd431630c973ca5a62e431ebbe23e7d0da320d506e652646933d64f20904a3ae"
+    },
+    {
+      "file": "RequestProject/ArcLength.lean",
+      "baseline_sha256": "31b6d8d317e9096576a622941f3c8924e4e3b3cd183a6dd36004ea6fcb89ea43",
+      "migrated_sha256": "e023847857ca9b0176cc2553538a166ade2c31cb97160be401e26beffd84b509"
+    },
+    {
+      "file": "RequestProject/Blaschke.lean",
+      "baseline_sha256": "75a04154da931116c4234f70498e7008e7562b845dffe6caefd76e0bae8953d7",
+      "migrated_sha256": "1c31df4b70581897f64d25109f2fa8ddb3b2839cadd584b72e3544483bcf5079"
+    },
+    {
+      "file": "RequestProject/BlaschkeCover.lean",
+      "baseline_sha256": "946f3305dcc7136aec7ba84ffaf43a89ba7d734737182b8f7443fb3825e66632",
+      "migrated_sha256": "9d529ced8261d2caad63d126f6f0332b210c421e382ab7aa093da94d93c7ef2b"
+    },
+    {
+      "file": "RequestProject/BlaschkeFactorization.lean",
+      "baseline_sha256": "e96d6767c4f9ce8692debe3cffe6dd049a4838fb06d53a062aa74870a8fc1744",
+      "migrated_sha256": "13c5e1947c4dec7f3cca6a1981468da0009d8df70148997e8acbf323307c4f85"
+    },
+    {
+      "file": "RequestProject/BlaschkeFibres.lean",
+      "baseline_sha256": "8a8a526ed1fdd9b3095a2719f17772699a8dc7f42da39f300e422c0214e279b3",
+      "migrated_sha256": "553e9258ca4e7dd8635dacfd112e3b34fa379e8ec45b89e3552f054121145103"
+    },
+    {
+      "file": "RequestProject/BlaschkeKernel.lean",
+      "baseline_sha256": "472ffcf303bc2c6114b4ea11c6e481134e880dc1d27e7feb947d1e6fe6704332",
+      "migrated_sha256": "c0422df1d67eb5be659bc487fcee9a6a2b6c0fe5f58e7995d8bcb8a7652f97ec"
+    },
+    {
+      "file": "RequestProject/BlaschkePerimeter.lean",
+      "baseline_sha256": "f091b103f575e41405eff8c20647beb96a0b1522f4e83c85fe07bb917ad6e8de",
+      "migrated_sha256": "8bfed73d6a63179427b748bfa47f105f39d3ae4cc50832d86a62ecea17d1fe7f"
+    },
+    {
+      "file": "RequestProject/BlaschkeWeight.lean",
+      "baseline_sha256": "8a86a95a8d0c24bc6e65899450ac31a5f1bdabf1a9fa1ec600bcc183748b8b99",
+      "migrated_sha256": "a68e28deae8b6c550a523e552fca53f2a73f30154b57bcf9cf63845feada0025"
+    },
+    {
+      "file": "RequestProject/BorderedTopology.lean",
+      "baseline_sha256": "c1cecad6e8232ad9b8be55f01319a90fa55649438c939d9f7c883bba1a84c213",
+      "migrated_sha256": "670e312abffe8284990b9adfe7ed55702286c6f5ae73f1be4dde73b5bc36effd"
+    },
+    {
+      "file": "RequestProject/BranchedCompletion.lean",
+      "baseline_sha256": "0246e9465b1d7f737124d7329ed26e4648e73703f143890356eba87aac6e04bc",
+      "migrated_sha256": "5d5b0845bc1d726f0ad767e315d31038fbbcf08b11ce97b617cb98c665bd37d2"
+    },
+    {
+      "file": "RequestProject/BranchPointRemoval.lean",
+      "baseline_sha256": "3c52ac3bfe7a44fe28b08701b4263f8df6de534684abf433d5e2191825e436fa",
+      "migrated_sha256": "dcb5f5549eacbe229035fb8fa504c7fc9054ceb4ae5482bffd6aedccddba9ca1"
+    },
+    {
+      "file": "RequestProject/C1Sobolev.lean",
+      "baseline_sha256": "81cc370f2050d51f2c7773b44796366c73ec75418847cbb38f0d301aeb226d9b",
+      "migrated_sha256": "94ff5538ad16d4c9b6baf133c32a7da5b01f183af2f1025021d6d7429e33321d"
+    },
+    {
+      "file": "RequestProject/C1Spectrum.lean",
+      "baseline_sha256": "95c6228ace1c592abe7141aa9b844d75fd2acee15ce5e7d8feab9e6cb34762b4",
+      "migrated_sha256": "87c5fbdb91cd04976a23fcbbd596283807dff5cbce80f733b466ca501731f8f4"
+    },
+    {
+      "file": "RequestProject/C1Transfer.lean",
+      "baseline_sha256": "d7069b1cf66faf7b6c8fe5ee897c12043ecd43686a7d126512bd16c6db270241",
+      "migrated_sha256": "3f051a1f7a1d3577089556bc7bf8b1dfb1dfb134a1e642b409cd7ba1e05a69f4"
+    },
+    {
+      "file": "RequestProject/ClassicalSteklov.lean",
+      "baseline_sha256": "b84afbb466f00095525e6e80b30bf5849e212b14a0ce147ee214d800ca000dec",
+      "migrated_sha256": "78007a2279b7df148307edf3bacb3209c6b82f1f44d76cf8b4d4bcff30aac8d3"
+    },
+    {
+      "file": "RequestProject/Coalescence.lean",
+      "baseline_sha256": "73a21004902149602acba0240df82d83cc46cc439927fa68f7c47af1c6bcd41a",
+      "migrated_sha256": "08cfb5fcd5a1078e057d677308f645695d701a2675680042c877e743646faafb"
+    },
+    {
+      "file": "RequestProject/CoalescenceRealization.lean",
+      "baseline_sha256": "2b1ac3e0b23ac3d6cfad235bfba8a5cd785dad2ba5022b3d3a8b8ea4af3dd037",
+      "migrated_sha256": "79ce514c820cb5d6b7b944ddf8753cbc24d8ad9d9130c713a0208349fef48490"
+    },
+    {
+      "file": "RequestProject/ConditionalFamily.lean",
+      "baseline_sha256": "0090d8d3b6a6cf420b0d4c26f28c8170792cee772bbbdadf6d6e0cc24212e046",
+      "migrated_sha256": "84d84b019f4bebc843ecb84487567c1f56d507f2b0afe3a99f264d3e67b9b20c"
+    },
+    {
+      "file": "RequestProject/ConeUniformizer.lean",
+      "baseline_sha256": "c23c583d892c8b4469fd1f85d64adf7b064412800f0928d313fb3aff98bc6c10",
+      "migrated_sha256": "365bea73df77da0b9fc64a2a0655cf4cf6208957834aa63e70abd4c154782a1f"
+    },
+    {
+      "file": "RequestProject/ConformalSobolev.lean",
+      "baseline_sha256": "0c5f00d5f0e30039e10e3e5372dfa22b1e1b1b1c689f6bf860defe7b29596b51",
+      "migrated_sha256": "040ce9cadaf692ec2b6748eab62de67e6f8e0a317c0fb3630d2af32ab381f3ad"
+    },
+    {
+      "file": "RequestProject/ConformalSpectrum.lean",
+      "baseline_sha256": "8c6278ca213bb199e70a2d9d9ed1a857ff201e51d1e51b0e9d4294fa7b35da96",
+      "migrated_sha256": "39b5f8b0e2ea8e4c808e640407f031a5895a394ecc08660b0ddbce62fce1ad00"
+    },
+    {
+      "file": "RequestProject/CoverInequivalence.lean",
+      "baseline_sha256": "255d0d18032fbaa453c0a356a83902aac3fc2e0e9a1eca6553595f8237946ae7",
+      "migrated_sha256": "ccae4bebe10c14aa645233f2b43148cb6ae8990cf52b2c70103f5d5f2223edc3"
+    },
+    {
+      "file": "RequestProject/CoverKernel.lean",
+      "baseline_sha256": "5ac6735d2c4d2c177ce91281eb6dba7ba4d09fd376a5e6f486ec60a984e66888",
+      "migrated_sha256": "b0f3352dfed3040868e3c07ac2cf5426a350ea2552039248f428d9bc0e3d70fc"
+    },
+    {
+      "file": "RequestProject/Defs.lean",
+      "baseline_sha256": "7bd03c5465c97e0e6b2c71441994b3a006dca4467cbb021638a13a17020f98cb",
+      "migrated_sha256": "452f002e21e0bdfc38237a4399dc7293420b610b590f0a3469f7978fcb220f3a"
+    },
+    {
+      "file": "RequestProject/Degree7Bordered.lean",
+      "baseline_sha256": "0c9a67072668fa016ef27d4cac1ac31e5ab5f797972a27fc7cc3dd90c8054202",
+      "migrated_sha256": "59aab9806e25f5b241d6d5fa993cd977a37f36d12538ad2c1b63d0a690379ef9"
+    },
+    {
+      "file": "RequestProject/Degree7CommonCover.lean",
+      "baseline_sha256": "23d2ff07b6f357ab52d87c1ac5f98d1b85b306b1b76110e151df4bba319cc949",
+      "migrated_sha256": "6cda8cabf4e6bff3ab10fc545d9b15c60a4a881d974ca48555ee7f99d58d9649"
+    },
+    {
+      "file": "RequestProject/Degree7Completion.lean",
+      "baseline_sha256": "b6906cdcf6d4699f057a0978516db64a608dab91d9979ced44c4338323e01fb6",
+      "migrated_sha256": "5ad6e1cb640e6bac6e3173876479420252a70b18b4698aed866970b3d3448598"
+    },
+    {
+      "file": "RequestProject/Degree7ConeOrders.lean",
+      "baseline_sha256": "7af599ba062fb7052cde537aa5afb81fd8e5a84e8ae158e0ce7714bf831a7fae",
+      "migrated_sha256": "daceb01552deb08b83ab7309ce34aab7e48e0eac00a3392441dabe1997917d03"
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "baseline_sha256": "f4e93216df1c88b12884a0926e7aef7acdb36bb912afbfb3963d93cb672da137",
+      "migrated_sha256": "fd0251c1cd7ba46f9adf7a829f67970d4216c20a9a70b913b7142b8ba53eb420"
+    },
+    {
+      "file": "RequestProject/Degree7Permutations.lean",
+      "baseline_sha256": "1ff7d45a63b6207242db5d2af809205f805cb9f9ca4e24cc9d4e3b7c2f1816fc",
+      "migrated_sha256": "84795b61cc2b81cf1fe9e063a708a365ae1cccecfcb4788c46eddebef2a5f78d"
+    },
+    {
+      "file": "RequestProject/Degree7PointLine.lean",
+      "baseline_sha256": "4bfd40fbf4ad80e345d76f97427addc5f3917f70decca7ea62dbe128311cc28a",
+      "migrated_sha256": "ee8b602e8dbdec074379583bee3fac6ebb45f217b9991894d73dd17827898d1c"
+    },
+    {
+      "file": "RequestProject/Degree7Polynomial.lean",
+      "baseline_sha256": "8f2e6211e498d372fe24ecf2a1f3b1b03c7f61aefa320c657ba5a9678b4fd498",
+      "migrated_sha256": "8c19aadf75d4f2bc13ff817862f49c02731ecc046c2c9fb4e1590ca3c9a67897"
+    },
+    {
+      "file": "RequestProject/Degree7Prop331.lean",
+      "baseline_sha256": "5ce530e6fd335bfef42a73f072ac5ecbe05cc1266d75f98a71294d4246b09bf2",
+      "migrated_sha256": "065fb35670ce02d346490db975d845d2ccf42872dd795848a5793e86ec25f7c1"
+    },
+    {
+      "file": "RequestProject/Degree7RegularCover.lean",
+      "baseline_sha256": "6894b6137bbefaed4f2916b52779551ef8a1092a774c7e85bfc937597288c9eb",
+      "migrated_sha256": "02d7e97c9f50b8325bad551ade531564bf5e14d334fe64780ae42cf023f0bb2d"
+    },
+    {
+      "file": "RequestProject/Degree7RiemannCover.lean",
+      "baseline_sha256": "cc95d04bb3db29b28986367977fefdfae24b7ee4c7c1492483b6afcd8d0406f5",
+      "migrated_sha256": "bffee689106ce8b94142b5a00a8d0de31bc4ebbfd31310002f63ccb1dbfc4540"
+    },
+    {
+      "file": "RequestProject/DiskAut.lean",
+      "baseline_sha256": "ea34258f619f6d1a382760795e0f4c8512aaaf5d2230b8d80339e9d4685cc378",
+      "migrated_sha256": "ecefcc6d6a373b9104423e5a5b12bd661c755f03d33a0ddddbcd3e0c6032528a"
+    },
+    {
+      "file": "RequestProject/DiskDensity.lean",
+      "baseline_sha256": "8a224cf33843e7abab218adfeed766cedeaf28a64a320ad393d4cbc88f3e142a",
+      "migrated_sha256": "43eaab14ca184975840a3363281deb1bc69f507010acca2416b489ba4543c7c2"
+    },
+    {
+      "file": "RequestProject/DiskGreen.lean",
+      "baseline_sha256": "b36a252e9478b9fae6a74f38608130c7df6673070e1b18e785a01595dd29f5d0",
+      "migrated_sha256": "38b21673542962b4d5f153a32edca2ef3969475ff245146a43c81fabc9a659ae"
+    },
+    {
+      "file": "RequestProject/DiskH1.lean",
+      "baseline_sha256": "6dad6aaa88cfec2a98b9fadbc48a6094b6ca0a640b0103b65af9b24a35e9f5da",
+      "migrated_sha256": "86d6a2e11a048cada09c11ff93afc98d0de9f65fef060c989d5ae92d01e091f6"
+    },
+    {
+      "file": "RequestProject/DiskSpectral.lean",
+      "baseline_sha256": "02f31249094f223d360023a0bc9cd6bc35ab54928a89d46f33b8a34cf259ca98",
+      "migrated_sha256": "d99db35247144c0b84ede53236fa42961f4ff061337f49b1e23a853a573ab9cb"
+    },
+    {
+      "file": "RequestProject/DiskTrace.lean",
+      "baseline_sha256": "60d7e1bf51f2fd4d73516cfb38c9c1132ecf1144dd96671f94a638399d89fbb3",
+      "migrated_sha256": "d835b3cbf9c8809eacb3b65bc2c29a6a985b00ae8bbe7ef5f1e30117cdc75c4b"
+    },
+    {
+      "file": "RequestProject/DomainH1.lean",
+      "baseline_sha256": "266e11fb871e3b41d366b8a0317a23073b629ecad4f8989e1a4f3027bc02c26f",
+      "migrated_sha256": "c5014e47262e559bab5eb0841b5c0492c0d07af01348a0503837bc4605d73c5c"
+    },
+    {
+      "file": "RequestProject/FanoKernel.lean",
+      "baseline_sha256": "6fa57a3cd708f0de9a462358c990c049ab76a990063731963b80f70a0e7f4186",
+      "migrated_sha256": "fc6a713380a32f9e6352c88c117707fa7efa99c84d793dc7fb96a1d697bd4062"
+    },
+    {
+      "file": "RequestProject/FillExtend.lean",
+      "baseline_sha256": "bcaa7718d4174a24288633a5c87115cf48ed28ee1164889bad200e4b994ff2f8",
+      "migrated_sha256": "db515813de93dfcbf8be55599ab584cc1cc048f6d6a517970a8de2b2029151b1"
+    },
+    {
+      "file": "RequestProject/FillMap.lean",
+      "baseline_sha256": "965d7557a4b56e962220e3dbdaa585b1495e8a9d86834f4ed662ac4377f31397",
+      "migrated_sha256": "10a9e237b467545bba4b0e54326c3378099ec96247ef3855553b59152e97dc6c"
+    },
+    {
+      "file": "RequestProject/FillProper.lean",
+      "baseline_sha256": "3ea36a3d71225eca7a222fe5f514589d68e39cc30f67a24622c3788ad358b598",
+      "migrated_sha256": "9eab9b1d55cf6770acc63aaee3645c724b7764788648ac4698f4f480f155915b"
+    },
+    {
+      "file": "RequestProject/FourierCircle.lean",
+      "baseline_sha256": "9255491db7e5e23efb6de47a6873886cd7c8ab97f55388bd636f8739b4800f5d",
+      "migrated_sha256": "3633592ca4dd58e2b3b39c2fa0f40a7c86e4db016ee2049adbb6c7a91c926fb2"
+    },
+    {
+      "file": "RequestProject/Friedrichs.lean",
+      "baseline_sha256": "233f79828777b82d590f0e5c8f4248f744a6743b66db5964e68b80bcd4c8a4f2",
+      "migrated_sha256": "53e61b0ca527e60ca153a129aeeb8e853fac2415b9bc564e9134e609782d5753"
+    },
+    {
+      "file": "RequestProject/FullAssembly.lean",
+      "baseline_sha256": "ea5e1c7fe6b1772ac35acc3799083d5aab98092920624f81a87c6c1235442014",
+      "migrated_sha256": "92caebd97a13ca4438a6f795f1f66696951eedeffd8d434a3e62aca65caf5cca"
+    },
+    {
+      "file": "RequestProject/GeneralDiskCovers.lean",
+      "baseline_sha256": "65e3f7908b96322ee67ffe27a4a6ece790723485949bc23cd6a656563adda190",
+      "migrated_sha256": "415c48febf8476380121da163b1305eaebfb333d1dedb9630fbcc14f0aeae51a"
+    },
+    {
+      "file": "RequestProject/GroupInput.lean",
+      "baseline_sha256": "a24764d1138e28196a03aed7e1fc085a87427d0018ad198e47370a0953fb0758",
+      "migrated_sha256": "5a2a54789ae0fb40874c2816ea3f92dd1a7163ae9144958f74b2c14f729476bb"
+    },
+    {
+      "file": "RequestProject/LemniscateBoundary.lean",
+      "baseline_sha256": "af9d2ce60309eee0077373281c09712a3f4894fe6610120d3f8c1d8f17f667be",
+      "migrated_sha256": "95b824260f107de18520ca17b1d4b1afb409a65a975e414b2edafe4d54173fc8"
+    },
+    {
+      "file": "RequestProject/LocalCoverIneq.lean",
+      "baseline_sha256": "713ce167e726b0d7dd6e63703d3ad34f19dd329b35bfda90c0e0b5ea580f4bac",
+      "migrated_sha256": "841d974980375848cb16e94883d279ea11feb40c9c85c34f444b7c47bfb1f49f"
+    },
+    {
+      "file": "RequestProject/LocalInertia.lean",
+      "baseline_sha256": "eee84af0aaf44a9b9167f3dea77a0d0391182228c700543b9da07c06e0824733",
+      "migrated_sha256": "e1fc8576e3302c079f7988f9909120534f9d873941c379ee6706c7b721bc238c"
+    },
+    {
+      "file": "RequestProject/MainStatement.lean",
+      "baseline_sha256": "c711050a6b4efc0d4e37696b0b8bd4d66c15c1bb15a9be271f87894db2ff5379",
+      "migrated_sha256": "34ffba2a2b76996a42298dfb3e08a5d540349066b6d73668998ec66ffe90179a"
+    },
+    {
+      "file": "RequestProject/MainTheoremH1.lean",
+      "baseline_sha256": "b8509a7428ec1249e50de1c8e4c6eb539e4867c6d5f6a576fe19ce15b1772dec",
+      "migrated_sha256": "c3aca98a3fff145f0a7ffd646d5b60ea87913a77739ed2c877af2295892940bc"
+    },
+    {
+      "file": "RequestProject/MainTheoremWeak.lean",
+      "baseline_sha256": "44c8c0122d169fd0da88271e73d4f0958abd1ce924fb1d50a4b4e897542861ac",
+      "migrated_sha256": "215ac53486c318f184dff6e979980b4c16552a061e2019827148c39fb3d55aa9"
+    },
+    {
+      "file": "RequestProject/Orbisurface.lean",
+      "baseline_sha256": "4f6b05b2bbedd5f2e5f9c8a630ab39750874465e968a784c01aad8470245cc30",
+      "migrated_sha256": "d31ba0da8fd57ce26339df861a7633fc37da7fce4a9a7bd26c66ef6ebb1d94e6"
+    },
+    {
+      "file": "RequestProject/OrbMetricBounds.lean",
+      "baseline_sha256": "e5123953dc4f94c94b54ebb440763ec79d2189512e1bff3fb6357ca78fd84549",
+      "migrated_sha256": "792a2bf63647ec3951ad8df805825478dbbdd59b3abf3aa514fee1e308b7a1ce"
+    },
+    {
+      "file": "RequestProject/OrbMetricSobolev.lean",
+      "baseline_sha256": "d9c335f4128891620c62c63e579d50ac18d2724d00ade9729024810283204972",
+      "migrated_sha256": "ee7c7082fcdd1d0fca3d671ab936f4baa22e93afce7e6658329c998762b25d16"
+    },
+    {
+      "file": "RequestProject/OrbMetricSpectrum.lean",
+      "baseline_sha256": "e3d5319af5f4f56be110f808c8435d740d797dd904a95f65044e089a2b6c907a",
+      "migrated_sha256": "ca39ab49d169a02b67958378cfe937369ebdb4505710de3e8e32367165c9a0d4"
+    },
+    {
+      "file": "RequestProject/OrbMinMax.lean",
+      "baseline_sha256": "111cfd78d2f8928b9f8ef289e7ee2bd009e05e30d1543edd652f66103623967f",
+      "migrated_sha256": "97bf70dc094ae035237aedafd3b67949aab857dfe94e421e16a3e44405441f70"
+    },
+    {
+      "file": "RequestProject/OrbSobolev.lean",
+      "baseline_sha256": "23e3271d4d2621ac376ed1209ccc9f47de96f7b0b21e22f773615582c7347ab6",
+      "migrated_sha256": "16728faad4026b117c8d88d2b5c6e8cd735139b4a3d924a71a7cfeae58a2346a"
+    },
+    {
+      "file": "RequestProject/OuterFunction.lean",
+      "baseline_sha256": "d4b42855d6bcef8476af8474db8944c1aac3f84dd45411f9a60e14dbdd2b8ce9",
+      "migrated_sha256": "a60a596c86d2c2df8eb1c87a13cd0f46839c79117f09b4d913a2885e7a16c719"
+    },
+    {
+      "file": "RequestProject/OutwardNormal.lean",
+      "baseline_sha256": "bae4b6c53a51b04480bfc4f1fce6bd9985a68944c0129a3cee3af388eec606b0",
+      "migrated_sha256": "53b53867785cbaf4d45c2d42f1f7cc3361ec6303186558318b0ba9b0b38159e4"
+    },
+    {
+      "file": "RequestProject/PaperStatements.lean",
+      "baseline_sha256": "62c3f5ec9788a960656f41a08c39c8ff9fc71f6fadb0926f97887e857a2eb628",
+      "migrated_sha256": "2847c411669f77dca593675041e03fdcde2ec4be6c55d25d1f1de29eea3d18a4"
+    },
+    {
+      "file": "RequestProject/PolynomialCover.lean",
+      "baseline_sha256": "56f70fe4f044d6d902696a630738c9521990d426ee2ac83295fde6d15cca32ac",
+      "migrated_sha256": "5c3beff0fc3f45996e0187ab4f3d62e6e0deea4f1089fc3c62121a1fe7d71b0b"
+    },
+    {
+      "file": "RequestProject/PullbackLocal.lean",
+      "baseline_sha256": "9a9d7f348cd46136081c4922213b099ec1bde47196d1c34b462f25f39dbaeaad",
+      "migrated_sha256": "96b013b343e6c6947dbd34e4b205926d92d5a4216b2249930e5c7dbd7999d46b"
+    },
+    {
+      "file": "RequestProject/PuncturedDiskCover.lean",
+      "baseline_sha256": "b737644f8f6511b3ffa9b6e25af816487b404260617cc9fc8a1b25b278b21141",
+      "migrated_sha256": "ac4815a87920d156eef151c74a3942e3c58f8eda62b1e661254a5e35a3d4969a"
+    },
+    {
+      "file": "RequestProject/RegCovMonodromy.lean",
+      "baseline_sha256": "f0e75c0904321fd464dbf33ad6580b0e789f30b22239039a4191169b4f64cd60",
+      "migrated_sha256": "334981f5e6aaf4ddedb9b1ed9a90fc05d646907140979830bd117c1d77f1fe89"
+    },
+    {
+      "file": "RequestProject/RegFillMetric.lean",
+      "baseline_sha256": "60d45ee9dd2f61ee0d917cb169177044e9b09d430b551e10ec5e8290fe90124a",
+      "migrated_sha256": "3904034bb8d910ae0257e3da228cf1a338ff48017566f0feea2e1fa72620bfd0"
+    },
+    {
+      "file": "RequestProject/RegularCover.lean",
+      "baseline_sha256": "88642b77cfb93c3b0bc9b49655a6b3e305668cad29ca88c1b31292a4b1270e04",
+      "migrated_sha256": "30b508ead90a2c9a8c1d7d209e631b08964854f18ef9aa02d499b972ff1f1110"
+    },
+    {
+      "file": "RequestProject/SingularTransfer.lean",
+      "baseline_sha256": "75800c471b13a310dc9300fba30b1d11ba057bd6f107a8b3c9322b12a62486cb",
+      "migrated_sha256": "371c5bc58e4519eb7b333973960b7ad5a2bdbf399e728219f10897a182457e90"
+    },
+    {
+      "file": "RequestProject/StarPrimitive.lean",
+      "baseline_sha256": "45462a61567d047e036b8d8757e5dde7bc3b85495c0c4daa6bcd62e9f90d18ff",
+      "migrated_sha256": "652ffdbe9d2fc3fc8248152793c93acbe178c3cfcd08b7c65ec145e34fd96d63"
+    },
+    {
+      "file": "RequestProject/SteklovRegularity.lean",
+      "baseline_sha256": "e66b1783f26b1c26883857c54f3153f8763345ad78c2f71159dbc2b0b3e521ee",
+      "migrated_sha256": "b2ccc6dd48efe8a110bed5279bb3c20163468e5a35e0c32197c27e8950b39486"
+    },
+    {
+      "file": "RequestProject/StrictConvexity.lean",
+      "baseline_sha256": "bae64d4eda6e481f77fb9a0c3f69b708a70989befa8c102b3a6109e444287d76",
+      "migrated_sha256": "f954fdd79bdf4c5fd6ca7da90dd5abb8b3eabc952245e25d620df4589d011145"
+    },
+    {
+      "file": "RequestProject/TraceCompact.lean",
+      "baseline_sha256": "30584e5b9868547c235aee00b34371432b445af9e1301669cd4bc7be946d7d97",
+      "migrated_sha256": "56fe219917fa99d48377553fc42360963317eae5539f464f1cf5cbb7aa24b461"
+    },
+    {
+      "file": "RequestProject/TransplantEnergy.lean",
+      "baseline_sha256": "7537f21685b0e2d02e271cc64f0f76d37d8d6e144f0d93387a3020910cc553db",
+      "migrated_sha256": "1153579af0dc864d06ab0759d3617df66bd3ea153ec819abd47286cd8f80497f"
+    },
+    {
+      "file": "RequestProject/TransplantTransfer.lean",
+      "baseline_sha256": "602f1041042cedad3b0c29fe107be9949a866fa4de5e8990b85284b223390fd6",
+      "migrated_sha256": "aae0ec5aa0e413f52f6132d6431b93476fe35d5e7ff529702c617fec77b2b19d"
+    },
+    {
+      "file": "RequestProject/WeylLemma.lean",
+      "baseline_sha256": "8349ee4d44534c842614d067dd84d77ad64a906ec5521b9163f10ffa8ea2feb9",
+      "migrated_sha256": "a81d51824c77e9e5d7b874fac66a42b7966731421a30d50843613d9540bf54db"
+    }
+  ],
+  "note": "This hash comparison records edits; it is not a proof validation result."
+}

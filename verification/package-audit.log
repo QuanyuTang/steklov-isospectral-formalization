@@ -1,0 +1,915 @@
+Checking preserved proof/type contracts, full axiom inventory, and public entry.
+'group_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GL3F2.group_input_GL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GL3F2.almostConjugate_HP_HL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GL3F2.not_areConjugate_HP_HL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GL3F2.cycleCount_x' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GL3F2.cycleCount_y' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GL3F2.cycleCount_xy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GL3F2.cycleCount_x_L' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GL3F2.cycleCount_y_L' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GL3F2.cycleCount_xy_L' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovGroup.sunada_finrank_invariants_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovGroup.areConjugate_of_equivariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovAnalytic.injOn_of_re_deriv_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCritical.critical_values_match' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCritical.critical_values_no_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCritical.branchValues_mem_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCritical.coalescence_coeff_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBlaschke.blaschke_boundary_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBlaschke.blaschke_boundary_rigidity_anti' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBlaschke.integral_bdens' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBlaschke.integral_norm_deriv_blaschke' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovDilationProof.steklovDilation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovDilationProof.boundaryLength_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovDilationProof.congruent_smul_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovDilationProof.orientationReversing_smul_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovSanity.unitDisk_isDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovSanity.unitDisk_strictlyConvex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovSanity.unitDisk_realAnalyticJordan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovSanity.id_isNormalizedConformalMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ArcLength.hausdorffMeasure_image_eq_lintegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ArcLength.hausdorffMeasure_restrict_image_eq_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ArcLength.lintegral_image_hausdorffMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HolInv.isOpen_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HolInv.hasDerivAt_invFunOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HolInv.deriv_ne_zero_of_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HolInv.exists_open_injOn_of_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HolInv.exists_open_nbhd_injOn_deriv_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Steklov.minMax_le_of_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConformalPullback.exists_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConformalPullback.frontier_image_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConformalPullback.boundary_lintegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConformalPullback.dirichletEnergy_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConformalPullback.boundaryMass_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConformalPullback.prop_2_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BoundaryLength.boundaryLength_image_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BoundaryLength.boundaryLength_eq_of_realAnalyticJordan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BoundaryLength.boundaryLength_rescaled_blaschke' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Prop231Reduction.prop_2_3_1_of_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConformalImage.isDomain_image_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConformalImage.isBounded_image_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConformalImage.simplyConnected_image_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConformalImage.realAnalyticJordan_image_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Prop231Reduction.isospectral_of_weighted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterFourier.norm_fc_le_of_iteratedDeriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterFourier.hasSum_fc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RealAnalyticBounds.exists_iteratedDeriv_bound_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterFunction.norm_Hj_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterFunction.re_H_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterFunction.exists_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterFunction.iteratedDeriv_H' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompositionBounds.norm_iteratedFDerivWithin_comp_le_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CompositionBounds.log_comp_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterRealization.exists_outer_primitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterRealization.norm_outer_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterRealization.prop_2_3_1_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterRealization.prop_2_3_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterRealization.deriv_eq_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterConvergence.main_estimate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterConvergence.prop_2_3_1_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterConvergence.prop_2_3_1_convergence_seq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterConvergence.prop_2_3_1_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.schwarz_near_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.inverse_schwarz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.norm_deriv_le_of_image_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.norm_deriv_ge_of_ball_subset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.trapped_map_close_to_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.polyQ_root_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.ball_subset_component' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.component_subset_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.iteratedDeriv_tendstoLocallyUniformlyOn_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SteklovCoalescence.blaschke_cinfty_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.iteratedDeriv_re_circle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.blaschke_weight_ck_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.coalescence_trapping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.coalescence_map_tendsto_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.coalescence_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.coalescence_cinfty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.coalescence_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.coalescence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.paperQ_eq_polyQ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.paperCoeff_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.prop_3_4_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.blaschke_weight_posAnalytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.coalescence_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovConvexity.strictConvex_closure_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovConvexity.eventually_strictConvex_of_C2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheoremExceptNoncongruence_of_mainTheorem' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SteklovCoalescence.mainTheorem_except_iii_of_cover_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.montel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.hurwitz_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.hasDerivAt_radialPrimitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.exists_log_of_starConvex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.exists_sqrt_of_starConvex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.koebe_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.riemann_mapping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.polyQ_eq_prod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.re_polyQ_deriv_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.starConvex_preimage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.nearDisk_preimage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.norm_le_one_of_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.blaschke_prod_norm_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.eq_blaschke_of_proper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.proper_comp_inv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.exists_normalizedDiskCover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.exists_paper_diskCover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.exists_paper_diskCover_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.prop_3_4_1_unconditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.coalescence_realization_unconditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheorem_except_iii_of_spectral_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Degree7.hasDerivAt_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.A_divmod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.quartic_cc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.aRem_cc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.bRem_cc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.bconst_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.deriv_pfun_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.pfun_critical_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.pfun_critical_value_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.one_sub_pfun' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.q_roots_simple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.q_disc_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.exists_monic_normalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.cc_plus_ne_cc_minus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.not_affine_equivalent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.i_sqrt7_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.cycleType_x7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.cycleType_y1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.cycleType_y2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.cycleType_x7y1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.cycleType_x7y2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.cycleType33_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.cycleType7_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.card_cycleType33' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.card_good' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.card_centralizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.good_eq_orbits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.rhoP_x' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.rhoP_y' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.rhoL_x' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.rhoL_y' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.rhoP_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.rhoL_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.card_closure_y1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.card_closure_y2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.passport_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.passport_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.passport_infinity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.card_roots_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.card_fibre_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PolyCover.isCoveringMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PolyCover.monodromy_transitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PolyCover.card_fibre' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.critVals_pPoly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.card_fibre_pPoly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.monodromy_transitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMonodromy.local_monodromy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MonodromyRelation.loop_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'InfinityMonodromy.infinity_monodromy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MonodromyTriple.monodromy_triple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.monodromy_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.admissible_normal_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CoverTransport.monodromy_map_mk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConjMonodromy.monodromyPerm_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConjMonodromy.std_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.pPoly_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.monodromy_point_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.monodromy_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CoverIneq.isStdLoops_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CoverIneq.monodromy_homeo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.covers_not_isomorphic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pi1Gen.subdivision' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pi1Gen.local_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pi1Gen.isStdLoops_generate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.extend_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.monodromy_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBranch.lintegral_fderiv_logCut_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBranch.tendsto_eLpNorm_fderiv_corr_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBranch.minMax_le_of_singular_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovArea.lintegral_deriv_sq_mul_eq_fibreSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBlaschke.lintegral_circle_norm_deriv_eq_circFibreSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBlaschke.circFibre_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovTransplant.weightedBoundaryMass_transplant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovTransplant.dirichletEnergy_transplant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovTransplant.weightedSteklovEigenvalue_le_of_transplant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'HolInv.exists_local_branches' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HolInv.exists_local_branches_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovTransplant.weightedSteklovEigenvalue_le_of_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBlaschke.fibre_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBlaschke.fibre_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBlaschke.IsFiniteBlaschke.exists_nbhd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.fanoT_rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.fanoT_mul_transpose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.fanoT_transpose_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CoverKernel.kernel_eventually_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CoverKernel.fibK_sum_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BCover.isCoveringMap_bproj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BKernel.weightedSteklovEigenvalue_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ActualKernel.spectra_eq_of_disk_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FamilyIso.family_spectra_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FamilyIso.exists_family_isospectral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheoremExceptNoncongruence_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.monodromy_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.no_local_iso' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DiskAut.exists_diskAut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DiskAut.isometry_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CongrRigid.blaschke_of_congr_hol' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CongrRigid.blaschke_of_congr_anti' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FamilyNoncongr.critSet_of_aut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FamilyNoncongr.critSet_of_anti' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FamilyNoncongr.family_facts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FamilyNoncongr.no_disk_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheorem_of_cover_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.not_congruent_of_critSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.not_reversing_of_critSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheorem_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.trace_ineq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.trace_embed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.norm_trace_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.weak_gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.snd_eq_zero_of_fst_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.fst_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.exists_family_ratio_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.weightedSteklovEigenvalue_eq_h1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.minMax_eq_closureMinMax' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.BddDomain.weak_gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.BddDomain.snd_eq_zero_of_fst_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.BddDomain.trace_embed_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.BddDomain.steklovEigenvalue_eq_h1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.traceIneq_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.bddDomain_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.steklovSpectrum_image_eq_h1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'mainTheorem_of_mainTheoremH1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheoremH1_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.isCompactOperator_of_approx' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.isCompactOperator_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovSpectral.exists_maximizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovSpectral.euler_lagrange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovSpectral.spectral_theorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.poincare_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.norm_sq_le_trace_grad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.hyp_weighted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.mem_weakEigenspace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.weighted_disk_spectral_theorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.conformal_weak_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.hasWeakSteklovSpectrum_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheoremWeak_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.weak_isospectral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'mainTheoremH1_of_mainTheoremWeak' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.mem_H1_of_weak_gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.mem_H1_iff_isWeakGradientPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.sobolevPullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.sobolevPullback_embedH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.inner_trace_pull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.inner_grad_pull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.isWeakSteklovEigenDom_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.isCompactOperator_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.weak_spectral_theorem_dom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.pullAmb_isWeakGradientPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.mem_H1_iff_isWeakGradientPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.hasSobolevWeakSteklovSpectrum_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheoremDom_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovWeyl.weyl_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovWeyl.weak_gradient_ae_eq_grad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.exists_harmonic_of_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.exists_harmonic_grad_of_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.isWeakSteklovEigen_of_classical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.isWeakSteklovEigenDom_of_classical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFourier.ae_eq_of_fc_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFourier.hasSum_fc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBoundary.exists_harmonic_of_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBoundary.integral_inner_grad_harmonic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBoundary.coeff_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBoundary.eq_embedH_of_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBoundary.boundary_condition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBoundary.weak_eigen_classical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBoundary.isAnalyticWeight_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.isAnalyticWeight_ρ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.weak_eigen_classical_dom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.isWeakSteklovEigenDom_iff_classical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.classical_spectral_theorem_dom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheoremClassical_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'mainTheoremDom_of_mainTheoremClassical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.bdryRad_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.frontier_preimage_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.range_bdryCurve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.isRealAnalyticJordanBoundary_preimage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovDiskCovers.isRealAnalyticJordanBoundary_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovDiskCovers.coverDomain_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovDiskCovers.critVals_coverPoly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovDiskCovers.lemma_3_2_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovDiskCovers.critVals_comp_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovDiskCovers.critVals_monicP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Steklov.minMax_le_of_approx' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovC1.exists_smooth_C1_approx' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovC1.minMax_le_of_C1_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovC1.minMax_congr_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovC1.fderiv_eq_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovC1.frontier_eq_image_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovC1.boundary_lintegral_C1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovC1.lintegral_weightMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'prop_2_1_1_C1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.closure_Ω' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.ConfMap.nrm_outward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.exists_smooth_approx_on' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.embedC1_mem_H1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.trace_embedC1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.BddDomain.embedC1_mem_H1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.BddDomain.trace_embedC1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.exists_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.hasDerivAt_G' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.lintegral_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.bdry_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.pullAmb_embed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.pushAmb_embed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.sobolevPullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.sobolevPullback_embedH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.pullAmb_isWeakGradientPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.mem_H1_iff_isWeakGradientPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.exists_hasTraceIneq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.norm_trace_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.inner_trace_pull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.inner_grad_pull' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.isWeakSteklovEigenDom_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.isCompactOperator_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.weak_spectral_theorem_dom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovH1.C1Conf.steklovSpectrum_eq_h1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovC1.prop_2_1_1_C1_weak' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovC1.hasSobolevWeakSteklovSpectrum_C1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.minMaxOn_le_minMax' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.minMaxOn_le_of_singular_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.chartFactor_rot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.coneChart_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.exists_coneChart_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.coneMetric_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.isOrbSmooth_of_contDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.IsOrbSmooth.continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.energy_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.bdryMass_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.cone_lintegral_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.cone_energy_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.IsOrbSmooth.dirichletEnergy_lt_top' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SteklovOrb.DiskOrbisurface.prop_2_2_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.IsOrbSmooth.memLp_grad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.tendsto_eLpNorm_corr_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.orbEmbed_mem_H1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.H1Orb_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.isWeakSteklovEigenOrb_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.weak_spectral_theorem_orb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.isEvenlyCovered_ordProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.isCoveringMap_ordProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.permAct_eq_self' depends on axioms: [propext, Quot.sound]
+'SteklovRegularCover.liftPath_ordProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.monodromy_ordProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.joined_sheet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.isCoveringMap_restrict_pathComponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.isCoveringMap_regProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.regAct_eq_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.exists_regAct_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.mem_regCov_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.evZero_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.evZero_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.card_regProj_fibre' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.mem_deckGroup_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regular_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.restrictEven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.isCoveringMap_sumElim' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.card_fibre_sumElim' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.monodromy_sumElim_inl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.monodromy_sumElim_inr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.sumLabel_monodromy_castAdd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.sumLabel_monodromy_natAdd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.evAt_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.evAt_surjective_of_joined' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.mem_deckGroup_baseTuple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.monodromy_homeomorph_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.labelH_monodromy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.combRho_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.sumLabel_monodromy_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.mem_deckGroup_sum_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.summand_map_inl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.summand_map_inr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.common_cover_generic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.common_regular_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFriedrichs.friedrichs_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.cone_lintegral_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.exists_cone_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.cone_estimates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.exists_lam_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.exists_weighted_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.area_lt_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.exists_restrict_le_smul_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.metric_form_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.enorm_metricEmbed_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.forget_metricEmbed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.norm_le_of_mem_H1Met' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.forget_mem_H1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.metricSobolevEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.metricSobolevEquivOrb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.subspaceMinMax_eq_of_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.exists_smooth_near_orbEmbed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.trace_orbEmbed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.traceMet_metricEmbed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.metricEnergy_metricEmbed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.metricBoundaryMass_metricEmbed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.isWeakSteklovEigenMet_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.weak_spectral_theorem_met' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.prop_2_2_1_metric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.isManifold_of_chartsAre' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.contMDiff_of_comp_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.contMDiff_proj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRiemann.contMDiff_of_comp_eq_holo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.isLocalHomeomorph_coverProjC' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regCov_riemannSurface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.lift_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.exists_period_of_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.card_fibre_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.period_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.powerChart_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.powerChart_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.covering_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.exists_powerCover_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.incl_shift_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.incl_shift_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.periods_eq_of_monodromy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.local_power_model' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovPunctured.local_power_model_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.regMonodromy_val' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.regMonodromy_iterate_coord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovRegularCover.regMonodromy_iterate_eq_self_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMonodromy.finRotate_iterate_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LocalMonodromy.local_monodromy_iterate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.sumElim_iterate_fix_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.homeomorph_comp_iterate_fix_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.projSum_iterate_fix_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regCov_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regCov_return_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regCov_return_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regCov_local_model' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regCov_local_model_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regCov_local_model_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.isOpenEmbedding_inl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.cuspChart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.t2Space' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.isManifold_fill' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.contMDiff_πFill' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.branch_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.branchEnds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.branchEnds_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regEnds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regEnds_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regFill_riemannSurface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.isCompact_preimage_of_isCoveringMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.isCompact_preimage_πFill' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.exists_bIdx_of_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.finite_bIdx' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.finite_regProj_fibre' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.finite_regEnds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.isCompact_preimage_regFillProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.isProperMap_regFillProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.isCompact_preimage_closedBall' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.continuous_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.homeoMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.πFill_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.contMDiffAt_of_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.isPreconnected_pdisk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.exists_rotation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.contMDiff_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.mem_range_bMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.bMap_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.bMap_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.endCompat_bMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.endCompat_regAct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.continuous_regFillAct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regFillAct_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regFillAct_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regFillHomeo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regFill_deckAction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.collarRad_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.not_branch_of_collar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regBordered' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.differentiableAt_of_comp_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.contMDiffAt_of_formula'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.exists_bound_of_eval_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.dense_range_inl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.differentiableOn_cuspRep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.differentiableOn_cuspExt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.continuous_extend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.eval_extend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.contMDiff_extend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.nhds_le_map_cuspExt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovFill.Fill.exists_common_of_cuspVal_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.quotient_ident' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.coord_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.completed_quotient_identifications' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBordered.isCoveringMapOn_of_isOpenEmbedding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBordered.exists_radial_retraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBordered.isPreconnected_sublevel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBordered.isPreconnected_strictSublevel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBordered.sublevel_topology' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBordered.exists_quotient_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBordered.exists_quotient_homeomorph_restrict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBordered.exists_homeomorph_of_normalizedDiskCover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.isOpenMap_regFillProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.isCoveringMapOn_bdf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regBorderedSurface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.surjective_regFillProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.actual_bordered_surface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.stabSub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.orbSetoid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.quotient_spaces_of_ev' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.paperQ_monicP_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.actual_quotient_spaces' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.eventually_isPreconnected_paperQ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.quotient_disk_of' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.quotient_interior_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.ram_of_poly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.cover_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.multiplicity_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.multiplicity_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.isBranchedDiskMap_of_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.prop_3_3_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.baseOrbMetric_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.exists_local_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.pullback_factor_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.exists_smooth_pullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.generic_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.critical_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.cone_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.smooth_at_noncone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.pullbackOrb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.pullbackOrb_lam' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.pullbackOrb_range_pt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.pullbackOrb_ord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.lineDensity_pullbackOrb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.weightedSteklovSpectrum_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.pullback_spectra_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.exists_baseOrbMetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.chartFactor_coneFac_aux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheorem_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBordered.local_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBordered.closed_disk_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBordered.closed_disk_homeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.stab_label_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.deckIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.stabSub_eq_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.stabilizer_identification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.completed_quotient_identifications_deck' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regMetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.chartDom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.pullback_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.isLocalBranched_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regMetric_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regMetric_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regMetric_cusp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regMetric_transform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regMetric_transition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regMetric_deck' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.quotient_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.metric_descends' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.closed_quotient_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.stabIn_inl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.rot_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.stab_card_crit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.stab_card_noncrit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.local_power_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.stab_card_mul_mult' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.coneSet_iff_stab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.ord_eq_stab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.boundary_metric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.LabelGeometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.label_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.prop_3_3_1_geometric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.prop_3_3_1_geometric_nonvacuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.prop_3_3_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheorem_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConeUnif.exists_equivariant_uniformizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConeUnif.metric_eq_at_filled_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.label_geometry_cone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.CuspCompat.cone_metric_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.completed_quotient_identifications_conn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.regFill_connected_of' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.prop_3_3_1_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ConformalPullback.prop_2_1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovC1.prop_2_1_1_C1_weak' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.prop_2_2_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovOrb.DiskOrbisurface.prop_2_2_1_metric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OuterConvergence.prop_2_3_1_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBlaschke.blaschke_boundary_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovBlaschke.blaschke_boundary_rigidity_anti' depends on axioms: [propext, Classical.choice, Quot.sound]
+'group_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GL3F2.group_input_GL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovDiskCovers.lemma_3_2_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.prop_3_3_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Degree7.prop_3_3_1_geometric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.prop_3_4_1_unconditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheorem_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SteklovCoalescence.mainTheoremClassical_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+MainTheorem : Prop
+AUDIT_OK ConeUnif.exists_equivariant_uniformizer: [propext, Quot.sound, Classical.choice]
+AUDIT_OK ConeUnif.metric_eq_at_filled_point: [propext, Quot.sound, Classical.choice]
+AUDIT_OK Degree7.label_geometry_cone: [propext, Quot.sound, Classical.choice]
+AUDIT_OK Degree7.CuspCompat.cone_metric_identity: [propext, Quot.sound, Classical.choice]
+AUDIT_OK Degree7.completed_quotient_identifications_conn: [propext, Quot.sound, Classical.choice]
+AUDIT_OK Degree7.regFill_connected_of: [propext, Quot.sound, Classical.choice]
+AUDIT_OK Degree7.prop_3_3_1_full: [propext, Quot.sound, Classical.choice]
+Degree7.CuspCompat {s : ℂ} (hs : s ^ 2 = -7) (f₀ : ↑(SteklovRegularCover.OrdFib (Degree7.projSum hs) 13))
+  (H : Subgroup ↥(SteklovRegularCover.deckGroup f₀)) (P : Polynomial ℂ) (Ev : Degree7.RegFill hs f₀ → ℂ) (ε : ℝ) (c : ℂ)
+  (ψ B : ℂ → ℂ) (L : SteklovOrb.BaseOrbMetric (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3) {V : Set ℂ}
+  (hB : SteklovOrb.IsBranchedDiskMap B V (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3 L.U) : Prop
+Degree7.CuspCompat.cone_metric_identity {s : ℂ} {hs : s ^ 2 = -7}
+  {f₀ : ↑(SteklovRegularCover.OrdFib (Degree7.projSum hs) 13)} {H : Subgroup ↥(SteklovRegularCover.deckGroup f₀)}
+  {P : Polynomial ℂ} {Ev : Degree7.RegFill hs f₀ → ℂ} {ε : ℝ} {c : ℂ} {ψ B : ℂ → ℂ}
+  {L : SteklovOrb.BaseOrbMetric (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3} {V : Set ℂ}
+  {hB : SteklovOrb.IsBranchedDiskMap B V (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3 L.U}
+  (hC : Degree7.CuspCompat hs f₀ H P Ev ε c ψ B L hB)
+  (j : SteklovFill.BIdx (SteklovRegularCover.regProj f₀) Degree7.cB (1 / 2))
+  (hreg : Polynomial.eval (Ev (SteklovFill.Fill.cusp j)) (Polynomial.derivative P) ≠ 0) :
+  ∃ i,
+    (SteklovOrb.pullbackOrb L hB).pt i = Degree7.cuspT hs f₀ Ev c ψ j 0 ∧
+      (SteklovOrb.pullbackOrb L hB).ord i = Degree7.dB j.fst ∧
+        ∃ r > 0,
+          ∃ μ,
+            ContDiffOn ℝ (↑⊤) μ (Metric.ball 0 r) ∧
+              (∀ w ∈ Metric.ball 0 r, 0 < μ w) ∧
+                (∀ w ∈ Metric.ball 0 r,
+                    w ≠ 0 →
+                      μ w =
+                        SteklovOrb.chartFactor (SteklovOrb.pullbackOrb L hB).lam ((SteklovOrb.pullbackOrb L hB).pt i)
+                          ((SteklovOrb.pullbackOrb L hB).ord i) w) ∧
+                  ∃ h,
+                    AnalyticAt ℂ h 0 ∧
+                      h 0 = 0 ∧
+                        deriv h 0 ≠ 0 ∧
+                          (∀ (ζ t : ℂ), ζ ^ Degree7.dB j.fst = 1 → h (ζ * t) = ζ * h t) ∧
+                            ∃ δ > 0,
+                              ∀ t ∈ Metric.ball 0 δ,
+                                Degree7.cuspT hs f₀ Ev c ψ j t =
+                                    Degree7.cuspT hs f₀ Ev c ψ j 0 + h t ^ Degree7.dB j.fst ∧
+                                  h t ∈ Metric.ball 0 r ∧
+                                    Degree7.regMetric L (SteklovFill.Fill.cuspChart j) t = μ (h t) * ‖deriv h t‖ ^ 2
+Degree7.label_geometry_cone {s : ℂ} (hs : s ^ 2 = -7) (f₀ : ↑(SteklovRegularCover.OrdFib (Degree7.projSum hs) 13))
+  (H : Subgroup ↥(SteklovRegularCover.deckGroup f₀)) {t : ℂ} (ht : t ^ 2 = -7) {Ev : Degree7.RegFill hs f₀ → ℂ}
+  (hEv : ContMDiff (modelWithCornersSelf ℂ ℂ) (modelWithCornersSelf ℂ ℂ) ⊤ Ev)
+  (hPEv : ∀ (w : Degree7.RegFill hs f₀), Polynomial.eval (Ev w) (Degree7.pPoly t) = Degree7.regFillProj hs f₀ w)
+  (hpr : IsProperMap Ev) (hsurj : Function.Surjective Ev)
+  (hfib : ∀ (w w' : Degree7.RegFill hs f₀), Ev w = Ev w' ↔ ∃ σ ∈ H, Degree7.regFillAct hs f₀ σ w = w')
+  (hq :
+    ∀ (ε : ℝ) (w : Degree7.RegFill hs f₀),
+      Polynomial.eval (Ev w) (SteklovDiskCovers.coverPoly (Degree7.pPoly t) ε) =
+        Degree7.affA ε (Degree7.regFillProj hs f₀ w))
+  {a : ℂ} (ha : a ^ 7 = -Degree7.bconst t) {τ : ℝ → ℂ} (hτ : ∀ (ε : ℝ), τ ε ^ 7 = (SteklovCritical.lamStar - 1) * ↑ε)
+  {ε : ℝ} (h0 : 0 < ε) (h1 : ε < 1 / 3)
+  (hconn : IsPreconnected (SteklovCoalescence.paperQ (Degree7.monicP t a) τ ε ⁻¹' Metric.ball 0 1)) {ψ B : ℂ → ℂ}
+  (hc : SteklovCoalescence.IsNormalizedDiskCover (SteklovCoalescence.paperQ (Degree7.monicP t a) τ ε) 7 ψ B)
+  (L : SteklovOrb.BaseOrbMetric (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3) {V : Set ℂ}
+  (hB : SteklovOrb.IsBranchedDiskMap B V (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3 L.U) :
+  Degree7.LabelGeometry hs f₀ H (Degree7.pPoly t) Ev ε (τ ε / a) ψ B L hB ∧
+    Degree7.CuspCompat hs f₀ H (Degree7.pPoly t) Ev ε (τ ε / a) ψ B L hB
+Degree7.prop_3_3_1_full {s : ℂ} (hs : s ^ 2 = -7) :
+  ∃ f₀,
+    PathConnectedSpace ↑(SteklovRegularCover.RegCov f₀) ∧
+      ConnectedSpace (Degree7.RegFill hs f₀) ∧
+        (∀ (σ : ↥(SteklovRegularCover.deckGroup f₀)),
+            ContMDiff (modelWithCornersSelf ℂ ℂ) (modelWithCornersSelf ℂ ℂ) ⊤ (Degree7.regFillAct hs f₀ σ) ∧
+              Function.Bijective (Degree7.regFillAct hs f₀ σ) ∧
+                ∀ (w : Degree7.RegFill hs f₀),
+                  Degree7.regFillProj hs f₀ (Degree7.regFillAct hs f₀ σ w) = Degree7.regFillProj hs f₀ w) ∧
+          Degree7.regFillAct hs f₀ 1 = id ∧
+            (∀ (σ τ : ↥(SteklovRegularCover.deckGroup f₀)),
+                Degree7.regFillAct hs f₀ (σ * τ) = Degree7.regFillAct hs f₀ τ ∘ Degree7.regFillAct hs f₀ σ) ∧
+              Nat.card ↥(SteklovRegularCover.deckGroup f₀) = 168 ∧
+                (∃ ι a b,
+                    (∀ (g : GL3F2.G), ↑(ι g) = (Degree7.combRho Degree7.rhoP Degree7.rhoL) g) ∧
+                        Degree7.stabSub f₀ 0 =
+                            Subgroup.map ι.toMonoidHom (Subgroup.map (MulEquiv.toMonoidHom (MulAut.conj a)) GL3F2.HP) ∧
+                          Degree7.stabSub f₀ 7 =
+                            Subgroup.map ι.toMonoidHom (Subgroup.map (MulEquiv.toMonoidHom (MulAut.conj b)) GL3F2.HL) ∨
+                      (∀ (g : GL3F2.G), ↑(ι g) = (Degree7.combRho Degree7.rhoL Degree7.rhoP) g) ∧
+                        Degree7.stabSub f₀ 0 =
+                            Subgroup.map ι.toMonoidHom (Subgroup.map (MulEquiv.toMonoidHom (MulAut.conj a)) GL3F2.HL) ∧
+                          Degree7.stabSub f₀ 7 =
+                            Subgroup.map ι.toMonoidHom (Subgroup.map (MulEquiv.toMonoidHom (MulAut.conj b)) GL3F2.HP)) ∧
+                  ∃ Ev₁ Ev₂,
+                    ContMDiff (modelWithCornersSelf ℂ ℂ) (modelWithCornersSelf ℂ ℂ) ⊤ Ev₁ ∧
+                      ContMDiff (modelWithCornersSelf ℂ ℂ) (modelWithCornersSelf ℂ ℂ) ⊤ Ev₂ ∧
+                        (∀ (w : Degree7.RegFill hs f₀),
+                            Polynomial.eval (Ev₁ w) (Degree7.pPoly s) = Degree7.regFillProj hs f₀ w) ∧
+                          (∀ (w : Degree7.RegFill hs f₀),
+                              Polynomial.eval (Ev₂ w) (Degree7.pPoly (-s)) = Degree7.regFillProj hs f₀ w) ∧
+                            (∀ (w w' : Degree7.RegFill hs f₀),
+                                Ev₁ w = Ev₁ w' ↔ (Degree7.orbSetoid hs f₀ (Degree7.stabSub f₀ 0)) w w') ∧
+                              (∀ (w w' : Degree7.RegFill hs f₀),
+                                  Ev₂ w = Ev₂ w' ↔ (Degree7.orbSetoid hs f₀ (Degree7.stabSub f₀ 7)) w w') ∧
+                                (∀ (ε : ℝ),
+                                    0 < ε →
+                                      ε < 1 / 3 →
+                                        IsCompact (Degree7.bordered hs f₀ ε) ∧
+                                          IsClosed (Degree7.bordered hs f₀ ε) ∧
+                                            interior (Degree7.bordered hs f₀ ε) = {w | ‖Degree7.bdf hs f₀ ε w‖ < 1} ∧
+                                              frontier (Degree7.bordered hs f₀ ε) = Degree7.borderedBdry hs f₀ ε ∧
+                                                closure (interior (Degree7.bordered hs f₀ ε)) =
+                                                    Degree7.bordered hs f₀ ε ∧
+                                                  (∀ w ∈ Degree7.borderedBdry hs f₀ ε,
+                                                      ∃ φ,
+                                                        w ∈ φ.source ∧
+                                                          Set.EqOn (↑φ) (Degree7.bdf hs f₀ ε) φ.source ∧
+                                                            ↑φ '' (φ.source ∩ Degree7.bordered hs f₀ ε) =
+                                                                φ.target ∩ Metric.closedBall 0 1 ∧
+                                                              ↑φ '' (φ.source ∩ Degree7.borderedBdry hs f₀ ε) =
+                                                                  φ.target ∩ Metric.sphere 0 1 ∧
+                                                                ContMDiffOn (modelWithCornersSelf ℂ ℂ)
+                                                                    (modelWithCornersSelf ℂ ℂ) ⊤ (↑φ) φ.source ∧
+                                                                  ContMDiffOn (modelWithCornersSelf ℂ ℂ)
+                                                                    (modelWithCornersSelf ℂ ℂ) ⊤ (↑φ.symm) φ.target) ∧
+                                                    (∀ (σ : ↥(SteklovRegularCover.deckGroup f₀))
+                                                        (w : Degree7.RegFill hs f₀),
+                                                        Degree7.regFillAct hs f₀ σ w ∈ Degree7.bordered hs f₀ ε ↔
+                                                          w ∈ Degree7.bordered hs f₀ ε) ∧
+                                                      IsConnected (Degree7.bordered hs f₀ ε) ∧
+                                                        IsConnected (interior (Degree7.bordered hs f₀ ε)) ∧
+                                                          ∀
+                                                            (L :
+                                                              SteklovOrb.BaseOrbMetric (↑ε)
+                                                                (SteklovCritical.lamStar * ↑ε) 2 3),
+                                                            Degree7.bordered hs f₀ ε ⊆ Degree7.bdf hs f₀ ε ⁻¹' L.U ∧
+                                                              (∀ e ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                  ∀ z ∈ Degree7.chartDom L e,
+                                                                    ContDiffAt ℝ (↑⊤) (Degree7.regMetric L e) z ∧
+                                                                      0 < Degree7.regMetric L e z) ∧
+                                                                (∀ e ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                    ∀ z ∈ Degree7.chartDom L e,
+                                                                      Degree7.bdf hs f₀ ε (↑e.symm z) ≠ ↑ε →
+                                                                        Degree7.bdf hs f₀ ε (↑e.symm z) ≠
+                                                                            SteklovCritical.lamStar * ↑ε →
+                                                                          Degree7.regMetric L e z =
+                                                                            L.lam (Degree7.bdf hs f₀ ε (↑e.symm z)) *
+                                                                              ‖deriv (Degree7.bdf hs f₀ ε ∘ ↑e.symm)
+                                                                                    z‖ ^
+                                                                                2) ∧
+                                                                  (∀ e ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                      ∀ e' ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                        ∀ z ∈ Degree7.chartDom L e,
+                                                                          ↑e.symm z ∈ e'.source →
+                                                                            AnalyticAt ℂ (↑e' ∘ ↑e.symm) z ∧
+                                                                              Degree7.regMetric L e z =
+                                                                                Degree7.regMetric L e'
+                                                                                    ((↑e' ∘ ↑e.symm) z) *
+                                                                                  ‖deriv (↑e' ∘ ↑e.symm) z‖ ^ 2) ∧
+                                                                    ∀ (σ : ↥(SteklovRegularCover.deckGroup f₀)),
+                                                                      ∀ e ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                        ∀ e' ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                          ∀ z ∈ Degree7.chartDom L e,
+                                                                            Degree7.regFillAct hs f₀ σ (↑e.symm z) ∈
+                                                                                e'.source →
+                                                                              AnalyticAt ℂ
+                                                                                  (↑e' ∘
+                                                                                    Degree7.regFillAct hs f₀ σ ∘
+                                                                                      ↑e.symm)
+                                                                                  z ∧
+                                                                                (↑e' ∘
+                                                                                        Degree7.regFillAct hs f₀ σ ∘
+                                                                                          ↑e.symm)
+                                                                                      z ∈
+                                                                                    Degree7.chartDom L e' ∧
+                                                                                  Degree7.regMetric L e z =
+                                                                                    Degree7.regMetric L e'
+                                                                                        ((↑e' ∘
+                                                                                            Degree7.regFillAct hs f₀ σ ∘
+                                                                                              ↑e.symm)
+                                                                                          z) *
+                                                                                      ‖deriv
+                                                                                            (↑e' ∘
+                                                                                              Degree7.regFillAct hs f₀
+                                                                                                  σ ∘
+                                                                                                ⋯)
+                                                                                            z‖ ^
+                                                                                        2) ∧
+                                  ∀ (aP aL : ℂ),
+                                    aP ^ 7 = -Degree7.bconst s →
+                                      aL ^ 7 = -Degree7.bconst (-s) →
+                                        ∀ (τ : ℝ → ℂ),
+                                          (∀ (ε : ℝ), τ ε ^ 7 = (SteklovCritical.lamStar - 1) * ↑ε) →
+                                            ∀ᶠ (ε : ℝ) in nhdsWithin 0 (Set.Ioi 0),
+                                              ∀ (ψP BP ψL BL : ℂ → ℂ),
+                                                SteklovCoalescence.IsNormalizedDiskCover
+                                                    (SteklovCoalescence.paperQ (Degree7.monicP s aP) τ ε) 7 ψP BP →
+                                                  SteklovCoalescence.IsNormalizedDiskCover
+                                                      (SteklovCoalescence.paperQ (Degree7.monicP (-s) aL) τ ε) 7 ψL BL →
+                                                    ∀
+                                                      (L :
+                                                        SteklovOrb.BaseOrbMetric (↑ε) (SteklovCritical.lamStar * ↑ε) 2
+                                                          3),
+                                                      ∃ VP VL,
+                                                        ∃ (hP :
+                                                          SteklovOrb.IsBranchedDiskMap BP VP (↑ε)
+                                                            (SteklovCritical.lamStar * ↑ε) 2 3 L.U)
+                                                          (hL :
+                                                          SteklovOrb.IsBranchedDiskMap BL VL (↑ε)
+                                                            (SteklovCritical.lamStar * ↑ε) 2 3 L.U),
+                                                          (Degree7.LabelGeometry hs f₀ (Degree7.stabSub f₀ 0)
+                                                                (Degree7.pPoly s) Ev₁ ε (τ ε / aP) ψP BP L hP ∧
+                                                              Degree7.CuspCompat hs f₀ (Degree7.stabSub f₀ 0)
+                                                                (Degree7.pPoly s) Ev₁ ε (τ ε / aP) ψP BP L hP) ∧
+                                                            (Degree7.LabelGeometry hs f₀ (Degree7.stabSub f₀ 7)
+                                                                  (Degree7.pPoly (-s)) Ev₂ ε (τ ε / aL) ψL BL L hL ∧
+                                                                Degree7.CuspCompat hs f₀ (Degree7.stabSub f₀ 7)
+                                                                  (Degree7.pPoly (-s)) Ev₂ ε (τ ε / aL) ψL BL L hL) ∧
+                                                              (SteklovOrb.pullbackOrb L hP).metricSteklovEigenvalue =
+                                                                  (SteklovOrb.pullbackOrb L
+                                                                      hL).metricSteklovEigenvalue ∧
+                                                                (SteklovOrb.pullbackOrb L hP).steklovSpectrum =
+                                                                  (SteklovOrb.pullbackOrb L hL).steklovSpectrum
+SteklovC1.prop_2_1_1_C1_weak : SteklovC1.Prop_2_1_1_C1_Weak
+SteklovOrb.DiskOrbisurface.prop_2_2_1_metric (O : SteklovOrb.DiskOrbisurface) :
+  O.metricSteklovEigenvalue = Steklov.weightedSteklovSpectrum O.lineDensity ∧
+    O.metricSteklovEigenvalue = O.steklovSpectrum
+OuterConvergence.prop_2_3_1_complete : Prop_2_3_1_complete
+SteklovBlaschke.blaschke_boundary_rigidity {B₁ B₂ φ : ℂ → ℂ} {n m : ℕ} (hB₁ : SteklovBlaschke.IsFiniteBlaschke B₁ n)
+  (hB₂ : SteklovBlaschke.IsFiniteBlaschke B₂ m) (hφ : SteklovBlaschke.IsDiskAut φ)
+  (h :
+    ∀ (t : ℝ),
+      ‖deriv (fun s => B₁ (Complex.exp (↑s * Complex.I))) t‖ =
+        ‖deriv (fun s => B₂ (φ (Complex.exp (↑s * Complex.I)))) t‖) :
+  ∃ η, ‖η‖ = 1 ∧ ∀ (z : ℂ), ‖z‖ ≤ 1 → B₁ z = η * B₂ (φ z)
+SteklovBlaschke.blaschke_boundary_rigidity_anti {B₁ B₂ φ : ℂ → ℂ} {n m : ℕ}
+  (hB₁ : SteklovBlaschke.IsFiniteBlaschke B₁ n) (hB₂ : SteklovBlaschke.IsFiniteBlaschke B₂ m)
+  (hφ : SteklovBlaschke.IsAntiDiskAut φ)
+  (h :
+    ∀ (t : ℝ),
+      ‖deriv (fun s => B₁ (Complex.exp (↑s * Complex.I))) t‖ =
+        ‖deriv (fun s => B₂ (φ (Complex.exp (↑s * Complex.I)))) t‖) :
+  ∃ η, ‖η‖ = 1 ∧ ∀ (z : ℂ), ‖z‖ ≤ 1 → B₁ z = η * (starRingEnd ℂ) (B₂ (φ z))
+group_input :
+  ∃ G x,
+    ∃ (x_1 : Finite G),
+      ∃ H₁ H₂ n x_2 y,
+        H₁.index = n ∧
+          H₂.index = n ∧
+            SteklovGroup.AlmostConjugate H₁ H₂ ∧
+              ¬SteklovGroup.AreConjugate H₁ H₂ ∧
+                Subgroup.closure {x_2, y} = ⊤ ∧
+                  SteklovGroup.cycleCount (x_2 * y) (G ⧸ H₁) = 1 ∧
+                    SteklovGroup.cycleCount x_2 (G ⧸ H₁) + SteklovGroup.cycleCount y (G ⧸ H₁) = n + 1 ∧
+                      SteklovGroup.cycleCount x_2 (G ⧸ H₁) < n ∧ SteklovGroup.cycleCount y (G ⧸ H₁) < n
+GL3F2.group_input_GL :
+  ∃ H₁ H₂ x y,
+    H₁.index = 7 ∧
+      H₂.index = 7 ∧
+        SteklovGroup.AlmostConjugate H₁ H₂ ∧
+          ¬SteklovGroup.AreConjugate H₁ H₂ ∧
+            Subgroup.closure {x, y} = ⊤ ∧
+              SteklovGroup.cycleCount (x * y) (GL3F2.G ⧸ H₁) = 1 ∧
+                SteklovGroup.cycleCount x (GL3F2.G ⧸ H₁) + SteklovGroup.cycleCount y (GL3F2.G ⧸ H₁) = 7 + 1 ∧
+                  SteklovGroup.cycleCount x (GL3F2.G ⧸ H₁) < 7 ∧
+                    SteklovGroup.cycleCount y (GL3F2.G ⧸ H₁) < 7 ∧ orderOf x = 2 ∧ orderOf y = 3 ∧ orderOf (x * y) = 7
+SteklovDiskCovers.lemma_3_2_1 {p : Polynomial ℂ} (hp : p.Monic) (hcv : p.critVals = {0, 1}) :
+  ∀ᶠ (ε : ℝ) in nhdsWithin 0 (Set.Ioi 0),
+    PlaneDomain.IsDomain (SteklovDiskCovers.coverDomain p ε) ∧
+      Bornology.IsBounded (SteklovDiskCovers.coverDomain p ε) ∧
+        SimplyConnectedSpace ↑(SteklovDiskCovers.coverDomain p ε) ∧
+          PlaneDomain.IsRealAnalyticJordanBoundary (SteklovDiskCovers.coverDomain p ε) ∧
+            (Differentiable ℂ fun z => Polynomial.eval z (SteklovDiskCovers.coverPoly p ε)) ∧
+              Set.MapsTo (fun z => Polynomial.eval z (SteklovDiskCovers.coverPoly p ε))
+                  (SteklovDiskCovers.coverDomain p ε) (Metric.ball 0 1) ∧
+                (∀ K ⊆ Metric.ball 0 1,
+                    IsCompact K →
+                      IsCompact
+                        (SteklovDiskCovers.coverDomain p ε ∩
+                          (fun z => Polynomial.eval z (SteklovDiskCovers.coverPoly p ε)) ⁻¹' K)) ∧
+                  (∀ w ∈ Metric.ball 0 1,
+                      (SteklovDiskCovers.coverPoly p ε - Polynomial.C w).roots.card = p.natDegree ∧
+                        ∀ z ∈ (SteklovDiskCovers.coverPoly p ε - Polynomial.C w).roots,
+                          z ∈ SteklovDiskCovers.coverDomain p ε) ∧
+                    (∀ w ∈ Metric.ball 0 1,
+                        w ∉ {↑ε, SteklovCritical.lamStar * ↑ε} →
+                          Nat.card
+                              { z //
+                                z ∈ SteklovDiskCovers.coverDomain p ε ∧
+                                  Polynomial.eval z (SteklovDiskCovers.coverPoly p ε) = w } =
+                            p.natDegree) ∧
+                      (fun z => Polynomial.eval z (SteklovDiskCovers.coverPoly p ε)) ''
+                          {z |
+                            z ∈ SteklovDiskCovers.coverDomain p ε ∧
+                              Polynomial.eval z (Polynomial.derivative (SteklovDiskCovers.coverPoly p ε)) = 0} =
+                        {↑ε, SteklovCritical.lamStar * ↑ε}
+SteklovCoalescence.prop_3_4_1_unconditional {P : Polynomial ℂ} (hP : P.Monic) {n : ℕ} (hn : 1 ≤ n)
+  (hdeg : P.natDegree = n) {τ : ℝ → ℂ} (hτ : ∀ (ε : ℝ), τ ε ^ n = (SteklovCritical.lamStar - 1) * ↑ε) :
+  ∃ ψ B,
+    (∀ᶠ (ε : ℝ) in nhdsWithin 0 (Set.Ioi 0),
+        SteklovCoalescence.IsNormalizedDiskCover (SteklovCoalescence.paperQ P τ ε) n (ψ ε) (B ε)) ∧
+      SteklovCoalescence.CoalescenceConclusions (nhdsWithin 0 (Set.Ioi 0)) n ψ B
+SteklovCoalescence.mainTheorem_proved : MainTheorem
+SteklovCoalescence.mainTheoremClassical_proved : MainTheoremClassical
+'SteklovSubmission.main_result' depends on axioms: [propext, Classical.choice, Quot.sound]

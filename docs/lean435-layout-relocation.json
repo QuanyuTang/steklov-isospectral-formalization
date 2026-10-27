@@ -1,0 +1,11 @@
+{
+  "name": "MainTheorem",
+  "from": "RequestProject/MainStatement.lean",
+  "to": "RequestProject/Defs.lean",
+  "reason": "Match compiler-generated auxiliary numeral proof names with the standalone Challenge",
+  "signature_and_body_code_identical": true,
+  "original_defs_sha256": "7bd03c5465c97e0e6b2c71441994b3a006dca4467cbb021638a13a17020f98cb",
+  "original_statement_sha256": "c711050a6b4efc0d4e37696b0b8bd4d66c15c1bb15a9be271f87894db2ff5379",
+  "validator": "scripts/check-release.py checks the exact code transformation from both immutable originals",
+  "new_toolchain_build_and_comparator_status": "pending"
+}

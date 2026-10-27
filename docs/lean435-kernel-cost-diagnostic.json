@@ -1,0 +1,67 @@
+{
+  "status": "baseline_diagnostic_only; target verification pending",
+  "aristotle_task_id": "9947c121-1251-4fbe-a6dc-c71cfe1e66ee",
+  "source_base_commit": "576684470b0dcf1e80d297b14fddb5f74a74b653",
+  "runtime": {
+    "lean": "4.28.0",
+    "mathlib": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+    "cores": 8,
+    "ram_gb": 64
+  },
+  "measurements_independently_reproduced_on_target": false,
+  "no_435_kernel_acceptance_claimed": true,
+  "proposed_patch_sha256": "91e25f26b027b68e291e58312fa9e72ca55e98a2c29476353dc804f7d9c3e270",
+  "archived_report_sha256": "c5003573da74e1ae2f08f234da4bdb25a55c5f5c51ed168baf302f2d3d77c3a2",
+  "proof_declarations": [
+    "CoverIneq.idBase_val",
+    "CoverIneq.isStdLoops_map",
+    "CoverIneq.fibreHomeo inverse membership proof",
+    "Degree7.monodromy_local",
+    "ActualKernel.spectra_eq_of_disk_data"
+  ],
+  "statement_changes": 0,
+  "computational_map_changes": 0,
+  "definition_proof_field_changes": 1,
+  "before_recheck_seconds": "each exceeded 120 seconds; idBase_val also exceeded 1500 seconds at a 30 GB limit",
+  "after_recheck_milliseconds": [
+    0.3,
+    15.5,
+    1.3,
+    4.8,
+    47.7
+  ],
+  "remaining_memory_hotspot": {
+    "declaration": "Degree7.good_eq_orbits._proof_1_1",
+    "baseline_peak_process_gb": 27.3,
+    "baseline_after_import_gb": 10.2,
+    "baseline_seconds": 125,
+    "cancelled_target_run_cause_established": false,
+    "status": "Historical measurement before the reviewed structural optimization below"
+  },
+  "required_validation": [
+    "full fresh-source 176-module target build",
+    "590-target proof/type/axiom audit",
+    "smooth-infinity and fibreHomeo projection guards",
+    "trusted sandboxed Lean and NanoDa replay",
+    "con-ron advisory attempt"
+  ],
+  "structural_good_orbits_followup": {
+    "task_id": "359a8814-75d1-4121-9c40-330ed99af214",
+    "patch_sha256": "fa26f655e0b100d99b41510999b143acac4426f4f1ad6da3bce65d0c3c237013",
+    "report_sha256": "4c4bfd74ade244225f0aa44485bf7bec4545bd7e57e03255fc6121b22861da78",
+    "profile_sha256": "8a9232d82a11c7ce1a310325a5d330912c2451d6e2b9fda0049a07432f277ba3",
+    "changed_original_module": "RequestProject/Degree7Counts.lean",
+    "original_headers_changed": 0,
+    "original_definitions_changed": 0,
+    "new_private_support_declarations": 52,
+    "baseline_only": true,
+    "reported_heaviest_recheck_peak_gb_before": 27.18,
+    "reported_heaviest_recheck_peak_gb_after": 10.44,
+    "reported_import_peak_gb": 10.14,
+    "reported_main_closure_peak_gb_before": 19.48,
+    "reported_main_closure_peak_gb_after": 3.77,
+    "surrogate_private_name_warning_count_before_and_after": 34,
+    "published_surrogate_outputs_filtered": true,
+    "target_certification": false
+  }
+}

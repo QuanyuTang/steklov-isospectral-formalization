@@ -1,0 +1,296 @@
+MainTheorem : Prop
+AUDIT_OK ConeUnif.exists_equivariant_uniformizer: [propext, Quot.sound, Classical.choice]
+AUDIT_OK ConeUnif.metric_eq_at_filled_point: [propext, Quot.sound, Classical.choice]
+AUDIT_OK Degree7.label_geometry_cone: [propext, Quot.sound, Classical.choice]
+AUDIT_OK Degree7.CuspCompat.cone_metric_identity: [propext, Quot.sound, Classical.choice]
+AUDIT_OK Degree7.completed_quotient_identifications_conn: [propext, Quot.sound, Classical.choice]
+AUDIT_OK Degree7.regFill_connected_of: [propext, Quot.sound, Classical.choice]
+AUDIT_OK Degree7.prop_3_3_1_full: [propext, Quot.sound, Classical.choice]
+Degree7.CuspCompat {s : ℂ} (hs : s ^ 2 = -7) (f₀ : ↑(SteklovRegularCover.OrdFib (Degree7.projSum hs) 13))
+  (H : Subgroup ↥(SteklovRegularCover.deckGroup f₀)) (P : Polynomial ℂ) (Ev : Degree7.RegFill hs f₀ → ℂ) (ε : ℝ) (c : ℂ)
+  (ψ B : ℂ → ℂ) (L : SteklovOrb.BaseOrbMetric (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3) {V : Set ℂ}
+  (hB : SteklovOrb.IsBranchedDiskMap B V (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3 L.U) : Prop
+Degree7.CuspCompat.cone_metric_identity {s : ℂ} {hs : s ^ 2 = -7}
+  {f₀ : ↑(SteklovRegularCover.OrdFib (Degree7.projSum hs) 13)} {H : Subgroup ↥(SteklovRegularCover.deckGroup f₀)}
+  {P : Polynomial ℂ} {Ev : Degree7.RegFill hs f₀ → ℂ} {ε : ℝ} {c : ℂ} {ψ B : ℂ → ℂ}
+  {L : SteklovOrb.BaseOrbMetric (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3} {V : Set ℂ}
+  {hB : SteklovOrb.IsBranchedDiskMap B V (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3 L.U}
+  (hC : Degree7.CuspCompat hs f₀ H P Ev ε c ψ B L hB)
+  (j : SteklovFill.BIdx (SteklovRegularCover.regProj f₀) Degree7.cB (1 / 2))
+  (hreg : Polynomial.eval (Ev (SteklovFill.Fill.cusp j)) (Polynomial.derivative P) ≠ 0) :
+  ∃ i,
+    (SteklovOrb.pullbackOrb L hB).pt i = Degree7.cuspT hs f₀ Ev c ψ j 0 ∧
+      (SteklovOrb.pullbackOrb L hB).ord i = Degree7.dB j.fst ∧
+        ∃ r > 0,
+          ∃ μ,
+            ContDiffOn ℝ (↑⊤) μ (Metric.ball 0 r) ∧
+              (∀ w ∈ Metric.ball 0 r, 0 < μ w) ∧
+                (∀ w ∈ Metric.ball 0 r,
+                    w ≠ 0 →
+                      μ w =
+                        SteklovOrb.chartFactor (SteklovOrb.pullbackOrb L hB).lam ((SteklovOrb.pullbackOrb L hB).pt i)
+                          ((SteklovOrb.pullbackOrb L hB).ord i) w) ∧
+                  ∃ h,
+                    AnalyticAt ℂ h 0 ∧
+                      h 0 = 0 ∧
+                        deriv h 0 ≠ 0 ∧
+                          (∀ (ζ t : ℂ), ζ ^ Degree7.dB j.fst = 1 → h (ζ * t) = ζ * h t) ∧
+                            ∃ δ > 0,
+                              ∀ t ∈ Metric.ball 0 δ,
+                                Degree7.cuspT hs f₀ Ev c ψ j t =
+                                    Degree7.cuspT hs f₀ Ev c ψ j 0 + h t ^ Degree7.dB j.fst ∧
+                                  h t ∈ Metric.ball 0 r ∧
+                                    Degree7.regMetric L (SteklovFill.Fill.cuspChart j) t = μ (h t) * ‖deriv h t‖ ^ 2
+Degree7.label_geometry_cone {s : ℂ} (hs : s ^ 2 = -7) (f₀ : ↑(SteklovRegularCover.OrdFib (Degree7.projSum hs) 13))
+  (H : Subgroup ↥(SteklovRegularCover.deckGroup f₀)) {t : ℂ} (ht : t ^ 2 = -7) {Ev : Degree7.RegFill hs f₀ → ℂ}
+  (hEv : ContMDiff (modelWithCornersSelf ℂ ℂ) (modelWithCornersSelf ℂ ℂ) ⊤ Ev)
+  (hPEv : ∀ (w : Degree7.RegFill hs f₀), Polynomial.eval (Ev w) (Degree7.pPoly t) = Degree7.regFillProj hs f₀ w)
+  (hpr : IsProperMap Ev) (hsurj : Function.Surjective Ev)
+  (hfib : ∀ (w w' : Degree7.RegFill hs f₀), Ev w = Ev w' ↔ ∃ σ ∈ H, Degree7.regFillAct hs f₀ σ w = w')
+  (hq :
+    ∀ (ε : ℝ) (w : Degree7.RegFill hs f₀),
+      Polynomial.eval (Ev w) (SteklovDiskCovers.coverPoly (Degree7.pPoly t) ε) =
+        Degree7.affA ε (Degree7.regFillProj hs f₀ w))
+  {a : ℂ} (ha : a ^ 7 = -Degree7.bconst t) {τ : ℝ → ℂ} (hτ : ∀ (ε : ℝ), τ ε ^ 7 = (SteklovCritical.lamStar - 1) * ↑ε)
+  {ε : ℝ} (h0 : 0 < ε) (h1 : ε < 1 / 3)
+  (hconn : IsPreconnected (SteklovCoalescence.paperQ (Degree7.monicP t a) τ ε ⁻¹' Metric.ball 0 1)) {ψ B : ℂ → ℂ}
+  (hc : SteklovCoalescence.IsNormalizedDiskCover (SteklovCoalescence.paperQ (Degree7.monicP t a) τ ε) 7 ψ B)
+  (L : SteklovOrb.BaseOrbMetric (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3) {V : Set ℂ}
+  (hB : SteklovOrb.IsBranchedDiskMap B V (↑ε) (SteklovCritical.lamStar * ↑ε) 2 3 L.U) :
+  Degree7.LabelGeometry hs f₀ H (Degree7.pPoly t) Ev ε (τ ε / a) ψ B L hB ∧
+    Degree7.CuspCompat hs f₀ H (Degree7.pPoly t) Ev ε (τ ε / a) ψ B L hB
+Degree7.prop_3_3_1_full {s : ℂ} (hs : s ^ 2 = -7) :
+  ∃ f₀,
+    PathConnectedSpace ↑(SteklovRegularCover.RegCov f₀) ∧
+      ConnectedSpace (Degree7.RegFill hs f₀) ∧
+        (∀ (σ : ↥(SteklovRegularCover.deckGroup f₀)),
+            ContMDiff (modelWithCornersSelf ℂ ℂ) (modelWithCornersSelf ℂ ℂ) ⊤ (Degree7.regFillAct hs f₀ σ) ∧
+              Function.Bijective (Degree7.regFillAct hs f₀ σ) ∧
+                ∀ (w : Degree7.RegFill hs f₀),
+                  Degree7.regFillProj hs f₀ (Degree7.regFillAct hs f₀ σ w) = Degree7.regFillProj hs f₀ w) ∧
+          Degree7.regFillAct hs f₀ 1 = id ∧
+            (∀ (σ τ : ↥(SteklovRegularCover.deckGroup f₀)),
+                Degree7.regFillAct hs f₀ (σ * τ) = Degree7.regFillAct hs f₀ τ ∘ Degree7.regFillAct hs f₀ σ) ∧
+              Nat.card ↥(SteklovRegularCover.deckGroup f₀) = 168 ∧
+                (∃ ι a b,
+                    (∀ (g : GL3F2.G), ↑(ι g) = (Degree7.combRho Degree7.rhoP Degree7.rhoL) g) ∧
+                        Degree7.stabSub f₀ 0 =
+                            Subgroup.map ι.toMonoidHom (Subgroup.map (MulEquiv.toMonoidHom (MulAut.conj a)) GL3F2.HP) ∧
+                          Degree7.stabSub f₀ 7 =
+                            Subgroup.map ι.toMonoidHom (Subgroup.map (MulEquiv.toMonoidHom (MulAut.conj b)) GL3F2.HL) ∨
+                      (∀ (g : GL3F2.G), ↑(ι g) = (Degree7.combRho Degree7.rhoL Degree7.rhoP) g) ∧
+                        Degree7.stabSub f₀ 0 =
+                            Subgroup.map ι.toMonoidHom (Subgroup.map (MulEquiv.toMonoidHom (MulAut.conj a)) GL3F2.HL) ∧
+                          Degree7.stabSub f₀ 7 =
+                            Subgroup.map ι.toMonoidHom (Subgroup.map (MulEquiv.toMonoidHom (MulAut.conj b)) GL3F2.HP)) ∧
+                  ∃ Ev₁ Ev₂,
+                    ContMDiff (modelWithCornersSelf ℂ ℂ) (modelWithCornersSelf ℂ ℂ) ⊤ Ev₁ ∧
+                      ContMDiff (modelWithCornersSelf ℂ ℂ) (modelWithCornersSelf ℂ ℂ) ⊤ Ev₂ ∧
+                        (∀ (w : Degree7.RegFill hs f₀),
+                            Polynomial.eval (Ev₁ w) (Degree7.pPoly s) = Degree7.regFillProj hs f₀ w) ∧
+                          (∀ (w : Degree7.RegFill hs f₀),
+                              Polynomial.eval (Ev₂ w) (Degree7.pPoly (-s)) = Degree7.regFillProj hs f₀ w) ∧
+                            (∀ (w w' : Degree7.RegFill hs f₀),
+                                Ev₁ w = Ev₁ w' ↔ (Degree7.orbSetoid hs f₀ (Degree7.stabSub f₀ 0)) w w') ∧
+                              (∀ (w w' : Degree7.RegFill hs f₀),
+                                  Ev₂ w = Ev₂ w' ↔ (Degree7.orbSetoid hs f₀ (Degree7.stabSub f₀ 7)) w w') ∧
+                                (∀ (ε : ℝ),
+                                    0 < ε →
+                                      ε < 1 / 3 →
+                                        IsCompact (Degree7.bordered hs f₀ ε) ∧
+                                          IsClosed (Degree7.bordered hs f₀ ε) ∧
+                                            interior (Degree7.bordered hs f₀ ε) = {w | ‖Degree7.bdf hs f₀ ε w‖ < 1} ∧
+                                              frontier (Degree7.bordered hs f₀ ε) = Degree7.borderedBdry hs f₀ ε ∧
+                                                closure (interior (Degree7.bordered hs f₀ ε)) =
+                                                    Degree7.bordered hs f₀ ε ∧
+                                                  (∀ w ∈ Degree7.borderedBdry hs f₀ ε,
+                                                      ∃ φ,
+                                                        w ∈ φ.source ∧
+                                                          Set.EqOn (↑φ) (Degree7.bdf hs f₀ ε) φ.source ∧
+                                                            ↑φ '' (φ.source ∩ Degree7.bordered hs f₀ ε) =
+                                                                φ.target ∩ Metric.closedBall 0 1 ∧
+                                                              ↑φ '' (φ.source ∩ Degree7.borderedBdry hs f₀ ε) =
+                                                                  φ.target ∩ Metric.sphere 0 1 ∧
+                                                                ContMDiffOn (modelWithCornersSelf ℂ ℂ)
+                                                                    (modelWithCornersSelf ℂ ℂ) ⊤ (↑φ) φ.source ∧
+                                                                  ContMDiffOn (modelWithCornersSelf ℂ ℂ)
+                                                                    (modelWithCornersSelf ℂ ℂ) ⊤ (↑φ.symm) φ.target) ∧
+                                                    (∀ (σ : ↥(SteklovRegularCover.deckGroup f₀))
+                                                        (w : Degree7.RegFill hs f₀),
+                                                        Degree7.regFillAct hs f₀ σ w ∈ Degree7.bordered hs f₀ ε ↔
+                                                          w ∈ Degree7.bordered hs f₀ ε) ∧
+                                                      IsConnected (Degree7.bordered hs f₀ ε) ∧
+                                                        IsConnected (interior (Degree7.bordered hs f₀ ε)) ∧
+                                                          ∀
+                                                            (L :
+                                                              SteklovOrb.BaseOrbMetric (↑ε)
+                                                                (SteklovCritical.lamStar * ↑ε) 2 3),
+                                                            Degree7.bordered hs f₀ ε ⊆ Degree7.bdf hs f₀ ε ⁻¹' L.U ∧
+                                                              (∀ e ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                  ∀ z ∈ Degree7.chartDom L e,
+                                                                    ContDiffAt ℝ (↑⊤) (Degree7.regMetric L e) z ∧
+                                                                      0 < Degree7.regMetric L e z) ∧
+                                                                (∀ e ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                    ∀ z ∈ Degree7.chartDom L e,
+                                                                      Degree7.bdf hs f₀ ε (↑e.symm z) ≠ ↑ε →
+                                                                        Degree7.bdf hs f₀ ε (↑e.symm z) ≠
+                                                                            SteklovCritical.lamStar * ↑ε →
+                                                                          Degree7.regMetric L e z =
+                                                                            L.lam (Degree7.bdf hs f₀ ε (↑e.symm z)) *
+                                                                              ‖deriv (Degree7.bdf hs f₀ ε ∘ ↑e.symm)
+                                                                                    z‖ ^
+                                                                                2) ∧
+                                                                  (∀ e ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                      ∀ e' ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                        ∀ z ∈ Degree7.chartDom L e,
+                                                                          ↑e.symm z ∈ e'.source →
+                                                                            AnalyticAt ℂ (↑e' ∘ ↑e.symm) z ∧
+                                                                              Degree7.regMetric L e z =
+                                                                                Degree7.regMetric L e'
+                                                                                    ((↑e' ∘ ↑e.symm) z) *
+                                                                                  ‖deriv (↑e' ∘ ↑e.symm) z‖ ^ 2) ∧
+                                                                    ∀ (σ : ↥(SteklovRegularCover.deckGroup f₀)),
+                                                                      ∀ e ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                        ∀ e' ∈ atlas ℂ (Degree7.RegFill hs f₀),
+                                                                          ∀ z ∈ Degree7.chartDom L e,
+                                                                            Degree7.regFillAct hs f₀ σ (↑e.symm z) ∈
+                                                                                e'.source →
+                                                                              AnalyticAt ℂ
+                                                                                  (↑e' ∘
+                                                                                    Degree7.regFillAct hs f₀ σ ∘
+                                                                                      ↑e.symm)
+                                                                                  z ∧
+                                                                                (↑e' ∘
+                                                                                        Degree7.regFillAct hs f₀ σ ∘
+                                                                                          ↑e.symm)
+                                                                                      z ∈
+                                                                                    Degree7.chartDom L e' ∧
+                                                                                  Degree7.regMetric L e z =
+                                                                                    Degree7.regMetric L e'
+                                                                                        ((↑e' ∘
+                                                                                            Degree7.regFillAct hs f₀ σ ∘
+                                                                                              ↑e.symm)
+                                                                                          z) *
+                                                                                      ‖deriv
+                                                                                            (↑e' ∘
+                                                                                              Degree7.regFillAct hs f₀
+                                                                                                  σ ∘
+                                                                                                ⋯)
+                                                                                            z‖ ^
+                                                                                        2) ∧
+                                  ∀ (aP aL : ℂ),
+                                    aP ^ 7 = -Degree7.bconst s →
+                                      aL ^ 7 = -Degree7.bconst (-s) →
+                                        ∀ (τ : ℝ → ℂ),
+                                          (∀ (ε : ℝ), τ ε ^ 7 = (SteklovCritical.lamStar - 1) * ↑ε) →
+                                            ∀ᶠ (ε : ℝ) in nhdsWithin 0 (Set.Ioi 0),
+                                              ∀ (ψP BP ψL BL : ℂ → ℂ),
+                                                SteklovCoalescence.IsNormalizedDiskCover
+                                                    (SteklovCoalescence.paperQ (Degree7.monicP s aP) τ ε) 7 ψP BP →
+                                                  SteklovCoalescence.IsNormalizedDiskCover
+                                                      (SteklovCoalescence.paperQ (Degree7.monicP (-s) aL) τ ε) 7 ψL BL →
+                                                    ∀
+                                                      (L :
+                                                        SteklovOrb.BaseOrbMetric (↑ε) (SteklovCritical.lamStar * ↑ε) 2
+                                                          3),
+                                                      ∃ VP VL,
+                                                        ∃ (hP :
+                                                          SteklovOrb.IsBranchedDiskMap BP VP (↑ε)
+                                                            (SteklovCritical.lamStar * ↑ε) 2 3 L.U)
+                                                          (hL :
+                                                          SteklovOrb.IsBranchedDiskMap BL VL (↑ε)
+                                                            (SteklovCritical.lamStar * ↑ε) 2 3 L.U),
+                                                          (Degree7.LabelGeometry hs f₀ (Degree7.stabSub f₀ 0)
+                                                                (Degree7.pPoly s) Ev₁ ε (τ ε / aP) ψP BP L hP ∧
+                                                              Degree7.CuspCompat hs f₀ (Degree7.stabSub f₀ 0)
+                                                                (Degree7.pPoly s) Ev₁ ε (τ ε / aP) ψP BP L hP) ∧
+                                                            (Degree7.LabelGeometry hs f₀ (Degree7.stabSub f₀ 7)
+                                                                  (Degree7.pPoly (-s)) Ev₂ ε (τ ε / aL) ψL BL L hL ∧
+                                                                Degree7.CuspCompat hs f₀ (Degree7.stabSub f₀ 7)
+                                                                  (Degree7.pPoly (-s)) Ev₂ ε (τ ε / aL) ψL BL L hL) ∧
+                                                              (SteklovOrb.pullbackOrb L hP).metricSteklovEigenvalue =
+                                                                  (SteklovOrb.pullbackOrb L
+                                                                      hL).metricSteklovEigenvalue ∧
+                                                                (SteklovOrb.pullbackOrb L hP).steklovSpectrum =
+                                                                  (SteklovOrb.pullbackOrb L hL).steklovSpectrum
+SteklovC1.prop_2_1_1_C1_weak : SteklovC1.Prop_2_1_1_C1_Weak
+SteklovOrb.DiskOrbisurface.prop_2_2_1_metric (O : SteklovOrb.DiskOrbisurface) :
+  O.metricSteklovEigenvalue = Steklov.weightedSteklovSpectrum O.lineDensity ∧
+    O.metricSteklovEigenvalue = O.steklovSpectrum
+OuterConvergence.prop_2_3_1_complete : Prop_2_3_1_complete
+SteklovBlaschke.blaschke_boundary_rigidity {B₁ B₂ φ : ℂ → ℂ} {n m : ℕ} (hB₁ : SteklovBlaschke.IsFiniteBlaschke B₁ n)
+  (hB₂ : SteklovBlaschke.IsFiniteBlaschke B₂ m) (hφ : SteklovBlaschke.IsDiskAut φ)
+  (h :
+    ∀ (t : ℝ),
+      ‖deriv (fun s => B₁ (Complex.exp (↑s * Complex.I))) t‖ =
+        ‖deriv (fun s => B₂ (φ (Complex.exp (↑s * Complex.I)))) t‖) :
+  ∃ η, ‖η‖ = 1 ∧ ∀ (z : ℂ), ‖z‖ ≤ 1 → B₁ z = η * B₂ (φ z)
+SteklovBlaschke.blaschke_boundary_rigidity_anti {B₁ B₂ φ : ℂ → ℂ} {n m : ℕ}
+  (hB₁ : SteklovBlaschke.IsFiniteBlaschke B₁ n) (hB₂ : SteklovBlaschke.IsFiniteBlaschke B₂ m)
+  (hφ : SteklovBlaschke.IsAntiDiskAut φ)
+  (h :
+    ∀ (t : ℝ),
+      ‖deriv (fun s => B₁ (Complex.exp (↑s * Complex.I))) t‖ =
+        ‖deriv (fun s => B₂ (φ (Complex.exp (↑s * Complex.I)))) t‖) :
+  ∃ η, ‖η‖ = 1 ∧ ∀ (z : ℂ), ‖z‖ ≤ 1 → B₁ z = η * (starRingEnd ℂ) (B₂ (φ z))
+group_input :
+  ∃ G x,
+    ∃ (x_1 : Finite G),
+      ∃ H₁ H₂ n x_2 y,
+        H₁.index = n ∧
+          H₂.index = n ∧
+            SteklovGroup.AlmostConjugate H₁ H₂ ∧
+              ¬SteklovGroup.AreConjugate H₁ H₂ ∧
+                Subgroup.closure {x_2, y} = ⊤ ∧
+                  SteklovGroup.cycleCount (x_2 * y) (G ⧸ H₁) = 1 ∧
+                    SteklovGroup.cycleCount x_2 (G ⧸ H₁) + SteklovGroup.cycleCount y (G ⧸ H₁) = n + 1 ∧
+                      SteklovGroup.cycleCount x_2 (G ⧸ H₁) < n ∧ SteklovGroup.cycleCount y (G ⧸ H₁) < n
+GL3F2.group_input_GL :
+  ∃ H₁ H₂ x y,
+    H₁.index = 7 ∧
+      H₂.index = 7 ∧
+        SteklovGroup.AlmostConjugate H₁ H₂ ∧
+          ¬SteklovGroup.AreConjugate H₁ H₂ ∧
+            Subgroup.closure {x, y} = ⊤ ∧
+              SteklovGroup.cycleCount (x * y) (GL3F2.G ⧸ H₁) = 1 ∧
+                SteklovGroup.cycleCount x (GL3F2.G ⧸ H₁) + SteklovGroup.cycleCount y (GL3F2.G ⧸ H₁) = 7 + 1 ∧
+                  SteklovGroup.cycleCount x (GL3F2.G ⧸ H₁) < 7 ∧
+                    SteklovGroup.cycleCount y (GL3F2.G ⧸ H₁) < 7 ∧ orderOf x = 2 ∧ orderOf y = 3 ∧ orderOf (x * y) = 7
+SteklovDiskCovers.lemma_3_2_1 {p : Polynomial ℂ} (hp : p.Monic) (hcv : p.critVals = {0, 1}) :
+  ∀ᶠ (ε : ℝ) in nhdsWithin 0 (Set.Ioi 0),
+    PlaneDomain.IsDomain (SteklovDiskCovers.coverDomain p ε) ∧
+      Bornology.IsBounded (SteklovDiskCovers.coverDomain p ε) ∧
+        SimplyConnectedSpace ↑(SteklovDiskCovers.coverDomain p ε) ∧
+          PlaneDomain.IsRealAnalyticJordanBoundary (SteklovDiskCovers.coverDomain p ε) ∧
+            (Differentiable ℂ fun z => Polynomial.eval z (SteklovDiskCovers.coverPoly p ε)) ∧
+              Set.MapsTo (fun z => Polynomial.eval z (SteklovDiskCovers.coverPoly p ε))
+                  (SteklovDiskCovers.coverDomain p ε) (Metric.ball 0 1) ∧
+                (∀ K ⊆ Metric.ball 0 1,
+                    IsCompact K →
+                      IsCompact
+                        (SteklovDiskCovers.coverDomain p ε ∩
+                          (fun z => Polynomial.eval z (SteklovDiskCovers.coverPoly p ε)) ⁻¹' K)) ∧
+                  (∀ w ∈ Metric.ball 0 1,
+                      (SteklovDiskCovers.coverPoly p ε - Polynomial.C w).roots.card = p.natDegree ∧
+                        ∀ z ∈ (SteklovDiskCovers.coverPoly p ε - Polynomial.C w).roots,
+                          z ∈ SteklovDiskCovers.coverDomain p ε) ∧
+                    (∀ w ∈ Metric.ball 0 1,
+                        w ∉ {↑ε, SteklovCritical.lamStar * ↑ε} →
+                          Nat.card
+                              { z //
+                                z ∈ SteklovDiskCovers.coverDomain p ε ∧
+                                  Polynomial.eval z (SteklovDiskCovers.coverPoly p ε) = w } =
+                            p.natDegree) ∧
+                      (fun z => Polynomial.eval z (SteklovDiskCovers.coverPoly p ε)) ''
+                          {z |
+                            z ∈ SteklovDiskCovers.coverDomain p ε ∧
+                              Polynomial.eval z (Polynomial.derivative (SteklovDiskCovers.coverPoly p ε)) = 0} =
+                        {↑ε, SteklovCritical.lamStar * ↑ε}
+SteklovCoalescence.prop_3_4_1_unconditional {P : Polynomial ℂ} (hP : P.Monic) {n : ℕ} (hn : 1 ≤ n)
+  (hdeg : P.natDegree = n) {τ : ℝ → ℂ} (hτ : ∀ (ε : ℝ), τ ε ^ n = (SteklovCritical.lamStar - 1) * ↑ε) :
+  ∃ ψ B,
+    (∀ᶠ (ε : ℝ) in nhdsWithin 0 (Set.Ioi 0),
+        SteklovCoalescence.IsNormalizedDiskCover (SteklovCoalescence.paperQ P τ ε) n (ψ ε) (B ε)) ∧
+      SteklovCoalescence.CoalescenceConclusions (nhdsWithin 0 (Set.Ioi 0)) n ψ B
+SteklovCoalescence.mainTheorem_proved : MainTheorem
+SteklovCoalescence.mainTheoremClassical_proved : MainTheoremClassical

@@ -1,0 +1,29 @@
+Steklov Isospectral Formalization
+Public release maintained by taohu-hub, RGConj, QuanyuTang, 2026.
+
+The new formalization and repository documentation are distributed under Apache-2.0.
+Automated proof generation used Aristotle (Harmonic); orchestration, mathematical
+scaffolding, audits, and packaging used OpenAI Codex. See docs/PROVENANCE.md.
+
+The mathematical source is Strictly Convex Steklov-Isospectral Plane Domains,
+Tao Hu, Jiachen Shi, Quanyu Tang, arXiv:2608.10557v2. Authorship of that paper is
+distinct from maintenance of this formalization. No endorsement by the coauthors,
+Harmonic, OpenAI, Lean, Mathlib, or Palomar is asserted.
+
+EXCEPTION: the paper's PDF, original TeX, arXiv metadata, and original source archive
+under paper/ retain the paper authors' rights. They are not relicensed by LICENSE.
+arXiv lists its non-exclusive distribution license, not a Creative Commons license.
+See paper/README.md for exact provenance and redistribution information.
+
+Lean, Mathlib and their dependencies retain their respective licenses and are
+fetched separately; dependency caches and compiled output are not distributed.
+
+The bundled Comparator verification script is from PalomarRegistry/PalomarTemplate
+and the metadata schema is from mathlib-initiative/formalization.yaml, both under
+Apache-2.0. Immutable source revisions are recorded in verification/.
+
+The hosted-runner disk cleanup step is adapted from LeanAutoformalizationSkills
+by Scott Armstrong, licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0). The original excerpt retains that license; repository-specific
+adaptations and the other new workflow code use Apache-2.0. See
+docs/THIRD_PARTY_NOTICES.md for attribution and links.

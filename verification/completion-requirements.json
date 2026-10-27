@@ -1,0 +1,245 @@
+{
+  "objective": "Theorem 1.1.2 and its supporting results of arXiv:2608.10557v2, with faithful machine-checked statements and explicit gaps",
+  "reviewed_at_utc": "2026-10-25T15:21:41.924054+00:00",
+  "source_tex": "sources/article/pdes40_arxiv_v2.tex",
+  "source_sha256": "972ad426dcc4855a6a6eb6c8f444d82175f057eef157a79494b24e36fcf9bce3",
+  "verified_baseline": "results/run-18/local-verification.json",
+  "all_baseline_sources_match_current_working_sources": true,
+  "main_conclusion_requirements": [
+    {
+      "item": "i",
+      "statement_latex": "Each domain is simply connected and strictly convex, and its\nboundary is a real-analytic Jordan curve.",
+      "status": "locally_verified_geometric_conclusion_for_actual_family",
+      "evidence": "results/run-09/local-verification.json",
+      "final_verification_status": "verified_with_original_full_weak_and_classical_spectral_interpretation",
+      "final_evidence": "results/run-20/completion-audit.json"
+    },
+    {
+      "item": "ii",
+      "statement_latex": "The two domains are Steklov isospectral:\n\\[\n\\SpecS\\bigl(\\Omega_{P,\\varepsilon}\\bigr)\n=\n\\SpecS\\bigl(\\Omega_{L,\\varepsilon}\\bigr),\n\\]\nincluding multiplicities.",
+      "status": "locally_verified_original_full_weak_W12_and_classical_spectra_with_multiplicities_for_actual_family",
+      "evidence": "results/run-13/local-verification.json",
+      "final_verification_status": "verified_with_original_full_weak_and_classical_spectral_interpretation",
+      "final_evidence": "results/run-20/completion-audit.json"
+    },
+    {
+      "item": "iii",
+      "statement_latex": "If $i,j\\in\\{P,L\\}$ and\n$0<\\varepsilon,\\varepsilon'<\\varepsilon_0$ satisfy\n$(i,\\varepsilon)\\neq(j,\\varepsilon')$, then\n$\\Omega_{i,\\varepsilon}$ and $\\Omega_{j,\\varepsilon'}$ are not\ncongruent. Moreover, none of the domains admits an\norientation-reversing Euclidean symmetry.",
+      "status": "locally_verified_geometric_conclusion_for_actual_family",
+      "evidence": "results/run-09/local-verification.json",
+      "final_verification_status": "verified_with_original_full_weak_and_classical_spectral_interpretation",
+      "final_evidence": "results/run-20/completion-audit.json"
+    },
+    {
+      "item": "iv",
+      "statement_latex": "Each domain has boundary length $2\\pi$.",
+      "status": "locally_verified_geometric_conclusion_for_actual_family",
+      "evidence": "results/run-09/local-verification.json",
+      "final_verification_status": "verified_with_original_full_weak_and_classical_spectral_interpretation",
+      "final_evidence": "results/run-20/completion-audit.json"
+    },
+    {
+      "item": "v",
+      "statement_latex": "For each $i\\in\\{P,L\\}$ and\n$0<\\varepsilon<\\varepsilon_0$, there is a conformal map\n$F_{i,\\varepsilon}:\\D\\longrightarrow\\Omega_{i,\\varepsilon}$\nwith $F_{i,\\varepsilon}(0)=0$ and\n$F_{i,\\varepsilon}'(0)>0$, extending holomorphically to a neighborhood\nof $\\overline\\D$, such that\n\\[\nF_{i,\\varepsilon}\\longrightarrow \\id\n\\quad\\text{in }C^\\infty(\\overline\\D)\n\\]\nas $\\varepsilon\\to0$.",
+      "status": "locally_verified_geometric_conclusion_for_actual_family",
+      "evidence": "results/run-09/local-verification.json",
+      "final_verification_status": "verified_with_original_full_weak_and_classical_spectral_interpretation",
+      "final_evidence": "results/run-20/completion-audit.json"
+    }
+  ],
+  "numbered_requirement_review": [
+    {
+      "paper_number": "1.1.2",
+      "source_label": "thm:main",
+      "source_line": 211,
+      "original_statement_latex": "\\label{thm:main}\nThere exist $\\varepsilon_0>0$ and a family\n$\\{\\Omega_{i,\\varepsilon}\\}_{i\\in\\{P,L\\},\\,0<\\varepsilon<\\varepsilon_0}$\nof domains in $\\R^2$ such that the following properties hold.\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n\\item Each domain is simply connected and strictly convex, and its\nboundary is a real-analytic Jordan curve.\n\\item The two domains are Steklov isospectral:\n\\[\n\\SpecS\\bigl(\\Omega_{P,\\varepsilon}\\bigr)\n=\n\\SpecS\\bigl(\\Omega_{L,\\varepsilon}\\bigr),\n\\]\nincluding multiplicities.\n\\item If $i,j\\in\\{P,L\\}$ and\n$0<\\varepsilon,\\varepsilon'<\\varepsilon_0$ satisfy\n$(i,\\varepsilon)\\neq(j,\\varepsilon')$, then\n$\\Omega_{i,\\varepsilon}$ and $\\Omega_{j,\\varepsilon'}$ are not\ncongruent. Moreover, none of the domains admits an\norientation-reversing Euclidean symmetry.\n\\item Each domain has boundary length $2\\pi$.\n\\item For each $i\\in\\{P,L\\}$ and\n$0<\\varepsilon<\\varepsilon_0$, there is a conformal map\n$F_{i,\\varepsilon}:\\D\\longrightarrow\\Omega_{i,\\varepsilon}$\nwith $F_{i,\\varepsilon}(0)=0$ and\n$F_{i,\\varepsilon}'(0)>0$, extending holomorphically to a neighborhood\nof $\\overline\\D$, such that\n\\[\nF_{i,\\varepsilon}\\longrightarrow \\id\n\\quad\\text{in }C^\\infty(\\overline\\D)\n\\]\nas $\\varepsilon\\to0$.\n\\end{enumerate}",
+      "evidence_state": "verified_against_original_source_and_final_snapshot",
+      "review": "All five original quantified conclusions, actual bounded simply connected strictly convex analytic Jordan domains, pure weak/classical Steklov spectra with multiplicities, full pairwise parameter/label noncongruence and no reversing symmetry, perimeter 2pi and normalized maps converging in all real C^k norms. Original spectral interpretation is verified, independent of the remaining quotient proof route.",
+      "verified_proof_declarations": [
+        "SteklovCoalescence.mainTheorem_proved",
+        "SteklovCoalescence.mainTheoremH1_proved",
+        "SteklovCoalescence.mainTheoremWeak_proved",
+        "SteklovCoalescence.mainTheoremDom_proved",
+        "SteklovCoalescence.mainTheoremClassical_proved"
+      ],
+      "statement_or_object_declarations": [
+        "MainTheorem",
+        "MainTheoremH1",
+        "MainTheoremWeak",
+        "MainTheoremDom",
+        "MainTheoremClassical"
+      ],
+      "existing_build_and_axiom_evidence": "results/run-13/local-verification.json",
+      "existing_fidelity_evidence": "results/run-13/statement-review.json",
+      "final_build_and_axiom_evidence": "results/run-20/local-verification.json",
+      "final_fidelity_evidence": "results/run-20/statement-review.json"
+    },
+    {
+      "paper_number": "2.1.1",
+      "source_label": "prop:conformal-pullback",
+      "source_line": 376,
+      "original_statement_latex": "\\label{prop:conformal-pullback}\nLet $F:\\D\\to\\Omega$ be a conformal bijection onto a bounded simply\nconnected plane domain.  Suppose that $F$ extends to a $C^1$ diffeomorphism\n$\\overline\\D\\to\\overline\\Omega$ and that $F'$ does not vanish on $\\T$. Then\n\\[\n\\SpecS(\\Omega)=\\SpecS(\\D,|F'|_{\\T}).\n\\]",
+      "evidence_state": "verified_against_original_source_and_final_snapshot",
+      "review": "General conformal map with real-C1 closure diffeomorphism is encoded using ambient C1 extensions of the map and inverse; no analytic-boundary hypothesis. Actual full weak Sobolev trace/spectrum bridge is verified.",
+      "verified_proof_declarations": [
+        "prop_2_1_1_C1",
+        "SteklovC1.prop_2_1_1_C1_weak",
+        "SteklovC1.hasSobolevWeakSteklovSpectrum_C1"
+      ],
+      "statement_or_object_declarations": [
+        "Prop_2_1_1_C1",
+        "SteklovC1.Prop_2_1_1_C1_Weak"
+      ],
+      "existing_build_and_axiom_evidence": "results/run-15/local-verification.json",
+      "existing_fidelity_evidence": "results/run-15/statement-review.json",
+      "final_build_and_axiom_evidence": "results/run-20/local-verification.json",
+      "final_fidelity_evidence": "results/run-20/statement-review.json"
+    },
+    {
+      "paper_number": "2.2.1",
+      "source_label": "prop:cone-removal",
+      "source_line": 420,
+      "original_statement_latex": "\\label{prop:cone-removal}\nLet $X$ be a compact orientable Riemannian orbisurface whose underlying\ntopological surface $|X|$ is a disk and whose singular set consists of\nfinitely many interior cone points. Let $\\psi:\\D\\longrightarrow |X|^\\circ$ be a conformal parametrization of the underlying Riemann surface,\nextending smoothly to the boundary.  If the boundary line element of\nthe orbifold metric pulls back to\n$\\rho(e^{\\iu t})\\dd t$, where $\\rho>0$, then\n\\[\n\\SpecS(X)=\\SpecS(\\D,\\rho).\n\\]",
+      "evidence_state": "verified_against_original_source_and_final_snapshot",
+      "review": "Original given conformal disk coordinate of a disk-type orbisurface, genuine finite cone charts with smooth positive lifted metrics. Actual metric H1Met graph norm in L2(lambda*dA) plus differential norm, trace/density/eigenvalue sequence with multiplicities. No new general uniformization theorem is required by the supplied-coordinate hypothesis.",
+      "verified_proof_declarations": [
+        "SteklovOrb.DiskOrbisurface.prop_2_2_1_metric",
+        "SteklovOrb.DiskOrbisurface.weak_spectral_theorem_met",
+        "SteklovOrb.DiskOrbisurface.metricEnergy_metricEmbed",
+        "SteklovOrb.DiskOrbisurface.metricBoundaryMass_metricEmbed"
+      ],
+      "statement_or_object_declarations": [
+        "SteklovOrb.DiskOrbisurface.metricSobolevEquiv"
+      ],
+      "existing_build_and_axiom_evidence": "results/run-16/local-verification.json",
+      "existing_fidelity_evidence": "results/run-16/statement-review.json",
+      "final_build_and_axiom_evidence": "results/run-20/local-verification.json",
+      "final_fidelity_evidence": "results/run-20/statement-review.json"
+    },
+    {
+      "paper_number": "2.3.1",
+      "source_label": "prop:outer-realization",
+      "source_line": 452,
+      "original_statement_latex": "\\label{prop:outer-realization}\nLet $c>0$.  Every positive real-analytic function $\\rho$ in a\nsufficiently small $C^\\infty(\\T)$-neighborhood of the constant $c$ is\nrealized by a holomorphic map $F_\\rho$ on a neighborhood of\n$\\overline\\D$ with the following properties:\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n\\item $F_\\rho(0)=0$, $F_\\rho'(0)>0$, and $F_\\rho$ is injective on\n$\\overline\\D$;\n\\item $|F_\\rho'|=\\rho$ on $\\T$.\n\\end{enumerate}\nThus $F_\\rho(\\D)$ is a bounded simply connected domain with\nreal-analytic Jordan boundary and\n\\[\n\\SpecS(F_\\rho(\\D))=\\SpecS(\\D,\\rho).\n\\]\nMoreover, if $\\rho_k\\to c$ in $C^\\infty(\\T)$, then the corresponding\nmaps may be chosen so that\n\\[\nF_{\\rho_k}\\longrightarrow c\\id\n\\quad\\text{in }C^\\infty(\\overline\\D).\n\\]",
+      "evidence_state": "verified_against_original_source_and_final_snapshot",
+      "review": "Arbitrary positive real-analytic boundary weights in a fixed finite C^k neighborhood of any c>0 (hence an open C-infinity neighborhood), normalized holomorphic-neighborhood realization with closed-disk injectivity, exact derivative modulus, domain topology/analytic Jordan boundary and spectral identity. Both parameter and sequence all-order convergence formulations are present. Actual weak spectral interpretation follows the verified conformal bridges on these analytic domains.",
+      "verified_proof_declarations": [
+        "OuterRealization.prop_2_3_1_realization",
+        "OuterRealization.prop_2_3_1",
+        "OuterConvergence.prop_2_3_1_convergence",
+        "OuterConvergence.prop_2_3_1_convergence_seq",
+        "OuterConvergence.prop_2_3_1_complete"
+      ],
+      "statement_or_object_declarations": [],
+      "existing_build_and_axiom_evidence": "results/run-03/local-verification.json",
+      "existing_fidelity_evidence": "results/run-01/project/INVENTORY.md and corresponding Lean source, inspected locally",
+      "final_build_and_axiom_evidence": "results/run-20/local-verification.json",
+      "final_fidelity_evidence": "results/run-20/statement-review.json"
+    },
+    {
+      "paper_number": "2.4.1",
+      "source_label": "lem:blaschke-boundary-rigidity",
+      "source_line": 518,
+      "original_statement_latex": "\\label{lem:blaschke-boundary-rigidity}\nLet $B_1$ and $B_2$ be finite Blaschke products of the same degree.\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n\\item If $\\varphi\\in\\Aut(\\D)$ and\n\\[\n\\left|\\frac{d}{dt}B_1(e^{\\iu t})\\right|\n=\n\\left|\\frac{d}{dt}B_2(\\varphi(e^{\\iu t}))\\right|\n\\qquad(t\\in\\R),\n\\]\nthen $B_1=\\eta B_2\\circ\\varphi$ for some $\\eta\\in\\T$.\n\\item If $\\varphi$ is an antiholomorphic automorphism of $\\D$ and the\nsame equality of boundary derivative moduli holds, then $B_1(z)=\\eta\\,\\overline{B_2(\\varphi(z))}$ for some $\\eta\\in\\T$.\n\\end{enumerate}",
+      "evidence_state": "verified_against_original_source_and_final_snapshot",
+      "review": "Both holomorphic and antiholomorphic disk automorphisms and their full boundary composition derivative modulus are covered; unit complex rotation identity on the whole closed disk is proved. The Lean result even allows unequal nominal degrees, so does not narrow the same-degree statement.",
+      "verified_proof_declarations": [
+        "SteklovBlaschke.blaschke_boundary_rigidity",
+        "SteklovBlaschke.blaschke_boundary_rigidity_anti"
+      ],
+      "statement_or_object_declarations": [],
+      "existing_build_and_axiom_evidence": "results/run-03/local-verification.json",
+      "existing_fidelity_evidence": "results/run-01/project/INVENTORY.md and corresponding Lean source, inspected locally",
+      "final_build_and_axiom_evidence": "results/run-20/local-verification.json",
+      "final_fidelity_evidence": "results/run-20/statement-review.json"
+    },
+    {
+      "paper_number": "3.1.1",
+      "source_label": "lem:group-input",
+      "source_line": 569,
+      "original_statement_latex": "\\label{lem:group-input}\nThere exist a finite group $G$, nonconjugate almost-conjugate\nsubgroups $H_1,H_2\\leq G$ of a common index $n$, and elements\n$x,y\\in G$ such that\n\\begin{enumerate}[label=\\textup{(\\alph*)}]\n\\item $x$ and $y$ generate $G$;\n\\item $xy$ acts as an $n$-cycle on $G/H_1$;\n\\item writing $c(g)=c_{G/H_1}(g)$, one has\n\\[\nc(x)+c(y)=n+1,\n\\qquad\nc(x)<n,\n\\qquad\nc(y)<n.\n\\]\n\\end{enumerate}\nIn fact, one may take $n=7$,\n$G=\\operatorname{GL}(3,\\Ftwo)$, with\n$\\operatorname{ord}(x)=2$, $\\operatorname{ord}(y)=3$, and\n$\\operatorname{ord}(xy)=7$.",
+      "evidence_state": "verified_against_original_source_and_final_snapshot",
+      "review": "Actual finite GL(3,F2), point and dual-line stabilizers, common index seven, almost conjugacy and nonconjugacy, two generators, exact 2/3/7 orders and cycle-count identities/inequalities. This supplies the existential group input.",
+      "verified_proof_declarations": [
+        "group_input",
+        "GL3F2.group_input_GL"
+      ],
+      "statement_or_object_declarations": [],
+      "existing_build_and_axiom_evidence": "results/run-03/local-verification.json",
+      "existing_fidelity_evidence": "results/run-01/project/INVENTORY.md and corresponding Lean source, inspected locally",
+      "final_build_and_axiom_evidence": "results/run-20/local-verification.json",
+      "final_fidelity_evidence": "results/run-20/statement-review.json"
+    },
+    {
+      "paper_number": "3.2.1",
+      "source_label": "lem:general-disk-covers",
+      "source_line": 720,
+      "original_statement_latex": "\\label{lem:general-disk-covers}\nFor all sufficiently small $\\varepsilon$, the set\n$Y_{j,\\varepsilon}$ is a bounded simply connected domain with\nreal-analytic Jordan boundary, and $q_{j,\\varepsilon}:Y_{j,\\varepsilon}\\longrightarrow\\D$ is a proper holomorphic map of degree $n$.  Its two critical values\nare $u_\\varepsilon$ and $v_\\varepsilon$.",
+      "evidence_state": "verified_against_original_source_and_final_snapshot",
+      "review": "Every monic polynomial with critical-value set exactly {0,1}; full preimage, not a selected component only. Bounded simply connected domain, analytic Jordan boundary, proper holomorphic map of exact degree counting multiplicity, and both genuine affine-rescaled critical values. Explicit pair has verified actual required monodromy.",
+      "verified_proof_declarations": [
+        "SteklovDiskCovers.coverDomain_geometry",
+        "SteklovDiskCovers.lemma_3_2_1",
+        "SteklovDiskCovers.critVals_monicP",
+        "SteklovCoalescence.exists_paper_diskCover",
+        "Degree7.monodromy_full"
+      ],
+      "statement_or_object_declarations": [],
+      "existing_build_and_axiom_evidence": "results/run-14/local-verification.json",
+      "existing_fidelity_evidence": "results/run-14/statement-review.json",
+      "final_build_and_axiom_evidence": "results/run-20/local-verification.json",
+      "final_fidelity_evidence": "results/run-20/statement-review.json"
+    },
+    {
+      "paper_number": "3.3.1",
+      "source_label": "prop:general-sunada",
+      "source_line": 823,
+      "original_statement_latex": "\\label{prop:general-sunada}\nThe orbisurfaces $X_{1,\\varepsilon}$ and $X_{2,\\varepsilon}$ have\nidentical Steklov spectra, including multiplicities.",
+      "evidence_state": "verified_against_original_source_and_final_snapshot",
+      "review": "prop_3_3_1_full uses a single actual f0 for path-connected regular cover, connected completed Riemann surface, actual holomorphic right deck action, degree168 and actual original HP/HL subgroup identification, genuine connected compact bordered surface and boundary charts, invariant metric, both complete metric quotient identifications and full Steklov spectra including multiplicities. label_geometry_cone proves both LabelGeometry and CuspCompat for each actual stabilizer quotient and every structural base metric, deriving all choices from actual monodromy/power models and the existing geometry. CuspCompat universally quantifies all compatible quotient homeomorphisms, so the same identification is used. Cone cases have actual rotation isotropy, standard uniformizer change and equality for every lifted factor; CuspCompat.cone_metric_identity specializes to the actual smooth positive cone-metric factor. Ordinary cusps have a local biholomorphic coordinate with smooth positive metric identity including zero.",
+      "verified_proof_declarations": [
+        "Degree7.prop_3_3_1_full",
+        "Degree7.label_geometry_cone",
+        "Degree7.CuspCompat.cone_metric_identity"
+      ],
+      "statement_or_object_declarations": [],
+      "existing_build_and_axiom_evidence": "results/run-19/local-verification.json",
+      "existing_fidelity_evidence": "results/run-19/statement-review.json",
+      "candidate_proof_declarations": [
+        "Degree7.prop_3_3_1_full",
+        "Degree7.label_geometry_cone",
+        "Degree7.CuspCompat.cone_metric_identity"
+      ],
+      "candidate_fidelity_review": "results/run-20/statement-review.json",
+      "final_build_and_axiom_evidence": "results/run-20/local-verification.json",
+      "final_fidelity_evidence": "results/run-20/statement-review.json"
+    },
+    {
+      "paper_number": "3.4.1",
+      "source_label": "prop:general-coalescence",
+      "source_line": 897,
+      "original_statement_latex": "\\label{prop:general-coalescence}\nThe maps $\\psi_{j,\\varepsilon}$ may be chosen so that\n\\begin{equation}\n\\rho_{j,\\varepsilon}\\longrightarrow n\n\\quad\\text{in }C^\\infty(\\T)\n\\label{eq:general-weight-convergence}\n\\end{equation}\nas $\\varepsilon\\to0$.",
+      "evidence_state": "verified_against_original_source_and_final_snapshot",
+      "review": "Arbitrary monic degree-n polynomial with n positive and actual tau^n=(lambdaStar-1)*epsilon; unconditional existence of the actual normalized covers and all-order coalescence of maps/derivatives/weights to z^n and n. Real iterated derivatives encode smooth C-infinity convergence, not analytic top regularity.",
+      "verified_proof_declarations": [
+        "SteklovCoalescence.exists_paper_diskCover",
+        "SteklovCoalescence.prop_3_4_1_unconditional",
+        "SteklovCoalescence.coalescence_realization_unconditional",
+        "SteklovCoalescence.coalescence_cinfty",
+        "SteklovCoalescence.coalescence_weight"
+      ],
+      "statement_or_object_declarations": [],
+      "existing_build_and_axiom_evidence": "results/run-05/local-verification.json",
+      "existing_fidelity_evidence": "results/run-05/statement-review.json; three exact type contracts in verification/Run05Audit.lean",
+      "final_build_and_axiom_evidence": "results/run-20/local-verification.json",
+      "final_fidelity_evidence": "results/run-20/statement-review.json"
+    }
+  ],
+  "pending_completion_checks": [],
+  "alternative_route_not_credited": "General Riemann existence for arbitrary permutation data is not formalized; the actual explicit degree-seven realization and actual monodromy replace this proof route for the chosen construction.",
+  "full_original_goal_complete": true,
+  "latest_incremental_verification": "results/run-19/local-verification.json",
+  "final_candidate_snapshot": "results/run-20/project",
+  "final_candidate_source_manifest": "results/run-20/final-source-manifest.json",
+  "completion_audit": "results/run-20/completion-audit.json"
+}

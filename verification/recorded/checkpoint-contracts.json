@@ -1,0 +1,39 @@
+{
+  "local_combined_command_exit_code": 0,
+  "complete_project_build_passed": true,
+  "complete_project_build_jobs": 8206,
+  "independent_audit_passed": true,
+  "closed_main_contracts": [
+    "MainTheorem",
+    "MainTheoremClassical"
+  ],
+  "closed_supporting_contracts": [
+    "SteklovC1.Prop_2_1_1_C1_Weak",
+    "Prop_2_3_1_complete"
+  ],
+  "original_numbered_signature_checks_passed": true,
+  "new_proposition_proofs": [
+    "ConeUnif.exists_equivariant_uniformizer",
+    "ConeUnif.metric_eq_at_filled_point",
+    "Degree7.CuspCompat.cone_metric_identity",
+    "Degree7.completed_quotient_identifications_conn",
+    "Degree7.label_geometry_cone",
+    "Degree7.prop_3_3_1_full",
+    "Degree7.regFill_connected_of"
+  ],
+  "negative_statement_function_and_construction_guards_passed": true,
+  "statement_definitions_not_claimed_as_proofs": [
+    "Degree7.LabelGeometry",
+    "Degree7.CuspCompat"
+  ],
+  "uncredited_function_type_contract": "Degree7.cuspT",
+  "full_actual_cone_uniformizer_and_same_witness_geometry_verified": true,
+  "audit_source": "verification/Run20Audit.lean",
+  "audit_log": "results/run-20/local-audit.log",
+  "allowed_transitive_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "full_original_goal_complete": true
+}

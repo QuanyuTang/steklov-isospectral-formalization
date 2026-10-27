@@ -1,0 +1,8 @@
+{
+  "check": "Lean lexical scan ignoring nested comments and quoted strings; supplementary to compilation and transitive axiom auditing",
+  "lean_source_count": 180,
+  "forbidden_code_tokens": [],
+  "process_or_unsafe_code_requiring_review": [],
+  "source_snapshot": "results/run-20/project",
+  "not_a_completion_or_proof_check_by_itself": true
+}

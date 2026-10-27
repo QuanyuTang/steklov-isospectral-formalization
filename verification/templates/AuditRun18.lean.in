@@ -1,0 +1,50 @@
+import RequestProject.Degree7Prop331
+import RequestProject.MainTheoremClassical
+
+/-! Axiom audit of the eighteenth run's new declarations (and the main theorem). -/
+
+#print axioms SteklovBordered.isCoveringMapOn_of_isOpenEmbedding
+#print axioms SteklovBordered.exists_radial_retraction
+#print axioms SteklovBordered.isPreconnected_sublevel
+#print axioms SteklovBordered.isPreconnected_strictSublevel
+#print axioms SteklovBordered.sublevel_topology
+#print axioms SteklovBordered.exists_quotient_homeomorph
+#print axioms SteklovBordered.exists_quotient_homeomorph_restrict
+#print axioms SteklovBordered.exists_homeomorph_of_normalizedDiskCover
+#print axioms Degree7.isOpenMap_regFillProj
+#print axioms Degree7.isCoveringMapOn_bdf
+#print axioms Degree7.regBorderedSurface
+#print axioms Degree7.surjective_regFillProj
+#print axioms Degree7.actual_bordered_surface
+#print axioms Degree7.stabSub
+#print axioms Degree7.orbSetoid
+#print axioms Degree7.quotient_spaces_of_ev
+#print axioms Degree7.paperQ_monicP_eq
+#print axioms Degree7.actual_quotient_spaces
+#print axioms Degree7.eventually_isPreconnected_paperQ
+#print axioms Degree7.quotient_disk_of
+#print axioms Degree7.quotient_interior_disk
+#print axioms Degree7.ram_of_poly
+#print axioms Degree7.cover_form
+#print axioms Degree7.multiplicity_zero
+#print axioms Degree7.multiplicity_one
+#print axioms Degree7.isBranchedDiskMap_of_cover
+#print axioms Degree7.prop_3_3_1
+#print axioms Degree7.baseOrbMetric_nonempty
+#print axioms SteklovOrb.exists_local_root
+#print axioms SteklovOrb.pullback_factor_eq
+#print axioms SteklovOrb.exists_smooth_pullback
+#print axioms SteklovOrb.generic_point
+#print axioms SteklovOrb.critical_point
+#print axioms SteklovOrb.cone_point
+#print axioms SteklovOrb.smooth_at_noncone
+#print axioms SteklovOrb.pullbackOrb
+#print axioms SteklovOrb.pullbackOrb_lam
+#print axioms SteklovOrb.pullbackOrb_range_pt
+#print axioms SteklovOrb.pullbackOrb_ord
+#print axioms SteklovOrb.lineDensity_pullbackOrb
+#print axioms SteklovOrb.weightedSteklovSpectrum_congr
+#print axioms SteklovOrb.pullback_spectra_eq
+#print axioms SteklovOrb.exists_baseOrbMetric
+#print axioms SteklovOrb.chartFactor_coneFac_aux
+#print axioms SteklovCoalescence.mainTheorem_proved
