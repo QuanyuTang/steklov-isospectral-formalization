@@ -14,4 +14,6 @@ paper/tex/* -text
 verification/templates/*.lean.in -text
 verification/recorded/* -text
 verification/package-*.log -text
+# Retain genuine compiler diagnostics such as "Try this: " verbatim.
+verification/local-windows-20261027/*.log whitespace=-blank-at-eol
 LICENSE -text
