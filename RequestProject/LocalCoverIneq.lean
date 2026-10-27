@@ -64,7 +64,8 @@ theorem monodromy_local {P Q : ℂ[X]} (hcv : critVals P = critVals Q) {M : ℝ}
   conv_lhs => rw [hf]
   refine Eq.trans ?_ (hF _).symm
   refine MonoTransfer.monodromy_transfer (isCoveringMap P)
-    (fun e => h (e : ℂ)) (fun y => (y : ℂ)) γ (γ.map (continuous_idBase hcv)) (fun t => rfl)
+    (fun e => h (e : ℂ)) (fun y => (y : ℂ)) γ (γ.map (continuous_idBase hcv))
+    (fun t => idBase_val hcv (γ t))
     {y | ‖(y : ℂ)‖ ≤ M} hγ ?_ ?_ (F.symm f) (F (F.symm f)) (hF _)
   · intro e' he'
     have hmem : (e' : ℂ) ∈ U := hUM _ (by rw [← proj_coe']; exact he')

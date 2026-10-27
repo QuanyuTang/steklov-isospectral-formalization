@@ -251,7 +251,8 @@ theorem spectra_eq_of_disk_data (hs : s ^ 2 = -7) (hδ : δ ≠ 0) (hsmall : ‖
   have hb₀ : (A : ℂ) = ((x₀ : ℂ) - ε) / δ := by
     show (A : ℂ) = (ε + δ * (A : ℂ) - ε) / δ
     field_simp; ring
-  have hb₀' : ((CoverIneq.idBase hcv A : Base (pPoly (-s))) : ℂ) = ((x₀ : ℂ) - ε) / δ := hb₀
+  have hb₀' : ((CoverIneq.idBase hcv A : Base (pPoly (-s))) : ℂ) = ((x₀ : ℂ) - ε) / δ :=
+    (CoverIneq.idBase_val hcv A).trans hb₀
   have hsph := sphere_subset_Xb hc' (by norm_num : (1 / 2 : ℝ) < 1) hCρ
   -- the labellings of the two fibres over `x₀`
   set Lab₂ := fun a => L (fmap hs hδ h₂ hc₂ hB₂ψ x₀ hx₀1 A hb₀ a) with hLab₂def

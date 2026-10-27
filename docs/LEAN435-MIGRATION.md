@@ -26,8 +26,11 @@ bare names by occurrence and recording ambient variable commands. It finds:
   as a deprecated alias;
 - the recorded instance-to-theorem change with identical statement, the exact
   `MainTheorem` module relocation, and two new proved private cycle helpers;
-- no dropped declarations or other normalized concrete-definition code-region
-  differences outside that separately checked exact relocation.
+- no dropped declarations or changed computational maps. The later kernel-cost
+  patch changes only the `invFun` subtype-membership proof in `fibreHomeo`;
+  the inventory records that body difference and enforces the exact two
+  reviewed proof-term replacements. No other definition-body region changes
+  outside the separately checked exact relocation are allowed.
 
 This is a textual inventory, not a cross-version elaborated-type equality
 proof. Kernel checking and mathematical interpretation remain separate gates.
@@ -71,6 +74,46 @@ The audit generator now opens both scopes, as the original `Defs.lean` does.
 This correction changes no proof module, declaration, audit target or kernel
 checker. The failed audit process is not counted as a successful audit; the
 corrected guard and all existing targets require a new exact-commit CI run.
+
+## Kernel-cost diagnostic and proof-only optimization
+
+Aristotle task `9947c121-1251-4fbe-a6dc-c71cfe1e66ee` profiled the intact
+Lean 4.28 baseline with imported declaration bodies visible. Those measurements
+are diagnostic evidence on 8 cores and 64 GB, not Lean 4.35 or bundled-checker
+verification. The earlier `83d5ec65` replay was cancelled without a retrievable
+final log, so its underlying cause and kernel outcome remain unknown.
+
+The diagnostic found expensive definitional unfolding through `CoverIneq.idBase`.
+Its proposed patch changes five proof terms in `CoverInequivalence`,
+`LocalCoverIneq` and `ActualKernel`: it proves `idBase_val` by `Subtype.coe_mk`
+and explicitly composes that equality at four callers. It changes no declaration
+header, quantified assumption, mathematical definition or theorem target.
+Within the `fibreHomeo` definition, only the inverse map's membership proof
+changes; both underlying functions and inverse-law fields remain unchanged.
+The source inventory checks the exact replacements, and anonymous audit
+contracts additionally check both computational projections by `rfl`.
+
+On the baseline, the five full-body rechecks changed from exceeding the
+120-second cap to 0.3–47.7 milliseconds. This suggests an optimization worth
+testing, but does not establish the cause of any target-version interruption.
+Another reachable declaration, `Degree7.good_eq_orbits._proof_1_1`, peaked at
+27.3 GB in the baseline probe. Further memory optimization or adequate runner
+resources may still be necessary. The proposed patch, projection guards, full
+590-target inventory and trusted kernels all require fresh target CI evidence.
+
+The replay wrapper now checkpoints partial logs and resource snapshots through
+the existing pinned artifact action every twenty minutes while the unchanged
+trusted command runs. Partial artifacts never certify acceptance. The final
+gate requires the actual checker exit status; successful, nonzero and missing
+fixture results are exercised in a separate Linux protocol job before real
+replay. Only optional partial-artifact upload failures are tolerated; mandatory
+final evidence, the con-ron attempt and source-preservation checks stay enforced.
+
+On disposable GitHub-hosted replay runners only, unused Java, Go and Swift SDKs
+are additionally removed. Extra disk-backed swap is capped at 24 GiB while
+retaining eight GiB free at allocation time. This is not a claim of 32 GiB of
+physical RAM: actual RAM, swap and disk are recorded in environment/checkpoint
+artifacts. The cold-build workflow keeps its previous resource policy.
 
 ## Historical patch sequence
 

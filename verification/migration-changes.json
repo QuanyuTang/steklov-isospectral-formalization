@@ -8,6 +8,11 @@
       "migrated_sha256": "866dc679d284043b0989eff06b7631dd24b3966a713763f019d2905a46f36b67"
     },
     {
+      "file": "RequestProject/ActualKernel.lean",
+      "baseline_sha256": "bd2a1546083da233c6672d3948879a63c121bd6b80db79e9d87d3bdd3d869006",
+      "migrated_sha256": "48db2fe26ed37a35df0c812f14b396264b69e3db485bde95245857dcf61fd4aa"
+    },
+    {
       "file": "RequestProject/ApproxMinMax.lean",
       "baseline_sha256": "00e926453d5d4f1f3c85f9c04958d51b99b2ad75caa95566712c9212b2384d65",
       "migrated_sha256": "bd431630c973ca5a62e431ebbe23e7d0da320d506e652646933d64f20904a3ae"
@@ -116,6 +121,11 @@
       "file": "RequestProject/ConformalSpectrum.lean",
       "baseline_sha256": "8c6278ca213bb199e70a2d9d9ed1a857ff201e51d1e51b0e9d4294fa7b35da96",
       "migrated_sha256": "39b5f8b0e2ea8e4c808e640407f031a5895a394ecc08660b0ddbce62fce1ad00"
+    },
+    {
+      "file": "RequestProject/CoverInequivalence.lean",
+      "baseline_sha256": "255d0d18032fbaa453c0a356a83902aac3fc2e0e9a1eca6553595f8237946ae7",
+      "migrated_sha256": "ccae4bebe10c14aa645233f2b43148cb6ae8990cf52b2c70103f5d5f2223edc3"
     },
     {
       "file": "RequestProject/CoverKernel.lean",
@@ -261,6 +271,11 @@
       "file": "RequestProject/LemniscateBoundary.lean",
       "baseline_sha256": "af9d2ce60309eee0077373281c09712a3f4894fe6610120d3f8c1d8f17f667be",
       "migrated_sha256": "95b824260f107de18520ca17b1d4b1afb409a65a975e414b2edafe4d54173fc8"
+    },
+    {
+      "file": "RequestProject/LocalCoverIneq.lean",
+      "baseline_sha256": "713ce167e726b0d7dd6e63703d3ad34f19dd329b35bfda90c0e0b5ea580f4bac",
+      "migrated_sha256": "841d974980375848cb16e94883d279ea11feb40c9c85c34f444b7c47bfb1f49f"
     },
     {
       "file": "RequestProject/LocalInertia.lean",

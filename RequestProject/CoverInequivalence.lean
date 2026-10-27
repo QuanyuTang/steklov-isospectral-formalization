@@ -43,7 +43,7 @@ critical values. -/
 def idBase (h : critVals P = critVals Q) (x : Base P) : Base Q := ⟨x.1, h ▸ x.2⟩
 
 @[simp] theorem idBase_val (h : critVals P = critVals Q) (x : Base P) :
-    (idBase h x : ℂ) = x := rfl
+    (idBase h x : ℂ) = x := Subtype.coe_mk _ _
 
 theorem continuous_idBase (h : critVals P = critVals Q) : Continuous (idBase h) :=
   continuous_subtype_val.subtype_mk _
@@ -58,7 +58,9 @@ theorem isStdLoops_map (h : critVals P = critVals Q) {r : ℝ} {A : Base P}
   obtain ⟨B, C, D, U0, L0, U1, L1, sBC, hU0, hL0, hU1, hL1, hs, rfl, rfl⟩ := hs
   refine ⟨_, _, _, U0.map (continuous_idBase h), L0.map (continuous_idBase h),
     U1.map (continuous_idBase h), L1.map (continuous_idBase h), sBC.map (continuous_idBase h),
-    hU0, hL0, hU1, hL1, hs, ?_, ?_⟩
+    fun t => (idBase_val h _).trans (hU0 t), fun t => (idBase_val h _).trans (hL0 t),
+    fun t => (idBase_val h _).trans (hU1 t), fun t => (idBase_val h _).trans (hL1 t),
+    fun t => (idBase_val h _).trans (hs t), ?_, ?_⟩
   · rw [quot_map_trans]; rfl
   · simp only [quot_map_trans, quot_map_symm]; rfl
 
@@ -90,8 +92,8 @@ def fibreHomeo (h : critVals P = critVals Q) (Ψ : Total P ≃ₜ Total Q)
     apply Subtype.ext
     have h1 := congrArg Subtype.val (hΨ (Ψ.symm f.1))
     rw [Homeomorph.apply_symm_apply] at h1
-    have h2 : (proj Q f.1 : ℂ) = x.1 := congrArg Subtype.val f.2
-    exact h1.symm.trans h2⟩
+    have h2 : (proj Q f.1 : ℂ) = x.1 := (congrArg Subtype.val f.2).trans (idBase_val h x)
+    exact (idBase_val h _).symm.trans (h1.symm.trans h2)⟩
   left_inv e := Subtype.ext (Ψ.symm_apply_apply e.1)
   right_inv f := Subtype.ext (Ψ.apply_symm_apply f.1)
 

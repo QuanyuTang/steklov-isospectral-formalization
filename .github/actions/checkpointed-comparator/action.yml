@@ -1,0 +1,363 @@
+{
+  "name": "Checkpointed required Comparator",
+  "description": "Preserve partial diagnostics while the unmodified sandboxed checker runs.",
+  "runs": {
+    "using": "composite",
+    "steps": [
+      {
+        "name": "Start the unchanged required sandboxed Comparator",
+        "id": "launch",
+        "shell": "bash",
+        "run": "set -Eeuo pipefail\nmkdir -p verification/current-ci\ntest ! -e verification/current-ci/required-replay.exit\necho 'STEKLOV_REPLAY_COMPLETE=false' >> \"$GITHUB_ENV\"\nnohup bash \"$GITHUB_ACTION_PATH/driver.sh\" < /dev/null > verification/current-ci/required-driver.log 2>&1 &\necho \"$!\" > verification/current-ci/required-replay.pid\n"
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (1/18)",
+        "id": "wait_01",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (1/18)",
+        "if": "always() && steps.wait_01.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-01-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (2/18)",
+        "id": "wait_02",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (2/18)",
+        "if": "always() && steps.wait_02.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-02-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (3/18)",
+        "id": "wait_03",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (3/18)",
+        "if": "always() && steps.wait_03.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-03-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (4/18)",
+        "id": "wait_04",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (4/18)",
+        "if": "always() && steps.wait_04.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-04-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (5/18)",
+        "id": "wait_05",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (5/18)",
+        "if": "always() && steps.wait_05.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-05-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (6/18)",
+        "id": "wait_06",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (6/18)",
+        "if": "always() && steps.wait_06.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-06-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (7/18)",
+        "id": "wait_07",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (7/18)",
+        "if": "always() && steps.wait_07.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-07-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (8/18)",
+        "id": "wait_08",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (8/18)",
+        "if": "always() && steps.wait_08.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-08-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (9/18)",
+        "id": "wait_09",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (9/18)",
+        "if": "always() && steps.wait_09.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-09-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (10/18)",
+        "id": "wait_10",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (10/18)",
+        "if": "always() && steps.wait_10.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-10-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (11/18)",
+        "id": "wait_11",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (11/18)",
+        "if": "always() && steps.wait_11.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-11-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (12/18)",
+        "id": "wait_12",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (12/18)",
+        "if": "always() && steps.wait_12.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-12-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (13/18)",
+        "id": "wait_13",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (13/18)",
+        "if": "always() && steps.wait_13.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-13-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (14/18)",
+        "id": "wait_14",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (14/18)",
+        "if": "always() && steps.wait_14.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-14-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (15/18)",
+        "id": "wait_15",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (15/18)",
+        "if": "always() && steps.wait_15.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-15-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (16/18)",
+        "id": "wait_16",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (16/18)",
+        "if": "always() && steps.wait_16.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-16-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (17/18)",
+        "id": "wait_17",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (17/18)",
+        "if": "always() && steps.wait_17.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-17-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Wait up to 20 minutes for required replay (18/18)",
+        "id": "wait_18",
+        "if": "steps.launch.outcome == 'success' && env.STEKLOV_REPLAY_COMPLETE != 'true'",
+        "shell": "bash",
+        "run": "bash \"$GITHUB_ACTION_PATH/poll.sh\""
+      },
+      {
+        "name": "Preserve partial replay diagnostics (18/18)",
+        "if": "always() && steps.wait_18.outcome != 'skipped'",
+        "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+        "continue-on-error": true,
+        "with": {
+          "name": "lean435-replay-checkpoint-18-${{ github.event.pull_request.head.sha || github.sha }}",
+          "path": "verification/current-ci/",
+          "if-no-files-found": "error",
+          "retention-days": 14
+        }
+      },
+      {
+        "name": "Require the actual trusted-checker exit status",
+        "if": "always()",
+        "shell": "bash",
+        "run": "set -Eeuo pipefail\nif [[ ! -f verification/current-ci/required-replay.exit ]]; then\n  echo 'No completed required-checker exit status; no acceptance claimed.' >&2\n  exit 1\nfi\nsteklov_replay_exit=$(cat verification/current-ci/required-replay.exit)\nif [[ ! \"$steklov_replay_exit\" =~ ^[0-9]+$ ]] || (( steklov_replay_exit > 255 )); then\n  echo 'Invalid required-checker exit status; no acceptance claimed.' >&2\n  exit 1\nfi\ncat verification/current-ci/comparator-required.log\nexit \"$steklov_replay_exit\"\n"
+      }
+    ]
+  }
+}

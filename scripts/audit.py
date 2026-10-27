@@ -27,6 +27,17 @@ example (B : (ℂ → ℝ) → ℝ≥0∞) (k : ℕ) (V : Submodule ℝ (ℂ →
     Steklov.AdmissibleSpace B k V ↔
       ((∀ u ∈ V, ContDiff ℝ ∞ u) ∧ Module.finrank ℝ V = k + 1 ∧
         ∀ u ∈ V, u ≠ 0 → B u ≠ 0) := Iff.rfl
+
+section
+variable {P Q : Polynomial ℂ} (h : P.critVals = Q.critVals)
+  (Ψ : PolyCover.Total P ≃ₜ PolyCover.Total Q)
+  (hΨ : ∀ e, PolyCover.proj Q (Ψ e) = CoverIneq.idBase h (PolyCover.proj P e))
+  (x : PolyCover.Base P)
+example (e : PolyCover.proj P ⁻¹' {x}) :
+    ((CoverIneq.fibreHomeo h Ψ hΨ x) e).1 = Ψ e.1 := rfl
+example (f : PolyCover.proj Q ⁻¹' {CoverIneq.idBase h x}) :
+    ((CoverIneq.fibreHomeo h Ψ hΨ x).symm f).1 = Ψ.symm f.1 := rfl
+end
 '''
 target.write_text('\n'.join(imports) + '\n\n' + smooth_contract + '\n\n' + '\n\n'.join(bodies)
                   + '\n#print axioms SteklovSubmission.main_result\n', encoding='utf-8')
@@ -69,6 +80,7 @@ if missing:
     sys.exit(f'FAIL: missing axiom reports for {sorted(missing)}')
 report = {'status': 'pass', 'fresh_lean_run': not bool(args.check_log),
           'smooth_infinity_contract_checked': not bool(args.check_log),
+          'fibreHomeo_projection_contracts_checked': not bool(args.check_log),
           'audited_unique_targets': len(expected), 'permitted_axioms': sorted(allowed),
           'targets': {name: records[name] for name in sorted(expected)}}
 if not args.check_log:
@@ -76,3 +88,4 @@ if not args.check_log:
 print(f'Axiom allowlist enforced for all {len(expected)} distinct targets: PASS', flush=True)
 if not args.check_log:
     print('Smooth-infinity admissibility contract: PASS', flush=True)
+    print('fibreHomeo computational projection contracts: PASS', flush=True)
