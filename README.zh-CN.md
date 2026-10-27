@@ -47,9 +47,9 @@ Palomar 使用公开 GitHub 仓库及完整 commit SHA 进行审查，并不是�
 
 ## 署名、AI 使用与许可
 
-仓库维护者：[taohu-hub](https://github.com/taohu-hub)、[RGConj](https://github.com/RGConj)、[QuanyuTang](https://github.com/QuanyuTang)。形式化主要使用 **Aristotle（Harmonic）** 生成证明，**OpenAI Codex** 用于组织工作、补充中间步骤、核验与整理。没有声称经过独立数学专家的人工审稿。详见 [PROVENANCE.md](docs/PROVENANCE.md)。
+仓库维护者：[Tao Hu](https://github.com/taohu-hub)、[Jiachen Shi](https://github.com/RGConj)、[Quanyu Tang](https://github.com/QuanyuTang)。形式化主要使用 **Aristotle（Harmonic）** 生成证明，**OpenAI Codex** 用于组织工作、补充中间步骤、核验与整理。详见 [PROVENANCE.md](docs/PROVENANCE.md)。
 
-原论文作者为 **Tao Hu、Jiachen Shi、Quanyu Tang**。仓库维护身份和论文作者身份分别标注，没有将论文或 AI 生成工作全部归功于维护者。
+原论文作者为 **Tao Hu、Jiachen Shi、Quanyu Tang**，已经经过人工独立审稿。
 
 ## 原文差异记录
 
