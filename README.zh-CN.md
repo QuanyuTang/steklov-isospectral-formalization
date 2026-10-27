@@ -1,6 +1,6 @@
 # 严格凸 Steklov 等谱平面区域：Lean 形式化
 
-**作者：[taohu-hub](https://github.com/taohu-hub)、[RGConj](https://github.com/RGConj)、[QuanyuTang](https://github.com/QuanyuTang)。**
+**作者：[Tao Hu](https://github.com/taohu-hub)、[Jiachen Shi](https://github.com/RGConj)、[Quanyu Tang](https://github.com/QuanyuTang)。**
 
 [![Lean 验证](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml)
 [![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml)
