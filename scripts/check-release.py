@@ -138,6 +138,27 @@ require(bound_sources <= source_hashes.keys(),
 inventory = set(release_files(ROOT))
 require(set(source_hashes) == inventory - DERIVED_FILES,
         "source checksum inventory exactly covers all nonderived release files")
+windows_report = ROOT / "verification/local-windows-20261027/report.json"
+windows_proof_inputs = set()
+if windows_report.is_file():
+    # Bind historical local evidence to its exact proof inputs. Refreshing the
+    # release manifests must never silently certify changed proof development.
+    # This integrity check makes no claim of a Linux sandbox or current CI run.
+    windows_record = json.loads(windows_report.read_text(encoding="utf-8"))
+    recorded_inputs = windows_record.get("proof_input_sha256")
+    require(isinstance(recorded_inputs, dict), "recorded Windows proof-input hash mapping present")
+    windows_proof_inputs = {p.relative_to(ROOT).as_posix() for p in lean_files}
+    windows_proof_inputs.update({"lean-toolchain", "lakefile.toml", "lake-manifest.json",
+                                 "comparator.json", "scripts/audit.py"})
+    windows_proof_inputs.update(p.relative_to(ROOT).as_posix()
+                               for p in (ROOT / "verification/templates").glob("*.lean.in")
+                               if p.is_file())
+    require(set(recorded_inputs) == windows_proof_inputs,
+            "recorded Windows proof-input inventory exactly covers current proof inputs")
+    for name in sorted(windows_proof_inputs):
+        digest = recorded_inputs[name]
+        require(isinstance(digest, str) and re.fullmatch(r"[0-9a-f]{64}", digest) is not None
+                and digest == source_hashes.get(name), "recorded Windows proof-input hash: " + name)
 if not args.write_report:
     publication = json.loads((ROOT / "publication-manifest.json").read_text(encoding="utf-8"))
     publication_hashes = publication.get("file_sha256", {})
@@ -206,6 +227,8 @@ summary = {
     "original_tex_and_archive_match": True,
     "source_manifest_coverage_complete": True,
     "publication_manifest_checked": not args.write_report,
+    "recorded_windows_proof_input_binding_checked": windows_report.is_file(),
+    "recorded_windows_proof_input_count": len(windows_proof_inputs),
     "observed_palomar_toolchain_minimum_satisfied": True,
     "palomar_registration_claimed": False,
     "kernel_acceptance_established_by_this_source_check": False,

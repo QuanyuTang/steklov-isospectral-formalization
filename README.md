@@ -5,6 +5,8 @@
 [![Lean verification](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml?query=branch%3Amain)
 [![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=main)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml?query=branch%3Amain)
 
+**Latest local recheck (2026-10-27):** The current proof inputs match snapshot `2d1b0331a534c8c774794252b14152c5be32a3f7`: all 176 modules and both entries built, all 590 audit targets passed, and the pinned Comparator, NanoDa, Lean and con-ron accepted the selected main-result proof. This was a **Windows run without Linux sandbox isolation**, using freshly generated, hash-bound exports. Current Linux CI jobs were blocked before starting by GitHub account billing/spending restrictions. [Results and genuine logs](verification/local-windows-20261027/report.json). The release checker enforces the complete 190-input proof fingerprint, so refreshing checksums alone cannot make changed proofs inherit this evidence.
+
 **Machine-checked proof snapshot:** Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted. See [status](PALOMAR_STATUS.md) and [exact evidence](docs/lean435-build-audit-evidence.json).
 
 **A Lean 4 formalization of Theorem 1.1.2 of Hu–Shi–Tang, with an explicit degree-seven construction.**
@@ -67,6 +69,8 @@ scripts/                   Build checks and Palomar preflight
 ```
 
 ## Palomar submission status
+
+The new Windows proof-source recheck is recorded [here](verification/local-windows-20261027/report.json). Its proof inputs remain unchanged in this checkout. The latest Linux jobs executed zero steps because of an account billing/spending restriction; obtain new successful isolated runs for the final submitted commit when that restriction is resolved. The Windows checks are not a claim of Linux sandbox verification or registry acceptance.
 
 Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted. These are checks of that exact snapshot. Subsequent commits require their own successful runs. No Palomar submission, editorial acceptance or registration is claimed.
 

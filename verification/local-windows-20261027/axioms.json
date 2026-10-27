@@ -1,0 +1,2963 @@
+{
+  "status": "pass",
+  "fresh_lean_run": true,
+  "smooth_infinity_contract_checked": true,
+  "fibreHomeo_projection_contracts_checked": true,
+  "audited_unique_targets": 590,
+  "permitted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "targets": {
+    "ActualKernel.spectra_eq_of_disk_data": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ArcLength.hausdorffMeasure_image_eq_lintegral": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ArcLength.hausdorffMeasure_restrict_image_eq_map": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ArcLength.lintegral_image_hausdorffMeasure": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "BCover.isCoveringMap_bproj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "BKernel.weightedSteklovEigenvalue_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "BoundaryLength.boundaryLength_eq_of_realAnalyticJordan": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "BoundaryLength.boundaryLength_image_ball": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "BoundaryLength.boundaryLength_rescaled_blaschke": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CompositionBounds.log_comp_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CompositionBounds.norm_iteratedFDerivWithin_comp_le_small": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConeUnif.exists_equivariant_uniformizer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConeUnif.metric_eq_at_filled_point": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConformalImage.isBounded_image_ball": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConformalImage.isDomain_image_ball": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConformalImage.realAnalyticJordan_image_ball": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConformalImage.simplyConnected_image_ball": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConformalPullback.boundaryMass_image": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConformalPullback.boundary_lintegral": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConformalPullback.dirichletEnergy_image": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConformalPullback.exists_cutoff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConformalPullback.frontier_image_ball": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConformalPullback.prop_2_1_1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CongrRigid.blaschke_of_congr_anti": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CongrRigid.blaschke_of_congr_hol": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConjMonodromy.monodromyPerm_conj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ConjMonodromy.std_conj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CoverIneq.isStdLoops_unique": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CoverIneq.monodromy_homeo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CoverKernel.fibK_sum_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CoverKernel.kernel_eventually_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "CoverTransport.monodromy_map_mk": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.A_divmod": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.CuspCompat.cone_metric_identity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.LabelGeometry": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.aRem_cc": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.actual_bordered_surface": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.actual_quotient_spaces": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.admissible_normal_form": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.bRem_cc": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.baseOrbMetric_nonempty": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.bconst_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.boundary_metric": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.card_centralizer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.card_closure_y1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.card_closure_y2": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.card_cycleType33": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.card_fibre_pPoly": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.card_fibre_regular": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.card_good": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.card_roots_sub": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.cc_plus_ne_cc_minus": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.chartDom": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.closed_quotient_disk": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.collarRad_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.combRho_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.common_cover_generic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.common_regular_cover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.completed_quotient_identifications": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.completed_quotient_identifications_conn": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.completed_quotient_identifications_deck": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.coneSet_iff_stab": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.continuous_regFillAct": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.coord_data": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.cover_form": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.covers_not_isomorphic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.critVals_pPoly": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.cycleType33_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.cycleType7_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.cycleType_x7": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.cycleType_x7y1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.cycleType_x7y2": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.cycleType_y1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.cycleType_y2": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.deckIso": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.deriv_pfun_eq_zero_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.endCompat_regAct": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.eventually_isPreconnected_paperQ": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.exists_monic_normalization": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.extend_pair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.fanoT_mul_transpose": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.fanoT_rho": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.fanoT_transpose_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.finite_regEnds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.finite_regProj_fibre": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.good_eq_orbits": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.hasDerivAt_A": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.homeomorph_comp_iterate_fix_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.i_sqrt7_sq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.isBranchedDiskMap_of_cover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.isCompact_preimage_closedBall": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.isCompact_preimage_regFillProj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.isCoveringMapOn_bdf": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.isLocalBranched_chart": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.isLocalHomeomorph_coverProjC": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.isOpenMap_regFillProj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.isProperMap_regFillProj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.labelH_monodromy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.label_geometry": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.label_geometry_cone": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.local_power_map": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.mem_deckGroup_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.mem_deckGroup_sum_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.metric_descends": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.monodromy_full": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.monodromy_homeomorph_comp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.monodromy_local": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.monodromy_pair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.monodromy_point_line": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.monodromy_rho": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.monodromy_transitive": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.multiplicity_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.multiplicity_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.no_local_iso": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.not_affine_equivalent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.not_branch_of_collar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.one_sub_pfun": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.orbSetoid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.ord_eq_stab": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.pPoly_conj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.paperQ_monicP_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.passport_infinity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.passport_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.passport_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.pfun_critical_value_mem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.pfun_critical_values": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.projSum_iterate_fix_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.prop_3_3_1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.prop_3_3_1_full": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.prop_3_3_1_geometric": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.prop_3_3_1_geometric_nonvacuous": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.q_disc_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.q_roots_simple": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.quartic_cc": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.quotient_chart": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.quotient_disk_of": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.quotient_ident": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.quotient_interior_disk": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.quotient_spaces_of_ev": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.ram_of_poly": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regBordered": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regBorderedSurface": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regCov_local_model": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regCov_local_model_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regCov_local_model_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regCov_return": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regCov_return_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regCov_return_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regCov_riemannSurface": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regEnds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regEnds_pow": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regFillAct_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regFillAct_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regFillHomeo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regFill_connected_of": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regFill_deckAction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regFill_riemannSurface": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regMetric": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regMetric_cusp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regMetric_deck": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regMetric_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regMetric_smooth": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regMetric_transform": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regMetric_transition": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.regular_cover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.rhoL_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.rhoL_x": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.rhoL_y": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.rhoP_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.rhoP_x": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.rhoP_y": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.rot_formula": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.stabIn_inl": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.stabSub": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.stabSub_eq_map": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.stab_card_crit": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.stab_card_mul_mult": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.stab_card_noncrit": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.stab_label_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.stabilizer_identification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.sumElim_iterate_fix_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.sumLabel_monodromy_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.summand_map_inl": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.summand_map_inr": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Degree7.surjective_regFillProj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "DiskAut.exists_diskAut": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "DiskAut.isometry_form": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FamilyIso.exists_family_isospectral": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FamilyIso.family_spectra_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FamilyNoncongr.critSet_of_anti": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FamilyNoncongr.critSet_of_aut": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FamilyNoncongr.family_facts": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FamilyNoncongr.no_disk_equiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "GL3F2.almostConjugate_HP_HL": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "GL3F2.cycleCount_x": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "GL3F2.cycleCount_x_L": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "GL3F2.cycleCount_xy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "GL3F2.cycleCount_xy_L": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "GL3F2.cycleCount_y": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "GL3F2.cycleCount_y_L": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "GL3F2.group_input_GL": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "GL3F2.not_areConjugate_HP_HL": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "HolInv.deriv_ne_zero_of_injOn": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "HolInv.exists_local_branches": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "HolInv.exists_local_branches_comp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "HolInv.exists_open_injOn_of_compact": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "HolInv.exists_open_nbhd_injOn_deriv_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "HolInv.hasDerivAt_invFunOn": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "HolInv.isOpen_image": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "InfinityMonodromy.infinity_monodromy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LocalMonodromy.finRotate_iterate_eq_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LocalMonodromy.local_monodromy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "LocalMonodromy.local_monodromy_iterate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MonodromyRelation.loop_relation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "MonodromyTriple.monodromy_triple": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterConvergence.main_estimate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterConvergence.prop_2_3_1_complete": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterConvergence.prop_2_3_1_convergence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterConvergence.prop_2_3_1_convergence_seq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterFourier.hasSum_fc": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterFourier.norm_fc_le_of_iteratedDeriv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterFunction.exists_decay": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterFunction.iteratedDeriv_H": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterFunction.norm_Hj_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterFunction.re_H_exp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterRealization.deriv_eq_outer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterRealization.exists_outer_primitive": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterRealization.norm_outer_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterRealization.prop_2_3_1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "OuterRealization.prop_2_3_1_realization": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Pi1Gen.isStdLoops_generate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Pi1Gen.local_step": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Pi1Gen.subdivision": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PolyCover.card_fibre": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PolyCover.isCoveringMap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PolyCover.monodromy_transitive": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Prop231Reduction.isospectral_of_weighted": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Prop231Reduction.prop_2_3_1_of_realization": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "RealAnalyticBounds.exists_iteratedDeriv_bound_periodic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Steklov.minMax_le_of_approx": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Steklov.minMax_le_of_transfer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovAnalytic.injOn_of_re_deriv_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovArea.lintegral_deriv_sq_mul_eq_fibreSum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBlaschke.IsFiniteBlaschke.exists_nbhd": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBlaschke.blaschke_boundary_rigidity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBlaschke.blaschke_boundary_rigidity_anti": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBlaschke.circFibre_finite": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBlaschke.fibre_card_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBlaschke.fibre_finite": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBlaschke.integral_bdens": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBlaschke.integral_norm_deriv_blaschke": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBlaschke.lintegral_circle_norm_deriv_eq_circFibreSum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBordered.closed_disk_extension": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBordered.closed_disk_homeomorph": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBordered.exists_homeomorph_of_normalizedDiskCover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBordered.exists_quotient_homeomorph": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBordered.exists_quotient_homeomorph_restrict": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBordered.exists_radial_retraction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBordered.isCoveringMapOn_of_isOpenEmbedding": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBordered.isPreconnected_strictSublevel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBordered.isPreconnected_sublevel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBordered.local_extension": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBordered.sublevel_topology": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBoundary.boundary_condition": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBoundary.coeff_relation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBoundary.eq_embedH_of_trace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBoundary.exists_harmonic_of_decay": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBoundary.integral_inner_grad_harmonic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBoundary.isAnalyticWeight_norm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBoundary.weak_eigen_classical": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBranch.lintegral_fderiv_logCut_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBranch.minMax_le_of_singular_transfer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovBranch.tendsto_eLpNorm_fderiv_corr_sub": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovC1.boundary_lintegral_C1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovC1.exists_smooth_C1_approx": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovC1.fderiv_eq_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovC1.frontier_eq_image_sphere": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovC1.hasSobolevWeakSteklovSpectrum_C1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovC1.lintegral_weightMeasure": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovC1.minMax_congr_smooth": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovC1.minMax_le_of_C1_comp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovC1.prop_2_1_1_C1_weak": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.ball_subset_component": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.bdryRad_analyticAt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.blaschke_cinfty_convergence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.blaschke_weight_ck_close": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.blaschke_weight_posAnalytic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.coalescence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.coalescence_cinfty": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.coalescence_map_tendsto_id": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.coalescence_realization": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.coalescence_realization_unconditional": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.coalescence_trapping": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.coalescence_weight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.coalescence_zeros": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.component_subset_ball": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.exists_normalizedDiskCover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.exists_paper_diskCover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.exists_paper_diskCover_eventually": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.frontier_preimage_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.inverse_schwarz": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.isRealAnalyticJordanBoundary_preimage": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.iteratedDeriv_re_circle": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.iteratedDeriv_tendstoLocallyUniformlyOn_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.mainTheoremClassical_proved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.mainTheoremDom_proved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.mainTheoremExceptNoncongruence_of_mainTheorem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.mainTheoremExceptNoncongruence_proved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.mainTheoremH1_proved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.mainTheoremWeak_proved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.mainTheorem_except_iii_of_cover_data": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.mainTheorem_except_iii_of_spectral_transfer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.mainTheorem_of_cover_data": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.mainTheorem_proved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.nearDisk_preimage": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.norm_deriv_ge_of_ball_subset": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.norm_deriv_le_of_image_subset": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.not_congruent_of_critSet": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.not_reversing_of_critSet": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.paperCoeff_tendsto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.paperQ_eq_polyQ": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.polyQ_eq_prod": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.polyQ_root_small": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.prop_3_4_1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.prop_3_4_1_unconditional": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.proper_comp_inv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.range_bdryCurve": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.re_polyQ_deriv_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.schwarz_near_id": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.starConvex_preimage": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.trapped_map_close_to_id": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCoalescence.weak_isospectral": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovConvexity.eventually_strictConvex_of_C2": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovConvexity.strictConvex_closure_image": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCritical.branchValues_mem_disk": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCritical.coalescence_coeff_tendsto_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCritical.critical_values_match": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovCritical.critical_values_no_reflection": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovDilationProof.boundaryLength_smul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovDilationProof.congruent_smul_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovDilationProof.orientationReversing_smul_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovDilationProof.steklovDilation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovDiskCovers.coverDomain_geometry": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovDiskCovers.critVals_comp_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovDiskCovers.critVals_coverPoly": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovDiskCovers.critVals_monicP": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovDiskCovers.isRealAnalyticJordanBoundary_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovDiskCovers.lemma_3_2_1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.contMDiffAt_of_formula": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.contMDiff_extend": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.contMDiff_map": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.contMDiff_\u03c0Fill": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.continuous_extend": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.continuous_map": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.cuspChart": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.dense_range_inl": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.differentiableOn_cuspExt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.differentiableOn_cuspRep": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.eval_extend": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.exists_common_of_cuspVal_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.exists_rotation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.homeoMap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.isCompact_preimage_\u03c0Fill": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.isManifold_fill": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.isOpenEmbedding_inl": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.isPreconnected_pdisk": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.nhds_le_map_cuspExt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.t2Space": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.Fill.\u03c0Fill_map": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.bMap_comp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.bMap_id": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.branchEnds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.branchEnds_pow": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.branch_closed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.contMDiffAt_of_formula'": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.differentiableAt_of_comp_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.endCompat_bMap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.exists_bIdx_of_mem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.exists_bound_of_eval_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.finite_bIdx": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.isCompact_preimage_of_isCoveringMap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFill.mem_range_bMap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFourier.ae_eq_of_fc_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFourier.hasSum_fc": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovFriedrichs.friedrichs_ball": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovGroup.areConjugate_of_equivariant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovGroup.sunada_finrank_invariants_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.BddDomain.embedC1_mem_H1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.BddDomain.snd_eq_zero_of_fst_eq_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.BddDomain.steklovEigenvalue_eq_h1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.BddDomain.trace_embedC1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.BddDomain.trace_embed_ae": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.BddDomain.weak_gradient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.bdry_finite": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.exists_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.exists_hasTraceIneq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.hasDerivAt_G": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.inner_grad_pull": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.inner_trace_pull": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.isCompactOperator_trace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.isWeakSteklovEigenDom_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.lintegral_frontier": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.mem_H1_iff_isWeakGradientPair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.norm_trace_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.pullAmb_embed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.pullAmb_isWeakGradientPair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.pushAmb_embed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.sobolevPullback": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.sobolevPullback_embedH": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.steklovSpectrum_eq_h1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.C1Conf.weak_spectral_theorem_dom": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.classical_spectral_theorem_dom": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.closure_\u03a9": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.exists_harmonic_grad_of_eigen": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.exists_harmonic_of_eigen": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.inner_grad_pull": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.inner_trace_pull": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.isAnalyticWeight_\u03c1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.isCompactOperator_trace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.isWeakSteklovEigenDom_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.isWeakSteklovEigenDom_iff_classical": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.isWeakSteklovEigenDom_of_classical": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.mem_H1_iff_isWeakGradientPair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.nrm_outward": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.pullAmb_isWeakGradientPair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.sobolevPullback": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.sobolevPullback_embedH": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.weak_eigen_classical_dom": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.ConfMap.weak_spectral_theorem_dom": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.bddDomain_image": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.conformal_weak_spectrum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.embedC1_mem_H1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.exists_family_ratio_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.exists_smooth_approx_on": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.fst_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.hasSobolevWeakSteklovSpectrum_image": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.hasWeakSteklovSpectrum_image": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.hyp_weighted": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.isCompactOperator_of_approx": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.isCompactOperator_trace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.isWeakSteklovEigen_of_classical": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.mem_H1_iff_isWeakGradientPair": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.mem_H1_of_weak_gradient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.mem_weakEigenspace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.minMax_eq_closureMinMax": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.norm_sq_le_trace_grad": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.norm_trace_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.poincare_trace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.snd_eq_zero_of_fst_eq_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.steklovSpectrum_image_eq_h1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.traceIneq_image": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.trace_embed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.trace_embedC1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.trace_ineq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.weak_gradient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.weightedSteklovEigenvalue_eq_h1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovH1.weighted_disk_spectral_theorem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.H1Orb_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.IsOrbSmooth.continuous": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.IsOrbSmooth.dirichletEnergy_lt_top": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.IsOrbSmooth.memLp_grad": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.area_lt_top": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.bdryMass_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.coneMetric_invariant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.cone_energy_finite": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.cone_estimates": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.cone_lintegral_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.energy_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.enorm_metricEmbed_sq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.exists_cone_radius": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.exists_lam_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.exists_restrict_le_smul_area": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.exists_smooth_near_orbEmbed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.exists_weighted_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.forget_mem_H1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.forget_metricEmbed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.isOrbSmooth_of_contDiff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.isWeakSteklovEigenMet_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.isWeakSteklovEigenOrb_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.metricBoundaryMass_metricEmbed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.metricEnergy_metricEmbed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.metricSobolevEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.metricSobolevEquivOrb": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.metric_form_norm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.norm_le_of_mem_H1Met": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.orbEmbed_mem_H1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.prop_2_2_1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.prop_2_2_1_metric": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.tendsto_eLpNorm_corr_sub": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.traceMet_metricEmbed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.trace_orbEmbed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.weak_spectral_theorem_met": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.DiskOrbisurface.weak_spectral_theorem_orb": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.chartFactor_coneFac_aux": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.chartFactor_rot": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.coneChart_eq_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.cone_lintegral_ge": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.cone_point": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.critical_point": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.exists_baseOrbMetric": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.exists_coneChart_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.exists_local_root": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.exists_smooth_pullback": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.generic_point": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.lineDensity_pullbackOrb": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.minMaxOn_le_minMax": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.minMaxOn_le_of_singular_transfer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.pullbackOrb": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.pullbackOrb_lam": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.pullbackOrb_ord": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.pullbackOrb_range_pt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.pullback_factor_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.pullback_law": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.pullback_spectra_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.smooth_at_noncone": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.subspaceMinMax_eq_of_equiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovOrb.weightedSteklovSpectrum_congr": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.card_fibre_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.covering_surjective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.exists_period_of_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.exists_powerCover_homeomorph": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.incl_shift_nat": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.incl_shift_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.lift_surjective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.local_power_model": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.local_power_model_all": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.period_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.periods_eq_of_monodromy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.powerChart_bijective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovPunctured.powerChart_pow": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.card_fibre_sumElim": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.card_regProj_fibre": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.evAt_eq_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.evAt_surjective_of_joined": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.evZero_eq_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.evZero_surjective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.exists_regAct_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.isCoveringMap_ordProj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.isCoveringMap_regProj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.isCoveringMap_restrict_pathComponent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.isCoveringMap_sumElim": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.isEvenlyCovered_ordProj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.joined_sheet": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.liftPath_ordProj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.mem_deckGroup_baseTuple": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.mem_regCov_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.monodromy_ordProj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.monodromy_sumElim_inl": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.monodromy_sumElim_inr": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.permAct_eq_self": [
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.regAct_eq_self": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.regMonodromy_iterate_coord": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.regMonodromy_iterate_eq_self_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.regMonodromy_val": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.restrictEven": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.sumLabel_monodromy_castAdd": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRegularCover.sumLabel_monodromy_natAdd": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.blaschke_prod_norm_ge": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.contMDiff_of_comp_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.contMDiff_of_comp_eq_holo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.contMDiff_proj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.eq_blaschke_of_proper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.exists_log_of_starConvex": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.exists_sqrt_of_starConvex": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.hasDerivAt_radialPrimitive": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.hurwitz_injOn": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.isManifold_of_chartsAre": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.koebe_step": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.montel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.norm_le_one_of_boundary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovRiemann.riemann_mapping": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovSanity.id_isNormalizedConformalMap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovSanity.unitDisk_isDomain": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovSanity.unitDisk_realAnalyticJordan": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovSanity.unitDisk_strictlyConvex": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovSpectral.euler_lagrange": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovSpectral.exists_maximizer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovSpectral.spectral_theorem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovSubmission.main_result": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovTransplant.dirichletEnergy_transplant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovTransplant.weightedBoundaryMass_transplant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovTransplant.weightedSteklovEigenvalue_le_of_kernel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovTransplant.weightedSteklovEigenvalue_le_of_transplant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovWeyl.weak_gradient_ae_eq_grad": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "SteklovWeyl.weyl_lemma": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "group_input": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "mainTheoremDom_of_mainTheoremClassical": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "mainTheoremH1_of_mainTheoremWeak": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "mainTheorem_of_mainTheoremH1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "prop_2_1_1_C1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  }
+}

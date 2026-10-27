@@ -1,0 +1,3019 @@
+⚠ [8932/9111] Replayed Challenge
+warning: Challenge.lean:168:8: declaration uses `sorry`
+⚠ [8934/9111] Built RequestProject.SumCover (119s)
+warning: RequestProject/SumCover.lean:88:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/SumCover.lean:88:16: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8935/9111] Replayed RequestProject.LocalHomeoRiemann
+warning: RequestProject/LocalHomeoRiemann.lean:32:0: Definition `SteklovRiemann.lhChartedSpace` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+warning: RequestProject/LocalHomeoRiemann.lean:77:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/LocalHomeoRiemann.lean:78:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/LocalHomeoRiemann.lean:90:6: `OpenPartialHomeomorph.coe_coe_symm` has been deprecated: Use `OpenPartialHomeomorph.coe_toPartialEquiv_symm` instead
+
+Hint: Replace the deprecated name:
+  O̵p̵e̵n̵P̵a̵r̵t̵i̵a̵l̵H̵o̵m̵e̵o̵m̵o̵r̵p̵h̵.̵c̵o̵e̵_̵c̵o̵e̵_̵s̵y̵m̵m̵O̲p̲e̲n̲P̲a̲r̲t̲i̲a̲l̲H̲o̲m̲e̲o̲m̲o̲r̲p̲h̲.̲c̲o̲e̲_̲t̲o̲P̲a̲r̲t̲i̲a̲l̲E̲q̲u̲i̲v̲_̲s̲y̲m̲m̲
+warning: RequestProject/LocalHomeoRiemann.lean:90:42: `OpenPartialHomeomorph.coe_coe` has been deprecated: Use `OpenPartialHomeomorph.coe_toPartialEquiv` instead
+
+Hint: Replace the deprecated name:
+  O̵p̵e̵n̵P̵a̵r̵t̵i̵a̵l̵H̵o̵m̵e̵o̵m̵o̵r̵p̵h̵.̵c̵o̵e̵_̵c̵o̵e̵O̲p̲e̲n̲P̲a̲r̲t̲i̲a̲l̲H̲o̲m̲e̲o̲m̲o̲r̲p̲h̲.̲c̲o̲e̲_̲t̲o̲P̲a̲r̲t̲i̲a̲l̲E̲q̲u̲i̲v̲
+warning: RequestProject/LocalHomeoRiemann.lean:100:4: `OpenPartialHomeomorph.coe_coe_symm` has been deprecated: Use `OpenPartialHomeomorph.coe_toPartialEquiv_symm` instead
+
+Hint: Replace the deprecated name:
+  O̵p̵e̵n̵P̵a̵r̵t̵i̵a̵l̵H̵o̵m̵e̵o̵m̵o̵r̵p̵h̵.̵c̵o̵e̵_̵c̵o̵e̵_̵s̵y̵m̵m̵O̲p̲e̲n̲P̲a̲r̲t̲i̲a̲l̲H̲o̲m̲e̲o̲m̲o̲r̲p̲h̲.̲c̲o̲e̲_̲t̲o̲P̲a̲r̲t̲i̲a̲l̲E̲q̲u̲i̲v̲_̲s̲y̲m̲m̲
+warning: RequestProject/LocalHomeoRiemann.lean:100:40: `OpenPartialHomeomorph.coe_coe` has been deprecated: Use `OpenPartialHomeomorph.coe_toPartialEquiv` instead
+
+Hint: Replace the deprecated name:
+  O̵p̵e̵n̵P̵a̵r̵t̵i̵a̵l̵H̵o̵m̵e̵o̵m̵o̵r̵p̵h̵.̵c̵o̵e̵_̵c̵o̵e̵O̲p̲e̲n̲P̲a̲r̲t̲i̲a̲l̲H̲o̲m̲e̲o̲m̲o̲r̲p̲h̲.̲c̲o̲e̲_̲t̲o̲P̲a̲r̲t̲i̲a̲l̲E̲q̲u̲i̲v̲
+warning: RequestProject/LocalHomeoRiemann.lean:90:42: This simp argument is unused:
+  OpenPartialHomeomorph.coe_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [extChartAt, OpenPartialHomeomorph.extend, Function.comp_apply, modelWithCornersSelf_coe,
+    modelWithCornersSelf_coe_symm, PartialEquiv.coe_trans, PartialEquiv.coe_trans_symm,
+    OpenPartialHomeomorph.toFun_eq_coe, id_eq, ModelWithCorners.toPartialEquiv_coe,
+    ModelWithCorners.toPartialEquiv_coe_symm, OpenPartialHomeomorph.coe_coe_symm] at hz ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RequestProject/LocalHomeoRiemann.lean:100:40: This simp argument is unused:
+  OpenPartialHomeomorph.coe_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [extChartAt, OpenPartialHomeomorph.extend, Function.comp_apply, modelWithCornersSelf_coe,
+    modelWithCornersSelf_coe_symm, PartialEquiv.coe_trans, PartialEquiv.coe_trans_symm,
+    OpenPartialHomeomorph.toFun_eq_coe, id_eq, ModelWithCorners.toPartialEquiv_coe,
+    ModelWithCorners.toPartialEquiv_coe_symm, OpenPartialHomeomorph.coe_coe_symm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RequestProject/LocalHomeoRiemann.lean:115:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8937/9111] Replayed RequestProject.PuncturedDiskCover
+warning: RequestProject/PuncturedDiskCover.lean:36:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/PuncturedDiskCover.lean:61:45: `IsOpen.locPathConnectedSpace` has been deprecated: Use `IsOpen.locallyPathConnectedSpace` instead
+warning: RequestProject/PuncturedDiskCover.lean:116:0: automatically included section variable(s) unused in theorem `SteklovPunctured.mem_periods`:
+  [Fact (0 < r)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fact (0 < r)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8939/9111] Replayed RequestProject.BorderedTopology
+warning: RequestProject/BorderedTopology.lean:132:66: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/BorderedTopology.lean:134:10: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+
+Hint: Replace the deprecated name:
+  continuousOn_iff_continuous_r̵d̲o̲m̲R̲estrict
+warning: RequestProject/BorderedTopology.lean:144:21: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/BorderedTopology.lean:148:21: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/BorderedTopology.lean:151:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/BorderedTopology.lean:152:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/BorderedTopology.lean:154:21: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/BorderedTopology.lean:176:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/BorderedTopology.lean:204:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/BorderedTopology.lean:204:6: Unused tactic linter: `exact directedOn_range.1 hmono.directed_le` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8940/9111] Built RequestProject.Friedrichs (120s)
+warning: RequestProject/Friedrichs.lean:58:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: RequestProject/Friedrichs.lean:179:10: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/Friedrichs.lean:180:10: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/Friedrichs.lean:182:62: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/Friedrichs.lean:183:72: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [8941/9111] Replayed RequestProject.FourierCircle
+warning: RequestProject/FourierCircle.lean:117:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8942/9111] Replayed RequestProject.CompactCriterion
+warning: RequestProject/CompactCriterion.lean:43:33: `Submodule.coe_norm` has been deprecated: use `norm_coe`
+✔ [8944/9111] Built RequestProject.Univalence (20s)
+✔ [8945/9111] Built RequestProject.CompositionBounds (21s)
+✔ [8946/9111] Built RequestProject.RealAnalyticBounds (20s)
+⚠ [8947/9111] Built RequestProject.OuterFourier (20s)
+warning: RequestProject/OuterFourier.lean:133:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [8948/9111] Built RequestProject.Hurwitz (20s)
+✔ [8949/9111] Built RequestProject.Montel (19s)
+⚠ [8950/9111] Built RequestProject.PolyTrapping (20s)
+warning: RequestProject/PolyTrapping.lean:81:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/PolyTrapping.lean:115:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8951/9111] Built RequestProject.StarPrimitive (21s)
+warning: RequestProject/StarPrimitive.lean:129:34: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/StarPrimitive.lean:129:34: Unused tactic linter: `first
+| rfl
+| simp` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [8952/9111] Built RequestProject.LinearFixed (18s)
+⚠ [8953/9111] Built RequestProject.GroupTheory (19s)
+warning: RequestProject/GroupTheory.lean:61:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/GroupTheory.lean:62:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/GroupTheory.lean:182:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [8954/9111] Built RequestProject.HolomorphicInverse (19s)
+⚠ [8955/9111] Built RequestProject.LogCutoff (21s)
+warning: RequestProject/LogCutoff.lean:120:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/LogCutoff.lean:124:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/LogCutoff.lean:254:10: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [8956/9111] Built RequestProject.CoverKernel (19s)
+warning: RequestProject/CoverKernel.lean:40:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/CoverKernel.lean:42:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/CoverKernel.lean:128:2: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [8957/9111] Built RequestProject.ArcLength (21s)
+warning: RequestProject/ArcLength.lean:131:8: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/ArcLength.lean:143:8: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [8958/9111] Built RequestProject.HolCover (19s)
+warning: RequestProject/HolCover.lean:85:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/HolCover.lean:87:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/HolCover.lean:88:9: `IsCoveringMapOn.of_openPartialHomeomorph` has been deprecated: Use `IsCoveringMapOn.of_isLocalHomeomorphOn` instead
+
+Hint: Replace the deprecated name:
+  I̵s̵C̵o̵v̵e̵r̵i̵n̵g̵M̵a̵p̵O̵n̵.̵o̵f̵_̵o̵p̵e̵n̵P̵a̵r̵t̵i̵a̵l̵H̵o̵m̵e̵o̵m̵o̵r̵p̵h̵I̲s̲C̲o̲v̲e̲r̲i̲n̲g̲M̲a̲p̲O̲n̲.̲o̲f̲_̲i̲s̲L̲o̲c̲a̲l̲H̲o̲m̲e̲o̲m̲o̲r̲p̲h̲O̲n̲
+warning: RequestProject/HolCover.lean:88:78: `ContinuousOn.restrict` has been deprecated: Use `ContinuousOn.domRestrict` instead
+⚠ [8959/9111] Built RequestProject.Degree7Polynomial (22s)
+warning: RequestProject/Degree7Polynomial.lean:289:54: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7Polynomial.lean:289:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: RequestProject/Degree7Polynomial.lean:289:54: Unused tactic linter: `simp` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8960/9111] Built RequestProject.Blaschke (21s)
+warning: RequestProject/Blaschke.lean:175:4: `DifferentiableAt.finset_prod` has been deprecated: Use `DifferentiableAt.finsetProd` instead
+
+Hint: Replace the deprecated name:
+  DifferentiableAt.finset_̵p̵P̲rod
+⚠ [8961/9111] Built RequestProject.MinMaxApprox (21s)
+warning: RequestProject/MinMaxApprox.lean:38:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/MinMaxApprox.lean:46:11: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  continuous_finset_̵s̵S̲um
+✔ [8962/9111] Built RequestProject.Defs (19s)
+⚠ [8963/9111] Built RequestProject.DiskTrace (21s)
+warning: RequestProject/DiskTrace.lean:53:32: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/DiskTrace.lean:53:32: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8964/9111] Built RequestProject.RegularCover (19s)
+warning: RequestProject/RegularCover.lean:68:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8965/9111] Built RequestProject.PunctureFilling (19s)
+warning: RequestProject/PunctureFilling.lean:160:32: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/PunctureFilling.lean:165:15: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/PunctureFilling.lean:169:15: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/PunctureFilling.lean:195:19: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/PunctureFilling.lean:282:27: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/PunctureFilling.lean:293:25: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/PunctureFilling.lean:369:30: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+✔ [8966/9111] Built RequestProject.PowerCover (19s)
+⚠ [8967/9111] Built RequestProject.OuterFunction (21s)
+warning: RequestProject/OuterFunction.lean:103:18: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: RequestProject/OuterFunction.lean:112:23: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: RequestProject/OuterFunction.lean:174:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/OuterFunction.lean:179:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/OuterFunction.lean:209:28: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: RequestProject/OuterFunction.lean:219:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/OuterFunction.lean:220:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/OuterFunction.lean:218:20: Unused tactic linter: `done` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/OuterFunction.lean:219:6: Unused tactic linter: `(funext k; simp [coef])` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/OuterFunction.lean:220:6: Unused tactic linter: `(simp only [coef, Int.cast_zero, Nat.cast_zero, zero_mul, Complex.exp_zero, mul_one];
+  ring)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/OuterFunction.lean:322:18: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: RequestProject/OuterFunction.lean:328:26: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+⚠ [8968/9111] Built RequestProject.Sunada (19s)
+warning: RequestProject/Sunada.lean:101:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8969/9111] Built RequestProject.NearDiskDomain (26s)
+warning: RequestProject/NearDiskDomain.lean:49:23: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  e̵v̵a̵l̵_̵f̵i̵n̵s̵e̵t̵_̵s̵u̵m̵e̲v̲a̲l̲_̲f̲i̲n̲s̲e̲t̲S̲u̲m̲
+warning: RequestProject/NearDiskDomain.lean:250:19: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [8970/9111] Built RequestProject.SchwarzTrapping (22s)
+⚠ [8971/9111] Built RequestProject.GroupInput (26s)
+warning: RequestProject/GroupInput.lean:92:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/GroupInput.lean:98:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/GroupInput.lean:104:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/GroupInput.lean:168:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵S̲e̲t̲.̲m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/GroupInput.lean:211:6: `Set.coe_setOf` has been deprecated: Use `Set.coe_ofPred` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵c̵o̵e̵_̵s̵e̵t̵O̵f̵S̲e̲t̲.̲c̲o̲e̲_̲o̲f̲P̲r̲e̲d̲
+warning: RequestProject/GroupInput.lean:259:21: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:259:21: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/GroupInput.lean:268:23: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:274:21: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:268:23: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/GroupInput.lean:274:21: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/GroupInput.lean:283:23: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:289:21: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:283:23: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/GroupInput.lean:289:21: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/GroupInput.lean:324:23: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:330:21: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:324:23: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/GroupInput.lean:330:21: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/GroupInput.lean:339:23: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:345:21: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:339:23: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/GroupInput.lean:345:21: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/GroupInput.lean:355:21: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:355:21: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/GroupInput.lean:393:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:394:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/GroupInput.lean:392:2: Unused tactic linter: `all_goals
+  ext v
+  simp [and_comm]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/GroupInput.lean:450:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵S̲e̲t̲.̲m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [8972/9111] Built RequestProject.LocalBranches (21s)
+warning: RequestProject/LocalBranches.lean:67:63: `Set.diff_subset` has been deprecated: Use `Set.sdiff_subset` instead
+
+Hint: Replace the deprecated name:
+  s̲diff_subset
+warning: RequestProject/LocalBranches.lean:87:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [8973/9111] Built RequestProject.Degree7Passport (22s)
+warning: RequestProject/Degree7Passport.lean:116:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/Degree7Passport.lean:206:55: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/Degree7Passport.lean:208:65: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/Degree7Passport.lean:218:58: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/Degree7Passport.lean:220:58: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/Degree7Passport.lean:271:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8974/9111] Built RequestProject.RiemannMap (21s)
+warning: RequestProject/RiemannMap.lean:252:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [8975/9111] Built RequestProject.BlaschkeFactorization (20s)
+warning: RequestProject/BlaschkeFactorization.lean:63:4: `continuousOn_finset_prod` has been deprecated: Use `continuousOn_finsetProd` instead
+
+Hint: Replace the deprecated name:
+  continuousOn_finset_̵p̵P̲rod
+warning: RequestProject/BlaschkeFactorization.lean:124:12: `DifferentiableOn.finset_prod` has been deprecated: Use `DifferentiableOn.finsetProd` instead
+
+Hint: Replace the deprecated name:
+  DifferentiableOn.finset_̵p̵P̲rod
+warning: RequestProject/BlaschkeFactorization.lean:188:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [8976/9111] Built RequestProject.BlaschkePerimeter (19s)
+warning: RequestProject/BlaschkePerimeter.lean:82:8: `Set.diff_empty` has been deprecated: Use `Set.sdiff_empty` instead
+
+Hint: Replace the deprecated name:
+  s̲diff_empty
+warning: RequestProject/BlaschkePerimeter.lean:120:6: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  intervalIntegral.integral_finset_̵s̵S̲um
+⚠ [8977/9111] Built RequestProject.BlaschkeFibres (21s)
+warning: RequestProject/BlaschkeFibres.lean:174:13: `DifferentiableAt.fun_finset_prod` has been deprecated: Use `DifferentiableAt.fun_finsetProd` instead
+
+Hint: Replace the deprecated name:
+  DifferentiableAt.fun_finset_̵p̵P̲rod
+⚠ [8978/9111] Built RequestProject.BranchPointRemoval (21s)
+warning: RequestProject/BranchPointRemoval.lean:120:5: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+
+Hint: Replace the deprecated name:
+  continuousOn_iff_continuous_r̵d̲o̲m̲R̲estrict
+warning: RequestProject/BranchPointRemoval.lean:155:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/BranchPointRemoval.lean:155:10: Unused tactic linter: `(convert! hf.hasFDerivAt.const_sub (f s) using 1 <;>
+    first
+    | rfl
+    | simp)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/BranchPointRemoval.lean:233:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/BranchPointRemoval.lean:279:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/BranchPointRemoval.lean:280:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/BranchPointRemoval.lean:279:10: Unused tactic linter: `(rw [Function.comp_def] at this; exact this)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/BranchPointRemoval.lean:280:10: Unused tactic linter: `simpa [Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/BranchPointRemoval.lean:301:12: `tendsto_finset_sum` has been deprecated: Use `tendsto_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  tendsto_finset_̵s̵S̲um
+⚠ [8979/9111] Built RequestProject.DiskSanity (19s)
+warning: RequestProject/DiskSanity.lean:25:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [8980/9111] Built RequestProject.MainStatement (18s)
+✔ [8981/9111] Built RequestProject.ApproxMinMax (20s)
+✔ [8982/9111] Built RequestProject.PaperStatements (18s)
+✔ [8983/9111] Built RequestProject.MinMaxTransfer (18s)
+✔ [8984/9111] Built RequestProject.RegCovMonodromy (18s)
+⚠ [8985/9111] Built RequestProject.DiskH1 (23s)
+warning: RequestProject/DiskH1.lean:184:15: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/DiskH1.lean:198:8: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/DiskH1.lean:198:32: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/DiskH1.lean:249:61: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/DiskH1.lean:267:15: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/DiskH1.lean:373:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [8986/9111] Built RequestProject.PunctureFillingRiemann (19s)
+warning: RequestProject/PunctureFillingRiemann.lean:94:24: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/PunctureFillingRiemann.lean:148:19: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/PunctureFillingRiemann.lean:217:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/PunctureFillingRiemann.lean:245:8: `OpenPartialHomeomorph.coe_coe_symm` has been deprecated: Use `OpenPartialHomeomorph.coe_toPartialEquiv_symm` instead
+
+Hint: Replace the deprecated name:
+  O̵p̵e̵n̵P̵a̵r̵t̵i̵a̵l̵H̵o̵m̵e̵o̵m̵o̵r̵p̵h̵.̵c̵o̵e̵_̵c̵o̵e̵_̵s̵y̵m̵m̵O̲p̲e̲n̲P̲a̲r̲t̲i̲a̲l̲H̲o̲m̲e̲o̲m̲o̲r̲p̲h̲.̲c̲o̲e̲_̲t̲o̲P̲a̲r̲t̲i̲a̲l̲E̲q̲u̲i̲v̲_̲s̲y̲m̲m̲
+warning: RequestProject/PunctureFillingRiemann.lean:252:8: `OpenPartialHomeomorph.coe_coe_symm` has been deprecated: Use `OpenPartialHomeomorph.coe_toPartialEquiv_symm` instead
+
+Hint: Replace the deprecated name:
+  O̵p̵e̵n̵P̵a̵r̵t̵i̵a̵l̵H̵o̵m̵e̵o̵m̵o̵r̵p̵h̵.̵c̵o̵e̵_̵c̵o̵e̵_̵s̵y̵m̵m̵O̲p̲e̲n̲P̲a̲r̲t̲i̲a̲l̲H̲o̲m̲e̲o̲m̲o̲r̲p̲h̲.̲c̲o̲e̲_̲t̲o̲P̲a̲r̲t̲i̲a̲l̲E̲q̲u̲i̲v̲_̲s̲y̲m̲m̲
+⚠ [8987/9111] Built RequestProject.LemniscateBoundary (21s)
+warning: RequestProject/LemniscateBoundary.lean:148:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/LemniscateBoundary.lean:253:17: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/LemniscateBoundary.lean:256:17: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/LemniscateBoundary.lean:280:13: `Set.mem_diff` has been deprecated: Use `Set.mem_sdiff` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵d̵i̵f̵f̵S̲e̲t̲.̲m̲e̲m̲_̲s̲d̲i̲f̲f̲
+warning: RequestProject/LemniscateBoundary.lean:280:56: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/LemniscateBoundary.lean:289:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8988/9111] Built RequestProject.Degree7Permutations (20s)
+warning: RequestProject/Degree7Permutations.lean:122:45: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7Permutations.lean:122:82: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7Permutations.lean:122:45: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/Degree7Permutations.lean:122:82: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/Degree7Permutations.lean:125:25: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7Permutations.lean:125:61: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7Permutations.lean:125:25: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/Degree7Permutations.lean:125:61: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/Degree7Permutations.lean:128:25: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7Permutations.lean:128:61: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7Permutations.lean:128:25: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/Degree7Permutations.lean:128:61: Unused tactic linter: `decide +kernel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8989/9111] Built RequestProject.PolynomialCover (18s)
+warning: RequestProject/PolynomialCover.lean:43:13: `Polynomial.natDegree_eq_zero_of_derivative_eq_zero` has been deprecated: Use `Polynomial.derivative_eq_zero` instead
+
+Note: The updated constant has a different type:
+  ∀ {R : Type u} [inst : Semiring R] {p : R[X]} [IsAddTorsionFree R], derivative p = 0 ↔ p.natDegree = 0
+instead of
+  ∀ {R : Type u} [inst : Semiring R] {p : R[X]} [IsAddTorsionFree R], derivative p = 0 → p.natDegree = 0
+warning: RequestProject/PolynomialCover.lean:59:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/PolynomialCover.lean:112:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/PolynomialCover.lean:145:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/PolynomialCover.lean:171:38: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+✔ [8990/9111] Built RequestProject.DiskAut (19s)
+⚠ [8991/9111] Built RequestProject.CircleFibre (21s)
+warning: RequestProject/CircleFibre.lean:125:6: `MeasureTheory.lintegral_finset_sum` has been deprecated: Use `MeasureTheory.lintegral_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  lintegral_finset_̵s̵S̲um
+warning: RequestProject/CircleFibre.lean:177:18: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/CircleFibre.lean:179:18: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/CircleFibre.lean:225:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/CircleFibre.lean:332:4: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  continuous_finset_̵s̵S̲um
+warning: RequestProject/CircleFibre.lean:335:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/CircleFibre.lean:350:8: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  intervalIntegral.integral_finset_̵s̵S̲um
+⚠ [8992/9111] Built RequestProject.SingularTransfer (22s)
+warning: RequestProject/SingularTransfer.lean:71:10: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/SingularTransfer.lean:123:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/SingularTransfer.lean:138:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/SingularTransfer.lean:146:12: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/SingularTransfer.lean:275:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/SingularTransfer.lean:346:12: `tendsto_finset_sum` has been deprecated: Use `tendsto_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  tendsto_finset_̵s̵S̲um
+warning: RequestProject/SingularTransfer.lean:350:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/SingularTransfer.lean:350:8: Unused tactic linter: `simpa [Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8993/9111] Built RequestProject.C1Transfer (26s)
+warning: RequestProject/C1Transfer.lean:28:8: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/C1Transfer.lean:216:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8994/9111] Built RequestProject.Dilation (19s)
+warning: RequestProject/Dilation.lean:79:16: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/Dilation.lean:80:26: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [8995/9111] Built RequestProject.ConformalPullback (20s)
+warning: RequestProject/ConformalPullback.lean:83:42: `Metric.closedBall_diff_ball` has been deprecated: Use `Metric.closedBall_sdiff_ball` instead
+
+Hint: Replace the deprecated name:
+  closedBall_s̲diff_ball
+warning: RequestProject/ConformalPullback.lean:83:69: `Set.InjOn.image_diff` has been deprecated: Use `Set.InjOn.image_sdiff` instead
+warning: RequestProject/ConformalPullback.lean:117:18: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/ConformalPullback.lean:166:71: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [8996/9111] Built RequestProject.AbstractMinMax (19s)
+warning: RequestProject/AbstractMinMax.lean:37:8: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/AbstractMinMax.lean:144:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8997/9111] Built RequestProject.DiskDensity (26s)
+warning: RequestProject/DiskDensity.lean:219:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/DiskDensity.lean:618:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/DiskDensity.lean:619:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/DiskDensity.lean:618:8: Unused tactic linter: `exact this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/DiskDensity.lean:619:8: Unused tactic linter: `(rw [heta] at this; exact this)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8998/9111] Built RequestProject.TraceCompact (24s)
+warning: RequestProject/TraceCompact.lean:75:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/TraceCompact.lean:75:8: Unused tactic linter: `simpa [Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/TraceCompact.lean:484:6: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/TraceCompact.lean:486:46: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/TraceCompact.lean:510:10: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [8999/9111] Built RequestProject.H1MinMax (21s)
+warning: RequestProject/H1MinMax.lean:149:8: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/H1MinMax.lean:263:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [9000/9111] Built RequestProject.FanoKernel (20s)
+⚠ [9001/9111] Built RequestProject.LocalMonodromy (35s)
+warning: RequestProject/LocalMonodromy.lean:340:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9002/9111] Built RequestProject.Degree7Counts (106s)
+warning: RequestProject/Degree7Counts.lean:410:67: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵S̲e̲t̲.̲m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+✔ [9003/9111] Built RequestProject.MonodromyTransfer (37s)
+✔ [9004/9111] Built RequestProject.CongruenceRigidity (20s)
+⚠ [9005/9111] Built RequestProject.BlaschkeCover (20s)
+warning: RequestProject/BlaschkeCover.lean:75:8: `mul_lt_one_of_nonneg_of_lt_one_left` has been deprecated: No replacement, use constituent lemmas from proof.
+warning: RequestProject/BlaschkeCover.lean:92:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/BlaschkeCover.lean:202:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/BlaschkeCover.lean:203:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9006/9111] Built RequestProject.OrbMinMax (21s)
+warning: RequestProject/OrbMinMax.lean:68:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/OrbMinMax.lean:139:12: `tendsto_finset_sum` has been deprecated: Use `tendsto_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  tendsto_finset_̵s̵S̲um
+warning: RequestProject/OrbMinMax.lean:143:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/OrbMinMax.lean:143:8: Unused tactic linter: `simpa [Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9007/9111] Built RequestProject.DilationGeometry (19s)
+⚠ [9008/9111] Built RequestProject.ConformalImage (19s)
+warning: RequestProject/ConformalImage.lean:41:69: `ContinuousOn.restrict` has been deprecated: Use `ContinuousOn.domRestrict` instead
+warning: RequestProject/ConformalImage.lean:62:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/ConformalImage.lean:63:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9009/9111] Built RequestProject.GeneralConformalPullback (21s)
+warning: RequestProject/GeneralConformalPullback.lean:115:50: `Metric.closedBall_diff_ball` has been deprecated: Use `Metric.closedBall_sdiff_ball` instead
+
+Hint: Replace the deprecated name:
+  closedBall_s̲diff_ball
+warning: RequestProject/GeneralConformalPullback.lean:115:77: `Set.InjOn.image_diff` has been deprecated: Use `Set.InjOn.image_sdiff` instead
+warning: RequestProject/GeneralConformalPullback.lean:152:18: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/GeneralConformalPullback.lean:228:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/GeneralConformalPullback.lean:258:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9010/9111] Built RequestProject.Prop231Reduction (18s)
+⚠ [9011/9111] Built RequestProject.AreaFormula (19s)
+warning: RequestProject/AreaFormula.lean:75:24: `Set.diff_subset` has been deprecated: Use `Set.sdiff_subset` instead
+
+Hint: Replace the deprecated name:
+  s̲diff_subset
+warning: RequestProject/AreaFormula.lean:88:11: `MeasureTheory.diff_null_ae_eq_self` has been deprecated: Use `MeasureTheory.sdiff_null_ae_eq_self` instead
+
+Hint: Replace the deprecated name:
+  s̲diff_null_ae_eq_self
+warning: RequestProject/AreaFormula.lean:116:42: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [9012/9111] Built RequestProject.DomainH1 (23s)
+warning: RequestProject/DomainH1.lean:144:15: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/DomainH1.lean:159:8: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/DomainH1.lean:159:32: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/DomainH1.lean:194:15: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/DomainH1.lean:296:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [9013/9111] Built RequestProject.AbstractSpectral (27s)
+warning: RequestProject/AbstractSpectral.lean:63:23: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:67:22: `ContinuousLinearMap.add_apply` has been deprecated: Use `add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵a̲d̲d̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:72:22: `ContinuousLinearMap.sub_apply` has been deprecated: Use `sub_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sub_apply` to `sub_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵u̵b̵_̵a̵p̵p̵l̵y̵s̲u̲b̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:101:20: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/AbstractSpectral.lean:116:25: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:218:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/AbstractSpectral.lean:219:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/AbstractSpectral.lean:218:10: Unused tactic linter: `simpa [Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/AbstractSpectral.lean:219:10: Unused tactic linter: `(rw [Real.sqrt_zero] at this; exact this)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/AbstractSpectral.lean:238:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/AbstractSpectral.lean:239:17: `ContinuousLinearMap.add_apply` has been deprecated: Use `add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵a̲d̲d̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:242:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/AbstractSpectral.lean:243:18: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:294:26: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/AbstractSpectral.lean:301:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/AbstractSpectral.lean:302:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/AbstractSpectral.lean:303:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/AbstractSpectral.lean:313:15: `ContinuousLinearMap.coe_sum'` has been deprecated: Use `FunLike.coe_sum` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.coe_sum'` to `FunLike.coe_sum x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵c̵o̵e̵_̵s̵u̵m̵'̵F̲u̲n̲L̲i̲k̲e̲.̲c̲o̲e̲_̲s̲u̲m̲
+warning: RequestProject/AbstractSpectral.lean:314:23: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:316:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/AbstractSpectral.lean:318:44: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/AbstractSpectral.lean:325:15: `ContinuousLinearMap.sub_apply` has been deprecated: Use `sub_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sub_apply` to `sub_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵u̵b̵_̵a̵p̵p̵l̵y̵s̲u̲b̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:332:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/AbstractSpectral.lean:396:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/AbstractSpectral.lean:435:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/AbstractSpectral.lean:441:19: `ContinuousLinearMap.coe_sum'` has been deprecated: Use `FunLike.coe_sum` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.coe_sum'` to `FunLike.coe_sum x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵c̵o̵e̵_̵s̵u̵m̵'̵F̲u̲n̲L̲i̲k̲e̲.̲c̲o̲e̲_̲s̲u̲m̲
+warning: RequestProject/AbstractSpectral.lean:443:20: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:492:41: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/AbstractSpectral.lean:516:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/AbstractSpectral.lean:520:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/AbstractSpectral.lean:533:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/AbstractSpectral.lean:542:32: `ContinuousLinearMap.coe_sum'` has been deprecated: Use `FunLike.coe_sum` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.coe_sum'` to `FunLike.coe_sum x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵c̵o̵e̵_̵s̵u̵m̵'̵F̲u̲n̲L̲i̲k̲e̲.̲c̲o̲e̲_̲s̲u̲m̲
+warning: RequestProject/AbstractSpectral.lean:543:4: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:544:4: `ContinuousLinearMap.zero_apply` has been deprecated: Use `zero_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.zero_apply` to `zero_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵zero_apply
+warning: RequestProject/AbstractSpectral.lean:545:51: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/AbstractSpectral.lean:546:28: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/AbstractSpectral.lean:570:38: `ContinuousLinearMap.coe_sum'` has been deprecated: Use `FunLike.coe_sum` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.coe_sum'` to `FunLike.coe_sum x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵c̵o̵e̵_̵s̵u̵m̵'̵F̲u̲n̲L̲i̲k̲e̲.̲c̲o̲e̲_̲s̲u̲m̲
+warning: RequestProject/AbstractSpectral.lean:571:10: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:573:59: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/AbstractSpectral.lean:574:36: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/AbstractSpectral.lean:576:16: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/AbstractSpectral.lean:577:24: `ContinuousLinearMap.sub_apply` has been deprecated: Use `sub_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sub_apply` to `sub_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵u̵b̵_̵a̵p̵p̵l̵y̵s̲u̲b̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:628:22: `ContinuousLinearMap.add_apply` has been deprecated: Use `add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵a̵d̵d̵_̵a̵p̵p̵l̵y̵a̲d̲d̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:633:23: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/AbstractSpectral.lean:638:27: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/AbstractSpectral.lean:639:41: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/AbstractSpectral.lean:699:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/AbstractSpectral.lean:732:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/AbstractSpectral.lean:766:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9014/9111] Built RequestProject.WeylLemma (22s)
+warning: RequestProject/WeylLemma.lean:265:14: `HarmonicOnNhd.circleAverage_eq` has been deprecated: Use `InnerProductSpace.HarmonicOnNhd.circleAverage_eq` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.circleAverage_eq` to `InnerProductSpace.HarmonicOnNhd.circleAverage_eq x`).
+
+Hint: Replace the deprecated name:
+  I̲n̲n̲e̲r̲P̲r̲o̲d̲u̲c̲t̲S̲p̲a̲c̲e̲.̲HarmonicOnNhd.circleAverage_eq
+warning: RequestProject/WeylLemma.lean:534:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/WeylLemma.lean:534:8: Unused tactic linter: `simpa [Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/WeylLemma.lean:592:19: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [9015/9111] Built RequestProject.LocalInertia (19s)
+warning: RequestProject/LocalInertia.lean:68:19: `IsOpen.locPathConnectedSpace` has been deprecated: Use `IsOpen.locallyPathConnectedSpace` instead
+warning: RequestProject/LocalInertia.lean:138:63: This simp argument is unused:
+  ContinuousMap.coe_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Function.comp_apply, Γ, ContinuousMap.coe_mk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RequestProject/LocalInertia.lean:267:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9016/9111] Built RequestProject.PolyLocalPeriod (18s)
+⚠ [9017/9111] Built RequestProject.InfinityMonodromy (19s)
+warning: RequestProject/InfinityMonodromy.lean:25:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/InfinityMonodromy.lean:186:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9018/9111] Built RequestProject.MonodromyRelation (21s)
+warning: RequestProject/MonodromyRelation.lean:32:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/MonodromyRelation.lean:54:18: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/MonodromyRelation.lean:69:20: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [9019/9111] Built RequestProject.BlaschkeCoverData (19s)
+warning: RequestProject/BlaschkeCoverData.lean:82:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/BlaschkeCoverData.lean:106:17: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/BlaschkeCoverData.lean:130:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9020/9111] Built RequestProject.BoundaryLength (19s)
+warning: RequestProject/BoundaryLength.lean:72:11: `DifferentiableAt.finset_prod` has been deprecated: Use `DifferentiableAt.finsetProd` instead
+
+Hint: Replace the deprecated name:
+  DifferentiableAt.finset_̵p̵P̲rod
+⚠ [9021/9111] Built RequestProject.OuterRealization (20s)
+warning: RequestProject/OuterRealization.lean:270:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [9022/9111] Built RequestProject.Transplant (19s)
+warning: RequestProject/Transplant.lean:88:24: `ContinuousLinearMap.sum_apply` has been deprecated: Use `sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `sum_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵u̵m̵_̵a̵p̵p̵l̵y̵s̲u̲m̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/Transplant.lean:88:55: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/Transplant.lean:120:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/Transplant.lean:160:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [9023/9111] Built RequestProject.C1H1 (22s)
+warning: RequestProject/C1H1.lean:95:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/C1H1.lean:167:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/C1H1.lean:180:8: `Submodule.coe_norm` has been deprecated: use `norm_coe`
+warning: RequestProject/C1H1.lean:249:8: `Submodule.coe_norm` has been deprecated: use `norm_coe`
+⚠ [9024/9111] Built RequestProject.DiskSpectral (24s)
+warning: RequestProject/DiskSpectral.lean:120:42: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/DiskSpectral.lean:122:44: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/DiskSpectral.lean:198:6: `MeasureTheory.measure_diff_null` has been deprecated: Use `MeasureTheory.measure_sdiff_null` instead
+
+Hint: Replace the deprecated name:
+  measure_s̲diff_null
+warning: RequestProject/DiskSpectral.lean:217:22: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  Polynomial.eval_finset_̵s̵S̲um
+warning: RequestProject/DiskSpectral.lean:221:16: `Polynomial.finset_sum_coeff` has been deprecated: Use `Polynomial.finsetSum_coeff` instead
+
+Hint: Replace the deprecated name:
+  Polynomial.finset_̵s̵S̲um_coeff
+warning: RequestProject/DiskSpectral.lean:223:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/DiskSpectral.lean:415:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9025/9111] Built RequestProject.DiskGreen (20s)
+warning: RequestProject/DiskGreen.lean:100:21: This simp argument is unused:
+  id_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fr, id, Function.comp_apply, Pi.add_apply, Pi.mul_apply, one_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RequestProject/DiskGreen.lean:100:67: This simp argument is unused:
+  Pi.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fr, id_eq, id, Function.comp_apply, Pi.add_apply, one_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RequestProject/DiskGreen.lean:102:20: This simp argument is unused:
+  id_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [f, id, Function.comp_apply, Pi.add_apply, Pi.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RequestProject/DiskGreen.lean:88:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/DiskGreen.lean:89:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/DiskGreen.lean:88:8: Unused tactic linter: `simpa [hpt, he, mul_comm, mul_left_comm, mul_assoc, Pi.add_def, Pi.sub_def, Pi.mul_def,
+  Pi.neg_def, Function.comp_def] using h2` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/DiskGreen.lean:89:8: Unused tactic linter: `exact
+  (h2.congr_deriv
+        (by
+          first
+          | rfl
+          | simp
+          | (simp; ring))).congr_of_eventuallyEq
+    (Filter.Eventually.of_forall fun _ => by
+      first
+      | rfl
+      | simp
+      | (simp; ring))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9026/9111] Built RequestProject.BranchedCompletion (19s)
+warning: RequestProject/BranchedCompletion.lean:48:65: `IsOpen.locPathConnectedSpace` has been deprecated: Use `IsOpen.locallyPathConnectedSpace` instead
+warning: RequestProject/BranchedCompletion.lean:48:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/BranchedCompletion.lean:121:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/BranchedCompletion.lean:146:45: `IsOpen.locPathConnectedSpace` has been deprecated: Use `IsOpen.locallyPathConnectedSpace` instead
+warning: RequestProject/BranchedCompletion.lean:146:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9027/9111] Built RequestProject.MonodromyTriple (19s)
+⚠ [9028/9111] Built RequestProject.DomainTrace (19s)
+warning: RequestProject/DomainTrace.lean:174:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [9029/9111] Built RequestProject.OuterConvergence (23s)
+warning: RequestProject/OuterConvergence.lean:184:18: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [9030/9111] Built RequestProject.TransplantEnergy (19s)
+warning: RequestProject/TransplantEnergy.lean:57:6: `ContinuousLinearMap.finset_sum_comp` has been deprecated: Use `ContinuousLinearMap.finsetSum_comp` instead
+
+Hint: Replace the deprecated name:
+  ContinuousLinearMap.finset_̵s̵S̲um_comp
+warning: RequestProject/TransplantEnergy.lean:71:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/TransplantEnergy.lean:71:6: Unused tactic linter: `(funext y; simp [Function.comp_apply])` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/TransplantEnergy.lean:112:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/TransplantEnergy.lean:121:8: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/TransplantEnergy.lean:121:32: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+✔ [9031/9111] Built RequestProject.ConformalWeakSpectrum (18s)
+⚠ [9032/9111] Built RequestProject.FillMap (19s)
+warning: RequestProject/FillMap.lean:71:33: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/FillMap.lean:105:6: `OpenPartialHomeomorph.coe_coe_symm` has been deprecated: Use `OpenPartialHomeomorph.coe_toPartialEquiv_symm` instead
+
+Hint: Replace the deprecated name:
+  O̵p̵e̵n̵P̵a̵r̵t̵i̵a̵l̵H̵o̵m̵e̵o̵m̵o̵r̵p̵h̵.̵c̵o̵e̵_̵c̵o̵e̵_̵s̵y̵m̵m̵O̲p̲e̲n̲P̲a̲r̲t̲i̲a̲l̲H̲o̲m̲e̲o̲m̲o̲r̲p̲h̲.̲c̲o̲e̲_̲t̲o̲P̲a̲r̲t̲i̲a̲l̲E̲q̲u̲i̲v̲_̲s̲y̲m̲m̲
+warning: RequestProject/FillMap.lean:112:6: `OpenPartialHomeomorph.coe_coe_symm` has been deprecated: Use `OpenPartialHomeomorph.coe_toPartialEquiv_symm` instead
+
+Hint: Replace the deprecated name:
+  O̵p̵e̵n̵P̵a̵r̵t̵i̵a̵l̵H̵o̵m̵e̵o̵m̵o̵r̵p̵h̵.̵c̵o̵e̵_̵c̵o̵e̵_̵s̵y̵m̵m̵O̲p̲e̲n̲P̲a̲r̲t̲i̲a̲l̲H̲o̲m̲e̲o̲m̲o̲r̲p̲h̲.̲c̲o̲e̲_̲t̲o̲P̲a̲r̲t̲i̲a̲l̲E̲q̲u̲i̲v̲_̲s̲y̲m̲m̲
+warning: RequestProject/FillMap.lean:116:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9033/9111] Built RequestProject.FillProper (19s)
+warning: RequestProject/FillProper.lean:35:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/FillProper.lean:174:6: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/FillProper.lean:189:20: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/FillProper.lean:190:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9034/9111] Built RequestProject.Degree7Monodromy (18s)
+⚠ [9035/9111] Built RequestProject.ConformalSobolev (31s)
+warning: RequestProject/ConformalSobolev.lean:361:28: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/ConformalSobolev.lean:370:6: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/ConformalSobolev.lean:381:15: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/ConformalSobolev.lean:389:15: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [9036/9111] Built RequestProject.BlaschkeConvergence (19s)
+warning: RequestProject/BlaschkeConvergence.lean:90:23: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+
+Hint: Replace the deprecated name:
+  s̵e̵t̵O̵f̵_̵f̵o̵r̵a̵l̵l̵o̲f̲P̲r̲e̲d̲_̲f̲o̲r̲a̲l̲l̲
+warning: RequestProject/BlaschkeConvergence.lean:98:5: `continuousOn_finset_prod` has been deprecated: Use `continuousOn_finsetProd` instead
+
+Hint: Replace the deprecated name:
+  continuousOn_finset_̵p̵P̲rod
+warning: RequestProject/BlaschkeConvergence.lean:112:11: `DifferentiableAt.finset_prod` has been deprecated: Use `DifferentiableAt.finsetProd` instead
+
+Hint: Replace the deprecated name:
+  DifferentiableAt.finset_̵p̵P̲rod
+⚠ [9037/9111] Built RequestProject.TransplantTransfer (19s)
+warning: RequestProject/TransplantTransfer.lean:64:10: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/TransplantTransfer.lean:89:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/TransplantTransfer.lean:152:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [9038/9111] Built RequestProject.StrictConvexity (22s)
+warning: RequestProject/StrictConvexity.lean:68:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/StrictConvexity.lean:68:10: Unused tactic linter: `simpa [Function.comp_def, Pi.sub_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/StrictConvexity.lean:93:12: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/StrictConvexity.lean:93:12: Unused tactic linter: `simpa [Pi.sub_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/StrictConvexity.lean:209:18: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/StrictConvexity.lean:221:22: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/StrictConvexity.lean:209:80: This simp argument is unused:
+  NNReal.coe_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [L, ContinuousLinearMap.smul_apply, ContinuousLinearMap.id_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RequestProject/StrictConvexity.lean:217:19: This simp argument is unused:
+  NNReal.coe_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [norm_div, norm_real, Real.norm_eq_abs, abs_of_pos hc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RequestProject/StrictConvexity.lean:232:24: This simp argument is unused:
+  e2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [e1, inv_inv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RequestProject/StrictConvexity.lean:227:20: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/StrictConvexity.lean:227:34: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/StrictConvexity.lean:229:20: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/StrictConvexity.lean:231:31: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/StrictConvexity.lean:234:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/StrictConvexity.lean:227:20: Unused tactic linter: `simp [Linv]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/StrictConvexity.lean:227:34: Unused tactic linter: `exact NNReal.coe_mk _ _` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/StrictConvexity.lean:229:20: Unused tactic linter: `exact NNReal.coe_mk _ _` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/StrictConvexity.lean:231:31: Unused tactic linter: `ring1` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/StrictConvexity.lean:232:38: Unused tactic linter: `ring1` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/StrictConvexity.lean:234:8: Unused tactic linter: `(simp only [Linv, NNReal.coe_mk, inv_inv]; ring1)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/StrictConvexity.lean:264:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/StrictConvexity.lean:264:10: Unused tactic linter: `simpa [Pi.sub_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9039/9111] Built RequestProject.FillExtend (20s)
+warning: RequestProject/FillExtend.lean:117:15: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [9040/9111] Built RequestProject.ConjugateMonodromy (19s)
+warning: RequestProject/ConjugateMonodromy.lean:40:8: This simp argument is unused:
+  ContinuousMap.coe_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Function.comp_apply, ContinuousMap.comp_apply, ContinuousMap.coe_mk, Path.map_coe, hcomm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9041/9111] Built RequestProject.Orbisurface (20s)
+warning: RequestProject/Orbisurface.lean:242:6: `MeasureTheory.diff_ae_eq_self` has been deprecated: Use `MeasureTheory.sdiff_ae_eq_self` instead
+
+Hint: Replace the deprecated name:
+  s̲diff_ae_eq_self
+warning: RequestProject/Orbisurface.lean:251:5: `Set.diff_subset_diff_left` has been deprecated: Use `Set.sdiff_subset_sdiff_left` instead
+
+Hint: Replace the deprecated name:
+  s̲diff_subset_s̲diff_left
+warning: RequestProject/Orbisurface.lean:272:62: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/Orbisurface.lean:355:71: `Set.Finite.diff` has been deprecated: Use `Set.Finite.sdiff` instead
+warning: RequestProject/Orbisurface.lean:401:12: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/Orbisurface.lean:401:36: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/Orbisurface.lean:430:12: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [9042/9111] Built RequestProject.C1Sobolev (30s)
+warning: RequestProject/C1Sobolev.lean:331:28: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/C1Sobolev.lean:339:6: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [9043/9111] Built RequestProject.ConformalSpectrum (21s)
+warning: RequestProject/ConformalSpectrum.lean:195:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/ConformalSpectrum.lean:204:12: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/ConformalSpectrum.lean:210:12: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/ConformalSpectrum.lean:195:8: Unused tactic linter: `exact fun h => (heig k).1 (P.symm.injective (h.trans P.symm.map_zero.symm))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/ConformalSpectrum.lean:204:12: Unused tactic linter: `exact fun h => hx (P.injective (h.trans P.map_zero.symm))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/ConformalSpectrum.lean:210:12: Unused tactic linter: `exact fun h => hy (P.symm.injective (h.trans P.symm.map_zero.symm))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9044/9111] Built RequestProject.DomainDensity (21s)
+⚠ [9045/9111] Built RequestProject.BlaschkeWeight (19s)
+warning: RequestProject/BlaschkeWeight.lean:54:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/BlaschkeWeight.lean:54:7: Unused tactic linter: `funext s` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/BlaschkeWeight.lean:54:17: Unused tactic linter: `simp [Function.comp_apply, reCLM_apply]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/BlaschkeWeight.lean:171:22: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+
+Hint: Replace the deprecated name:
+  s̵e̵t̵O̵f̵_̵f̵o̵r̵a̵l̵l̵o̲f̲P̲r̲e̲d̲_̲f̲o̲r̲a̲l̲l̲
+warning: RequestProject/BlaschkeWeight.lean:178:9: `continuousOn_finset_sum` has been deprecated: Use `continuousOn_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  continuousOn_finset_̵s̵S̲um
+✔ [9046/9111] Built RequestProject.TransplantKernel (17s)
+✔ [9047/9111] Built RequestProject.Degree7PointLine (18s)
+⚠ [9048/9111] Built RequestProject.OrbSobolev (20s)
+warning: RequestProject/OrbSobolev.lean:50:8: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/OrbSobolev.lean:50:32: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/OrbSobolev.lean:85:23: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [9049/9111] Built RequestProject.PullbackLocal (18s)
+warning: RequestProject/PullbackLocal.lean:56:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/PullbackLocal.lean:56:8: Unused tactic linter: `exact
+  (this.congr_deriv
+        (by
+          first
+          | rfl
+          | simp
+          | (simp; ring))).congr_of_eventuallyEq
+    (Filter.Eventually.of_forall fun _ => by
+      first
+      | rfl
+      | simp
+      | (simp; ring))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9050/9111] Built RequestProject.SteklovRegularity (19s)
+⚠ [9051/9111] Built RequestProject.Coalescence (21s)
+warning: RequestProject/Coalescence.lean:164:13: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/Coalescence.lean:212:12: `tendsto_finset_prod` has been deprecated: Use `tendsto_finsetProd` instead
+
+Hint: Replace the deprecated name:
+  tendsto_finset_̵p̵P̲rod
+warning: RequestProject/Coalescence.lean:210:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Coalescence.lean:210:8: Unused tactic linter: `(rw [show bfac 0 (1 / 2 : ℂ) = 1 / 2 by simp [bfac]] at this; exact this)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/Coalescence.lean:300:4: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  Polynomial.eval_finset_̵s̵S̲um
+⚠ [9052/9111] Built RequestProject.BlaschkeKernel (19s)
+warning: RequestProject/BlaschkeKernel.lean:79:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/BlaschkeKernel.lean:88:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/BlaschkeKernel.lean:150:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/BlaschkeKernel.lean:151:53: `IsOpen.locPathConnectedSpace` has been deprecated: Use `IsOpen.locallyPathConnectedSpace` instead
+warning: RequestProject/BlaschkeKernel.lean:151:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/BlaschkeKernel.lean:195:19: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/BlaschkeKernel.lean:196:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/BlaschkeKernel.lean:213:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/BlaschkeKernel.lean:214:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/BlaschkeKernel.lean:215:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/BlaschkeKernel.lean:251:19: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [9053/9111] Built RequestProject.CoverInequivalence (17s)
+⚠ [9054/9111] Built RequestProject.OrbMetricBounds (20s)
+warning: RequestProject/OrbMetricBounds.lean:77:20: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/OrbMetricBounds.lean:108:74: `Set.Finite.diff` has been deprecated: Use `Set.Finite.sdiff` instead
+warning: RequestProject/OrbMetricBounds.lean:267:46: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/OrbMetricBounds.lean:297:29: `Set.diff_subset` has been deprecated: Use `Set.sdiff_subset` instead
+
+Hint: Replace the deprecated name:
+  s̲diff_subset
+warning: RequestProject/OrbMetricBounds.lean:287:18: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/OrbMetricBounds.lean:319:10: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/OrbMetricBounds.lean:319:34: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/OrbMetricBounds.lean:319:58: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/OrbMetricBounds.lean:419:26: `Set.diff_subset` has been deprecated: Use `Set.sdiff_subset` instead
+
+Hint: Replace the deprecated name:
+  s̲diff_subset
+warning: RequestProject/OrbMetricBounds.lean:457:10: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [9055/9111] Built RequestProject.ConeUniformizer (18s)
+warning: RequestProject/ConeUniformizer.lean:74:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/ConeUniformizer.lean:74:8: Unused tactic linter: `exact
+  (this.congr_deriv
+        (by
+          first
+          | rfl
+          | simp
+          | (simp; ring))).congr_of_eventuallyEq
+    (Filter.Eventually.of_forall fun _ => by
+      first
+      | rfl
+      | simp
+      | (simp; ring))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9056/9111] Built RequestProject.ClassicalSteklov (20s)
+warning: RequestProject/ClassicalSteklov.lean:72:48: `InnerProductSpace.isOpen_setOf_harmonicAt` has been deprecated: Use `InnerProductSpace.isOpen_setOfPred_harmonicAt` instead
+
+Hint: Replace the deprecated name:
+  isOpen_setOfP̲r̲e̲d̲_harmonicAt
+warning: RequestProject/ClassicalSteklov.lean:73:25: `harmonic_is_realOfHolomorphic` has been deprecated: Use `InnerProductSpace.HarmonicOnNhd.exists_analyticOnNhd_ball_re_eq` instead
+
+Hint: Replace the deprecated name:
+  h̵a̵r̵m̵o̵n̵i̵c̵_̵i̵s̵_̵r̵e̵a̵l̵O̵f̵H̵o̵l̵o̵m̵o̵r̵p̵h̵i̵c̵H̲a̲r̲m̲o̲n̲i̲c̲O̲n̲N̲h̲d̲.̲e̲x̲i̲s̲t̲s̲_̲a̲n̲a̲l̲y̲t̲i̲c̲O̲n̲N̲h̲d̲_̲b̲a̲l̲l̲_̲r̲e̲_̲e̲q̲
+warning: RequestProject/ClassicalSteklov.lean:115:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/ClassicalSteklov.lean:115:7: Unused tactic linter: `funext t` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/ClassicalSteklov.lean:115:17: Unused tactic linter: `simp [Function.comp_apply]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/ClassicalSteklov.lean:164:47: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵s̵m̵u̵l̵_̵a̵p̵p̵l̵y̵s̲m̲u̲l̲_̲a̲p̲p̲l̲y̲
+warning: RequestProject/ClassicalSteklov.lean:165:6: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵o̲n̲e̲_̲a̲p̲p̲l̲y̲_̲e̲q̲_̲s̲e̲l̲f̲
+warning: RequestProject/ClassicalSteklov.lean:161:21: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/ClassicalSteklov.lean:161:11: Unused tactic linter: `funext z` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/ClassicalSteklov.lean:161:21: Unused tactic linter: `simp [Function.comp_apply]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9057/9111] Built RequestProject.HarmonicSeries (21s)
+warning: RequestProject/HarmonicSeries.lean:157:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9058/9111] Built RequestProject.GeneralDiskCovers (19s)
+warning: RequestProject/GeneralDiskCovers.lean:137:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/GeneralDiskCovers.lean:161:36: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/GeneralDiskCovers.lean:175:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/GeneralDiskCovers.lean:248:36: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/GeneralDiskCovers.lean:263:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [9059/9111] Built RequestProject.CoalescenceRealization (18s)
+warning: RequestProject/CoalescenceRealization.lean:76:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/CoalescenceRealization.lean:112:18: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [9060/9111] Built RequestProject.DiskBoundaryExtension (22s)
+warning: RequestProject/DiskBoundaryExtension.lean:219:18: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: RequestProject/DiskBoundaryExtension.lean:429:6: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+
+Hint: Replace the deprecated name:
+  continuousOn_iff_continuous_r̵d̲o̲m̲R̲estrict
+warning: RequestProject/DiskBoundaryExtension.lean:436:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9061/9111] Built RequestProject.LocalCoverIneq (21s)
+warning: RequestProject/LocalCoverIneq.lean:135:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/LocalCoverIneq.lean:137:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9062/9111] Built RequestProject.Pi1Generation (22s)
+warning: RequestProject/Pi1Generation.lean:71:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Pi1Generation.lean:83:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Pi1Generation.lean:93:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Pi1Generation.lean:111:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Pi1Generation.lean:291:11: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: RequestProject/Pi1Generation.lean:298:11: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [9063/9111] Built RequestProject.OrbMetricSobolev (26s)
+warning: RequestProject/OrbMetricSobolev.lean:160:17: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/OrbMetricSobolev.lean:303:8: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/OrbMetricSobolev.lean:303:32: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/OrbMetricSobolev.lean:331:8: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/OrbMetricSobolev.lean:331:32: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+⚠ [9064/9111] Built RequestProject.OutwardNormal (21s)
+warning: RequestProject/OutwardNormal.lean:116:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/OutwardNormal.lean:55:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/OutwardNormal.lean:56:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/OutwardNormal.lean:79:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/OutwardNormal.lean:81:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/OutwardNormal.lean:88:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/OutwardNormal.lean:89:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/OutwardNormal.lean:90:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/OutwardNormal.lean:55:8: Unused tactic linter: `simpa [γ, Pi.add_def, Pi.sub_def, Pi.mul_def, Pi.neg_def, Function.comp_def] using
+  this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/OutwardNormal.lean:56:8: Unused tactic linter: `exact
+  (this.congr_deriv
+        (by
+          first
+          | rfl
+          | simp
+          | (simp; ring))).congr_of_eventuallyEq
+    (Filter.Eventually.of_forall fun _ => by
+      first
+      | rfl
+      | simp
+      | (simp; ring))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/OutwardNormal.lean:78:28: Unused tactic linter: `done` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/OutwardNormal.lean:79:10: Unused tactic linter: `(rw [mul_comm, ← Complex.real_smul, inner_smul_right, real_inner_self_eq_norm_sq, hz₀]; simp;
+  done)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/OutwardNormal.lean:81:10: Unused tactic linter: `(rw [mul_comm, ← Complex.real_smul, real_inner_smul_right, real_inner_self_eq_norm_sq, hz₀,
+    one_pow, mul_one])` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/OutwardNormal.lean:88:8: Unused tactic linter: `(rw [hip]; done)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/OutwardNormal.lean:89:8: Unused tactic linter: `(linarith [hip]; done)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/OutwardNormal.lean:90:8: Unused tactic linter: `(
+  rw [real_inner_eq_re_inner ℂ]
+  simp only [inner]
+  have hzz : z₀ * star z₀ = 1 :=
+    by
+    have hconj : z₀ * (starRingEnd ℂ) z₀ = 1 := by rw [Complex.mul_conj, Complex.normSq_eq_norm_sq, hz₀]; norm_num
+    simpa only [starRingEnd_apply] using hconj
+  simp only [RCLike.re_to_complex]
+  rw [mul_right_comm, hzz, one_mul, Complex.ofReal_re]
+  done)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9065/9111] Built RequestProject.BoundaryRegularity (23s)
+⚠ [9066/9111] Built RequestProject.DiskCoverExistence (19s)
+warning: RequestProject/DiskCoverExistence.lean:62:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9067/9111] Built RequestProject.ConditionalFamily (18s)
+warning: RequestProject/ConditionalFamily.lean:163:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/ConditionalFamily.lean:163:8: Unused tactic linter: `simpa [inv_inv, Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9068/9111] Built RequestProject.FullMonodromy (17s)
+✔ [9069/9111] Built RequestProject.OrbMetricSpectrum (20s)
+✔ [9070/9111] Built RequestProject.AnalyticWeight (20s)
+✔ [9071/9111] Built RequestProject.CoverFamily (17s)
+⚠ [9072/9111] Built RequestProject.FullAssembly (18s)
+warning: RequestProject/FullAssembly.lean:64:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/FullAssembly.lean:64:8: Unused tactic linter: `simpa [inv_inv, Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9073/9111] Built RequestProject.ActualKernel (20s)
+warning: RequestProject/ActualKernel.lean:108:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/ActualKernel.lean:109:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9074/9111] Built RequestProject.Degree7RegularCover (18s)
+warning: RequestProject/Degree7RegularCover.lean:40:64: `IsOpen.locPathConnectedSpace` has been deprecated: Use `IsOpen.locallyPathConnectedSpace` instead
+warning: RequestProject/Degree7RegularCover.lean:88:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7RegularCover.lean:89:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9075/9111] Built RequestProject.PullbackOrbisurface (21s)
+warning: RequestProject/PullbackOrbisurface.lean:116:61: `Set.Finite.diff` has been deprecated: Use `Set.Finite.sdiff` instead
+⚠ [9076/9111] Built RequestProject.ClassicalSteklovDom (19s)
+warning: RequestProject/ClassicalSteklovDom.lean:110:27: `isOpen_setOf_eventually_nhds` has been deprecated: Use `isOpen_setOfPred_eventually_nhds` instead
+
+Hint: Replace the deprecated name:
+  isOpen_setOfP̲r̲e̲d̲_eventually_nhds
+warning: RequestProject/ClassicalSteklovDom.lean:138:43: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
+
+Hint: Replace the deprecated name:
+  C̵o̵n̵t̵i̵n̵u̵o̵u̵s̵L̵i̵n̵e̵a̵r̵M̵a̵p̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵o̲n̲e̲_̲a̲p̲p̲l̲y̲_̲e̲q̲_̲s̲e̲l̲f̲
+⚠ [9077/9111] Built RequestProject.FamilyNoncongruence (22s)
+warning: RequestProject/FamilyNoncongruence.lean:159:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: RequestProject/FamilyNoncongruence.lean:161:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+✔ [9078/9111] Built RequestProject.FamilyIsospectral (18s)
+✔ [9079/9111] Built RequestProject.PullbackLaw (19s)
+⚠ [9080/9111] Built RequestProject.Degree7CommonCover (26s)
+warning: RequestProject/Degree7CommonCover.lean:132:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7CommonCover.lean:133:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7CommonCover.lean:319:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7CommonCover.lean:320:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7CommonCover.lean:384:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7CommonCover.lean:385:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7CommonCover.lean:386:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9081/9111] Built RequestProject.MainTheoremProof (18s)
+✔ [9082/9111] Built RequestProject.MainExceptIII (17s)
+⚠ [9083/9111] Built RequestProject.Degree7Inertia (18s)
+warning: RequestProject/Degree7Inertia.lean:186:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7Inertia.lean:229:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7Inertia.lean:230:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9084/9111] Built RequestProject.Degree7RiemannCover (17s)
+warning: RequestProject/Degree7RiemannCover.lean:46:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7RiemannCover.lean:71:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7RiemannCover.lean:84:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7RiemannCover.lean:94:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7RiemannCover.lean:95:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7RiemannCover.lean:84:8: Unused tactic linter: `simpa [coverProjC, Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/Degree7RiemannCover.lean:94:8: Unused tactic linter: `simpa [coverProjC] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/Degree7RiemannCover.lean:95:8: Unused tactic linter: `simpa [coverProjC, Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9085/9111] Built RequestProject.MainTheoremH1 (18s)
+warning: RequestProject/MainTheoremH1.lean:99:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/MainTheoremH1.lean:99:8: Unused tactic linter: `simpa [inv_inv, Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9086/9111] Built RequestProject.Degree7Completion (18s)
+warning: RequestProject/Degree7Completion.lean:43:2: `ChartedSpace.locPathConnectedSpace` has been deprecated: Use `ChartedSpace.locallyPathConnectedSpace` instead
+
+Hint: Replace the deprecated name:
+  ChartedSpace.loca̲l̲l̲y̲PathConnectedSpace
+warning: RequestProject/Degree7Completion.lean:103:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9087/9111] Built RequestProject.MainTheoremWeak (18s)
+warning: RequestProject/MainTheoremWeak.lean:99:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/MainTheoremWeak.lean:99:8: Unused tactic linter: `simpa [inv_inv, Function.comp_def] using this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9088/9111] Built RequestProject.Degree7Proper (18s)
+warning: RequestProject/Degree7Proper.lean:31:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7Proper.lean:49:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7Proper.lean:50:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7Proper.lean:51:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9089/9111] Built RequestProject.MainTheoremDom (18s)
+⚠ [9090/9111] Built RequestProject.Degree7Deck (18s)
+warning: RequestProject/Degree7Deck.lean:47:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7Deck.lean:117:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9091/9111] Built RequestProject.MainTheoremClassical (18s)
+⚠ [9092/9111] Built RequestProject.C1Spectrum (25s)
+warning: RequestProject/C1Spectrum.lean:236:18: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/C1Spectrum.lean:236:74: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/C1Spectrum.lean:240:16: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/C1Spectrum.lean:240:49: `ofReal_norm_eq_enorm` has been deprecated: Use `ofReal_norm` instead
+
+Hint: Replace the deprecated name:
+  ofReal_norm_̵e̵q̵_̵e̵n̵o̵r̵m̵
+warning: RequestProject/C1Spectrum.lean:347:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/C1Spectrum.lean:356:12: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/C1Spectrum.lean:362:12: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/C1Spectrum.lean:347:8: Unused tactic linter: `exact fun h => (heig k).1 (P.symm.injective (h.trans P.symm.map_zero.symm))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/C1Spectrum.lean:356:12: Unused tactic linter: `exact fun h => hx (P.injective (h.trans P.map_zero.symm))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/C1Spectrum.lean:362:12: Unused tactic linter: `exact fun h => hy (P.symm.injective (h.trans P.symm.map_zero.symm))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/C1Spectrum.lean:379:6: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [9093/9111] Built RequestProject.Degree7Bordered (19s)
+warning: RequestProject/Degree7Bordered.lean:131:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7Bordered.lean:150:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7Bordered.lean:153:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7Bordered.lean:150:8: Unused tactic linter: `rw [← hset] at this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/Degree7Bordered.lean:153:8: Unused tactic linter: `(
+  have hfun :
+    (fun f : RegCov f₀ => affA ε (coverProjC hs f₀ f)) =
+      ((affHomeo hε) ∘ fun f : RegCov f₀ => ((regProj f₀ f : Base (pPoly s)) : ℂ)) :=
+    by
+    funext f
+    exact (affHomeo_apply hε _).symm
+  rw [hfun]
+  exact this)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9094/9111] Built Solution (18s)
+⚠ [9096/9111] Built RequestProject.Degree7Quotient (18s)
+warning: RequestProject/Degree7Quotient.lean:85:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9097/9111] Built RequestProject.Degree7BorderedSurface (18s)
+warning: RequestProject/Degree7BorderedSurface.lean:154:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7BorderedSurface.lean:249:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9098/9111] Built RequestProject.Degree7QuotientSpace (18s)
+warning: RequestProject/Degree7QuotientSpace.lean:106:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Degree7QuotientSpace.lean:110:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Degree7QuotientSpace.lean:174:35: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Degree7QuotientSpace.lean:176:33: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Degree7QuotientSpace.lean:178:39: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Degree7QuotientSpace.lean:255:65: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Degree7QuotientSpace.lean:259:65: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Degree7QuotientSpace.lean:263:65: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Degree7QuotientSpace.lean:279:65: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Degree7QuotientSpace.lean:283:65: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Degree7QuotientSpace.lean:287:65: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+✔ [9099/9111] Built RequestProject.Degree7SubgroupIdent (19s)
+⚠ [9100/9111] Built RequestProject.Degree7QuotientDisk (20s)
+warning: RequestProject/Degree7QuotientDisk.lean:52:5: `continuousOn_iff_continuous_restrict` has been deprecated: Use `continuousOn_iff_continuous_domRestrict` instead
+
+Hint: Replace the deprecated name:
+  continuousOn_iff_continuous_r̵d̲o̲m̲R̲estrict
+⚠ [9101/9111] Built RequestProject.RegFillMetric (20s)
+warning: RequestProject/RegFillMetric.lean:101:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/RegFillMetric.lean:123:50: Variable name `w` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _w
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RequestProject/RegFillMetric.lean:222:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/RegFillMetric.lean:223:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/RegFillMetric.lean:222:10: Unused tactic linter: `simpa [Pi.add_def, Pi.sub_def, Pi.mul_def, Pi.neg_def, Function.comp_def] using
+  this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/RegFillMetric.lean:223:10: Unused tactic linter: `exact
+  (this.congr_deriv
+        (by
+          first
+          | rfl
+          | simp
+          | (simp; ring))).congr_of_eventuallyEq
+    (Filter.Eventually.of_forall fun _ => by
+      first
+      | rfl
+      | simp
+      | (simp; ring))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/RegFillMetric.lean:332:6: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RequestProject/RegFillMetric.lean:333:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/RegFillMetric.lean:333:6: Unused tactic linter: `simpa [Pi.add_def, Pi.sub_def, Pi.mul_def, Pi.neg_def, Function.comp_def] using
+  this.deriv` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/RegFillMetric.lean:346:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/RegFillMetric.lean:370:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9102/9111] Built RequestProject.Degree7Prop331 (20s)
+warning: RequestProject/Degree7Prop331.lean:99:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7Prop331.lean:100:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RequestProject/Degree7Prop331.lean:99:10: Unused tactic linter: `simpa [Pi.add_def, Pi.sub_def, Pi.mul_def, Pi.neg_def, Function.comp_def] using
+  this` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RequestProject/Degree7Prop331.lean:100:10: Unused tactic linter: `exact
+  (this.congr_deriv
+        (by
+          first
+          | rfl
+          | simp
+          | (simp; ring))).congr_of_eventuallyEq
+    (Filter.Eventually.of_forall fun _ => by
+      first
+      | rfl
+      | simp
+      | (simp; ring))` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9103/9111] Built RequestProject.Degree7Descent (18s)
+warning: RequestProject/Degree7Descent.lean:67:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7Descent.lean:105:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9104/9111] Built RequestProject.Degree7ClosedQuotient (18s)
+warning: RequestProject/Degree7ClosedQuotient.lean:115:56: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+warning: RequestProject/Degree7ClosedQuotient.lean:121:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7ClosedQuotient.lean:123:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7ClosedQuotient.lean:124:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7ClosedQuotient.lean:154:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [9105/9111] Built RequestProject.Degree7ConeOrders (20s)
+warning: RequestProject/Degree7ConeOrders.lean:155:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7ConeOrders.lean:288:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: RequestProject/Degree7ConeOrders.lean:424:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9106/9111] Built RequestProject.Degree7GeomLemmas (18s)
+⚠ [9107/9111] Built RequestProject.Degree7BoundaryMetric (18s)
+warning: RequestProject/Degree7BoundaryMetric.lean:58:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9108/9111] Built RequestProject.Degree7Prop331Geom (18s)
+warning: RequestProject/Degree7Prop331Geom.lean:138:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+⚠ [9109/9111] Built RequestProject.Degree7ConeMetric (19s)
+warning: RequestProject/Degree7ConeMetric.lean:127:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9110/9111] Built RequestProject.Degree7Prop331Full (18s)
+warning: RequestProject/Degree7Prop331Full.lean:181:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Build completed successfully (9111 jobs).

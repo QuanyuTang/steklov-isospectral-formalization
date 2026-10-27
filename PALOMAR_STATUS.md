@@ -2,6 +2,33 @@
 
 Authors and responsible maintainers, in order: **taohu-hub, RGConj, QuanyuTang**.
 
+## Latest proof-source recheck: Windows, 2026-10-27
+
+The proof inputs in this checkout match the complete 190-input fingerprint of
+`2d1b0331a534c8c774794252b14152c5be32a3f7`. All 176 modules and both entries
+built successfully (9111 jobs), the fresh 590-target audit passed, and the
+unmodified pinned Comparator accepted the declaration/definition match and axiom
+allowlist. NanoDa and Lean accepted the selected proof closure; con-ron also
+accepted the same Solution export (71641 declarations reported by that checker).
+
+This was an **unsandboxed Windows check**, with fresh export generation bound to
+source, compiled-part and tool hashes. A Windows executable-location compatibility
+bridge was used; no checker binary or submitted Comparator configuration was
+modified. The earlier Windows runtime stack failures were resolved through the
+documented resource settings before the successful full build.
+
+The latest Linux jobs ran **zero steps**: GitHub reported failed recent account
+payments or an insufficient spending limit. This message does not establish
+which of those conditions applies. New successful isolated runs of the final
+submitted SHA remain pending; no current Linux sandbox result is claimed.
+
+[Structured report and logs](verification/local-windows-20261027/report.json) ·
+[Source/export/tool bindings](verification/local-windows-20261027/export-bindings.json).
+`scripts/check-release.py` rejects changed or missing proof inputs even after
+the ordinary release checksums have been refreshed.
+
+## Previously recorded Linux sandbox verification
+
 Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels.
 
 | Check | Recorded result |

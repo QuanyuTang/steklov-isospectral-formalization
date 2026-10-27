@@ -82,3 +82,12 @@ stale integrity manifests, branch badges, validation gaps and documentation;
 it does not replace the mathematical proof. The structured record at
 [final-review.json](../verification/final-review.json) distinguishes this
 source review from compilation, independent-kernel replay and human review.
+
+The resulting [Windows machine-checking record](../verification/local-windows-20261027/report.json)
+binds proof snapshot `2d1b0331a534c8c774794252b14152c5be32a3f7` to the successful
+build, full fresh axiom/type audit, locally generated exports and unmodified
+bundled checkers. NanoDa, Lean and con-ron accepted the selected main-result
+closure. The run was unsandboxed; a Windows executable-location compatibility
+bridge did not alter the checkers. Linux CI was prevented from starting by the
+repository owner's billing/spending restriction. Later documentation/evidence
+commits retain the same proof inputs, as enforced by the release checker.

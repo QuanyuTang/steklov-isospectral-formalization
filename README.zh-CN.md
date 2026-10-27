@@ -5,13 +5,15 @@
 [![Lean 验证](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml?query=branch%3Amain)
 [![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=main)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml?query=branch%3Amain)
 
+**本次本机复核（2026-10-27）：** 当前证明输入与快照 `2d1b0331a534c8c774794252b14152c5be32a3f7` 一致，全部 176 个模块及两个入口编译成功，590 个审计目标通过；固定版本 Comparator、NanoDa、Lean 和 con-ron 均接受主结果的证明。本次在 **Windows 本机进行，没有 Linux 隔离沙箱**；导出数据已与源码及编译产物的哈希绑定。最新 Linux CI 因 GitHub 账户付款／支出限制而未能启动。见[结果与真实日志](verification/local-windows-20261027/report.json)。发布检查会核对全部 190 项证明输入，修改证明后仅刷新校验清单无法沿用这份通过记录。
+
 **已核验的证明快照：** 提交 `6932e18512a7` 已在 Lean 4.35.0-rc2 下完成全部 176 模块的无项目缓存编译、590 目标类型与公理审计，并通过沙箱中 bundled Lean 和 NanoDa 双内核复核。con-ron 也接受了证明。 [当前状态](PALOMAR_STATUS.md) · [准确证据](docs/lean435-build-audit-evidence.json)
 
 **Hu–Shi–Tang 论文定理 1.1.2 的 Lean 4 形式化，采用显式七次多项式构造。**
 
 [English](README.md) · [论文](https://arxiv.org/abs/2608.10557v2) · [独立定理陈述](Challenge.lean) · [证明入口](Solution.lean)
 
-该工程证明：存在单参数平面区域对族 `(Ω P ε, Ω L ε)`，对每个相同参数 `ε`，这一对区域的 Steklov 谱完全相同（包含重数）；不同标签或不同参数对应的区域彼此不全等。每个区域都有界、单连通、严格凸，边界为实解析 Jordan 曲线；周长均为 2π，没有反向欧氏对称，归一化共形映射在 C∞ 意义下趋于恒等映射。
+该工程证明：存在 `ε₀ > 0` 及平面区域对族 `(Ω P ε, Ω L ε)`（`0 < ε < ε₀`），同一参数下这一对区域的 Steklov 谱完全相同（包含重数）；不同标签或不同参数对应的区域彼此不全等。每个区域都有界、单连通、严格凸，边界为实解析 Jordan 曲线；周长均为 2π，没有反向欧氏对称，归一化共形映射在 C∞ 意义下趋于恒等映射。
 
 这回答了 Dirichlet-to-Neumann 算子的逆谱几何问题：即便限制在任意接近圆盘的严格凸解析平面区域中，完整 Steklov 谱仍不能在欧氏全等意义下确定区域形状。相关研究领域包括谱几何、反问题和复分析。
 
