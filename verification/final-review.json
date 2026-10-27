@@ -1,0 +1,76 @@
+{
+  "review_date": "2026-10-27",
+  "reviewed_base_commit": "0beb2b8ced22da1569bc42c6bb394bec9b850361",
+  "review_method": "Parallel AI-assisted source and release review by OpenAI Codex; not independent human peer review",
+  "mathematical_source": "paper/tex/pdes40_arxiv_v2.tex, Theorem 1.1.2 (lines 211-245)",
+  "compared_declaration": "SteklovSubmission.main_result",
+  "source_review_result": "No substantiated mathematical defect identified in the reviewed statement and core proof chain",
+  "statement_checks": [
+    {
+      "files": [
+        "Challenge.lean",
+        "RequestProject/Defs.lean",
+        "RequestProject/MainStatement.lean",
+        "Solution.lean"
+      ],
+      "finding": "All five conclusions and simultaneous quantifiers agree with the preserved TeX; the final entry has no extra hypotheses."
+    },
+    {
+      "files": [
+        "RequestProject/Defs.lean"
+      ],
+      "finding": "Domains are nonempty open connected sets; boundaries are regular analytic Jordan curves; strict convexity concerns the closure; congruence includes reflections. The positive parameter interval and two labels are nonempty."
+    },
+    {
+      "files": [
+        "RequestProject/Defs.lean",
+        "RequestProject/DomainDensity.lean",
+        "RequestProject/DiskDensity.lean",
+        "RequestProject/ClassicalSteklovDom.lean",
+        "RequestProject/OutwardNormal.lean",
+        "RequestProject/MainTheoremClassical.lean"
+      ],
+      "finding": "Spectrum uses actual Dirichlet energy and boundary Hausdorff mass; smooth-test min-max is connected by proofs to Sobolev weak and harmonic outward-normal PDE eigenproblems, with completeness, multiplicities and divergence."
+    }
+  ],
+  "core_proof_checks": [
+    {
+      "files": [
+        "RequestProject/MainTheoremProof.lean",
+        "RequestProject/Degree7Polynomial.lean",
+        "RequestProject/Degree7Monodromy.lean",
+        "RequestProject/FamilyIsospectral.lean",
+        "RequestProject/ActualKernel.lean"
+      ],
+      "finding": "Explicit polynomial/monodromy input and two-way weighted-disk transplantation supply the conditional assembly inputs; spectral equality is not assumed as a defining property."
+    },
+    {
+      "files": [
+        "RequestProject/RiemannMap.lean",
+        "RequestProject/OuterRealization.lean",
+        "RequestProject/StrictConvexity.lean"
+      ],
+      "finding": "Core analytic realization and convexity claims have substantive proofs."
+    }
+  ],
+  "release_repairs": [
+    "Regenerate stale SOURCE_SHA256SUMS, structural report and publication manifest together; validate completeness and publication hashes.",
+    "Show main-branch workflow badges and require exact-commit verification.",
+    "Strengthen metadata and source validation; run those checks before local builds.",
+    "Use source type paper for compatibility with the published Palomar policy; declare substantive-development explicitly.",
+    "Clarify manuscript review versus independent human review of the formalization, and remove obsolete PR/upload instructions.",
+    "Correct a StrictConvexity module-doc declaration name; no mathematical Lean code changed."
+  ],
+  "policy_reference": {
+    "repository": "https://github.com/PalomarRegistry/PalomarPolicy",
+    "revision": "28bd48b9b71bbb2a82c718ce761d5a4220ef8e60",
+    "minimum_lean_checked": "v4.35.0-rc2"
+  },
+  "machine_verification": "This source-review report does not assert CI success. Require successful Lean verification and Palomar Comparator workflow runs on the exact submitted commit; use their artifacts for machine evidence.",
+  "limits": [
+    "Core proof-chain review is not a line-by-line independent human audit of every supporting lemma.",
+    "The advertised scope remains the five-conclusion main theorem; general arbitrary-data Riemann existence, arbitrary orbifolds, and a general analytic Sunada theorem are not claimed.",
+    "No Palomar submission, editorial outcome or registration is asserted.",
+    "Repository visibility remains private until the owner changes it for actual submission."
+  ]
+}

@@ -2,8 +2,8 @@
 
 **作者：[Tao Hu](https://github.com/taohu-hub)、[Jiachen Shi](https://github.com/RGConj)、[Quanyu Tang](https://github.com/QuanyuTang)。**
 
-[![Lean 验证](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml)
-[![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml)
+[![Lean 验证](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml?query=branch%3Amain)
+[![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=main)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml?query=branch%3Amain)
 
 **已核验的证明快照：** 提交 `6932e18512a7` 已在 Lean 4.35.0-rc2 下完成全部 176 模块的无项目缓存编译、590 目标类型与公理审计，并通过沙箱中 bundled Lean 和 NanoDa 双内核复核。con-ron 也接受了证明。 [当前状态](PALOMAR_STATUS.md) · [准确证据](docs/lean435-build-audit-evidence.json)
 
@@ -12,6 +12,8 @@
 [English](README.md) · [论文](https://arxiv.org/abs/2608.10557v2) · [独立定理陈述](Challenge.lean) · [证明入口](Solution.lean)
 
 该工程证明：存在 Steklov 谱完全相同（包含重数）、彼此不全等的平面区域族。这些区域有界、单连通、严格凸，边界为实解析 Jordan 曲线；周长均为 2π，没有反向欧氏对称，归一化共形映射在 C∞ 意义下趋于恒等映射。
+
+这回答了 Dirichlet-to-Neumann 算子的逆谱几何问题：即便限制在任意接近圆盘的严格凸解析平面区域中，完整 Steklov 谱仍不能在欧氏全等意义下确定区域形状。相关研究领域包括谱几何、反问题和复分析。
 
 ## 核验与范围
 
@@ -29,6 +31,8 @@
 安装 elan、Git 与 Lean 支持的 C/C++ 工具链后，在本目录执行：
 
 ```sh
+python3 -m pip install jsonschema==4.25.1
+python3 scripts/validate-metadata.py
 lake exe cache get
 lake build
 python3 scripts/audit.py
@@ -37,9 +41,11 @@ python3 scripts/check-release.py
 
 `Challenge.lean` 是只导入 Mathlib 的独立陈述文件，其中有 **一个有意保留的 `sorry`**，用于 Palomar 的陈述与证明对比机制。实际证明位于 `Solution.lean` 和 `RequestProject/`，不导入该陈述文件。这个占位不属于主定理证明。
 
+主动修改仓库文件后，运行 `python3 scripts/refresh-release.py`，同时更新源码校验清单、结构报告和发布清单，再重新核验。投稿时应核对**实际提交的完整 SHA** 对应的两项 CI 结果；其他提交的绿色徽章不能替代它。[本次源码审查记录](verification/final-review.json) 明确列出了核查范围与限制。
+
 ## GitHub 发布与 Palomar
 
-可以将**本目录中的全部内容**作为一个 GitHub 仓库的根目录上传；不要再嵌套一层 `formalization/`。建议仓库名：`steklov-isospectral-formalization`。原始论文 PDF、TeX 和原始源码包位于 `paper/`。
+本仓库的根目录就是投稿项目根目录；无需再上传 ZIP 或嵌套一层 `formalization/`。原始论文 PDF、TeX 和原始源码包位于 `paper/`。
 
 **记录的证明快照已通过所需本地准备检查。** con-ron 也接受了证明。 原始 Lean 4.28 日志只核验原基线；目标版本以精确提交的 CI 记录为准。仓库公开、实际投稿及永久登记仍须项目所有者最终批准。[当前状态](PALOMAR_STATUS.md)
 
@@ -49,7 +55,7 @@ Palomar 使用公开 GitHub 仓库及完整 commit SHA 进行审查，并不是�
 
 仓库维护者：[Tao Hu](https://github.com/taohu-hub)、[Jiachen Shi](https://github.com/RGConj)、[Quanyu Tang](https://github.com/QuanyuTang)。形式化主要使用 **Aristotle（Harmonic）** 生成证明，**OpenAI Codex** 用于组织工作、补充中间步骤、核验与整理。详见 [PROVENANCE.md](docs/PROVENANCE.md)。
 
-原论文作者为 **Tao Hu、Jiachen Shi、Quanyu Tang**，已经经过人工独立审稿。
+原论文作者为 **Tao Hu、Jiachen Shi、Quanyu Tang**。据维护者说明，作者已人工审阅论文并对数学结论负责；这与 Lean 形式化的独立人工审查是两回事。本仓库不宣称已获得对形式化代码的独立人工审稿。
 
 ## 原文差异记录
 

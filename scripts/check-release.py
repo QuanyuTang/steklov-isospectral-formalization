@@ -7,9 +7,12 @@ import json
 import re
 import tarfile
 
+from release_manifest import DERIVED_FILES, file_hash, release_files
+
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument("--write-report", action="store_true")
+parser.add_argument("--write-report", action="store_true",
+                    help="write the structural report; skip the derived publication manifest during refresh")
 args = parser.parse_args()
 checks = []
 
@@ -114,10 +117,35 @@ require(pin == "leanprover/lean4:v4.35.0-rc2", "migration target Lean toolchain 
 manifest = json.loads((ROOT / "lake-manifest.json").read_text(encoding="utf-8"))
 mathlib = next(p for p in manifest["packages"] if p["name"] == "mathlib")
 require(mathlib["rev"] == "065356127b1dc0016f66b7283ce0ce2c4055aa55", "canonical Mathlib release commit pinned")
+source_hashes = {}
 for line in (ROOT / "SOURCE_SHA256SUMS").read_text(encoding="utf-8").splitlines():
+    require(re.fullmatch(r"[0-9a-f]{64}  .+", line) is not None, "valid source checksum entry")
     digest, name = line.split("  ", 1)
+    require(name not in source_hashes, "unique source checksum entry: " + name)
+    require(not Path(name).is_absolute() and ".." not in Path(name).parts and "\\" not in name,
+            "repository-relative checksum path: " + name)
+    source_hashes[name] = digest
     p = ROOT / name
-    require(p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest() == digest, "source hash: " + name)
+    require(p.is_file() and not p.is_symlink() and hashlib.sha256(p.read_bytes()).hexdigest() == digest,
+            "source hash: " + name)
+bound_sources = {p.relative_to(ROOT).as_posix() for p in lean_files}
+bound_sources.update(set(required) - {"SOURCE_SHA256SUMS"})
+bound_sources.update(p.relative_to(ROOT).as_posix() for p in (ROOT / "scripts").iterdir() if p.is_file())
+bound_sources.update(p.relative_to(ROOT).as_posix() for p in (ROOT / ".github").rglob("*") if p.is_file())
+require(bound_sources <= source_hashes.keys(),
+        "all Lean sources, required release files, scripts and CI files bound by source checksums; missing: "
+        + ", ".join(sorted(bound_sources - source_hashes.keys())))
+inventory = set(release_files(ROOT))
+require(set(source_hashes) == inventory - DERIVED_FILES,
+        "source checksum inventory exactly covers all nonderived release files")
+if not args.write_report:
+    publication = json.loads((ROOT / "publication-manifest.json").read_text(encoding="utf-8"))
+    publication_hashes = publication.get("file_sha256", {})
+    require(set(publication_hashes) == inventory - {"publication-manifest.json"},
+            "publication manifest exactly covers all other release files")
+    for name, digest in publication_hashes.items():
+        require(re.fullmatch(r"[0-9a-f]{64}", digest) is not None
+                and file_hash(ROOT, name) == digest, "publication hash: " + name)
 frozen = json.loads((ROOT / "verification/recorded/final-source-manifest.json").read_text(encoding="utf-8"))
 header_only_files = {"RequestProject/Main.lean"}
 audit_template_files = {"RequestProject/" + n for n in
@@ -176,6 +204,8 @@ summary = {
     "byte_identical_original_source_contents": 179 - len(changed_sources),
     "module_header_only_adaptations": sorted(header_only_files),
     "original_tex_and_archive_match": True,
+    "source_manifest_coverage_complete": True,
+    "publication_manifest_checked": not args.write_report,
     "observed_palomar_toolchain_minimum_satisfied": True,
     "palomar_registration_claimed": False,
     "kernel_acceptance_established_by_this_source_check": False,

@@ -35,10 +35,10 @@
         "Quanyu Tang"
       ],
       "id": "https://arxiv.org/abs/2608.10557v2",
-      "type": "article",
+      "type": "paper",
       "location": "Theorem 1.1.2 and supporting results in Sections 2–3",
       "relationship": "adapts",
-      "note": "All five main conclusions; explicit degree-seven realization replaces general Riemann existence. Concrete metric orbifold disk models are used. No coauthor endorsement or independent human review is asserted.",
+      "note": "All five main conclusions; explicit degree-seven realization replaces general Riemann existence. Concrete metric orbifold disk models are used. Manuscript review by its authors is distinct from independent human review of the Lean formalization; no such independent formalization review is claimed.",
       "license": "arXiv non-exclusive distribution license; original paper files are excluded from the code license"
     }
   ],
@@ -128,7 +128,7 @@
   "review": {
     "status": "AI-assisted assessment; exact recorded snapshot passed fresh target build, complete audit and sandboxed bundled Lean/NanoDa replay; no independent human review",
     "reviewers": [],
-    "notes": "Recorded commit 6932e18512a776e4edae15bc076f4224ec85e4ad passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted. These are checks of that exact snapshot. Subsequent commits require their own successful runs. No Palomar submission, editorial acceptance or registration is claimed. The 590-target audit checks the full inventory in standard Lean; independent Comparator replay checks the selected main-result proof closure, not 590 separate exports. The earlier read-only AI release review covered fd44fc6172c412ccdc844c112dea5d3df9a26383. Aristotle subsequently authored proof-cost optimizations; that earlier review is not an independent review of those later patches. Codex reviewed exact source differences, preservation of original declaration headers/definitions and the actual target CI. The full-baseline textual inventory preserves 2486 original declaration records with no deletion, five disclosed eLpNorm helper adaptations, upstream typeclass spelling changes, an exact main-statement relocation and one statement-identical instance-to-theorem change. It records two proved private cycle helpers and 52 additional private proof-support declarations for good_eq_orbits, plus the exact fibreHomeo inverse-membership proof change with unchanged computational maps. Textual fidelity checks do not prove semantic equivalence to the paper. No independent human mathematical peer review is claimed."
+    "notes": "Recorded commit 6932e18512a776e4edae15bc076f4224ec85e4ad passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted. These are checks of that exact snapshot. Subsequent commits require their own successful runs. No Palomar submission, editorial acceptance or registration is claimed. The 590-target audit checks the full inventory in standard Lean; independent Comparator replay checks the selected main-result proof closure, not 590 separate exports. The earlier read-only AI release review covered fd44fc6172c412ccdc844c112dea5d3df9a26383. Aristotle subsequently authored proof-cost optimizations; that earlier review is not an independent review of those later patches. Codex reviewed exact source differences, preservation of original declaration headers/definitions and the actual target CI. The full-baseline textual inventory preserves 2486 original declaration records with no deletion, five disclosed eLpNorm helper adaptations, upstream typeclass spelling changes, an exact main-statement relocation and one statement-identical instance-to-theorem change. It records two proved private cycle helpers and 52 additional private proof-support declarations for good_eq_orbits, plus the exact fibreHomeo inverse-membership proof change with unchanged computational maps. Textual fidelity checks do not prove semantic equivalence to the paper. No independent human mathematical peer review is claimed. A further Codex source review on 2026-10-27 checked the five simultaneous conclusions against the preserved TeX, the geometric definitions, the Sobolev/classical spectrum bridges, and the construction/transplantation chain; no substantiated mathematical defect was found in that reviewed scope. See verification/final-review.json. This AI source review is separate from the exact-commit CI results and is not independent human peer review."
   },
   "alignment": {
     "namespace": "SteklovSubmission",
@@ -142,5 +142,8 @@
       }
     ]
   },
-  "acknowledgements": "Paper authors Tao Hu, Jiachen Shi, Quanyu Tang; Lean and Mathlib contributors; Harmonic Aristotle; OpenAI Codex. Credits do not imply endorsement."
+  "acknowledgements": "Paper authors Tao Hu, Jiachen Shi, Quanyu Tang; Lean and Mathlib contributors; Harmonic Aristotle; OpenAI Codex. Credits do not imply endorsement.",
+  "repository": {
+    "role": "substantive-development"
+  }
 }

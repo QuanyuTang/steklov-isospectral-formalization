@@ -65,6 +65,8 @@ The baseline public layout was additionally built and audited in an independent 
 
 `SOURCE_SHA256SUMS` binds the 176 library modules, four preserved original audit inventories, the standalone audit template, the two submission modules, project pins, and original paper files. `scripts/check-release.py` checks these hashes, module headers, line limits, project pins, comparison targets, the statement-only placeholder, and source/archive correspondence. Its checks are supplementary to Lean and do not prove mathematical fidelity.
 
+After an intentional edit, run `python3 scripts/refresh-release.py`. It updates `SOURCE_SHA256SUMS`, regenerates `verification/release-check.json`, and refreshes `publication-manifest.json` in that order. This records the new bytes; it does not certify a build or mathematical correctness. Normal release checks also validate the publication manifest. Commit the result and obtain successful build/audit and Comparator runs for the exact submitted SHA.
+
 ## Updating Lean
 
 Changing `lean-toolchain` or Mathlib invalidates the recorded environment-specific build evidence. Port the source, pin canonical Mathlib for the same Lean release, regenerate the manifest, rebuild, rerun the axiom audit, and run the required Palomar Comparator and independent-kernel checks. Preserve this verified release as a tag or immutable commit before a port.

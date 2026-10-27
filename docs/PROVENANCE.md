@@ -72,3 +72,13 @@ No independent human mathematical peer review, Palomar registration or
 institutional endorsement is claimed. [RESULTS.md](RESULTS.md) and
 [ERRATA-AND-DEVIATIONS.md](ERRATA-AND-DEVIATIONS.md) describe the actual scope,
 concrete representations and alternative proof routes.
+
+On 2026-10-27, Codex performed an additional parallel source review against the
+preserved TeX: all five main conclusions and their simultaneous quantifiers,
+the ordinary geometric definitions, the actual variational/PDE spectrum bridge,
+and the core construction and transplantation chain. No substantiated
+mathematical defect was identified in that review. The release repair fixes
+stale integrity manifests, branch badges, validation gaps and documentation;
+it does not replace the mathematical proof. The structured record at
+[final-review.json](../verification/final-review.json) distinguishes this
+source review from compilation, independent-kernel replay and human review.

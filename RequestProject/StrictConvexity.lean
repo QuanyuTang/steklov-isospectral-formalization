@@ -16,7 +16,7 @@ Proof.  For `z₁ ≠ z₂` in `𝔻̄`, `a, b > 0`, `a + b = 1`, put `m = a z�
 on `B̄(m, s/4) ⊆ 𝔻` with constant `ε c`, `F(B̄(m, s/4)) ⊇ B̄(F(m), c(1-ε)s/4)`, an open ball
 around `a F(z₁) + b F(z₂)` inside `F(𝔻)`.
 
-`eventually_strictConvex_of_cinfty`: a family of maps tending to `c·id` in `C²(𝔻̄)` eventually has
+`eventually_strictConvex_of_C2`: a family of maps tending to `c·id` in `C²(𝔻̄)` eventually has
 strictly convex image domains.
 -/
 

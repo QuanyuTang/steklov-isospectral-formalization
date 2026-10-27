@@ -395,7 +395,7 @@
     {
       "file": "RequestProject/StrictConvexity.lean",
       "baseline_sha256": "bae64d4eda6e481f77fb9a0c3f69b708a70989befa8c102b3a6109e444287d76",
-      "migrated_sha256": "f954fdd79bdf4c5fd6ca7da90dd5abb8b3eabc952245e25d620df4589d011145"
+      "migrated_sha256": "ea03385718be0756b1028536c8f5e0688571ba2e1e251046d5801d9cf5eec44e"
     },
     {
       "file": "RequestProject/TraceCompact.lean",
