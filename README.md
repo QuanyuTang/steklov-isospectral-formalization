@@ -70,10 +70,9 @@ Palomar reviews the full SHA of a **public GitHub repository**. This preparation
 
 ## Attribution and citation
 
-Repository maintainers: [taohu-hub](https://github.com/taohu-hub), [RGConj](https://github.com/RGConj), [QuanyuTang](https://github.com/QuanyuTang). Proof generation was primarily performed with **Aristotle (Harmonic)**, with **OpenAI Codex** used for orchestration, intermediate scaffolding, local checks, and packaging. [Full provenance](docs/PROVENANCE.md).
+Repository maintainers: [Tao Hu](https://github.com/taohu-hub), [Jiachen Shi](https://github.com/RGConj), [Quanyu Tang](https://github.com/QuanyuTang). Proof generation was primarily performed with **Aristotle (Harmonic)**, with **OpenAI Codex** used for orchestration, intermediate scaffolding, local checks, and packaging. [Full provenance](docs/PROVENANCE.md).
 
-Mathematical source: **Tao Hu, Jiachen Shi, Quanyu Tang**, *Strictly Convex Steklov-Isospectral Plane Domains*, [arXiv:2608.10557v2](https://arxiv.org/abs/2608.10557v2). The formalization follows an explicit alternative realization of the construction. This repository is not a new claim of authorship of the paper.
-
+Mathematical source: **Tao Hu, Jiachen Shi, Quanyu Tang**, *Strictly Convex Steklov-Isospectral Plane Domains*, [arXiv:2608.10557v2](https://arxiv.org/abs/2608.10557v2). The manuscript has been already under independent review by the authors, who take full responsibility for all mathematical claims in the paper.
 ```bibtex
 @misc{hu2026strictly,
   title = {Strictly Convex Steklov-Isospectral Plane Domains},
