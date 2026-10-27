@@ -2,10 +2,10 @@
 
 **作者：[Tao Hu](https://github.com/taohu-hub)、[Jiachen Shi](https://github.com/RGConj)、[Quanyu Tang](https://github.com/QuanyuTang)。**
 
-[![Lean 验证](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml?query=branch%3Amain)
-[![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=main)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml?query=branch%3Amain)
+[![Lean 验证](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/lean.yml?query=branch%3Amain)
+[![Palomar Comparator](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml?query=branch%3Amain)
 
-**本次本机复核（2026-10-27）：** 当前证明输入与快照 `2d1b0331a534c8c774794252b14152c5be32a3f7` 一致，全部 176 个模块及两个入口编译成功，590 个审计目标通过；固定版本 Comparator、NanoDa、Lean 和 con-ron 均接受主结果的证明。本次在 **Windows 本机进行，没有 Linux 隔离沙箱**；导出数据已与源码及编译产物的哈希绑定。最新 Linux CI 因 GitHub 账户付款／支出限制而未能启动。见[结果与真实日志](verification/local-windows-20261027/report.json)。发布检查会核对全部 190 项证明输入，修改证明后仅刷新校验清单无法沿用这份通过记录。
+**本次本机复核（2026-10-27）：** 当前证明输入与快照 `2d1b0331a534c8c774794252b14152c5be32a3f7` 一致，全部 176 个模块及两个入口编译成功，590 个审计目标通过；固定版本 Comparator、NanoDa、Lean 和 con-ron 均接受主结果的证明。本次在 **Windows 本机进行，没有 Linux 隔离沙箱**；导出数据已与源码及编译产物的哈希绑定。原仓库最终版本的 Linux CI 因原所有者账户的付款／支出限制而未能启动；本个人公开副本的结果请以其 Actions 中对应完整提交的检查为准，原仓库的付款／支出失败不能说明此副本的检查结果。见[结果与真实日志](verification/local-windows-20261027/report.json)。发布检查会核对全部 190 项证明输入，修改证明后仅刷新校验清单无法沿用这份通过记录。
 
 **已核验的证明快照：** 提交 `6932e18512a7` 已在 Lean 4.35.0-rc2 下完成全部 176 模块的无项目缓存编译、590 目标类型与公理审计，并通过沙箱中 bundled Lean 和 NanoDa 双内核复核。con-ron 也接受了证明。 [当前状态](PALOMAR_STATUS.md) · [准确证据](docs/lean435-build-audit-evidence.json)
 
@@ -49,7 +49,7 @@ python3 scripts/check-release.py
 
 本仓库的根目录就是投稿项目根目录；无需再上传 ZIP 或嵌套一层 `formalization/`。原始论文 PDF、TeX 和原始源码包位于 `paper/`。
 
-**记录的证明快照已通过所需本地准备检查。** con-ron 也接受了证明。 原始 Lean 4.28 日志只核验原基线；目标版本以精确提交的 CI 记录为准。仓库公开、实际投稿及永久登记仍须项目所有者最终批准。[当前状态](PALOMAR_STATUS.md)
+**记录的证明快照已通过所需本地准备检查。** con-ron 也接受了证明。 原始 Lean 4.28 日志只核验原基线；目标版本以精确提交的 CI 记录为准。本仓库已应所有者要求公开；实际投稿及永久登记仍须项目所有者最终批准。[当前状态](PALOMAR_STATUS.md)
 
 Palomar 使用公开 GitHub 仓库及完整 commit SHA 进行审查，并不是直接接收 ZIP。发布和后续提交步骤见 [PALOMAR.md](docs/PALOMAR.md)。本项目目前**没有获得 Palomar 核验、登记或背书**。
 

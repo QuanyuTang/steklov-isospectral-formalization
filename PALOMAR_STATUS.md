@@ -17,10 +17,12 @@ bridge was used; no checker binary or submitted Comparator configuration was
 modified. The earlier Windows runtime stack failures were resolved through the
 documented resource settings before the successful full build.
 
-The latest Linux jobs ran **zero steps**: GitHub reported failed recent account
-payments or an insufficient spending limit. This message does not establish
-which of those conditions applies. New successful isolated runs of the final
-submitted SHA remain pending; no current Linux sandbox result is claimed.
+The original repository's final Linux jobs ran **zero steps**: GitHub reported
+failed recent payments or an insufficient spending limit for its owner account.
+This message does not establish which condition applies. For the personal copy
+`QuanyuTang/steklov-isospectral-formalization`, consult its Actions runs for the
+exact commit. The original repository's billing failures do not establish this
+copy's result. Each submitted SHA requires successful isolated checks.
 
 [Structured report and logs](verification/local-windows-20261027/report.json) ·
 [Source/export/tool bindings](verification/local-windows-20261027/export-bindings.json).
@@ -49,4 +51,4 @@ The complete 590-target audit uses standard Lean. Comparator independently repla
 
 The proof scope, alternative explicit construction and qualified general-theory limits are documented in [RESULTS.md](docs/RESULTS.md). Historical Lean 4.28 reports remain baseline evidence only.
 
-[Exact build/kernel evidence](docs/lean435-build-audit-evidence.json) · [Submission guide](docs/PALOMAR.md). Publication of the private preparation repository and actual submission require the owner's final approval.
+[Exact build/kernel evidence](docs/lean435-build-audit-evidence.json) · [Submission guide](docs/PALOMAR.md). The personal preparation repository is public at the owner's request. Actual submission requires the owner's final approval.

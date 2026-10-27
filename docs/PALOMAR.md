@@ -1,17 +1,17 @@
 # GitHub publication and Palomar submission
 
-## Current status: verified proof snapshot; publication pending
+## Current status: public repository; submission pending
 
 As checked on **2026-10-27**, the official [toolchain policy](https://raw.githubusercontent.com/PalomarRegistry/PalomarSubmission/main/toolchains.json) specifies minimum **Lean v4.35.0-rc2**. Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted. These are checks of that exact snapshot. Subsequent commits require their own successful runs. No Palomar submission, editorial acceptance or registration is claimed.
 
 The root project contains the pinned Lake configuration/manifest, short independent Challenge, proved Solution, Comparator configuration and v0.4 metadata. Challenge imports canonical Mathlib only, has one deliberate statement hole and is never a Solution dependency. Comparator compares concrete definitions in full and has no fillable definition targets. [Evidence](lean435-build-audit-evidence.json).
 
-## Publish the repository
+## Public repository and final snapshot
 
-1. The preparation repository is `taohu-hub/steklov-isospectral-formalization`. The migration in PR #1 has been merged; use the final verified commit on `main`. Publication remains a separate owner action.
-2. Put this folder's contents at the repository root. Commit hidden files too (`.github/`, `.gitignore`, `.gitattributes`). Do not upload `.lake/`, caches, account credentials, or another enclosing directory.
+1. The preparation repository is `QuanyuTang/steklov-isospectral-formalization`, a public independent copy preserving the original repository's full `main` history through `5de09135cd688ce5e6487b16bd44e64f056f7fbc`. Use the final verified commit on this repository's `main`. It was made public at the owner's explicit request. See [copy provenance](PROVENANCE.md#public-personal-copy).
+2. The project contents are already at the repository root, including hidden files (`.github/`, `.gitignore`, `.gitattributes`). Keep `.lake/`, caches and account credentials outside the committed source; do not add another enclosing directory.
 3. Review the maintainer name and chosen code license in `formalization.yaml`, README, and NOTICE. The included paper retains its own rights; its arXiv license does not itself grant third-party redistribution. The publisher must hold the necessary rights or permission for public paper-file distribution.
-4. After all checks and the final review, publish the approved snapshot and save its full 40-character commit SHA. A document-only follow-up commit still needs checks on its own exact snapshot.
+4. After all checks and the final review, select the approved public snapshot and save its full 40-character commit SHA. A document-only follow-up commit still needs checks on its own exact snapshot.
 
 The ZIP is a transport package for GitHub, not a direct Palomar submission artifact. Uploading the ZIP as one opaque repository file is not sufficient.
 

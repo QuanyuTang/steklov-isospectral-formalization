@@ -88,6 +88,28 @@ binds proof snapshot `2d1b0331a534c8c774794252b14152c5be32a3f7` to the successfu
 build, full fresh axiom/type audit, locally generated exports and unmodified
 bundled checkers. NanoDa, Lean and con-ron accepted the selected main-result
 closure. The run was unsandboxed; a Windows executable-location compatibility
-bridge did not alter the checkers. Linux CI was prevented from starting by the
-repository owner's billing/spending restriction. Later documentation/evidence
-commits retain the same proof inputs, as enforced by the release checker.
+bridge did not alter the checkers. The original repository's final Linux CI was
+prevented from starting by its owner account's billing/spending restriction.
+For the public personal copy, consult its Actions runs for the exact commit;
+the original repository's billing failures do not establish this copy's result.
+Later documentation/evidence commits retain the same proof inputs, as enforced
+by the release checker.
+
+## Public personal copy
+
+On 2026-10-27, at the user's request, the complete `main` history of
+[taohu-hub/steklov-isospectral-formalization](https://github.com/taohu-hub/steklov-isospectral-formalization)
+through commit `5de09135cd688ce5e6487b16bd44e64f056f7fbc` was copied to
+[QuanyuTang/steklov-isospectral-formalization](https://github.com/QuanyuTang/steklov-isospectral-formalization).
+The destination is an independent repository rather than a GitHub fork; the
+original was public when inspected at the time of copying. The destination was
+initially private and was subsequently made public at the user's explicit
+request on 2026-10-27. The copy preserves the original
+authorship, maintainer ordering, licensing, proof sources and historical evidence.
+Ownership of the destination does not change attribution.
+
+Historical Actions links still refer to the original repository and certify
+only their recorded snapshots. This personal copy must obtain its own successful
+checks for the final submitted commit. Its workflow badges point to its own
+Actions runs. Public repository access does not constitute Palomar submission,
+editorial acceptance or registration; none is claimed.
