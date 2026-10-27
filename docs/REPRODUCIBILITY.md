@@ -49,6 +49,15 @@ On Windows, use `python` in place of `python3` if appropriate. PowerShell conven
 ./scripts/verify.ps1
 ```
 
+The project explicitly passes `-j2` to each compiler and to the audit probe;
+`LEAN_NUM_THREADS` alone controls Lake's runtime, not the Lean CLI's default
+compiler thread count. On Windows, `verify.ps1` also defaults to a controlled
+main thread, a 64 MiB thread stack and UTF-8 Python output, while preserving
+explicit caller-supplied Lean resource settings. These execution settings
+change neither the statements nor the kernel's trust rules. They address the
+stack-overflow failures observed in an initial local Windows build; both
+previously failing modules passed standalone checks with the explicit settings.
+
 For POSIX shells:
 
 ```sh

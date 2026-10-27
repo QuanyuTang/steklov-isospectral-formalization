@@ -49,7 +49,7 @@ if args.check_log:
     output = args.check_log.read_text(encoding='utf-8')
 else:
     print('Checking preserved proof/type contracts, full axiom inventory, and public entry.', flush=True)
-    process = subprocess.Popen(['lake', 'env', 'lean',
+    process = subprocess.Popen(['lake', 'env', 'lean', '-j2',
                                '-Dbackward.isDefEq.respectTransparency=false',
                                '-Dbackward.defeqAttrib.useBackward=true',
                                target.relative_to(root).as_posix()],

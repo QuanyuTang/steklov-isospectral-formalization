@@ -59,7 +59,8 @@
     "Strengthen metadata and source validation; run those checks before local builds.",
     "Use source type paper for compatibility with the published Palomar policy; declare substantive-development explicitly.",
     "Clarify manuscript review versus independent human review of the formalization, and remove obsolete PR/upload instructions.",
-    "Correct a StrictConvexity module-doc declaration name; no mathematical Lean code changed."
+    "Correct a StrictConvexity module-doc declaration name; no mathematical Lean code changed.",
+    "Explicitly pass -j2 to project compiler processes and the audit; supply caller-overridable Windows stack/runtime defaults and UTF-8 output. LEAN_NUM_THREADS alone does not bound Lean CLI threads."
   ],
   "policy_reference": {
     "repository": "https://github.com/PalomarRegistry/PalomarPolicy",

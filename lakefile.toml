@@ -1,6 +1,8 @@
 name = "RequestProject"
 version = "1.1.0"
 defaultTargets = ["RequestProject", "Challenge", "Solution"]
+# Bound each compiler process; this resource setting does not affect build traces.
+weakLeanArgs = ["-j2"]
 
 [leanOptions]
 backward.isDefEq.respectTransparency = false
