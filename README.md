@@ -3,9 +3,12 @@
 **Authors: [Tao Hu](https://github.com/taohu-hub), [Jiachen Shi](https://github.com/RGConj), [Quanyu Tang](https://github.com/QuanyuTang).**
 
 [![Lean verification](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/lean.yml?query=branch%3Amain)
-[![Palomar Comparator](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml?query=branch%3Amain)
+[![Bundled Comparator](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml?query=branch%3Amain)
+[![Palomar mechanical preflight](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar-mechanical.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar-mechanical.yml?query=branch%3Amain)
 
-**Latest local recheck (2026-10-27):** The current proof inputs match snapshot `2d1b0331a534c8c774794252b14152c5be32a3f7`: all 176 modules and both entries built, all 590 audit targets passed, and the pinned Comparator, NanoDa, Lean and con-ron accepted the selected main-result proof. This was a **Windows run without Linux sandbox isolation**, using freshly generated, hash-bound exports. The original repository's final Linux CI jobs were blocked before starting by its owner account's billing/spending restrictions. For this public personal copy, consult its Actions runs for the exact commit; the original repository's billing failures do not establish this copy's result. [Results and genuine logs](verification/local-windows-20261027/report.json). The release checker enforces the complete 190-input proof fingerprint, so refreshing checksums alone cannot make changed proofs inherit this evidence.
+**Canonical Challenge compatibility (2026-10-27):** The [actual Palomar submission](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/40533988514) of `e5e5383838201fb674f87042dcb8c86ccc761fb2` failed while compiling `Label`'s `Fintype` instance. Palomar deliberately compiles Challenge without candidate Lake options. This revision scopes the needed elaboration option to that one unchanged inductive declaration. The new official **full mechanical preflight** covers the canonical Challenge stage omitted by the earlier two workflows. Consult all three workflows for the exact new commit; no future pass or registry acceptance is asserted. [Bounded source-change record](verification/challenge-canonical-20261027/migration.json).
+
+**Historical Windows recheck:** Snapshot `2d1b0331a534c8c774794252b14152c5be32a3f7` passed the full build, fresh 590-target audit, and pinned Comparator/NanoDa/Lean/con-ron checks using locally generated hash-bound exports, without Linux sandbox isolation. Its original 190-input report is unchanged. The current library, Solution and other inputs remain byte-identical (189 entries); the old Challenge is archived separately. The release checker permits only the recorded one-line scoped Challenge adjustment and does not extend historical acceptance to the modified Challenge. [Original results and genuine logs](verification/local-windows-20261027/report.json).
 
 **Machine-checked proof snapshot:** Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted. See [status](PALOMAR_STATUS.md) and [exact evidence](docs/lean435-build-audit-evidence.json).
 
@@ -23,7 +26,7 @@ The result concerns inverse spectral geometry for the Dirichlet-to-Neumann opera
 | Current target | Lean **4.35.0-rc2**, Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`; fresh full build and 590-target audit passed on recorded commit `6932e18512a7` |
 | Verified baseline | Lean **4.28.0**, Mathlib `8f9d9cff6bd728b17a24e163c9402775d9e6a365`; original successful logs included |
 | Axioms | `propext`, `Classical.choice`, `Quot.sound` only |
-| Palomar | **Prepared for submission; not submitted or registered** |
+| Palomar | A prior submission failed canonical Challenge compilation; check official full mechanical preflight for the current commit; no registration claimed |
 | Review | AI-assisted statement/source review; no independent human mathematical review claimed |
 
 ## What is proved
@@ -47,7 +50,7 @@ python3 scripts/validate-metadata.py
 
 `lean-toolchain` selects the exact Lean release; the committed manifest pins the dependency closure. Do not run `lake update` just to reproduce this release. A deliberate `sorry` occurs **only in `Challenge.lean`**, as Palomar's statement/proof separation permits. It is not imported by `Solution.lean` or the proof library.
 
-After an intentional repository edit, run `python3 scripts/refresh-release.py` to regenerate the source checksums, structural report and publication manifest together, then rerun verification. Check both workflows on the **exact commit being submitted**; a green badge on another commit is insufficient. The [final source review](verification/final-review.json) records the statement and core-proof review and its limits.
+After an intentional repository edit, run `python3 scripts/refresh-release.py` to regenerate the source checksums, structural report and publication manifest together, then rerun verification. Check all three workflows on the **exact commit being submitted**; a green badge on another commit is insufficient. The [final source review](verification/final-review.json) records the statement and core-proof review and its limits.
 
 The recorded full build reported 8206 successful jobs. That historical count need not equal a fresh incremental build's count. Machine logs are in [`verification/recorded/`](verification/recorded/). [Reproduction details](docs/REPRODUCIBILITY.md).
 
@@ -65,16 +68,16 @@ paper/                     Original arXiv PDF, TeX, and source archive
 verification/              Re-runnable audit and recorded evidence
 docs/                      Scope, foundations, provenance, and submission instructions
 scripts/                   Build checks and Palomar preflight
-.github/workflows/         GitHub Actions build and axiom checks
+.github/workflows/         Full build/audit, bundled Comparator, official mechanical preflight
 ```
 
 ## Palomar submission status
 
-The new Windows proof-source recheck is recorded [here](verification/local-windows-20261027/report.json). Its proof inputs remain unchanged in this checkout. The original repository's final Linux jobs executed zero steps because of its owner account's billing/spending restriction. For this public personal copy, consult its Actions runs and require successful isolated checks for the exact submitted commit; the original repository's billing failures do not establish this copy's result. The Windows checks are not a claim of Linux sandbox verification or registry acceptance.
+The personal-copy [full build and 590-target audit](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/runs/40527371599) and [bundled Comparator workflow](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/runs/40527371580) passed on `e5e5383838201fb674f87042dcb8c86ccc761fb2`. Those workflows inherited candidate Lake options and did not include Palomar's independent canonical Challenge compilation; the later actual submission failed at that stage. The current official full mechanical preflight pins PalomarSubmission `c02bbeaed888df45c4e28c4e99dba540ad21552a`, with `mode: full` and the standard runner profile. It exercises the mechanical pipeline without creating a registry submission or performing editorial review or registration. Require successful results for the exact new commit. [Reproduction and evidence limits](docs/REPRODUCIBILITY.md).
 
-Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted. These are checks of that exact snapshot. Subsequent commits require their own successful runs. No Palomar submission, editorial acceptance or registration is claimed.
+Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted. These are checks of that exact snapshot. Subsequent commits require their own successful runs. These historical checks do not establish successful Palomar verification, editorial acceptance or registration.
 
-Palomar reviews the full SHA of a **public GitHub repository**. This preparation repository is public at the owner's request. Actual Palomar submission remains a separate owner-approved action. The ZIP transports the source to GitHub; it is not a standalone Palomar submission. See [the submission guide](docs/PALOMAR.md) and [recorded evidence](docs/lean435-build-audit-evidence.json).
+Palomar reviews the full SHA of a **public GitHub repository**. This preparation repository is public at the owner's request. A subsequent Palomar submission remains a separate owner-approved action. The ZIP transports the source to GitHub; it is not a standalone Palomar submission. See [the submission guide](docs/PALOMAR.md) and [recorded evidence](docs/lean435-build-audit-evidence.json).
 
 ## Attribution and citation
 

@@ -92,8 +92,10 @@ bridge did not alter the checkers. The original repository's final Linux CI was
 prevented from starting by its owner account's billing/spending restriction.
 For the public personal copy, consult its Actions runs for the exact commit;
 the original repository's billing failures do not establish this copy's result.
-Later documentation/evidence commits retain the same proof inputs, as enforced
-by the release checker.
+The historical report retains all original 190 input hashes. Following the
+canonical Challenge repair described below, the other 189 current inputs remain
+byte-identical and the previous Challenge is archived; the historical run does
+not cover the new Challenge.
 
 ## Public personal copy
 
@@ -112,4 +114,34 @@ Historical Actions links still refer to the original repository and certify
 only their recorded snapshots. This personal copy must obtain its own successful
 checks for the final submitted commit. Its workflow badges point to its own
 Actions runs. Public repository access does not constitute Palomar submission,
-editorial acceptance or registration; none is claimed.
+editorial acceptance or registration. A later actual submission attempt is
+recorded below; successful verification and registration are not claimed here.
+
+## Canonical Challenge compilation repair
+
+The user's actual submission `r8jnaa28pthg` of
+`e5e5383838201fb674f87042dcb8c86ccc761fb2` on 2026-10-27
+[failed canonical Challenge compilation](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/40533988514).
+The personal-repository full build/audit and bundled Comparator workflows had
+passed for that snapshot, but used the candidate Lake configuration. Palomar's
+canonical stage intentionally omits that configuration and its compiler options;
+`Label`'s generated `Fintype` instance failed under the compiler defaults. The
+earlier two green workflows therefore did not establish canonical Challenge
+compatibility.
+
+The bounded repair inserts only
+`set_option backward.isDefEq.respectTransparency false in` before the existing
+`Label` inductive declaration and deriving clause. The old source is archived
+byte-for-byte in `verification/challenge-canonical-20261027/`; its hash still
+matches the unchanged Windows report. The checker reconstructs the new source
+using the single hardcoded insertion and enforces the other 189 input hashes.
+This records source preservation, not acceptance of the changed file by a
+compiler, independent kernel or registry. Historical reports and genuine logs
+are not rewritten.
+
+The added official mechanical preflight calls the pinned PalomarSubmission
+pipeline in **full** mode with its standard runner profile. It includes the
+canonical Challenge stage absent from the earlier two workflows. Require
+successful results on the exact new commit. Running this mechanical workflow
+in the personal repository does not create a registry submission or perform
+editorial review or registration.

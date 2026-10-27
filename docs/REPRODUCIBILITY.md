@@ -74,7 +74,7 @@ The baseline public layout was additionally built and audited in an independent 
 
 `SOURCE_SHA256SUMS` binds the 176 library modules, four preserved original audit inventories, the standalone audit template, the two submission modules, project pins, and original paper files. `scripts/check-release.py` checks these hashes, module headers, line limits, project pins, comparison targets, the statement-only placeholder, and source/archive correspondence. Its checks are supplementary to Lean and do not prove mathematical fidelity.
 
-After an intentional edit, run `python3 scripts/refresh-release.py`. It updates `SOURCE_SHA256SUMS`, regenerates `verification/release-check.json`, and refreshes `publication-manifest.json` in that order. This records the new bytes; it does not certify a build or mathematical correctness. Normal release checks also validate the publication manifest. Commit the result and obtain successful build/audit and Comparator runs for the exact submitted SHA.
+After an intentional edit, run `python3 scripts/refresh-release.py`. It updates `SOURCE_SHA256SUMS`, regenerates `verification/release-check.json`, and refreshes `publication-manifest.json` in that order. This records the new bytes; it does not certify a build or mathematical correctness. Normal release checks also validate the publication manifest. Commit the result and obtain successful full build/audit, bundled Comparator and official full mechanical preflight runs for the exact submitted SHA.
 
 The [2026-10-27 Windows record](../verification/local-windows-20261027/report.json)
 includes the full successful build log, fresh 590-target audit, and genuine
@@ -90,11 +90,43 @@ the unmodified Comparator. These local checks used no Linux sandbox and do not
 replace the standard isolated scripts above. Large compiled artifacts, the
 compatibility executable and the full exports are not shipped in the repository.
 
-The release checker also enforces the report's complete 190-entry
-`proof_input_sha256` map (all mathematical sources, pins/configuration and audit
-inputs). Documentation-only edits may retain the proof evidence. A change to
-these proof inputs requires fresh checks and new evidence; running the checksum
-refresh tool alone deliberately fails on a stale proof fingerprint.
+The historical report's complete 190-entry `proof_input_sha256` map is retained
+unchanged. The current library, Solution, pins/configuration and audit inputs
+remain byte-identical (189 entries). The previous Challenge is archived at
+`verification/challenge-canonical-20261027/Challenge.previous.lean.in` and must
+match its historical hash. The release checker reconstructs the new Challenge
+with exactly one hardcoded scoped-option insertion before `Label`; all other
+bytes must match. The accompanying migration record binds the new source hash
+and makes no proof-acceptance claim. Any additional proof-input edit still fails
+this guard after ordinary checksum refresh. The old Windows run does not cover
+the modified Challenge.
+
+## Canonical Challenge and official mechanical preflight
+
+The [actual Palomar submission](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/40533988514) of
+`e5e5383838201fb674f87042dcb8c86ccc761fb2` failed while deriving `Fintype` for
+`Label`. The earlier full build/audit and bundled Comparator workflows passed
+using candidate Lake options. Palomar deliberately compiles Challenge directly
+with the pinned compiler and frozen canonical dependencies, without the candidate
+Lake configuration, candidate module outputs or command-line `-D` options.
+Thus those two workflows did not test the canonical compilation stage.
+
+The scoped `backward.isDefEq.respectTransparency=false` insertion applies only
+to the unchanged `Label` declaration and its deriving clause. To exercise the
+actual mechanical path, run the **Palomar mechanical preflight** workflow
+(`palomar-mechanical.yml`) and inspect the result for the exact commit. It calls
+`PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml` at
+`c02bbeaed888df45c4e28c4e99dba540ad21552a`, with matching `pipeline_commit`,
+**`mode: full`** and `execution_profile: palomar-standard-v1`. The upstream
+`preflight` mode alone does not compile Challenge and would miss this error.
+
+Full mode includes canonical Challenge compilation, protected declaration
+exports/comparison, dependency checks, kernel controls and the bundled-kernel
+pipeline. This own-repository workflow does not create a registry submission,
+run editorial review or register the result. Keep the full-library build/audit
+workflow as well: the mechanical pipeline's Solution closure need not cover
+all advertised library modules. The older bundled Comparator remains an
+additional check rather than a substitute for the official mechanical path.
 
 ## Updating Lean
 

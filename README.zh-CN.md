@@ -3,9 +3,12 @@
 **作者：[Tao Hu](https://github.com/taohu-hub)、[Jiachen Shi](https://github.com/RGConj)、[Quanyu Tang](https://github.com/QuanyuTang)。**
 
 [![Lean 验证](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/lean.yml?query=branch%3Amain)
-[![Palomar Comparator](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml?query=branch%3Amain)
+[![Bundled Comparator](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml?query=branch%3Amain)
+[![Palomar 完整机械预检](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar-mechanical.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar-mechanical.yml?query=branch%3Amain)
 
-**本次本机复核（2026-10-27）：** 当前证明输入与快照 `2d1b0331a534c8c774794252b14152c5be32a3f7` 一致，全部 176 个模块及两个入口编译成功，590 个审计目标通过；固定版本 Comparator、NanoDa、Lean 和 con-ron 均接受主结果的证明。本次在 **Windows 本机进行，没有 Linux 隔离沙箱**；导出数据已与源码及编译产物的哈希绑定。原仓库最终版本的 Linux CI 因原所有者账户的付款／支出限制而未能启动；本个人公开副本的结果请以其 Actions 中对应完整提交的检查为准，原仓库的付款／支出失败不能说明此副本的检查结果。见[结果与真实日志](verification/local-windows-20261027/report.json)。发布检查会核对全部 190 项证明输入，修改证明后仅刷新校验清单无法沿用这份通过记录。
+**独立 Challenge 编译修复（2026-10-27）：** 提交 `e5e5383838201fb674f87042dcb8c86ccc761fb2` 的[实际 Palomar 投稿](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/40533988514)在生成 `Label` 的 `Fintype` 实例时失败。Palomar 会独立编译 Challenge，刻意不继承候选仓库的 Lake 选项。本次只在原有 `Label` 声明前加入一行局部 elaboration 选项，声明文本及证明库保持原样；新增官方 **full 模式完整机械预检**，补上原两项工作流遗漏的独立 Challenge 阶段。请核对新提交对应的全部三项工作流结果；这里不预先宣称检查通过或获得登记。[严格限定的源码修改记录](verification/challenge-canonical-20261027/migration.json)。
+
+**历史 Windows 本机复核：** 快照 `2d1b0331a534c8c774794252b14152c5be32a3f7` 已通过完整编译、590 项审计及 Comparator、NanoDa、Lean、con-ron 检查；该检查没有 Linux 隔离沙箱，使用与源码及编译产物哈希绑定的本机导出。原始 190 项输入记录与日志保留不变；当前证明库、Solution 及其他输入共 189 项仍逐字一致，旧 Challenge 另行归档。发布检查只允许记录中这一处局部选项插入，不把旧核验结果延伸为对新 Challenge 的接受。[原始结果与真实日志](verification/local-windows-20261027/report.json)。
 
 **已核验的证明快照：** 提交 `6932e18512a7` 已在 Lean 4.35.0-rc2 下完成全部 176 模块的无项目缓存编译、590 目标类型与公理审计，并通过沙箱中 bundled Lean 和 NanoDa 双内核复核。con-ron 也接受了证明。 [当前状态](PALOMAR_STATUS.md) · [准确证据](docs/lean435-build-audit-evidence.json)
 
@@ -43,13 +46,13 @@ python3 scripts/check-release.py
 
 `Challenge.lean` 是只导入 Mathlib 的独立陈述文件，其中有 **一个有意保留的 `sorry`**，用于 Palomar 的陈述与证明对比机制。实际证明位于 `Solution.lean` 和 `RequestProject/`，不导入该陈述文件。这个占位不属于主定理证明。
 
-主动修改仓库文件后，运行 `python3 scripts/refresh-release.py`，同时更新源码校验清单、结构报告和发布清单，再重新核验。投稿时应核对**实际提交的完整 SHA** 对应的两项 CI 结果；其他提交的绿色徽章不能替代它。[本次源码审查记录](verification/final-review.json) 明确列出了核查范围与限制。
+主动修改仓库文件后，运行 `python3 scripts/refresh-release.py`，同时更新源码校验清单、结构报告和发布清单，再重新核验。投稿时应核对**实际提交的完整 SHA** 对应的三项 CI 结果；其他提交的绿色徽章不能替代它。[本次源码审查记录](verification/final-review.json) 明确列出了核查范围与限制。
 
 ## GitHub 发布与 Palomar
 
 本仓库的根目录就是投稿项目根目录；无需再上传 ZIP 或嵌套一层 `formalization/`。原始论文 PDF、TeX 和原始源码包位于 `paper/`。
 
-**记录的证明快照已通过所需本地准备检查。** con-ron 也接受了证明。 原始 Lean 4.28 日志只核验原基线；目标版本以精确提交的 CI 记录为准。本仓库已应所有者要求公开；实际投稿及永久登记仍须项目所有者最终批准。[当前状态](PALOMAR_STATUS.md)
+**记录的证明快照已通过所需本地准备检查。** con-ron 也接受了证明。 原始 Lean 4.28 日志只核验原基线；个人仓库 `e5e5383` 的[完整编译与审计](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/runs/40527371599)、[bundled Comparator](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/runs/40527371580)虽已通过，却继承了候选 Lake 选项，未覆盖后来实际投稿失败的独立 Challenge 阶段。当前版本须另查精确提交的官方 full 模式机械预检结果。本仓库已应所有者要求公开；实际投稿及永久登记仍须项目所有者最终批准。[当前状态](PALOMAR_STATUS.md)
 
 Palomar 使用公开 GitHub 仓库及完整 commit SHA 进行审查，并不是直接接收 ZIP。发布和后续提交步骤见 [PALOMAR.md](docs/PALOMAR.md)。本项目目前**没有获得 Palomar 核验、登记或背书**。
 

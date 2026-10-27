@@ -140,10 +140,12 @@ require(set(source_hashes) == inventory - DERIVED_FILES,
         "source checksum inventory exactly covers all nonderived release files")
 windows_report = ROOT / "verification/local-windows-20261027/report.json"
 windows_proof_inputs = set()
+windows_current_exact_inputs = 0
+windows_challenge_adjustment_checked = False
 if windows_report.is_file():
-    # Bind historical local evidence to its exact proof inputs. Refreshing the
-    # release manifests must never silently certify changed proof development.
-    # This integrity check makes no claim of a Linux sandbox or current CI run.
+    # Historical evidence keeps its exact original hashes. The sole bounded
+    # adjustment below archives the old Challenge; it does not extend that
+    # evidence to the new Challenge or replace fresh canonical verification.
     windows_record = json.loads(windows_report.read_text(encoding="utf-8"))
     recorded_inputs = windows_record.get("proof_input_sha256")
     require(isinstance(recorded_inputs, dict), "recorded Windows proof-input hash mapping present")
@@ -154,11 +156,51 @@ if windows_report.is_file():
                                for p in (ROOT / "verification/templates").glob("*.lean.in")
                                if p.is_file())
     require(set(recorded_inputs) == windows_proof_inputs,
-            "recorded Windows proof-input inventory exactly covers current proof inputs")
+            "recorded Windows proof-input inventory exactly covers current proof-input paths")
+    adjustment_path = ROOT / "verification/challenge-canonical-20261027/migration.json"
+    archived_challenge_hash = None
+    if adjustment_path.is_file():
+        adjustment = json.loads(adjustment_path.read_text(encoding="utf-8"))
+        archive_name = "verification/challenge-canonical-20261027/Challenge.previous.lean.in"
+        require(adjustment.get("record_type") == "bounded_challenge_elaboration_compatibility_change"
+                and adjustment.get("source") == "Challenge.lean"
+                and adjustment.get("previous_source_archive") == archive_name,
+                "fixed Challenge-only elaboration adjustment record")
+        require(adjustment.get("previous_snapshot") == "e5e5383838201fb674f87042dcb8c86ccc761fb2"
+                and adjustment.get("historical_windows_snapshot") == windows_record.get("proof_source_snapshot")
+                and adjustment.get("unchanged_historical_windows_inputs") == len(windows_proof_inputs) - 1,
+                "Challenge adjustment identifies its historical snapshots and other unchanged inputs")
+        archive_path = ROOT / archive_name
+        require(archive_path.is_file() and not archive_path.is_symlink(),
+                "historical Challenge source archive present as a regular file")
+        archived_challenge = archive_path.read_bytes()
+        archived_challenge_hash = hashlib.sha256(archived_challenge).hexdigest()
+        require(archived_challenge_hash == recorded_inputs["Challenge.lean"]
+                and adjustment.get("previous_source_sha256") == archived_challenge_hash,
+                "archived Challenge matches the untouched historical Windows input hash")
+        # Commands are hardcoded, never taken from the record. Strict byte
+        # reconstruction rejects additional edits, broader scopes and options.
+        label_block = (b"/-- The two labels `P` (points) and `L` (lines) of the family in Theorem 1.1.2. -/\n"
+                       b"inductive Label | P | L\n  deriving DecidableEq, Fintype, Repr")
+        option_line = b"set_option backward.isDefEq.respectTransparency false in\n"
+        require(archived_challenge.count(label_block) == 1,
+                "one exact historical documented Label declaration and deriving clause")
+        expected_challenge = archived_challenge.replace(label_block, option_line + label_block, 1)
+        require(challenge.read_bytes() == expected_challenge,
+                "Challenge differs only by the fixed scoped Label elaboration option")
+        require(adjustment.get("current_source_sha256") == hashlib.sha256(expected_challenge).hexdigest()
+                and adjustment.get("current_source_sha256") == source_hashes["Challenge.lean"],
+                "Challenge adjustment records the exact new source hash")
+        windows_challenge_adjustment_checked = True
     for name in sorted(windows_proof_inputs):
         digest = recorded_inputs[name]
+        expected_digest = (archived_challenge_hash if name == "Challenge.lean"
+                           and windows_challenge_adjustment_checked else source_hashes.get(name))
         require(isinstance(digest, str) and re.fullmatch(r"[0-9a-f]{64}", digest) is not None
-                and digest == source_hashes.get(name), "recorded Windows proof-input hash: " + name)
+                and digest == expected_digest, "historical Windows proof-input hash: " + name)
+        windows_current_exact_inputs += digest == source_hashes.get(name)
+    require(windows_current_exact_inputs == len(windows_proof_inputs) - int(windows_challenge_adjustment_checked),
+            "all other historical Windows proof inputs remain byte-identical")
 if not args.write_report:
     publication = json.loads((ROOT / "publication-manifest.json").read_text(encoding="utf-8"))
     publication_hashes = publication.get("file_sha256", {})
@@ -229,6 +271,10 @@ summary = {
     "publication_manifest_checked": not args.write_report,
     "recorded_windows_proof_input_binding_checked": windows_report.is_file(),
     "recorded_windows_proof_input_count": len(windows_proof_inputs),
+    "recorded_windows_current_exact_input_count": windows_current_exact_inputs,
+    "recorded_windows_challenge_adjustment_checked": windows_challenge_adjustment_checked,
+    "recorded_windows_all_current_inputs_byte_identical": bool(windows_proof_inputs)
+        and windows_current_exact_inputs == len(windows_proof_inputs),
     "observed_palomar_toolchain_minimum_satisfied": True,
     "palomar_registration_claimed": False,
     "kernel_acceptance_established_by_this_source_check": False,

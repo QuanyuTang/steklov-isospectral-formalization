@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Judge Solution against Challenge the way Palomar does: with the `lake
+# Compare Solution against the Lake-built Challenge with the `lake
 # comparator` that ships in this project's own toolchain, replaying the proof
 # through Lean's kernel and the toolchain's bundled independent kernels
 # (NanoDa and con-ron). Nothing is built from a pin; everything that judges
 # comes from `lean-toolchain`, which Palomar requires to be v4.35.0-rc2 or
-# later.
+# later. This supplementary check uses the project's Lake options. The pinned
+# official palomar-mechanical.yml workflow additionally compiles a protected
+# canonical Challenge without those options and runs the full registry pipeline.
 repository_root=$(cd "$(dirname "$0")/.." && pwd)
 cd "$repository_root"
 
@@ -29,7 +31,7 @@ done
 
 # Palomar ignores `enable_nanoda` and rejects `external_kernels` in a submitted
 # comparator.json: it registers the toolchain's bundled kernels itself. This
-# generated copy does the same, so the local check judges as the registry does.
+# generated copy registers the same bundled kernels for this supplementary run.
 config=$(mktemp "${TMPDIR:-/tmp}/palomar-comparator.XXXXXX")
 trap 'rm -f "$config"' EXIT
 python3 - comparator.json "$config" "$prefix" <<'PY'

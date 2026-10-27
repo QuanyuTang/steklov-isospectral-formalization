@@ -1,0 +1,27 @@
+name: Palomar mechanical preflight
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  mechanical:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@c02bbeaed888df45c4e28c4e99dba540ad21552a
+    with:
+      repository: ${{ github.repository }}
+      commit: ${{ github.event.pull_request.head.sha || github.sha }}
+      pipeline_commit: c02bbeaed888df45c4e28c4e99dba540ad21552a
+      request_id: steklovcheck
+      mode: full
+      execution_profile: palomar-standard-v1
+      options: '{"comparator_config_path":"comparator.json","authorization_relationship":"I am a responsible author or maintainer"}'

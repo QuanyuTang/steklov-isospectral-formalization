@@ -1,0 +1,22 @@
+{
+  "record_type": "bounded_challenge_elaboration_compatibility_change",
+  "date": "2026-10-27",
+  "previous_snapshot": "e5e5383838201fb674f87042dcb8c86ccc761fb2",
+  "historical_windows_snapshot": "2d1b0331a534c8c774794252b14152c5be32a3f7",
+  "source": "Challenge.lean",
+  "previous_source_archive": "verification/challenge-canonical-20261027/Challenge.previous.lean.in",
+  "previous_source_sha256": "c57acd5b4298250f77e00fe03f4b0d6690768388d650829d79d7fd76b8519371",
+  "current_source_sha256": "5181bdfa195cd6806ea86684fdcb7a7ed55f5fa9e6d6ecbd6aea805e1ea8c2bd",
+  "unchanged_historical_windows_inputs": 189,
+  "change": "Insert exactly one scoped set_option backward.isDefEq.respectTransparency false in immediately before the unchanged documented Label inductive declaration (before its doc-comment) and deriving clause; no other source bytes change.",
+  "reason": "The canonical Palomar Challenge compiler deliberately does not inherit candidate Lake options. Without this scoped option, deriving Fintype for Label fails under the pinned compiler defaults.",
+  "failed_submission": {
+    "request_id": "r8jnaa28pthg",
+    "commit": "e5e5383838201fb674f87042dcb8c86ccc761fb2",
+    "run": "https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/40533988514",
+    "stage": "canonical Challenge compilation",
+    "declaration": "instFintypeLabel"
+  },
+  "historical_evidence": "The original Windows report and logs retain their original 190-input hashes. This record binds the old Challenge archive to that report and keeps the other 189 inputs byte-identical; it does not make the old run evidence for the changed Challenge.",
+  "verification_claim": "Source-adjustment integrity only. This record does not certify compilation, canonical Challenge acceptance, kernel replay, Palomar editorial acceptance or registration. Consult the official full mechanical preflight and other workflow results for the exact new commit."
+}

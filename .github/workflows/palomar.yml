@@ -1,4 +1,4 @@
-name: Palomar Comparator
+name: Bundled Comparator
 
 on:
   push:

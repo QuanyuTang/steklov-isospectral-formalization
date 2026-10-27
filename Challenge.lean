@@ -126,6 +126,7 @@ def TendstoIdInCInfty (F : ℝ → ℂ → ℂ) : Prop :=
 
 end PlaneDomain
 
+set_option backward.isDefEq.respectTransparency false in
 /-- The two labels `P` (points) and `L` (lines) of the family in Theorem 1.1.2. -/
 inductive Label | P | L
   deriving DecidableEq, Fintype, Repr
