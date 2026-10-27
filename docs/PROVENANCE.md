@@ -55,11 +55,17 @@ statement hole is not imported by the Solution. The permitted proof axioms
 are `propext`, `Classical.choice` and `Quot.sound`; the audit enforces the
 allowlist for every inventory target and rejects missing reports.
 
-Release preparation also received a subsequent read-only AI source/document
-review by Aristotle. It identified documentation and inventory issues; the
+Release preparation received a read-only AI source/document review by Aristotle
+of commit `fd44fc6172c412ccdc844c112dea5d3df9a26383`. It identified documentation and inventory issues; the
 source-map corrections, comments and full-baseline declaration inventory were
 then checked separately. This was an AI review, not independent human peer
 review or target-toolchain compilation by that reviewer.
+
+Aristotle later authored the idBase and structural good_eq_orbits proof-cost
+optimizations. The earlier read-only review does not cover those later patches.
+Codex reviewed their exact source differences, unchanged original statements and
+computational definitions, and target build/audit/Comparator evidence. The
+52 new private proof-support declarations are individually inventoried.
 
 The review status remains AI-assisted assessment with machine checking.
 No independent human mathematical peer review, Palomar registration or

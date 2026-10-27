@@ -1,12 +1,7 @@
-# Migration candidate — not yet verified
+# Lean 4.35 migration: verified proof snapshot
 
-Target: leanprover/lean4:v4.35.0-rc2; Mathlib 065356127b1dc0016f66b7283ce0ce2c4055aa55.
-Recorded commit `fd44fc6172c412ccdc844c112dea5d3df9a26383` passed the fresh
-176-module Linux build, all 590 audit targets, official metadata schema and
-strict source-preservation checks. Its sandboxed main-proof export was
-accepted by NanoDa. The runner then shut down during Lean's replay; a
-same-commit retry is in progress. Final verification and packaging remain
-incomplete. [Evidence](docs/lean435-build-audit-evidence.json).
+Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted.
 
-Historical files in `verification/recorded/` and `verification/package-*.log`
-certify the separately preserved Lean 4.28 baseline only.
+These are checks of that exact snapshot. Subsequent commits require their own successful runs. No Palomar submission, editorial acceptance or registration is claimed. See [evidence](docs/lean435-build-audit-evidence.json).
+
+Historical logs in `verification/recorded/` and `verification/package-*.log` certify the separately preserved Lean 4.28 baseline.

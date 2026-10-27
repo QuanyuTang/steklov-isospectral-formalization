@@ -17,6 +17,6 @@
   "original_tex_and_archive_match": true,
   "observed_palomar_toolchain_minimum_satisfied": true,
   "palomar_registration_claimed": false,
-  "comparator_or_independent_kernel_verification_claimed": false,
+  "kernel_acceptance_established_by_this_source_check": false,
   "not_a_Lean_build_or_semantic_fidelity_proof": true
 }

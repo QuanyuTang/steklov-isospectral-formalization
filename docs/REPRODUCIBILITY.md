@@ -1,9 +1,6 @@
 # Reproduce this release
 
-This is a migration candidate. Recorded commit
-`fd44fc6172c412ccdc844c112dea5d3df9a26383` passed the complete Lean 4.35.0-rc2
-build with no restored project artifacts and all 590 audit targets. NanoDa
-accepted its exported main proof; Lean's independent replay is unfinished.
+Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted.
 The historical logs under `verification/recorded/` certify Lean 4.28 only.
 See [current status](../PALOMAR_STATUS.md) and [exact evidence](lean435-build-audit-evidence.json).
 

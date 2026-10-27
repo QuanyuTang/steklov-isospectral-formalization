@@ -5,7 +5,7 @@
 [![Lean 验证](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml)
 [![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml)
 
-**迁移候选版本：** 记录的 Lean 4.35.0-rc2 提交已在不恢复项目缓存的条件下编译全部 176 个模块，并通过 590 目标审计。NanoDa 已接受其导出证明，Lean 独立复核仍未完成。[当前状态](PALOMAR_STATUS.md) · [对应提交与核验证据](docs/lean435-build-audit-evidence.json)
+**已核验的证明快照：** 提交 `6932e18512a7` 已在 Lean 4.35.0-rc2 下完成全部 176 模块的无项目缓存编译、590 目标类型与公理审计，并通过沙箱中 bundled Lean 和 NanoDa 双内核复核。con-ron 也接受了证明。 [当前状态](PALOMAR_STATUS.md) · [准确证据](docs/lean435-build-audit-evidence.json)
 
 **Hu–Shi–Tang 论文定理 1.1.2 的 Lean 4 形式化，采用显式七次多项式构造。**
 
@@ -18,7 +18,7 @@
 - 176 个可编译的 Lean 库模块与 4 份保留的原始审计模板（共 180 份原始源码），`RequestProject/` 中没有 `sorry`、`admit` 或新增数学公理。
 - 原始基线核验环境：Lean **4.28.0**；Mathlib 固定为 `8f9d9cff6bd728b17a24e163c9402775d9e6a365`。
 - 原始基线发布布局已在独立目录中完整编译通过（8206 个任务），590 个不同导出审计目标均只依赖三个标准公理。[基线核验报告](verification/package-verification.json)、[构建日志](verification/package-build.log)、[审计日志](verification/package-audit.log) 均随包提供；590 是审计声明数，不是独立数学定理数。
-- 迁移候选提交 `fd44fc6172c412ccdc844c112dea5d3df9a26383` 已在 Linux 的目标 Lean **4.35.0-rc2**、canonical Mathlib 下通过无项目缓存的完整编译、同一套 590 目标审计及源码完整性检查。NanoDa 已接受证明，Lean 独立复核曾被 runner 关闭信号中断，后续尝试按提交记录在 CI 中，不能称为 Palomar 已验证。[准确记录](docs/lean435-build-audit-evidence.json)
+- 已核验提交 `6932e18512a776e4edae15bc076f4224ec85e4ad` 在目标 Lean **4.35.0-rc2**、canonical Mathlib 下通过无项目缓存的完整编译、590 目标审计、元数据和源码检查，以及 Lean、NanoDa 双内核复核。后续提交仍须各自重新通过 CI；这些结果不等于 Palomar 已核验或登记。[准确记录](docs/lean435-build-audit-evidence.json)
 - 主定理的五项结论全部包含；更强入口 `SteklovCoalescence.mainTheoremClassical_proved` 连接弱 Sobolev 谱与经典调和 PDE 的 Steklov 边界条件。
 - 仅使用 `propext`（命题外延性）、`Classical.choice`（经典选择）、`Quot.sound`（商类型等价代表元的相等性）。没有把论文结论作为公理。
 
@@ -41,7 +41,7 @@ python3 scripts/check-release.py
 
 可以将**本目录中的全部内容**作为一个 GitHub 仓库的根目录上传；不要再嵌套一层 `formalization/`。建议仓库名：`steklov-isospectral-formalization`。原始论文 PDF、TeX 和原始源码包位于 `paper/`。
 
-**迁移尚未通过全部验证。** 当前固定为 Lean **4.35.0-rc2** 及对应 canonical Mathlib，已通过无项目缓存的完整编译、590 目标审计、元数据和源码检查。NanoDa 已接受当前记录提交的证明；Lean 独立复核尚未完成。保留的 Lean 4.28 日志只核验原基线。[当前状态](PALOMAR_STATUS.md)
+**记录的证明快照已通过所需本地准备检查。** con-ron 也接受了证明。 原始 Lean 4.28 日志只核验原基线；目标版本以精确提交的 CI 记录为准。仓库公开、实际投稿及永久登记仍须项目所有者最终批准。[当前状态](PALOMAR_STATUS.md)
 
 Palomar 使用公开 GitHub 仓库及完整 commit SHA 进行审查，并不是直接接收 ZIP。发布和后续提交步骤见 [PALOMAR.md](docs/PALOMAR.md)。本项目目前**没有获得 Palomar 核验、登记或背书**。
 

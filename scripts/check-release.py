@@ -178,7 +178,7 @@ summary = {
     "original_tex_and_archive_match": True,
     "observed_palomar_toolchain_minimum_satisfied": True,
     "palomar_registration_claimed": False,
-    "comparator_or_independent_kernel_verification_claimed": False,
+    "kernel_acceptance_established_by_this_source_check": False,
     "not_a_Lean_build_or_semantic_fidelity_proof": True,
 }
 if args.write_report:

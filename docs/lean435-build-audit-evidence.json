@@ -1,43 +1,52 @@
 {
-  "status": "fresh_build_and_audit_passed_required_Lean_replay_incomplete",
-  "recorded_commit": "fd44fc6172c412ccdc844c112dea5d3df9a26383",
-  "recorded_tree": "2c283e0d66d71c15581c9ebf6b34705217e40e2e",
+  "status": "recorded_proof_snapshot_passed_required_local_preparation_checks",
+  "recorded_commit": "6932e18512a776e4edae15bc076f4224ec85e4ad",
+  "recorded_tree": "f8f2152469245ebc9163b093ae1e7e4b37274e8e",
   "toolchain": "leanprover/lean4:v4.35.0-rc2",
   "mathlib": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "build_run": "https://github.com/taohu-hub/steklov-isospectral-formalization/actions/runs/40443523130",
+  "comparator_run": "https://github.com/taohu-hub/steklov-isospectral-formalization/actions/runs/40443523286",
   "full_build_and_audit": {
-    "commit": "fd44fc6172c412ccdc844c112dea5d3df9a26383",
-    "tree": "2c283e0d66d71c15581c9ebf6b34705217e40e2e",
-    "workflow_run_id": 40302103754,
-    "workflow_job_id": 121502204549,
-    "workflow_conclusion": "success",
+    "run_id": 40443523130,
+    "job_id": 121989222116,
+    "url": "https://github.com/taohu-hub/steklov-isospectral-formalization/actions/runs/40443523130",
+    "conclusion": "success",
     "fresh_project_build": true,
     "compiled_project_modules": 176,
-    "reported_build_jobs": 9111,
-    "audited_targets": 590,
-    "axioms_allowed_only": [
+    "audited_unique_targets": 590,
+    "smooth_infinity_contract_checked": true,
+    "fibreHomeo_projection_contracts_checked": true,
+    "permitted_axioms": [
       "Classical.choice",
       "Quot.sound",
       "propext"
     ],
-    "artifact_id": 12643906279,
-    "artifact_zip_sha256": "aad107be10feacfa44036fa86e4846fe9db15576a8b1e0df43c03d6a96244757",
-    "axioms_json_sha256": "bba4371e82f78293e4f9b306061ee154a9250c6541300c57bad45e741a2c3dcd",
-    "independent_kernel_replay_passed": false
+    "source_preservation_passed": true,
+    "artifact_id": 12708740365,
+    "artifact_sha256": "6d75a4f69d483bd3466fc2c1be10169fc27bdb60893d0d1eaf9b3efbea151d2d",
+    "axioms_json_sha256": "04ce4389abece4e9c035d109aa16d5b8483d4352f3efd5ed750168d25728b151"
   },
-  "build_run": "https://github.com/taohu-hub/steklov-isospectral-formalization/actions/runs/40302103754",
-  "comparator_run": "https://github.com/taohu-hub/steklov-isospectral-formalization/actions/runs/40302103713",
-  "comparator_attempt_1": {
-    "job_id": 121531008068,
-    "nanoda": "accepted at 2026-10-26T11:02:00.9125829Z",
-    "lean_default_kernel": "started; no acceptance or rejection recorded before runner shutdown",
-    "runner_shutdown_utc": "2026-10-26T12:17:12.2568251Z",
-    "process_exit_code": 143,
-    "startup_artifact_sha256": "3440cd2bf2fa2d87b4da5f225af4fec2329aa95beed280972ff39e3cfa077197",
-    "nanoda_binary_sha256": "8241c5e6baa29490aa118d382f97961b208ae730fdb96545c2abed74c9ece5a8",
-    "leanchecker_binary_sha256": "9e36e955a251b1313c8eb5b7fa101282d51df109d34d8bb7c1cfdf51985aba29"
+  "sandboxed_comparator": {
+    "run_id": 40443523286,
+    "job_id": 121989570434,
+    "url": "https://github.com/taohu-hub/steklov-isospectral-formalization/actions/runs/40443523286",
+    "conclusion": "success",
+    "required_phase_conclusion": "success",
+    "sandbox": true,
+    "lean_kernel_accepted": true,
+    "nanoda_kernel_accepted": true,
+    "conron_advisory": {
+      "attempted": true,
+      "status": "accepted",
+      "detail": "con-ron, NanoDa and Lean accepted in the additional unchanged upstream all-kernel script."
+    },
+    "source_preservation_passed": true,
+    "artifact_id": 12709585449,
+    "artifact_sha256": "c13310d492c3558831260e644d0b874d66ccd438659dc94de1aab1b7da30560a",
+    "log_sha256": "217b3899203c1876388c997d0be6cbd8814d18895f233aa1c2176fec2038ba9c",
+    "all_kernels_log_sha256": "3a64b954197816bac82361807467f94fa887b7e44c4a3e8791a08a80441935ac",
+    "scope": "Selected main_result transitive proof closure; the 590-target standard-Lean audit is separate."
   },
-  "same_commit_retry": "Attempt 2 lost hosted-runner communication; final job log unavailable, so its kernel outcome is unknown.",
-  "palomar_submitted_or_registered": false,
-  "qualification": "This records the named snapshot only; all required checks must pass again on the final submission commit.",
-  "later_candidates": "Follow exact commit IDs in the two GitHub Actions workflows; recorded evidence does not certify subsequent commits."
+  "qualification": "These are checks of that exact snapshot. Subsequent commits require their own successful runs. No Palomar submission, editorial acceptance or registration is claimed.",
+  "palomar_submitted_or_registered": false
 }

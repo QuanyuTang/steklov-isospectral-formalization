@@ -5,7 +5,7 @@
 [![Lean verification](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/lean.yml)
 [![Palomar Comparator](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=codex%2Flean435-migration)](https://github.com/taohu-hub/steklov-isospectral-formalization/actions/workflows/palomar.yml)
 
-**Migration candidate:** The recorded Lean 4.35.0-rc2 snapshot passed a fresh build of all 176 modules and the 590-target audit. NanoDa accepted its exported proof; Lean's independent replay remains unfinished. See [current status](PALOMAR_STATUS.md) and [exact evidence](docs/lean435-build-audit-evidence.json).
+**Machine-checked proof snapshot:** Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted. See [status](PALOMAR_STATUS.md) and [exact evidence](docs/lean435-build-audit-evidence.json).
 
 **A Lean 4 formalization of Theorem 1.1.2 of Hu–Shi–Tang, with an explicit degree-seven construction.**
 
@@ -16,10 +16,10 @@ The development proves the existence of pairs of bounded, simply connected, stri
 | Item | Baseline evidence and current target |
 | --- | --- |
 | Proof development | 176 library modules + 4 preserved audit templates; no proof placeholders |
-| Current target | Lean **4.35.0-rc2**, Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`; fresh full build and 590-target audit passed on recorded commit `fd44fc6172c4` |
+| Current target | Lean **4.35.0-rc2**, Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`; fresh full build and 590-target audit passed on recorded commit `6932e18512a7` |
 | Verified baseline | Lean **4.28.0**, Mathlib `8f9d9cff6bd728b17a24e163c9402775d9e6a365`; original successful logs included |
 | Axioms | `propext`, `Classical.choice`, `Quot.sound` only |
-| Palomar | **Not submitted or registered; required Lean replay remains unfinished** |
+| Palomar | **Prepared for submission; not submitted or registered** |
 | Review | AI-assisted statement/source review; no independent human mathematical review claimed |
 
 ## What is proved
@@ -45,7 +45,7 @@ python3 scripts/validate-metadata.py
 
 The recorded full build reported 8206 successful jobs. That historical count need not equal a fresh incremental build's count. Machine logs are in [`verification/recorded/`](verification/recorded/). [Reproduction details](docs/REPRODUCIBILITY.md).
 
-The Lean 4.28 baseline release layout was also built and audited in an independent directory: **8206 build jobs succeeded, and all 590 unique axiom-inventory targets used only the three standard axioms**, including the new public entry. See the [release verification report](verification/package-verification.json), [build log](verification/package-build.log), and [audit log](verification/package-audit.log). These are local Lean checks; Palomar Comparator and independent-kernel verification remain outstanding.
+The Lean 4.28 baseline release layout was also built and audited in an independent directory: **8206 build jobs succeeded, and all 590 unique axiom-inventory targets used only the three standard axioms**, including the new public entry. See the [release verification report](verification/package-verification.json), [build log](verification/package-build.log), and [audit log](verification/package-audit.log). These historical logs certify the baseline only; the separate target-version evidence records the later Comparator and independent-kernel checks.
 
 ## Repository map
 
@@ -64,9 +64,9 @@ scripts/                   Build checks and Palomar preflight
 
 ## Palomar submission status
 
-**Final verification is incomplete.** Recorded commit `fd44fc6172c412ccdc844c112dea5d3df9a26383` passed the fresh full-library build, 590-target audit, metadata and strict source-preservation checks. Its sandboxed Comparator reached NanoDa acceptance, then the runner shut down during Lean's replay. That interruption is not Lean acceptance or a recorded kernel rejection. Subsequent attempts are identified by commit in CI; no completed Lean replay is claimed here. Historical Lean 4.28 logs certify the baseline only; see [current evidence](docs/lean435-build-audit-evidence.json).
+Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted. These are checks of that exact snapshot. Subsequent commits require their own successful runs. No Palomar submission, editorial acceptance or registration is claimed.
 
-Palomar reviews an exact commit of a **public GitHub repository**, rather than accepting a standalone ZIP as the proof submission. See [the included submission guide](docs/PALOMAR.md) and [Palomar's current instructions](https://palomar-registry.org/how-to-submit). No Palomar registration or endorsement is claimed.
+Palomar reviews the full SHA of a **public GitHub repository**. This preparation repository remains private until the owner approves publication. The ZIP transports the source to GitHub; it is not a standalone Palomar submission. See [the submission guide](docs/PALOMAR.md) and [recorded evidence](docs/lean435-build-audit-evidence.json).
 
 ## Attribution and citation
 

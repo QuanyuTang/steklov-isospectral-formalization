@@ -1,5 +1,5 @@
 {
-  "status": "Historical five-helper patch; later pinned Linux fresh compilation and all 590 audit targets passed on recorded fd44fc6172c4. Required Lean replay remains incomplete.",
+  "status": "Historical five-helper patch; incorporated in recorded 6932e18512a776e4edae15bc076f4224ec85e4ad, which passed the fresh target build, full 590-target audit and required Lean/NanoDa replay. See the separate exact-commit evidence record.",
   "base_commit": "635ac12bcd94900ed358f1e4e6a8973f7500d937",
   "aristotle_task": "81dccf0b-8b15-4407-9ca6-6dac05d49813",
   "existing_concrete_definitions_unchanged_in_this_patch": true,

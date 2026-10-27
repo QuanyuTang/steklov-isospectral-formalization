@@ -1,12 +1,10 @@
 # GitHub publication and Palomar submission
 
-## Current status: migration verification in progress
+## Current status: verified proof snapshot; publication pending
 
-As checked on **2026-10-26**, the official [toolchain policy](https://raw.githubusercontent.com/PalomarRegistry/PalomarSubmission/main/toolchains.json) specifies a minimum of **Lean v4.35.0-rc2**. This project pins that release and its canonical Mathlib revision. Recorded commit `fd44fc6172c412ccdc844c112dea5d3df9a26383` passed the fresh full-library build, all 590 audit targets, metadata and strict source checks. Lean's independent replay is still unfinished; this is not yet a fully verified submission candidate. [Exact evidence](lean435-build-audit-evidence.json).
+As checked on **2026-10-27**, the official [toolchain policy](https://raw.githubusercontent.com/PalomarRegistry/PalomarSubmission/main/toolchains.json) specifies minimum **Lean v4.35.0-rc2**. Recorded commit `6932e18512a776e4edae15bc076f4224ec85e4ad` passed a fresh Lean 4.35.0-rc2 build of all 176 modules, the complete 590-target proof/type and transitive axiom audit, official metadata/source checks, and sandboxed Comparator replay with the bundled Lean and NanoDa kernels. con-ron also accepted. These are checks of that exact snapshot. Subsequent commits require their own successful runs. No Palomar submission, editorial acceptance or registration is claimed.
 
-The package contains `Challenge.lean`, `Solution.lean`, `comparator.json`, `formalization.yaml`, a standard root license, all proof sources, and pinned dependencies. The Challenge imports only Mathlib, stays below 1000 lines / 100 KiB, and states all five main conclusions. Its one deliberate `sorry` is not a proof dependency.
-
-The bundled sandboxed Comparator reached NanoDa acceptance on the recorded commit, then the runner shut down during Lean's replay. No Lean acceptance or rejection was recorded. Subsequent attempts are recorded by commit in CI; no completed Lean replay is claimed here. Both mandatory kernel acceptances remain necessary; con-ron is attempted afterward under [the official mechanical policy](https://github.com/PalomarRegistry/PalomarPolicy/blob/main/CONTRIBUTING.md#5-what-mechanical-verification-establishes). An inconclusive local advisory timeout is never described as acceptance.
+The root project contains the pinned Lake configuration/manifest, short independent Challenge, proved Solution, Comparator configuration and v0.4 metadata. Challenge imports canonical Mathlib only, has one deliberate statement hole and is never a Solution dependency. Comparator compares concrete definitions in full and has no fillable definition targets. [Evidence](lean435-build-audit-evidence.json).
 
 ## Publish the repository
 
@@ -17,7 +15,7 @@ The bundled sandboxed Comparator reached NanoDa acceptance on the recorded commi
 
 The ZIP is a transport package for GitHub, not a direct Palomar submission artifact. Uploading the ZIP as one opaque repository file is not sufficient.
 
-## Complete the port before submission
+## Reproduce checks before submitting a new snapshot
 
 1. Preserve the Lean 4.28 baseline and the documented statement, definition and implementation-helper migration records.
 2. Keep the exact supported Lean release and corresponding canonical Mathlib revision pinned together.
