@@ -10,10 +10,6 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: false
-
 jobs:
   checkpoint-protocol-smoke:
     name: Check replay-wrapper protocol (fixtures only)
@@ -82,6 +78,9 @@ jobs:
 
   verify:
     needs: checkpoint-protocol-smoke
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: false
     runs-on: ubuntu-22.04
     timeout-minutes: 360
     env:

@@ -108,6 +108,8 @@ gate requires the actual checker exit status; successful, nonzero and missing
 fixture results are exercised in a separate Linux protocol job before real
 replay. Only optional partial-artifact upload failures are tolerated; mandatory
 final evidence, the con-ron attempt and source-preservation checks stay enforced.
+Only the heavy replay job holds the existing concurrency group; protocol tests
+can run immediately while an older independent replay continues undisturbed.
 
 On disposable GitHub-hosted replay runners only, unused Java, Go and Swift SDKs
 are additionally removed. Extra disk-backed swap is capped at 24 GiB while
