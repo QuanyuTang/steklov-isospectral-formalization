@@ -4,7 +4,7 @@
   "candidate_toolchain": "leanprover/lean4:v4.35.0-rc2",
   "limitations": "Comment/quoted-string-stripped normalized textual comparison including ambient variable commands, not elaborated type equality or semantic equivalence; defining statements are separately frozen/reviewed and kernel checks remain required.",
   "baseline_declarations": 2486,
-  "candidate_declarations": 2488,
+  "candidate_declarations": 2540,
   "signature_changes": [
     {
       "file": "RequestProject/BranchPointRemoval.lean",
@@ -109,6 +109,474 @@
   ],
   "dropped_declarations": [],
   "added_declarations": [
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "Conj#1",
+      "name": "Conj",
+      "kind": "abbrev",
+      "header": "private abbrev Conj (y f s : Fin 7 \u2192 Fin 7) : Prop",
+      "neutral_header": "private DECL Conj (y f s : Fin 7 \u2192 Fin 7) : Prop",
+      "line": 72
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "fixFree_of_seven#1",
+      "name": "fixFree_of_seven",
+      "kind": "theorem",
+      "header": "private theorem fixFree_of_seven {g : Perm (Fin 7)} (h : g.cycleType = {7}) (i : Fin 7) : g i \u2260 i",
+      "neutral_header": "private DECL fixFree_of_seven {g : Perm (Fin 7)} (h : g.cycleType = {7}) (i : Fin 7) : g i \u2260 i",
+      "line": 136
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "allCand#1",
+      "name": "allCand",
+      "kind": "def",
+      "header": "private def allCand (f : \u2115 \u2192 Bool) : Bool",
+      "neutral_header": "private DECL allCand (f : \u2115 \u2192 Bool) : Bool",
+      "line": 210
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "stab_y2#1",
+      "name": "stab_y2",
+      "kind": "theorem",
+      "header": "private theorem stab_y2 : \u2200 b : Fin 7, Conj y2f y2f (wB y2f b) \u2192 \u2200 i, wB y2f b i = i",
+      "neutral_header": "private DECL stab_y2 : \u2200 b : Fin 7, Conj y2f y2f (wB y2f b) \u2192 \u2200 i, wB y2f b i = i",
+      "line": 121
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "bltT#1",
+      "name": "bltT",
+      "kind": "theorem",
+      "header": "private theorem bltT {n m : \u2115} (h : n < m) : Nat.blt n m = true",
+      "neutral_header": "private DECL bltT {n m : \u2115} (h : n < m) : Nat.blt n m = true",
+      "line": 230
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "mem_of_anyEq#1",
+      "name": "mem_of_anyEq",
+      "kind": "theorem",
+      "header": "private theorem mem_of_anyEq {r : List \u2115} {E : List (List \u2115)} (h : anyEq r E = true) : r \u2208 E",
+      "neutral_header": "private DECL mem_of_anyEq {r : List \u2115} {E : List (List \u2115)} (h : anyEq r E = true) : r \u2208 E",
+      "line": 258
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "coe_y1#1",
+      "name": "coe_y1",
+      "kind": "theorem",
+      "header": "private theorem coe_y1 : \u21d1y1 = y1f",
+      "neutral_header": "private DECL coe_y1 : \u21d1y1 = y1f",
+      "line": 60
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "lenB#1",
+      "name": "lenB",
+      "kind": "def",
+      "header": "private def lenB (l : List \u2115) : \u2115",
+      "neutral_header": "private DECL lenB (l : List \u2115) : \u2115",
+      "line": 159
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "coe_x7#1",
+      "name": "coe_x7",
+      "kind": "theorem",
+      "header": "private theorem coe_x7 : \u21d1x7 = xf",
+      "neutral_header": "private DECL coe_x7 : \u21d1x7 = xf",
+      "line": 59
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "memB_false#1",
+      "name": "memB_false",
+      "kind": "theorem",
+      "header": "private theorem memB_false {a : \u2115} {l : List \u2115} (h : a \u2209 l) : memB a l = false",
+      "neutral_header": "private DECL memB_false {a : \u2115} {l : List \u2115} (h : a \u2209 l) : memB a l = false",
+      "line": 237
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "rev_length#1",
+      "name": "rev_length",
+      "kind": "theorem",
+      "header": "private theorem rev_length (y : Perm (Fin 7)) (k : \u2115) : (rev y k).length = k",
+      "neutral_header": "private DECL rev_length (y : Perm (Fin 7)) (k : \u2115) : (rev y k).length = k",
+      "line": 289
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "okR_rev#1",
+      "name": "okR_rev",
+      "kind": "theorem",
+      "header": "private theorem okR_rev {y : Perm (Fin 7)} (h3 : \u2200 i, y (y (y i)) = i) (hx : \u2200 i, y i \u2260 x7 i) (h01 : \u00ac (y 0 = 0 \u2227 y 1 = 1)) {k : \u2115} (hk : k < 7) : okR (rev y k) (yN y k) = true",
+      "neutral_header": "private DECL okR_rev {y : Perm (Fin 7)} (h3 : \u2200 i, y (y (y i)) = i) (hx : \u2200 i, y i \u2260 x7 i) (h01 : \u00ac (y 0 = 0 \u2227 y 1 = 1)) {k : \u2115} (hk : k < 7) : okR (rev y k) (yN y k) = true",
+      "line": 315
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "search_sound#1",
+      "name": "search_sound",
+      "kind": "theorem",
+      "header": "private theorem search_sound {y : Perm (Fin 7)} (h3 : \u2200 i, y (y (y i)) = i) (hx : \u2200 i, y i \u2260 x7 i) (h01 : \u00ac (y 0 = 0 \u2227 y 1 = 1)) : \u2200 n k, n + k = 7 \u2192 searchR n (rev y k) = true \u2192 rev y 7 \u2208 ER",
+      "neutral_header": "private DECL search_sound {y : Perm (Fin 7)} (h3 : \u2200 i, y (y (y i)) = i) (hx : \u2200 i, y i \u2260 x7 i) (h01 : \u00ac (y 0 = 0 \u2227 y 1 = 1)) : \u2200 n k, n + k = 7 \u2192 searchR n (rev y k) = true \u2192 rev y 7 \u2208 ER",
+      "line": 363
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "yN_lt#1",
+      "name": "yN_lt",
+      "kind": "theorem",
+      "header": "private theorem yN_lt (y : Perm (Fin 7)) (i : \u2115) : yN y i < 7",
+      "neutral_header": "private DECL yN_lt (y : Perm (Fin 7)) (i : \u2115) : yN y i < 7",
+      "line": 279
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "comm_tail#1",
+      "name": "comm_tail",
+      "kind": "theorem",
+      "header": "private theorem comm_tail {\u03c3 \u03c4 : Perm (Fin 7)} (h\u03c3 : \u03c3 * x7 = x7 * \u03c3) (h\u03c4 : \u03c4 * x7 = x7 * \u03c4) : \u03c4\u207b\u00b9 * \u03c3 * x7 = x7 * (\u03c4\u207b\u00b9 * \u03c3)",
+      "neutral_header": "private DECL comm_tail {\u03c3 \u03c4 : Perm (Fin 7)} (h\u03c3 : \u03c3 * x7 = x7 * \u03c3) (h\u03c4 : \u03c4 * x7 = x7 * \u03c4) : \u03c4\u207b\u00b9 * \u03c3 * x7 = x7 * (\u03c4\u207b\u00b9 * \u03c3)",
+      "line": 132
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "beqF#1",
+      "name": "beqF",
+      "kind": "theorem",
+      "header": "private theorem beqF {n m : \u2115} (h : n \u2260 m) : Nat.beq n m = false",
+      "neutral_header": "private DECL beqF {n m : \u2115} (h : n \u2260 m) : Nat.beq n m = false",
+      "line": 224
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "xs#1",
+      "name": "xs",
+      "kind": "def",
+      "header": "private def xs : List \u2115",
+      "neutral_header": "private DECL xs : List \u2115",
+      "line": 161
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "yN_fin#1",
+      "name": "yN_fin",
+      "kind": "theorem",
+      "header": "private theorem yN_fin (y : Perm (Fin 7)) (i : Fin 7) : yN y i.val = (y i).val",
+      "neutral_header": "private DECL yN_fin (y : Perm (Fin 7)) (i : Fin 7) : yN y i.val = (y i).val",
+      "line": 276
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "y2f#1",
+      "name": "y2f",
+      "kind": "def",
+      "header": "private def y2f : Fin 7 \u2192 Fin 7",
+      "neutral_header": "private DECL y2f : Fin 7 \u2192 Fin 7",
+      "line": 57
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "conj_tail#1",
+      "name": "conj_tail",
+      "kind": "theorem",
+      "header": "private theorem conj_tail {\u03c3 \u03c4 y y' : Perm (Fin 7)} (h : \u03c3 * y * \u03c3\u207b\u00b9 = \u03c4 * y' * \u03c4\u207b\u00b9) : \u03c4\u207b\u00b9 * \u03c3 * y = y' * (\u03c4\u207b\u00b9 * \u03c3)",
+      "neutral_header": "private DECL conj_tail {\u03c3 \u03c4 y y' : Perm (Fin 7)} (h : \u03c3 * y * \u03c3\u207b\u00b9 = \u03c4 * y' * \u03c4\u207b\u00b9) : \u03c4\u207b\u00b9 * \u03c3 * y = y' * (\u03c4\u207b\u00b9 * \u03c3)",
+      "line": 126
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "anyEq#1",
+      "name": "anyEq",
+      "kind": "def",
+      "header": "private def anyEq (r : List \u2115) (E : List (List \u2115)) : Bool",
+      "neutral_header": "private DECL anyEq (r : List \u2115) (E : List (List \u2115)) : Bool",
+      "line": 180
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "xs_spec#1",
+      "name": "xs_spec",
+      "kind": "theorem",
+      "header": "private theorem xs_spec : \u2200 i : Fin 7, nthB xs i.val = (x7 i).val",
+      "neutral_header": "private DECL xs_spec : \u2200 i : Fin 7, nthB xs i.val = (x7 i).val",
+      "line": 313
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "searchR#1",
+      "name": "searchR",
+      "kind": "def",
+      "header": "private def searchR (n : \u2115) : List \u2115 \u2192 Bool",
+      "neutral_header": "private DECL searchR (n : \u2115) : List \u2115 \u2192 Bool",
+      "line": 214
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "xf#1",
+      "name": "xf",
+      "kind": "def",
+      "header": "private def xf : Fin 7 \u2192 Fin 7",
+      "neutral_header": "private DECL xf : Fin 7 \u2192 Fin 7",
+      "line": 55
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "yN#1",
+      "name": "yN",
+      "kind": "def",
+      "header": "private def yN (y : Perm (Fin 7)) (i : \u2115) : \u2115",
+      "neutral_header": "private DECL yN (y : Perm (Fin 7)) (i : \u2115) : \u2115",
+      "line": 274
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "lenB_eq#1",
+      "name": "lenB_eq",
+      "kind": "theorem",
+      "header": "private theorem lenB_eq (l : List \u2115) : lenB l = l.length",
+      "neutral_header": "private DECL lenB_eq (l : List \u2115) : lenB l = l.length",
+      "line": 232
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "rev#1",
+      "name": "rev",
+      "kind": "def",
+      "header": "private def rev (y : Perm (Fin 7)) : \u2115 \u2192 List \u2115 | 0 => [] | k + 1 => yN y k :: rev y k",
+      "neutral_header": "private DECL rev (y : Perm (Fin 7)) : \u2115 \u2192 List \u2115 | 0 => [] | k + 1 => yN y k :: rev y k",
+      "line": 285
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "rev_injective#1",
+      "name": "rev_injective",
+      "kind": "theorem",
+      "header": "private theorem rev_injective {y y' : Perm (Fin 7)} (h : rev y 7 = rev y' 7) : y = y'",
+      "neutral_header": "private DECL rev_injective {y y' : Perm (Fin 7)} (h : rev y 7 = rev y' 7) : y = y'",
+      "line": 377
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "eq_wA#1",
+      "name": "eq_wA",
+      "kind": "theorem",
+      "header": "private theorem eq_wA {f s : Fin 7 \u2192 Fin 7} (h : Conj y1f f s) : s = wA f (s 0)",
+      "neutral_header": "private DECL eq_wA {f s : Fin 7 \u2192 Fin 7} (h : Conj y1f f s) : s = wA f (s 0)",
+      "line": 83
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "not_conj_y1_y2#1",
+      "name": "not_conj_y1_y2",
+      "kind": "theorem",
+      "header": "private theorem not_conj_y1_y2 : \u2200 b : Fin 7, \u00ac Conj y1f y2f (wA y2f b)",
+      "neutral_header": "private DECL not_conj_y1_y2 : \u2200 b : Fin 7, \u00ac Conj y1f y2f (wA y2f b)",
+      "line": 124
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "stab_y1#1",
+      "name": "stab_y1",
+      "kind": "theorem",
+      "header": "private theorem stab_y1 : \u2200 b : Fin 7, Conj y1f y1f (wA y1f b) \u2192 \u2200 i, wA y1f b i = i",
+      "neutral_header": "private DECL stab_y1 : \u2200 b : Fin 7, Conj y1f y1f (wA y1f b) \u2192 \u2200 i, wA y1f b i = i",
+      "line": 118
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "search_ok#1",
+      "name": "search_ok",
+      "kind": "theorem",
+      "header": "private theorem search_ok : searchR 7 [] = true",
+      "neutral_header": "private DECL search_ok : searchR 7 [] = true",
+      "line": 218
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "wB#1",
+      "name": "wB",
+      "kind": "def",
+      "header": "private def wB (f : Fin 7 \u2192 Fin 7) (b : Fin 7) : Fin 7 \u2192 Fin 7",
+      "neutral_header": "private DECL wB (f : Fin 7 \u2192 Fin 7) (b : Fin 7) : Fin 7 \u2192 Fin 7",
+      "line": 68
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "memB#1",
+      "name": "memB",
+      "kind": "def",
+      "header": "private def memB (a : \u2115) (l : List \u2115) : Bool",
+      "neutral_header": "private DECL memB (a : \u2115) (l : List \u2115) : Bool",
+      "line": 153
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "nthB#1",
+      "name": "nthB",
+      "kind": "def",
+      "header": "private def nthB (l : List \u2115) : \u2115 \u2192 \u2115",
+      "neutral_header": "private DECL nthB (l : List \u2115) : \u2115 \u2192 \u2115",
+      "line": 156
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "ER#1",
+      "name": "ER",
+      "kind": "def",
+      "header": "private def ER : List (List \u2115)",
+      "neutral_header": "private DECL ER : List (List \u2115)",
+      "line": 184
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "conj_of_perm#1",
+      "name": "conj_of_perm",
+      "kind": "theorem",
+      "header": "private theorem conj_of_perm {\u03c1 f y : Perm (Fin 7)} (hx : \u03c1 * x7 = x7 * \u03c1) (hy : \u03c1 * y = f * \u03c1) : Conj \u21d1y \u21d1f \u21d1\u03c1",
+      "neutral_header": "private DECL conj_of_perm {\u03c1 f y : Perm (Fin 7)} (hx : \u03c1 * x7 = x7 * \u03c1) (hy : \u03c1 * y = f * \u03c1) : Conj \u21d1y \u21d1f \u21d1\u03c1",
+      "line": 75
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "listEqB_eq#1",
+      "name": "listEqB_eq",
+      "kind": "theorem",
+      "header": "private theorem listEqB_eq {l m : List \u2115} (h : listEqB l m = true) : l = m",
+      "neutral_header": "private DECL listEqB_eq {l m : List \u2115} (h : listEqB l m = true) : l = m",
+      "line": 246
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "listEqB#1",
+      "name": "listEqB",
+      "kind": "def",
+      "header": "private def listEqB (l : List \u2115) : List \u2115 \u2192 Bool",
+      "neutral_header": "private DECL listEqB (l : List \u2115) : List \u2115 \u2192 Bool",
+      "line": 176
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "card_good_le#1",
+      "name": "card_good_le",
+      "kind": "theorem",
+      "header": "private theorem card_good_le : (univ.filter fun y : Perm (Fin 7) => y.cycleType = {3, 3} \u2227 (x7 * y).cycleType = {7}).card \u2264 96",
+      "neutral_header": "private DECL card_good_le : (univ.filter fun y : Perm (Fin 7) => y.cycleType = {3, 3} \u2227 (x7 * y).cycleType = {7}).card \u2264 96",
+      "line": 404
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "eq_wB#1",
+      "name": "eq_wB",
+      "kind": "theorem",
+      "header": "private theorem eq_wB {f s : Fin 7 \u2192 Fin 7} (h : Conj y2f f s) : s = wB f (s 0)",
+      "neutral_header": "private DECL eq_wB {f s : Fin 7 \u2192 Fin 7} (h : Conj y2f f s) : s = wB f (s 0)",
+      "line": 100
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "bltF#1",
+      "name": "bltF",
+      "kind": "theorem",
+      "header": "private theorem bltF {n m : \u2115} (h : \u00ac n < m) : Nat.blt n m = false",
+      "neutral_header": "private DECL bltF {n m : \u2115} (h : \u00ac n < m) : Nat.blt n m = false",
+      "line": 227
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "card_C#1",
+      "name": "card_C",
+      "kind": "theorem",
+      "header": "private theorem card_C : (univ.filter fun \u03c3 : Perm (Fin 7) => \u03c3 * x7 = x7 * \u03c3).card = 48",
+      "neutral_header": "private DECL card_C : (univ.filter fun \u03c3 : Perm (Fin 7) => \u03c3 * x7 = x7 * \u03c3).card = 48",
+      "line": 142
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "good_rev_mem#1",
+      "name": "good_rev_mem",
+      "kind": "theorem",
+      "header": "private theorem good_rev_mem {y : Perm (Fin 7)} (hy : y.cycleType = {3, 3}) (hxy : (x7 * y).cycleType = {7}) : rev y 7 \u2208 ER",
+      "neutral_header": "private DECL good_rev_mem {y : Perm (Fin 7)} (hy : y.cycleType = {3, 3}) (hxy : (x7 * y).cycleType = {7}) : rev y 7 \u2208 ER",
+      "line": 383
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "allCand_spec#1",
+      "name": "allCand_spec",
+      "kind": "theorem",
+      "header": "private theorem allCand_spec {f : \u2115 \u2192 Bool} (h : allCand f = true) {a : \u2115} (ha : a < 7) : f a = true",
+      "neutral_header": "private DECL allCand_spec {f : \u2115 \u2192 Bool} (h : allCand f = true) {a : \u2115} (ha : a < 7) : f a = true",
+      "line": 268
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "coe_y2#1",
+      "name": "coe_y2",
+      "kind": "theorem",
+      "header": "private theorem coe_y2 : \u21d1y2 = y2f",
+      "neutral_header": "private DECL coe_y2 : \u21d1y2 = y2f",
+      "line": 61
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "wA#1",
+      "name": "wA",
+      "kind": "def",
+      "header": "private def wA (f : Fin 7 \u2192 Fin 7) (b : Fin 7) : Fin 7 \u2192 Fin 7",
+      "neutral_header": "private DECL wA (f : Fin 7 \u2192 Fin 7) (b : Fin 7) : Fin 7 \u2192 Fin 7",
+      "line": 65
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "y1f#1",
+      "name": "y1f",
+      "kind": "def",
+      "header": "private def y1f : Fin 7 \u2192 Fin 7",
+      "neutral_header": "private DECL y1f : Fin 7 \u2192 Fin 7",
+      "line": 56
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "mem_rev#1",
+      "name": "mem_rev",
+      "kind": "theorem",
+      "header": "private theorem mem_rev {y : Perm (Fin 7)} {k a : \u2115} (h : a \u2208 rev y k) : \u2203 i < k, yN y i = a",
+      "neutral_header": "private DECL mem_rev {y : Perm (Fin 7)} {k a : \u2115} (h : a \u2208 rev y k) : \u2203 i < k, yN y i = a",
+      "line": 304
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "okR#1",
+      "name": "okR",
+      "kind": "def",
+      "header": "private def okR (r : List \u2115) (a : \u2115) : Bool",
+      "neutral_header": "private DECL okR (r : List \u2115) (a : \u2115) : Bool",
+      "line": 168
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "ER_length#1",
+      "name": "ER_length",
+      "kind": "theorem",
+      "header": "private theorem ER_length : ER.length = 96",
+      "neutral_header": "private DECL ER_length : ER.length = 96",
+      "line": 220
+    },
+    {
+      "file": "RequestProject/Degree7Counts.lean",
+      "key": "nthB_rev#1",
+      "name": "nthB_rev",
+      "kind": "theorem",
+      "header": "private theorem nthB_rev (y : Perm (Fin 7)) {k i : \u2115} (h : i < k) : nthB (rev y k) (k - 1 - i) = yN y i",
+      "neutral_header": "private DECL nthB_rev (y : Perm (Fin 7)) {k i : \u2115} (h : i < k) : nthB (rev y k) (k - 1 - i) = yN y i",
+      "line": 294
+    },
     {
       "file": "RequestProject/Degree7Permutations.lean",
       "key": "cycleType22_of_aux#1",
@@ -587,9 +1055,9 @@
     {
       "file": "RequestProject/Degree7Counts.lean",
       "baseline_sha256": "f4e93216df1c88b12884a0926e7aef7acdb36bb912afbfb3963d93cb672da137",
-      "candidate_sha256": "f4e93216df1c88b12884a0926e7aef7acdb36bb912afbfb3963d93cb672da137",
+      "candidate_sha256": "fd0251c1cd7ba46f9adf7a829f67970d4216c20a9a70b913b7142b8ba53eb420",
       "baseline_declarations": 4,
-      "candidate_declarations": 4
+      "candidate_declarations": 56
     },
     {
       "file": "RequestProject/Degree7Deck.lean",
@@ -1437,7 +1905,10 @@
     "upstream_typeclass_spelling_changes_in_headers": 8,
     "ambient_variable_typeclass_spelling_changes": 4,
     "dropped_declarations": 0,
-    "new_proved_private_helpers": 2,
+    "new_proved_private_helpers": 36,
+    "new_private_computational_helpers": 18,
+    "new_private_declarations_total": 54,
+    "good_orbits_exact_private_helper_inventory": "docs/lean435-proof-helper-additions.json",
     "instance_to_theorem_with_same_statement": 1,
     "definition_code_region_changes_outside_exact_checked_main_relocation": 1,
     "definition_proof_field_changes": 1,

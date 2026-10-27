@@ -35,7 +35,8 @@
     "baseline_peak_process_gb": 27.3,
     "baseline_after_import_gb": 10.2,
     "baseline_seconds": 125,
-    "cancelled_target_run_cause_established": false
+    "cancelled_target_run_cause_established": false,
+    "status": "Historical measurement before the reviewed structural optimization below"
   },
   "required_validation": [
     "full fresh-source 176-module target build",
@@ -43,5 +44,24 @@
     "smooth-infinity and fibreHomeo projection guards",
     "trusted sandboxed Lean and NanoDa replay",
     "con-ron advisory attempt"
-  ]
+  ],
+  "structural_good_orbits_followup": {
+    "task_id": "359a8814-75d1-4121-9c40-330ed99af214",
+    "patch_sha256": "fa26f655e0b100d99b41510999b143acac4426f4f1ad6da3bce65d0c3c237013",
+    "report_sha256": "4c4bfd74ade244225f0aa44485bf7bec4545bd7e57e03255fc6121b22861da78",
+    "profile_sha256": "8a9232d82a11c7ce1a310325a5d330912c2451d6e2b9fda0049a07432f277ba3",
+    "changed_original_module": "RequestProject/Degree7Counts.lean",
+    "original_headers_changed": 0,
+    "original_definitions_changed": 0,
+    "new_private_support_declarations": 52,
+    "baseline_only": true,
+    "reported_heaviest_recheck_peak_gb_before": 27.18,
+    "reported_heaviest_recheck_peak_gb_after": 10.44,
+    "reported_import_peak_gb": 10.14,
+    "reported_main_closure_peak_gb_before": 19.48,
+    "reported_main_closure_peak_gb_after": 3.77,
+    "surrogate_private_name_warning_count_before_and_after": 34,
+    "published_surrogate_outputs_filtered": true,
+    "target_certification": false
+  }
 }

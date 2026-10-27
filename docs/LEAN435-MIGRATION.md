@@ -25,7 +25,9 @@ bare names by occurrence and recording ambient variable commands. It finds:
   sources have the same class field, and the new version retains the old name
   as a deprecated alias;
 - the recorded instance-to-theorem change with identical statement, the exact
-  `MainTheorem` module relocation, and two new proved private cycle helpers;
+  `MainTheorem` module relocation, two proved private cycle helpers, and 52
+  later private proof-support declarations for the structural `good_eq_orbits`
+  proof, frozen individually in [the helper inventory](lean435-proof-helper-additions.json);
 - no dropped declarations or changed computational maps. The later kernel-cost
   patch changes only the `invFun` subtype-membership proof in `fibreHomeo`;
   the inventory records that body difference and enforces the exact two
@@ -97,9 +99,30 @@ On the baseline, the five full-body rechecks changed from exceeding the
 120-second cap to 0.3–47.7 milliseconds. This suggests an optimization worth
 testing, but does not establish the cause of any target-version interruption.
 Another reachable declaration, `Degree7.good_eq_orbits._proof_1_1`, peaked at
-27.3 GB in the baseline probe. Further memory optimization or adequate runner
-resources may still be necessary. The proposed patch, projection guards, full
-590-target inventory and trusted kernels all require fresh target CI evidence.
+27.3 GB in the baseline probe. The follow-up below addresses this cost. All
+changes, projection guards, the full 590-target inventory and trusted kernels
+require exact-current-commit target CI evidence.
+
+Aristotle task `359a8814-75d1-4121-9c40-330ed99af214` replaces only the proof
+of `Degree7.good_eq_orbits` and adds 52 private support declarations in its
+existing module. Its original statement and all four conclusions are identical.
+The other three original counting theorems retain their exact statements and
+proofs. The new argument uses conjugation invariance, the centralizer-order
+formula, free orbits and a kernel-checked pruned search over partial assignments
+for the upper bound 96. Soundness of that search is proved in Lean; no external
+certificate, axiom or native evaluator is trusted. The expensive `card_good`
+enumeration is not moved into the main theorem's closure.
+
+On the available Lean 4.28 baseline only, the whole-process peak for rechecking
+the heaviest declaration fell from 27.18 to 10.44 GB, including an unchanged
+10.14 GB import. A diagnostic fresh closure-only replay of the main theorem
+fell from 19.48 to 3.77 GB. These are Aristotle's diagnostic measurements, not
+independently reproduced Lean 4.35 or bundled-Comparator acceptance. The
+surrogate replay printed 34 duplicate-private-name warnings both before and
+after; its filtered outputs are not certification evidence. Exact patch/report
+hashes and runtime qualifications are recorded in the
+[diagnostic record](lean435-kernel-cost-diagnostic.json). Full target build,
+all 590 audit targets and required trusted kernel replay remain mandatory.
 
 The replay wrapper now checkpoints partial logs and resource snapshots through
 the existing pinned artifact action every twenty minutes while the unchanged

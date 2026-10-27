@@ -158,6 +158,11 @@
       "migrated_sha256": "daceb01552deb08b83ab7309ce34aab7e48e0eac00a3392441dabe1997917d03"
     },
     {
+      "file": "RequestProject/Degree7Counts.lean",
+      "baseline_sha256": "f4e93216df1c88b12884a0926e7aef7acdb36bb912afbfb3963d93cb672da137",
+      "migrated_sha256": "fd0251c1cd7ba46f9adf7a829f67970d4216c20a9a70b913b7142b8ba53eb420"
+    },
+    {
       "file": "RequestProject/Degree7Permutations.lean",
       "baseline_sha256": "1ff7d45a63b6207242db5d2af809205f805cb9f9ca4e24cc9d4e3b7c2f1816fc",
       "migrated_sha256": "84795b61cc2b81cf1fe9e063a708a365ae1cccecfcb4788c46eddebef2a5f78d"
