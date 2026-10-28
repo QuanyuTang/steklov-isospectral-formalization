@@ -6,6 +6,8 @@
 [![Bundled Comparator](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml?query=branch%3Amain)
 [![Palomar mechanical preflight](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar-mechanical.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar-mechanical.yml?query=branch%3Amain)
 
+**Palomar registration:** [PALOMAR-2026-10-27-000029, version 1](https://palomar-registry.org/entry?id=PALOMAR-2026-10-27-000029&version=1) records commit `54fddf140bb5fb86ce2eb8fceddb46f20bac1842`. This revision corrects the repository metadata to display the authors' and maintainers' human names. A subsequent registration under the same Palomar ID is needed to publish that correction; the registered version 1 remains unchanged.
+
 **Canonical Challenge compatibility (2026-10-27):** The [actual Palomar submission](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/40533988514) of `e5e5383838201fb674f87042dcb8c86ccc761fb2` failed while compiling `Label`'s `Fintype` instance. Palomar deliberately compiles Challenge without candidate Lake options. This revision scopes the needed elaboration option to that one unchanged inductive declaration. The new official **full mechanical preflight** covers the canonical Challenge stage omitted by the earlier two workflows. Consult all three workflows for the exact new commit; no future pass or registry acceptance is asserted. [Bounded source-change record](verification/challenge-canonical-20261027/migration.json).
 
 **Historical Windows recheck:** Snapshot `2d1b0331a534c8c774794252b14152c5be32a3f7` passed the full build, fresh 590-target audit, and pinned Comparator/NanoDa/Lean/con-ron checks using locally generated hash-bound exports, without Linux sandbox isolation. Its original 190-input report is unchanged. The current library, Solution and other inputs remain byte-identical (189 entries); the old Challenge is archived separately. The release checker permits only the recorded one-line scoped Challenge adjustment and does not extend historical acceptance to the modified Challenge. [Original results and genuine logs](verification/local-windows-20261027/report.json).
@@ -26,7 +28,7 @@ The result concerns inverse spectral geometry for the Dirichlet-to-Neumann opera
 | Current target | Lean **4.35.0-rc2**, Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`; fresh full build and 590-target audit passed on recorded commit `6932e18512a7` |
 | Verified baseline | Lean **4.28.0**, Mathlib `8f9d9cff6bd728b17a24e163c9402775d9e6a365`; original successful logs included |
 | Axioms | `propext`, `Classical.choice`, `Quot.sound` only |
-| Palomar | A prior submission failed canonical Challenge compilation; check official full mechanical preflight for the current commit; no registration claimed |
+| Palomar | Version 1 registered at `54fddf1`; the author-name metadata revision requires its own checks and subsequent registration |
 | Review | AI-assisted statement/source review; no independent human mathematical review claimed |
 
 ## What is proved

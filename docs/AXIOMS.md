@@ -34,4 +34,8 @@ Recorded fidelity review was AI-assisted, not independent human expert review.
 Both bundled NanoDa and Lean kernels accepted the selected main-result proof
 closure in the Linux sandbox. This independent replay covers that closure; the
 590-target inventory is separately checked by standard Lean. con-ron also accepted.
-No Palomar verification or registration is claimed.
+These historical axiom checks are distinct from Palomar registration. Source
+commit `54fddf140bb5fb86ce2eb8fceddb46f20bac1842` was subsequently registered as
+[PALOMAR-2026-10-27-000029, version 1](https://palomar-registry.org/entry?id=PALOMAR-2026-10-27-000029&version=1).
+The current author-name metadata revision requires its own exact-commit checks
+and subsequent registration.

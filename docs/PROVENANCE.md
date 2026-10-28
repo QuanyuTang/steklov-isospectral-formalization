@@ -7,9 +7,10 @@ The mathematical source is Tao Hu, Jiachen Shi and Quanyu Tang,
 The original PDF, TeX and arXiv source archive are preserved under `paper/`.
 Their rights are separate from the formalization's code license.
 
-The formalization authors and responsible maintainers are **taohu-hub,
-RGConj, QuanyuTang**, in that order, as specified by the project owner.
-These identifiers do not authenticate a particular paper-author identity or
+The formalization authors and responsible maintainers are **Tao Hu,
+Jiachen Shi, Quanyu Tang**, in that order, as specified by the project owner.
+Their GitHub accounts are `taohu-hub`, `RGConj`, and `QuanyuTang`, respectively.
+These account identifiers do not authenticate a particular paper-author identity or
 assert any coauthor's endorsement or independent human review.
 
 The user requested and directed the work. **Aristotle (Harmonic)** performed
@@ -114,8 +115,8 @@ Historical Actions links still refer to the original repository and certify
 only their recorded snapshots. This personal copy must obtain its own successful
 checks for the final submitted commit. Its workflow badges point to its own
 Actions runs. Public repository access does not constitute Palomar submission,
-editorial acceptance or registration. A later actual submission attempt is
-recorded below; successful verification and registration are not claimed here.
+editorial acceptance or registration. A later actual submission attempt and the
+subsequently registered snapshot are recorded below.
 
 ## Canonical Challenge compilation repair
 
@@ -145,3 +146,14 @@ canonical Challenge stage absent from the earlier two workflows. Require
 successful results on the exact new commit. Running this mechanical workflow
 in the personal repository does not create a registry submission or perform
 editorial review or registration.
+
+## Palomar registration and author-name metadata
+
+[PALOMAR-2026-10-27-000029, version 1](https://palomar-registry.org/entry?id=PALOMAR-2026-10-27-000029&version=1)
+registered source commit `54fddf140bb5fb86ce2eb8fceddb46f20bac1842`.
+On 2026-10-28, the project owner requested that the repository's author and
+maintainer metadata use the corresponding human names instead of GitHub account
+strings. This corrects their displayed representation and preserves the existing
+people and order; the account links remain in the README. Historical reports and
+the registered version 1 are unchanged. A new source SHA must be submitted under
+the existing Palomar ID before a subsequent version can publish the correction.

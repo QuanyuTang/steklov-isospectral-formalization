@@ -1,6 +1,16 @@
-# Palomar preparation status
+# Palomar registration and verification status
 
-Authors and responsible maintainers, in order: **taohu-hub, RGConj, QuanyuTang**.
+Authors and responsible maintainers, in order: **Tao Hu, Jiachen Shi, Quanyu Tang**.
+
+## Registered version and author-name metadata revision
+
+[PALOMAR-2026-10-27-000029, version 1](https://palomar-registry.org/entry?id=PALOMAR-2026-10-27-000029&version=1)
+records commit `54fddf140bb5fb86ce2eb8fceddb46f20bac1842`.
+The current revision replaces the three GitHub account strings in project
+authorship and maintenance metadata with the corresponding human names, in the
+same order. It does not change the proved mathematics or the registered version 1.
+Publishing this metadata correction requires a subsequent ordinary submission
+under the same Palomar ID and its own exact-commit checks and registration.
 
 ## Canonical Challenge compatibility repair, 2026-10-27
 

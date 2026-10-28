@@ -6,6 +6,8 @@
 [![Bundled Comparator](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar.yml?query=branch%3Amain)
 [![Palomar 完整机械预检](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar-mechanical.yml/badge.svg?branch=main)](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/workflows/palomar-mechanical.yml?query=branch%3Amain)
 
+**Palomar 登记：** [PALOMAR-2026-10-27-000029，第 1 版](https://palomar-registry.org/entry?id=PALOMAR-2026-10-27-000029&version=1) 固定于提交 `54fddf140bb5fb86ce2eb8fceddb46f20bac1842`。本次修订将仓库元数据中的作者和维护者改为人名；仍需使用同一 Palomar 编号提交后续版本，才能在登记中发布这项更正。已登记的第 1 版保持不变。
+
 **独立 Challenge 编译修复（2026-10-27）：** 提交 `e5e5383838201fb674f87042dcb8c86ccc761fb2` 的[实际 Palomar 投稿](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/40533988514)在生成 `Label` 的 `Fintype` 实例时失败。Palomar 会独立编译 Challenge，刻意不继承候选仓库的 Lake 选项。本次只在原有 `Label` 声明前加入一行局部 elaboration 选项，声明文本及证明库保持原样；新增官方 **full 模式完整机械预检**，补上原两项工作流遗漏的独立 Challenge 阶段。请核对新提交对应的全部三项工作流结果；这里不预先宣称检查通过或获得登记。[严格限定的源码修改记录](verification/challenge-canonical-20261027/migration.json)。
 
 **历史 Windows 本机复核：** 快照 `2d1b0331a534c8c774794252b14152c5be32a3f7` 已通过完整编译、590 项审计及 Comparator、NanoDa、Lean、con-ron 检查；该检查没有 Linux 隔离沙箱，使用与源码及编译产物哈希绑定的本机导出。原始 190 项输入记录与日志保留不变；当前证明库、Solution 及其他输入共 189 项仍逐字一致，旧 Challenge 另行归档。发布检查只允许记录中这一处局部选项插入，不把旧核验结果延伸为对新 Challenge 的接受。[原始结果与真实日志](verification/local-windows-20261027/report.json)。
@@ -52,9 +54,9 @@ python3 scripts/check-release.py
 
 本仓库的根目录就是投稿项目根目录；无需再上传 ZIP 或嵌套一层 `formalization/`。原始论文 PDF、TeX 和原始源码包位于 `paper/`。
 
-**记录的证明快照已通过所需本地准备检查。** con-ron 也接受了证明。 原始 Lean 4.28 日志只核验原基线；个人仓库 `e5e5383` 的[完整编译与审计](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/runs/40527371599)、[bundled Comparator](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/runs/40527371580)虽已通过，却继承了候选 Lake 选项，未覆盖后来实际投稿失败的独立 Challenge 阶段。当前版本须另查精确提交的官方 full 模式机械预检结果。本仓库已应所有者要求公开；实际投稿及永久登记仍须项目所有者最终批准。[当前状态](PALOMAR_STATUS.md)
+**记录的证明快照已通过所需本地准备检查。** con-ron 也接受了证明。 原始 Lean 4.28 日志只核验原基线；个人仓库 `e5e5383` 的[完整编译与审计](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/runs/40527371599)、[bundled Comparator](https://github.com/QuanyuTang/steklov-isospectral-formalization/actions/runs/40527371580)虽已通过，却继承了候选 Lake 选项，未覆盖后来实际投稿失败的独立 Challenge 阶段。当前版本须另查精确提交的官方 full 模式机械预检结果。本仓库已应所有者要求公开；后续版本的实际投稿及永久登记仍须项目所有者最终批准。[当前状态](PALOMAR_STATUS.md)
 
-Palomar 使用公开 GitHub 仓库及完整 commit SHA 进行审查，并不是直接接收 ZIP。发布和后续提交步骤见 [PALOMAR.md](docs/PALOMAR.md)。本项目目前**没有获得 Palomar 核验、登记或背书**。
+Palomar 使用公开 GitHub 仓库及完整 commit SHA 进行审查，并不是直接接收 ZIP。提交 `54fddf140bb5fb86ce2eb8fceddb46f20bac1842` 已登记为上述第 1 版；本次姓名元数据修订尚未登记为第 2 版。后续提交步骤见 [PALOMAR.md](docs/PALOMAR.md)。登记不构成 Palomar 对数学结果的认可或背书。
 
 ## 署名、AI 使用与许可
 

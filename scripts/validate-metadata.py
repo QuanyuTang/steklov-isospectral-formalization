@@ -40,9 +40,9 @@ def placeholder_paths(value, path='$'):
 
 
 require(document.get('version') == 'v0.4', 'metadata version must be v0.4')
-require(document['project']['authors'] == ['taohu-hub', 'RGConj', 'QuanyuTang'],
+require(document['project']['authors'] == ['Tao Hu', 'Jiachen Shi', 'Quanyu Tang'],
         'ordered formalization authors changed; review authorship intentionally')
-require(document['project']['responsible_maintainers'] == ['taohu-hub', 'RGConj', 'QuanyuTang'],
+require(document['project']['responsible_maintainers'] == ['Tao Hu', 'Jiachen Shi', 'Quanyu Tang'],
         'responsible maintainers changed; review maintenance intentionally')
 require(document['project']['license'] == 'Apache-2.0', 'project license must be Apache-2.0')
 description = document['project'].get('description', '')

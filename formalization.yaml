@@ -4,14 +4,14 @@
     "name": "Strictly Convex Steklov-Isospectral Plane Domains",
     "description": "Formalization of a family of pairs of bounded, simply connected, strictly convex planar domains with real-analytic boundaries. At each parameter, the two domains have identical Steklov spectra, including multiplicities. Distinct labels or parameters give noncongruent domains. Each domain has perimeter 2π and no orientation-reversing Euclidean symmetry, and normalized conformal maps converge in C∞ to the identity. The proof uses an explicit degree-seven construction.",
     "authors": [
-      "taohu-hub",
-      "RGConj",
-      "QuanyuTang"
+      "Tao Hu",
+      "Jiachen Shi",
+      "Quanyu Tang"
     ],
     "responsible_maintainers": [
-      "taohu-hub",
-      "RGConj",
-      "QuanyuTang"
+      "Tao Hu",
+      "Jiachen Shi",
+      "Quanyu Tang"
     ],
     "license": "Apache-2.0"
   },
